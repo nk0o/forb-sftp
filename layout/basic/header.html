@@ -1,7 +1,8 @@
 
 <!--@css(/layout/basic/css/ap-header.css)-->
 <!-- 최상단 띠배너 -->
-<div class="main_top_banner ez-align-center" data-ez-module="top-banner" data-ez-align="center" data-ez-role="style.color" data-ez-display="visible" data-ez="contents-0ufi8ba-1">
+<!-- class="hidden main_top_banner"  hidden으로 상단띠배너 조절 -->
+<div class="hidden main_top_banner ez-align-center" data-ez-module="top-banner" data-ez-align="center" data-ez-role="style.color" data-ez-display="visible" data-ez="contents-0ufi8ba-1">
   <div class="top_banner_box_inner">
     <div class="top_banner_text">
       <a data-ez-role="a" href="/category/아기띠/44/" data-href="#" target="_self">2026 신상 아기띠 출시 — 지금 바로 확인하기👉</a>
@@ -89,18 +90,22 @@
             <span></span>
           </button>
           <!-- 모바일메뉴 버튼 -->
-          <a href="javascript:void(0);" class="eNavFold ap-nav__hamburger">
+          <button class="eNavFold ap-nav__hamburger">
             <span></span>
             <span></span>
             <span></span>
-          </a>
+          </button>
           <!-- 로고 -->
           <a href="/" class="top_logo ap-nav__logo">FORB<!-- <img src="{$logo}" alt="{$mall_name}"> --> </a>
     
           <!-- 검색·마이페이지·장바구니·전체메뉴 -->
           <div class="top_mypage ap-nav__actions">
             <div module="Layout_MobileAction" class="tablet_detail_only">
-              <a href="#none" onclick="{$go_back}"><img src="/SkinImg/img/back.svg"></a>
+              <a href="#none" onclick="{$go_back}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="icon">
+                  <path d="M7.29976 12.5L14.9998 20.1C15.3998 20.5 15.9998 20.5 16.3998 20.1C16.7998 19.7 16.7998 19.1 16.3998 18.7L9.49976 11.7L16.3998 4.7C16.7998 4.3 16.7998 3.7 16.3998 3.3C16.1998 3.1 15.9998 3 15.6998 3C15.3998 3 15.1998 3.1 14.9998 3.3L7.29976 10.9C6.89976 11.4 6.89976 12 7.29976 12.5C7.29976 12.4 7.29976 12.4 7.29976 12.5Z" fill="#000000"></path>
+                </svg>
+              </a>
             </div>
             <a href="javascript:void(0);" class="eSearch ap-nav__icon-btn" aria-label="검색"><!--@import(/svg/icon-search.html)--></a><!-- 검색 -->
             <a href="/myshop/index.html" class="ap-nav__icon-btn" aria-label="마이페이지"><!--@import(/svg/icon-user.html)--></a><!-- 마이페이지 -->
@@ -193,7 +198,6 @@
       <div class="mega-menu__heading" id="mmHeading"></div>
       <div class="mega-menu__grid" id="mmGrid"></div>
     </div>
-    <button class="mega-menu__close" id="megaClose" aria-label="닫기">✕</button>
   </div>
 </div><!-- //mega-menu -->
 
@@ -295,14 +299,13 @@
   }
 
   function getHeaderOffset() {
-    if(topBnr.classList.contains || apHeader.classList.contains('fixed')){ 
+    if(topBnr.classList.contains('hidden') || apHeader.classList.contains('fixed')){ 
       return HEADER_H
     }
-    return topBnr ? HEADER_H + BNR_H : HEADER_H; 
+    return HEADER_H + BNR_H;
   }
 
   getHeaderOffset(); // 초기 실행
-  console.log(getHeaderOffset())
   window.addEventListener('scroll', getHeaderOffset);
 
   // ── 메가메뉴 ──
@@ -310,10 +313,9 @@
     const MENUS = {
       carseat: {
         image:'https://forbshop.com/web/product/big/202511/798ba45d67dfa2f0c73be04374f2bff3.jpg', //메뉴 썸네일
-        heading: '카시트', //메뉴 타이틀
-        caption: 'Car Seat', //썸네일 하단 캡션
+        heading: 'category', //메뉴 타이틀
+        caption: '포브의 카시트 더 알아보기', //썸네일 하단 캡션
         visualTitle: '안전을 위한 최선의 선택', //썸네일 하단 문구
-        cols: 2, //링크(1~3) 
         links: [ //링크이름
           { label: '보네떼 바로가기'},
           { label: '리니 바로가기' },
@@ -321,10 +323,9 @@
       },
       carrier: {
         image:'https://forbshop.com/web/product/extra/big/20230801/23d337b4ee8194e75ef594625785b857.jpg',
-        heading: '아기띠',
+        heading: 'category',
         caption: 'Baby Carrier',
         visualTitle: '아이와 더 가깝게, 더 편안하게',
-        cols: 2,
         links: [
           { label: '신생아 아기띠'},
           { label: '프리아핏 에어', badge: 'BEST' },
@@ -334,31 +335,28 @@
       },
       outdoor: {
         image:'https://forbshop.com/web/product/extra/big/20240205/d96729fb2ecc9b9c89e212025667ca26.jpg',
-        heading: '아웃도어캐리어',
+        heading: 'category',
         caption: 'Outdoor Carrier',
         visualTitle: '자연 속에서도 자유롭게',
-        cols: 1,
         links: [
           { label: '볼레프로 바로가기', badge: 'BEST' },
         ]
       },
       bag: {
-        image:'https://forbshop.com/web/product/big/202511/915a86e7ebaded8e6ec5cef999adfc39.jpg',
-        heading: '기저귀가방',
+        image:'https://forbshop.com/web/product/big/202511/798ba45d67dfa2f0c73be04374f2bff3.jpg',
+        heading: 'category',
         caption: 'Diaper Bag',
         visualTitle: '스타일과 기능, 두 가지 모두',
-        cols: 2,
         links: [
           { label: '토트백', badge: 'NEW' },
           { label: '백팩' },
         ]
       },
       acc: {
-        image:'https://forbshop.com/web/product/big/202307/286ed0bfabfdd0ab25e5b567136b71bb.jpg',
-        heading: '액세서리',
+        image:'https://forbshop.com/web/product/extra/big/20240205/d96729fb2ecc9b9c89e212025667ca26.jpg',
+        heading: 'category',
         caption: 'Accessories',
         visualTitle: '포브 제품을 더 편리하게',
-        cols: 3,
         links: [
           { label: '카시트 액세서리' },
           { label: '아기띠 액세서리' },
@@ -366,11 +364,10 @@
         ]
       },
       about: {
-        image:'https://forbmaster.cafe24.com/web/upload/about_bt_bg.jpg',
-        heading: '포브소개',
+        image:'',
+        heading: 'forb',
         caption: 'About FORB',
         visualTitle: 'For Baby, For Happiness',
-        cols: 2,
         links: [
           { label: '브랜드 스토리' },
           { label: '장인정신' },
@@ -379,11 +376,10 @@
         ]
       },
       service: {
-        image:'https://forbmaster.cafe24.com/web/upload/about_bg_45.jpg',
-        heading: '서비스',
+        image:'https://forbshop.com/web/product/extra/big/20240205/d96729fb2ecc9b9c89e212025667ca26.jpg',
+        heading: 'forb\'s service',
         caption: 'Service',
         visualTitle: '구매 후에도 함께합니다',
-        cols: 2,
         links: [
           { label: '제품케어서비스(A/S)' },
           { label: '정품 인증' },
@@ -394,7 +390,6 @@
     };
 
     const menu      = document.getElementById('megaMenu');
-    const closeBtn  = document.getElementById('megaClose');
     const mmImg      = document.getElementById('mmImage');
     const heading   = document.getElementById('mmHeading');
     const grid      = document.getElementById('mmGrid');
@@ -419,8 +414,7 @@
 
       if (currentMenu === key && menu.classList.contains('is-open')) return;
       currentMenu = key;
-      
-      mmImg.setAttribute("src", data.image);
+      data.image == null ? mmImg.setAttribute("src", data.image) :mmImg.setAttribute("src", 'https://forbmaster.cafe24.com/web/img/img-placeholder.png')
       heading.textContent = data.heading;
       caption.textContent = data.caption;
       visTitle.textContent = data.visualTitle;
@@ -429,8 +423,6 @@
         el.classList.toggle('is-visible', el.dataset.img === key);
       });
 
-      const colClass = data.cols === 1 ? 'mega-menu__grid--1col' : data.cols === 2 ? 'mega-menu__grid--2col' : '';
-      grid.className = 'mega-menu__grid ' + colClass;
       grid.innerHTML = data.links.map(l => `
         <a href="#" class="mega-menu__link">
           ${l.label}
@@ -457,7 +449,6 @@
 
     menu.addEventListener('mouseenter', () => clearTimeout(closeTimer));
     menu.addEventListener('mouseleave', () => hideMenu());
-    closeBtn.addEventListener('click', () => { clearTimeout(closeTimer); hideMenu(); });
   })();
   
   // ── 전체메뉴 드로어 + 헤더 스크롤 ──
