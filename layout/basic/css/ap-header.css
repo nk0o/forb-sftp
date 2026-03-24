@@ -125,6 +125,8 @@
   .ap-nav__link { padding: 0 11px; }
   .fullnav__row { grid-template-columns: repeat(3,1fr); }
   .mega-menu__grid { grid-template-columns: repeat(2,1fr); }
+  /* 검색 */
+  .forb #header.fixed .inner .xans-layout-searchheader, .xans-layout-searchheader{width:100%;}
 }
 
 /* ── 모바일 (≤768px) ── */

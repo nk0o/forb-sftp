@@ -484,5 +484,11 @@
     closeBtn.addEventListener('click', closeDrawer);
     dim.addEventListener('click', closeDrawer);
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+    function checkViewport() {
+      if (window.innerWidth <= 768) {
+        closeDrawer();
+      }
+    }
+    window.addEventListener('resize', checkViewport);
   })();
 </script>
