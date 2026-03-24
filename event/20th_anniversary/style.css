@@ -1,0 +1,352 @@
+/* =============================================
+   forb-anniversary (BEM)
+   Block: forb-anniversary
+   ============================================= */
+
+/* Block */
+.forb-anniversary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #f0f0f0;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* __card */
+.forb-anniversary__card {
+  background: #fff;
+  border-radius: 16px;
+  width: 360px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* __header */
+.forb-anniversary__header {
+  padding: 22px 24px 16px;
+  text-align: center;
+}
+
+/* __title */
+.forb-anniversary__title {
+  font-size: 26px;
+  font-weight: 900;
+  color: #1a1a1a;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+}
+
+/* __meta */
+.forb-anniversary__meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: #444;
+}
+
+/* __meta-item */
+.forb-anniversary__meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* __meta-label */
+.forb-anniversary__meta-label {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 2px 7px;
+  font-size: 12px;
+  color: #555;
+}
+
+/* __meta-text */
+.forb-anniversary__meta-text {
+  font-size: 13px;
+  color: #444;
+}
+
+/* __banner */
+.forb-anniversary__banner {
+  background: linear-gradient(135deg, #f5c842 0%, #f0a800 100%);
+  height: 120px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/* __banner-characters */
+.forb-anniversary__banner-characters {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+}
+
+/* __char */
+.forb-anniversary__char {
+  font-size: 56px;
+  line-height: 1;
+  animation: forb-float 3s ease-in-out infinite;
+}
+.forb-anniversary__char:nth-child(1) { animation-delay: 0s; }
+.forb-anniversary__char:nth-child(2) { animation-delay: 0.4s; font-size: 62px; }
+.forb-anniversary__char:nth-child(3) { animation-delay: 0.8s; font-size: 58px; }
+.forb-anniversary__char:nth-child(4) { animation-delay: 1.2s; }
+
+@keyframes forb-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* __quiz */
+.forb-anniversary__quiz {
+  margin: 16px;
+  background: #fff;
+  border: 1.5px solid #e8e8e8;
+  border-radius: 14px;
+  padding: 18px 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* __question */
+.forb-anniversary__question {
+  font-size: 14px;
+  color: #222;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+/* __q-label */
+.forb-anniversary__q-label {
+  font-size: 16px;
+  font-weight: 900;
+  color: #f0a800;
+  margin-right: 6px;
+}
+
+/* __letters */
+.forb-anniversary__letters {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+/* __letter-btn */
+.forb-anniversary__letter-btn {
+  width: 60px;
+  height: 48px;
+  border: 1.5px solid #ddd;
+  border-radius: 10px;
+  background: #fafafa;
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.forb-anniversary__letter-btn:hover {
+  border-color: #f0a800;
+  background: #fff8e6;
+  color: #d48b00;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(240, 168, 0, 0.2);
+}
+
+/* __letter-btn--selected (Modifier) */
+.forb-anniversary__letter-btn--selected {
+  border-color: #f0a800;
+  background: #f0a800;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(240, 168, 0, 0.3);
+}
+
+/* __input */
+.forb-anniversary__input {
+  width: 100%;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 15px;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #222;
+  outline: none;
+  margin-bottom: 12px;
+  transition: border-color 0.2s;
+  text-align: center;
+  letter-spacing: 2px;
+}
+.forb-anniversary__input:focus {
+  border-color: #f0a800;
+  box-shadow: 0 0 0 3px rgba(240, 168, 0, 0.1);
+}
+
+/* __actions */
+.forb-anniversary__actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* __btn-confirm */
+.forb-anniversary__btn-confirm {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #1a1a1a;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.forb-anniversary__btn-confirm:hover {
+  background: #333;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* __feedback */
+.forb-anniversary__feedback {
+  margin-top: 10px;
+  font-size: 13px;
+  text-align: center;
+  color: #e53935;
+  font-weight: 500;
+  min-height: 18px;
+  transition: opacity 0.2s;
+}
+
+/* __feedback--hidden (Modifier) */
+.forb-anniversary__feedback--hidden {
+  opacity: 0;
+}
+
+/* __hint-btn */
+.forb-anniversary__hint-btn {
+  display: block;
+  width: calc(100% - 32px);
+  margin: 0 16px 16px;
+  padding: 16px;
+  border: 1.5px solid #e8e8e8;
+  border-radius: 12px;
+  background: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s;
+  font-family: 'Noto Sans KR', sans-serif;
+  text-decoration: none;
+}
+.forb-anniversary__hint-btn:hover {
+  background: #fafafa;
+  border-color: #ccc;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* __modal-overlay */
+.forb-anniversary__modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  animation: forb-fadeIn 0.2s;
+}
+
+/* __modal-overlay--show (Modifier) */
+.forb-anniversary__modal-overlay--show {
+  display: flex;
+}
+
+@keyframes forb-fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* __modal */
+.forb-anniversary__modal {
+  background: #fff;
+  border-radius: 20px;
+  padding: 32px 28px;
+  width: 300px;
+  text-align: center;
+  animation: forb-popIn 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes forb-popIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* __modal-icon */
+.forb-anniversary__modal-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+/* __modal-title */
+.forb-anniversary__modal-title {
+  font-size: 20px;
+  font-weight: 900;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+/* __modal-desc */
+.forb-anniversary__modal-desc {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* __modal-btn */
+.forb-anniversary__modal-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #f0a800;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Noto Sans KR', sans-serif;
+  transition: background 0.15s;
+}
+.forb-anniversary__modal-btn:hover {
+  background: #d48b00;
+}
+
+/* __modal-close */
+.forb-anniversary__modal-close {
+  display: block;
+  margin-top: 12px;
+  font-size: 13px;
+  color: #999;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.forb-anniversary__modal-close:hover {
+  color: #666;
+}

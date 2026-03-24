@@ -1,0 +1,171 @@
+<!--@layout(/layout/basic/layout.html)-->
+<div class="section">
+  <!--@css(/event/20th_anniversary/style.css)-->
+  <div>
+    <div class="path">
+      <span>현재 위치</span>
+      <ol>
+        <li><a href="/">홈</a></li>
+        <li><a href="#">게시판</a></li>
+        <li title="현재 위치"><strong>20주년 퀴즈 이벤트</strong></li>
+      </ol>
+    </div>
+    <div class="titleArea">
+      <h2>20주년 퀴즈 이벤트</h2>
+    </div>
+  </div>
+</div>
+
+<div class="section forb-anniversary">
+
+  <div class="forb-anniversary__card">
+
+    <!-- Header -->
+    <div class="forb-anniversary__header">
+      <h1 class="forb-anniversary__title">포브 20주년 퀴즈 이벤트</h1>
+      <div class="forb-anniversary__meta">
+        <div class="forb-anniversary__meta-item">
+          <span class="forb-anniversary__meta-label">참여기간</span>
+          <span class="forb-anniversary__meta-text">6.1(월) ~ 6.3(수)</span>
+        </div>
+        <div class="forb-anniversary__meta-item">
+          <span class="forb-anniversary__meta-label">결과발표</span>
+          <span class="forb-anniversary__meta-text">6.8(월)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Banner -->
+    <div class="forb-anniversary__banner">
+      <div class="forb-anniversary__banner-characters">
+        <span class="forb-anniversary__char">🕵️</span>
+        <span class="forb-anniversary__char">🐦</span>
+        <span class="forb-anniversary__char">🦢</span>
+        <span class="forb-anniversary__char">👩‍🔬</span>
+      </div>
+    </div>
+
+    <!-- Quiz Box -->
+    <div class="forb-anniversary__quiz">
+      <div class="forb-anniversary__question">
+        <span class="forb-anniversary__q-label">Q.</span>
+        포브의 2006년을 함께한 유모차 겸 카시트는 무엇일까요?
+      </div>
+
+      <div class="forb-anniversary__letters">
+        <button class="forb-anniversary__letter-btn" onclick="pickLetter(this, 'ㅋ')">ㅋ</button>
+        <button class="forb-anniversary__letter-btn" onclick="pickLetter(this, 'ㅂ')">ㅂ</button>
+        <button class="forb-anniversary__letter-btn" onclick="pickLetter(this, 'ㅌ')">ㅌ</button>
+        <button class="forb-anniversary__letter-btn" onclick="pickLetter(this, 'ㅂ')">ㅂ</button>
+      </div>
+
+      <input type="text" class="forb-anniversary__input" id="answerInput" placeholder="정답을 입력하세요"
+        maxlength="20" />
+
+      <div class="forb-anniversary__actions">
+        <button class="forb-anniversary__btn-confirm" onclick="checkAnswer()">정답 확인</button>
+      </div>
+
+      <div class="forb-anniversary__feedback forb-anniversary__feedback--hidden" id="feedback">
+        아쉽지만, 정답이 아닙니다.
+      </div>
+    </div>
+
+    <!-- Hint Button -->
+    <a class="forb-anniversary__hint-btn" href="https://www.forbshop.com/shopinfo/aboutus.html"
+      target="_blank" onclick="goHint(event)">힌트 보러가기 👁</a>
+
+  </div>
+
+  <!-- Coupon Modal -->
+  <div class="forb-anniversary__modal-overlay" id="modalOverlay">
+    <div class="forb-anniversary__modal">
+      <div class="forb-anniversary__modal-icon">🎉</div>
+      <h2 class="forb-anniversary__modal-title">정답입니다!</h2>
+      <p class="forb-anniversary__modal-desc">축하드립니다!<br>포브 20주년 기념 쿠폰을 발급해 드립니다.</p>
+      <a class="forb-anniversary__modal-btn" id="couponBtn" href="#" onclick="issueCoupon(event)">쿠폰
+        받기</a>
+      <button class="forb-anniversary__modal-close" onclick="closeModal()">닫기</button>
+    </div>
+  </div>
+
+
+
+  <script>
+    const CORRECT_ANSWER = '컨버터블';
+
+    // 쿠폰 링크 (DOM에 미노출)
+    const _c = atob('Ly9mb3Jic2hvcC5jb20vZXhlYy9mcm9udC9uZXdjb3Vwb24vSXNzdWVEb3dubG9hZD9jb3Vwb25fbm89NjA4NDcwMDA3MzIwMDAwMDY2MQ==');
+
+    let selectedLetters = [];
+
+    function pickLetter(btn, letter) {
+      if (btn.classList.contains('forb-anniversary__letter-btn--selected')) {
+        btn.classList.remove('forb-anniversary__letter-btn--selected');
+        selectedLetters = selectedLetters.filter(l => l !== letter);
+      } else {
+        btn.classList.add('forb-anniversary__letter-btn--selected');
+        selectedLetters.push(letter);
+      }
+      hideFeedback();
+    }
+
+    function clearAnswer() {
+      document.getElementById('answerInput').value = '';
+      document.querySelectorAll('.forb-anniversary__letter-btn').forEach(b =>
+        b.classList.remove('forb-anniversary__letter-btn--selected')
+      );
+      selectedLetters = [];
+      hideFeedback();
+    }
+
+    function checkAnswer() {
+      const input = document.getElementById('answerInput');
+      const val = input.value.trim().replace(/\s/g, '');
+      if (!val) {
+        showFeedback('정답을 입력해 주세요.');
+        return;
+      }
+      if (val === CORRECT_ANSWER) {
+        showModal();
+      } else {
+        showFeedback('아쉽지만, 정답이 아닙니다.');
+      }
+    }
+
+    function showFeedback(msg) {
+      const el = document.getElementById('feedback');
+      el.textContent = msg;
+      el.classList.remove('forb-anniversary__feedback--hidden');
+    }
+
+    function hideFeedback() {
+      document.getElementById('feedback').classList.add('forb-anniversary__feedback--hidden');
+    }
+
+    function showModal() {
+      document.getElementById('modalOverlay').classList.add('forb-anniversary__modal-overlay--show');
+    }
+
+    function closeModal() {
+      document.getElementById('modalOverlay').classList.remove('forb-anniversary__modal-overlay--show');
+    }
+
+    function issueCoupon(e) {
+      e.preventDefault();
+      window.location.href = _c;
+    }
+
+    function goHint(e) {
+      e.preventDefault();
+      window.location.href = 'https://www.forbshop.com/shopinfo/aboutus.html';
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeModal();
+    });
+    document.getElementById('modalOverlay').addEventListener('click', function (e) {
+      if (e.target === this) closeModal();
+    });
+  </script>
+</div>

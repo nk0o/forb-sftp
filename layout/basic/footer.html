@@ -1,0 +1,231 @@
+
+<!--@css(/layout/basic/css/ap-footer.css)-->
+<div class="bottom-nav RMB RTB" ez-module="bottom-navigation" data-ez="contents-07fah5x-1">
+  <ul class="bottom-nav__tabBar">
+    <li>
+      <button type="button" class="btnNav eNavFold">
+      <i aria-hidden="true" class="icon icoNav"></i>네비게이션</button>
+    </li>
+    <li>
+      <button type="button" class="btnSearch eSearch"><!--@import(/svg/icon-search.html)-->검색</button>
+    </li>
+    <li><a href="/"><!--@import(/svg/icon-home.html)-->홈</a></li> 
+    <li module="Layout_stateLogon">
+      <a href="/order/basket.html"><!--@import(/svg/icon-cart.html)-->Cart 
+        <span class="count {$basket_count_display|display} {$basket_count_display_class}">
+          <span class="{$basket_count_class}">{$basket_count}</span>
+        </span>
+      </a>
+    </li>
+    <li module="Layout_stateLogoff">
+      <a href="/order/basket.html"><!--@import(/svg/icon-cart.html)-->Cart 
+          <span class="count {$basket_count_display|display} {$basket_count_display_class}">
+            <span class="{$basket_count_class}">{$basket_count}</span>
+          </span>
+        </a>
+      </li>
+    <li>
+      <a href="/myshop/index.html"><!--@import(/svg/icon-user.html)-->마이쇼핑</a>
+    </li> 
+  </ul>
+  <div class="bottom-nav__top">
+    <a href="#wrap" title="화면 최상단으로 이동하기"><i aria-hidden="true" class="icon icoArrowRight"></i></a>
+    <a href="#footer" title="화면 최상단으로 이동하기"><i aria-hidden="true" class="icon icoArrowRight"></i></a>
+  </div>
+</div>
+
+<!-- 푸터 영역 -->
+<footer class="ap-ft" id="footer" module="Layout_footer">
+  <div class="ap-ft-upper">
+    <div class="ap-container">
+      <div class="ap-ft-upper__grid">
+        <!-- 푸터 로고, 문구 -->
+        <div class="ap-ft-brand">
+          <a href="/" class="ap-ft-brand__name"><img src="/web/upload/_dj/img/p_logo.png" alt="{$mall_name}"></a>
+          <span class="ap-ft-brand__rule"></span>
+          <p class="ap-ft-brand__desc">부모가 가장 믿고 선택할 수 있는<br/>프리미엄 제품을 만듭니다.</p>
+        </div>
+        <!-- 푸터 메뉴 리스트 -->
+        <ul class="ap-ft-nav">
+          <li class="ap-ft-nav__col">
+            <button class="mob-toggle" aria-expanded="false" onclick="toggleCol(this)">브랜드<span class="arrow">▾</span></button>
+            <div class="ap-ft-nav__title">브랜드</div>
+            <div class="ap-ft-nav__body">
+              <div class="ap-ft-nav__inner">
+                <ul>
+                  <li><a href="#">포브 스토리</a></li>
+                  <li><a href="#">포브 장인정신</a></li>
+                  <li><a href="#">지속가능성</a></li>
+                  <li><a href="#">매장 안내</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="ap-ft-nav__col">
+            <button class="mob-toggle" aria-expanded="false" onclick="toggleCol(this)">서비스<span class="arrow">▾</span></button>
+            <div class="ap-ft-nav__title">서비스</div>
+            <div class="ap-ft-nav__body">
+              <div class="ap-ft-nav__inner">
+                <ul>
+                  <li><a href="#">제품 케어 서비스</a></li>
+                  <li><a href="#">정품 인증</a></li>
+                  <li><a href="#">카시트 무상교환</a></li>
+                  <li><a href="#">A/S 기준</a></li>
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="#">문의하기</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="ap-ft-nav__col ap-ft-cs">
+            <span class="mob-toggle">고객센터</span>
+            <div class="ap-ft-nav__title">고객센터</div>
+            <div class="ap-ft-nav__body open">
+              <div class="ap-ft-nav__inner">
+                <p class="ap-ft-cs__hours">09:00 — 16:00<br/>토·일·공휴일 휴무<br/>점심 12:30 — 13:30</p>
+                <a href="https://pf.kakao.com/_Rkfld/chat" target="_blank" class="ap-ft-cs__link ap-btn ap-btn--sm ap-btn--outline-gold">카카오톡 1:1 문의</a>
+              </div>
+            </div>
+          </li>
+          <li class="ap-ft-nav__col" data-ez-group="sns">
+            <button class="mob-toggle" aria-expanded="false" onclick="toggleCol(this)">미디어<span class="arrow">▾</span></button>
+            <div class="ap-ft-nav__title" data-ez-role="title">미디어</div>
+            <div class="ap-ft-nav__body">
+              <div class="ap-ft-nav__inner">
+                <ul class="ap-ft-sns" data-ez-role="list">
+                  <li>
+                    <a href="https://pf.kakao.com/_Rkfld/" data-ez-item="kakao">
+                    <img src="https://forbmaster.cafe24.com/web/img/icon-ft_kakao.svg" alt>
+                    Kakao</a>
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com/forbkorea/" data-ez-item="instagram">
+                    <img src="https://forbmaster.cafe24.com/web/img/icon-ft_instagram.svg" alt>
+                    Instagram</a>
+                  </li>
+                  <li>
+                    <a href="https://www.youtube.com/@forb9126" data-ez-item="youtube">
+                    <img src="https://forbmaster.cafe24.com/web/img/icon-ft_youtube.svg" alt>
+                    YouTube</a>
+                  </li>
+                  <li>
+                    <a href="https://blog.naver.com/forb_kr" data-ez-item="blog">
+                    <img src="https://forbmaster.cafe24.com/web/img/icon-ft_blog.svg" alt>
+                    Blog</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul><!-- //ap-ft-nav -->
+      </div><!-- //ap-ft-upper__grid -->
+    </div>
+  </div><!-- //ap-ft-upper -->
+  <div class="ap-ft-legal">
+    <div class="ap-container">
+      <div class="ap-ft-legal__grid">
+        <div class="ap-ft-legal__rows">
+          <!-- Row 1: 사업자 정보 -->
+          <ul class="ap-ft-legal__row" data-ez-group="info" data-ez-role="list">
+            <li class="ap-ft-legal__item" data-ez-item="company_name">
+              <span data-ez-role="field">상호:&nbsp;</span> 
+              <span data-ez-role="value">{$company_name}</span>
+            </li>
+            <li class="ap-ft-legal__item" data-ez-item="president_name">
+              <span data-ez-role="field">대표:&nbsp;</span> 
+              <span data-ez-role="value">{$president_name}</span>
+            </li>
+            <li class="ap-ft-legal__item" data-ez-item="company_regno">
+              <span data-ez-role="field">사업자등록번호:&nbsp;</span> 
+              <span data-ez-role="value">{$company_regno}</span>
+            </li>
+            <li class="ap-ft-legal__item" data-ez-item="network_regno">
+              <span data-ez-role="field">통신판매업 신고번호:&nbsp;</span> 
+              <span data-ez-role="value">{$network_regno} <em class="ap-ft-legal__link">{$biz_no_link}</em></span>
+            </li>
+          </ul><!-- //ap-ft-legal__row -->
+          <!-- Row 2: 주소·연락처 -->
+          <ul class="ap-ft-legal__row">
+            <li class="ap-ft-legal__item" data-ez-item="address">
+              <span data-ez-role="field">주소:&nbsp;</span> 
+              <span data-ez-role="value">{$mall_zipcode} {$mall_addr1} {$mall_addr2}</span>
+            </li>
+            <li class="ap-ft-legal__item" data-ez-item="phone">
+              <span data-ez-role="field">전화:&nbsp;</span> 
+              <span data-ez-role="value">{$phone}</span>
+            </li>
+            <li class="ap-ft-legal__item" data-ez-item="cpo_name">
+              <span data-ez-role="field">개인정보관리책임자:&nbsp;</span> 
+              <span data-ez-role="value"><a href="{$cpo_name}">{$cpo_name}</a></span>
+            </li>
+            <li class="ap-ft-legal__item">
+              <span data-ez-role="field">호스팅제공자:&nbsp;</span> 
+              <span data-ez-role="value">카페24(주)</span>
+            </li>
+          </ul><!-- //ap-ft-legal__row -->
+            <!-- Row 3: 무통장 계좌 -->
+          <ul class="ap-ft-legal__row">
+            <li class="ap-ft-legal__item">무통장입금: 기업은행 002-000170-01-041</li>
+            <li class="ap-ft-legal__item">예금주: (주)동인기연</li>
+          </ul>
+          <!-- Row 4: 반품지 -->
+          <ul class="ap-ft-legal__row">
+            <li class="ap-ft-legal__item">배송 및 반품지 주소: 경기도 김포시 통진읍 대곶북로 370-26 포브 물류센터</li>
+          </ul>
+        </div>
+
+        <!-- 구매안전서비스 에스크로 인증마크 -->
+        <div class="ap-ft-escrow" data-ez-escrow>
+          <a href="https://iniweb.inicis.com/popup/common/popup_escrow_notice.jsp?mid=ECAforbmst"  class="ap-ft-escrow__badge" data-ez-link="#link"> 
+            <div class="ap-ft-escrow__icon">
+              <img src="//m-img.cafe24.com/images/bi/escrow/escrow_43x43_gray.png" alt="에스크로-이니페이-KG이니시스">
+            </div>
+            <div class="ap-ft-escrow__text">
+              고객님은 안전거래를 위해 <strong>PG에스크로 구매안전서비스</strong>를 이용하실 수 있습니다.<br>
+              결제대금예치업 등록번호 <span>02-006-00013</span>
+            </div>
+          </a>
+        </div><!-- //ap-ft-escrow -->
+      </div><!-- //ap-ft-legal__grid -->
+    </div><!-- //ap-container -->
+  </div><!-- //ap-ft-legal -->
+  <div class="ap-ft-bottom" data-ez-group="policy intro">
+    <div class="ap-container">
+      <div class="ap-ft-bottom__inner">
+        <!-- 약관 및 안내 -->
+        <div class="ap-ft-bottom__policy" data-ez-role="list">
+          <a href="/member/mall_agreement.html" data-ez-item="agreement">이용약관</a>
+          <a href="/member/privacy.html" class="em" data-ez-item="privacy">개인정보처리방침</a>
+          <a href="/shopinfo/guide.html" data-ez-item="guide">이용안내</a>
+          <a href="/board/매장안내/5/" data-ez-item="store">배송안내</a>
+        </div>
+        <!-- 푸터 copyright -->
+        <p class="ap-ft-bottom__copyright">Copyright&copy;&nbsp;(주)동인기연. All rights reserved.</p>
+      </div><!-- //ap-ft-bottom__inner -->
+    </div><!-- //ap-container -->
+  </div><!-- //ap-ft-bottom -->
+
+</footer>
+
+<script>
+  function toggleCol(btn) {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+    const body = btn.nextElementSibling.nextElementSibling;
+    body.classList.toggle('open', !expanded);
+  }
+  function checkViewport() {
+    const bodies = document.querySelectorAll('.ap-ft-nav__body');
+    if (window.innerWidth >= 768) {
+      bodies.forEach(b => { b.style.maxHeight = 'none'; b.style.overflow = 'visible'; });
+    } else {
+      bodies.forEach(b => {
+        b.style.maxHeight = '';
+        b.style.overflow = '';
+      });
+    }
+  }
+  window.addEventListener('resize', checkViewport);
+  checkViewport();
+</script>
+<!--#ez="1/24"-->

@@ -1,0 +1,94 @@
+/******** 푸터 (하단회사정보) ********/
+
+/* ══ UPPER ══ */
+#footer.ap-ft{ background: #2C2420;}
+.ap-ft-upper { padding: 64px 0 52px; }
+.ap-ft-upper__grid { display: grid; grid-template-columns: 220px 1fr; gap: 72px; align-items: start; }
+.ap-ft-brand__name { font-family: var(--ap-font-serif); font-size: 24px; font-weight: 400; letter-spacing: 0.28em; color: var(--ap-color-cream); display: block; margin-bottom: 14px; height: 30px;}
+.ap-ft-brand__name img{display: inline-block;width: auto; height: 100%;}
+.ap-ft-brand__rule { display: block; width: 20px; height: 1px; background: var(--ap-color-beige-deep); margin-bottom: 14px; }
+.ap-ft-brand__desc { font-size: var(--ap-text-sm); color: var(--ap-color-beige-deep); line-height: 1.85; font-weight: 300; word-break: keep-all; }
+.ap-ft-nav { display: grid; grid-template-columns: repeat(4, 1fr); gap: 36px; }
+.ap-ft-nav__title {  font-size: var(--ap-text-xs) font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ap-color-gold); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--ap-color-text-secondary); }
+.ap-ft-nav__col { list-style: none; }
+.ap-ft-nav__col li a { display: block; font-size: var(--ap-text-sm); color: var(--ap-color-beige-mid); font-weight: 300; text-decoration: none; line-height: 2.15; transition: color 0.2s; }
+.ap-ft-nav__col li a:hover { color: var(--ap-color-gold-light); }
+.ap-ft-cs__number { font-size: 18px; font-weight: 400; color: var(--ap-color-ivory); letter-spacing: 0.05em; margin-bottom: 8px; display: block; }
+.ap-ft-cs__hours { font-size: var(--ap-text-sm); color: var(--ap-color-beige-mid); font-weight: 300; line-height: 1.8; }
+.ap-ft-cs__link{ margin-top: 14px;padding: 9px 14px; font-size: var(--ap-text-sm); font-weight: 400; font-family: var(--sans); cursor: pointer; text-decoration: none; transition: background 0.2s opacity 0.2s; white-space: nowrap;}
+.ap-ft-sns { list-style: none; }
+.ap-ft-sns li a { display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--ap-color-text-muted); font-weight: 300; text-decoration: none; line-height: 2.15; transition: color 0.2s; }
+.ap-ft-sns li img{display: inline-block; height: 20px; width: auto;}
+
+
+
+/* ══ LEGAL INFO BAND ══ */
+.ap-ft-legal { background: #261E1B; border-top: 1px solid var(--ap-color-text-secondary); padding: 28px 0; }
+.ap-ft-legal__grid { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: start; }
+.ap-ft-legal__row { display: flex; flex-wrap: wrap; gap: 0; margin-bottom: 7px; }
+.ap-ft-legal__row:last-child { margin-bottom: 0; }
+.ap-ft-legal__item { font-size: var(--ap-text-sm); color: var(--ap-color-beige-deep); font-weight: 300; padding: 0 10px; border-right: 1px solid var(--ap-color-text-secondary); line-height: 1.5; }
+.ap-ft-legal__item:first-child { padding-left: 0; }
+.ap-ft-legal__item:last-child { border-right: none; }
+.ap-ft-legal__item a { color: inherit; text-decoration: none; transition: color 0.2s; }
+.ap-ft-legal__item a:hover { color: var(--ap-color-beige-deep-lt); }
+.ap-ft-legal__link{color: var(--ap-color-gold-light);font-style: normal; font-size: 12px; letter-spacing: var(--ap-tracking-wider); text-transform: uppercase;}
+
+/* Escrow */
+.ap-ft-escrow{max-width: 240px;}
+.ap-ft-escrow__badge { display: flex; align-items: center;gap: 10px; flex-shrink: 0; border: 1px solid var(--ap-color-text-secondary); padding: 7px 12px; cursor: pointer; transition: border-color 0.2s; }
+.ap-ft-escrow__badge:hover { border-color: var(--ap-color-beige-deep); }
+.ap-ft-escrow__icon { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.ap-ft-escrow__icon img{display: block; width: 100%;}
+.ap-ft-escrow__text { font-size: 10px; color: var(--ap-color-beige-deep); font-weight: 300; line-height: 1.4; }
+.ap-ft-escrow__text strong { font-size: 9px; font-weight: 500; color: var(--ap-color-gold); letter-spacing: 0.1em; text-transform: uppercase; }
+.ap-ft-escrow__text span{white-space: nowrap;}
+
+/* ══ BOTTOM ══ */
+.ap-ft-bottom { background: #201815; border-top: 1px solid var(--ap-color-text-secondary); }
+.ap-ft-bottom__inner { padding: 18px 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+.ap-ft-bottom__policy { display: flex; align-items: center; }
+.ap-ft-bottom__policy a { font-size: 12px; color: var(--ap-color-beige-deep); font-weight: 300; text-decoration: none; padding: 0 10px; border-right: 1px solid var(--ap-color-text-secondary); line-height: 1; transition: color 0.2s; }
+.ap-ft-bottom__policy a:first-child { padding-left: 0; }
+.ap-ft-bottom__policy a:last-child { border-right: none; }
+.ap-ft-bottom__copyright { font-size: 12px; color: var(--ap-color-beige-deep); font-weight: 300; letter-spacing: 0.03em; text-align: right; }
+.ap-ft-bottom__copyright em { font-style: normal; font-family: var(--ap-font-sans); font-size: var(--ap-text-sm); color: var(--ap-color-beige-deep); }
+/* ══ MOBILE ══ */
+.mob-toggle { display: none; }
+
+@media (max-width: 1024px) { 
+  .ap-ft-upper__grid { grid-template-columns: 1fr; gap: 40px; }
+  .ap-ft-nav { grid-template-columns: repeat(2, 1fr); gap: 32px 40px; }
+  .ap-ft-legal__grid { grid-template-columns: 1fr; gap: 20px; }
+  .ap-ft-escrow { justify-content: flex-start; }
+}
+
+@media (max-width: 768px) {   
+  .ap-ft-upper { padding: 40px 0 0; }
+  .ap-ft-upper__grid{gap: var(--ap-space-md);}
+  .ap-ft-brand{text-align: center;}
+  .ap-ft-brand__name { font-size: 20px; }
+  .ap-ft-brand__rule{display: none;}
+  /* Accordion */
+  .ap-ft-nav { grid-template-columns: 1fr; gap: 0; margin-top: 8px; }
+  .ap-ft-nav__col { border-top: 1px solid var(--ap-color-text-secondary); }
+  .mob-toggle { display: flex; align-items: center; justify-content: space-between; width: 100%; background: none; border: none; padding: 15px 0; cursor: pointer; font-size: var(--ap-text-sm); font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ap-color-beige-deep); font-family: var(--ap-font-sans); }
+  .mob-toggle .arrow { font-size: 32px; color: var(--ap-color-text-secondary); transition: transform 0.25s; line-height: 1; }
+  .mob-toggle[aria-expanded="true"] .arrow { transform: rotate(180deg); }
+  .ap-ft-nav__title { display: none; }
+  .ap-ft-nav__body { overflow: hidden; max-height: 0; transition: max-height 0.3s ease; }
+  .ap-ft-nav__body.open { max-height: 360px; }
+  .ap-ft-nav__inner { padding-bottom: 16px; }
+  .ap-ft-cs{order:-1;}
+  /* Legal band */
+  .ap-ft-legal { padding: 24px 0; }
+  .ap-ft-legal__item { font-size: 12px; margin-bottom: 4px;}
+  .ap-ft-legal__row { gap: 2px; justify-content: center;}
+  .ap-ft-legal__grid{justify-content: center;}
+  /* Escrow */
+  .ap-ft-escrow{max-width: 100%;}
+  .ap-ft-escrow__icon{width: 24px;}
+  /* Bottom */
+  .ap-ft-bottom-inner { flex-direction: column; align-items: flex-start; gap: 12px; padding: 18px 0 24px; }
+  .ap-ft-bottom__copyright { text-align: left; }
+}

@@ -1,0 +1,5 @@
+.forb #wrap{overflow: visible;}
+
+@media (max-width: 1024px) {}
+/* ── 모바일 (≤768px) ── */
+@media (max-width: 768px) {}
