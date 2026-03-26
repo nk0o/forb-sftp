@@ -115,6 +115,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .sg-icon-preview svg {
+  stroke:var(--ap-color-text-secondary);
   width: 26px;
   height: 26px;
   display: block;
