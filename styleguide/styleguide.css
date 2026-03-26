@@ -89,3 +89,105 @@ a { text-decoration: none; color: inherit; }
 /* brand-card 프리뷰 */
 .sg-brand-demo .brand-row { border-radius: var(--ap-radius-md); overflow: hidden; }
 .sg-brand-demo .brand-card { aspect-ratio: 4/3; }
+
+/* 아이콘 그리드 */
+.sg-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.sg-icon-card {
+  border: 1px solid var(--ap-color-border-light);
+  border-radius: var(--ap-radius-md);
+  background: var(--ap-color-bg-section);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sg-icon-preview {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  color: var(--ap-color-text-primary);
+}
+
+.sg-icon-preview svg {
+  width: 26px;
+  height: 26px;
+  display: block;
+}
+
+.sg-hamburger-svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.sg-icon-preview--hamburger {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.sg-hamburger-btn {
+  width: 44px;
+  height: 32px;
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+}
+
+.sg-hamburger-btn span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: currentColor;
+  border-radius: 2px;
+  color: var(--ap-color-text-primary);
+}
+
+.sg-icon-preview--close {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.sg-close-btn {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--ap-color-border-light);
+  background: var(--ap-color-bg-base);
+  border-radius: var(--ap-radius-sm);
+  cursor: pointer;
+  color: var(--ap-color-text-primary);
+  font-size: 18px;
+  line-height: 1;
+}
+
+.sg-icon-name {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ap-color-text-muted);
+  font-family: monospace;
+}
+
+.sg-icon-import code {
+  font-family: monospace;
+  font-size: 11px;
+  color: var(--ap-color-text-muted);
+  background: rgba(26, 20, 16, 0.04);
+  padding: 6px 8px;
+  border-radius: 4px;
+  display: block;
+  overflow: auto;
+}
