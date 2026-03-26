@@ -2,7 +2,10 @@
 <!--@js(/layout/basic/js/main.js)-->
 <!--@css(/layout/basic/css/main.css)-->
 <!--@css(/layout/basic/css/ap-main.css)-->
-
+<!--@css(/layout/basic/css/aos.css)-->
+<!--@js(/layout/basic/js/aos.js)-->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
 <!-- ======================================================
   메인 상단 슬라이드
 ====================================================== -->
@@ -87,11 +90,11 @@
 ====================================================== -->
 <section class="ap-philosophy" data-ez="module-12diyid-1" data-ez-module="user-defined/1" data-ez-name="USER DEFINED" data-ez-type="plain">
   <div class="ap-philosophy__inner">
-    <h2 class="ap-philosophy__text">
+    <h2 class="ap-philosophy__text" data-aos="fade-up" data-aos-duration="1000">
       아이를 위한 선택이<br>
       <strong>행복을 위한 선택</strong>이 될 수 있도록
     </h2>
-    <p class="ap-philosophy__sub">For Baby, For Happiness</p>
+    <p class="ap-philosophy__sub" data-aos="fade-up" data-aos-duration="1050">For Baby, For Happiness</p>
   </div>
 </section>
 
@@ -156,7 +159,7 @@
         <!-- <img src="/web/img/img-main-prd-1.png" alt loading="lazy" ez-prevent="img"> -->
       </span>
     </div>
-    <div class="ap-products-row__body">
+    <div class="ap-products-row__body" data-aos="fade-left" data-aos-duration="1000">
       <span class="ap-products-row__tag">Baby Carrier</span>
       <h2 class="ap-products-row__name">프리아핏 에어</h2>
       <p class="ap-products-row__desc">신생아부터 36개월까지. 3-in-1 올인원 디자인으로 성장에 따라 변형되는 스마트 아기띠. 국내 최초 무게 분산 허리벨트 탑재.</p>
@@ -173,7 +176,7 @@
         <!-- <img src="/web/img/img-main-prd-2.png" alt loading="lazy" ez-prevent="img"> -->
       </span>
     </div>
-    <div class="ap-products-row__body">
+    <div class="ap-products-row__body" data-aos="fade-right" data-aos-duration="1050">
       <span class="ap-products-row__tag">Car Seat</span>
       <h2 class="ap-products-row__name">보네떼</h2>
       <p class="ap-products-row__desc">ADAC 최우수 등급 획득. 360° 회전 시스템으로 승하차가 편리하고, 측면 충격 흡수 구조로 아이를 완벽하게 보호합니다.</p>
@@ -190,7 +193,7 @@
         <!-- <img src="/web/img/img-main-prd-3.png" alt loading="lazy" ez-prevent="img"> -->
       </span>
     </div>
-    <div class="ap-products-row__body">
+    <div class="ap-products-row__body" data-aos="fade-left" data-aos-duration="1100">
       <span class="ap-products-row__tag">Outdoor carrier</span>
       <h2 class="ap-products-row__name">볼레 프로</h2>
       <p class="ap-products-row__desc">최대 18kg까지 흔들림 없는 밀착 케어. 아이와 완벽한 아웃도어 라이프를 완성하는 프리미엄 등산 캐리어.</p>
@@ -253,7 +256,7 @@
   클릭 유도 섹션
 ====================================================== -->
 <section class="ap-cta" data-ez="module-0pvnp7a-1" data-ez-module="user-defined/1" data-ez-name="USER DEFINED" data-ez-type="plain">
-  <div class="ap-container" style="position:relative;z-index:1;">
+  <div class="ap-container" style="position:relative;z-index:1;" data-aos="fade-up" data-aos-duration="2000">
     <span class="ap-cta__eyebrow">Membership</span>
     <h2 class="ap-cta__title ap-text--h2">포브 회원이 되어<br>특별한 혜택을 받아보세요</h2>
     <p class="ap-cta__desc">가입 즉시 적립금 5,000원 + 무료 전문가 상담 + 전용 A/S 우선 접수</p>
@@ -284,8 +287,51 @@
       effect: "fade",
       fadeEffect: { crossFade: true },
       speed: 400,
+      on: {
+        init: function () {
+          const content = this.slides[this.realIndex].querySelector('.ap-hero__content');
+          if (content) {
+            setTimeout(() => content.classList.add('is-animated'), 100);
+          }
+        },
+        slideChange: function () {
+          // HTMLCollection → Array 변환
+          Array.from(this.slides).forEach(slide => {
+            const content = slide.querySelector('.ap-hero__content');
+            if (content) content.classList.remove('is-animated');
+          });
+        },
+        slideChangeTransitionEnd: function () {
+          const activeSlide = this.slides[this.activeIndex];
+          const content = activeSlide?.querySelector('.ap-hero__content');
+          if (content) {
+            void content.offsetWidth;
+            content.classList.add('is-animated');
+          }
+        },
+      },
     });
   </script>
 </div>
 <!--@define(cmc_log)-->
 <!--#ez="1/2"-->
+<!-- AOS 스크립트 시작 -->
+<script> 
+    AOS.init();
+    /* 스크롤 애니메이션 */
+    const lenis = new Lenis({
+      duration: 1.5,           // 꽤 길게 — 무겁고 고급스러운 느낌
+      easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),  // easeOutExpo
+      orientation: 'vertical',
+      smoothWheel: true,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+    lenis.on('scroll', () => {
+      AOS.refresh();
+    });
+</script>

@@ -1,87 +1,80 @@
-<aside id="aside" module="layout_slidePackage" class="RTMB" data-ez="contents-0lkigu0-1">
+<aside id="aside" module="layout_slidePackage" class="RTMB ap-side" data-ez="contents-0lkigu0-1">
   <!--@css(/layout/basic/css/slideMenu.css)-->
+  <!--@css(/layout/basic/css/ap-sidebar.css)-->
   <!--@js(/layout/basic/js/slide_menu.js)-->
-  <nav class="navigation-menu" role="navigation">
-    <div class="navigation_state" data-ez-group="top-util-menu" data-ez-role="list">
-      <a data-ez-item="join" module="Layout_statelogoff" href="/member/agreement.html">회원가입</a>
-      <a data-ez-item="login" module="Layout_statelogoff" href="/member/login.html">로그인</a>
-      <a data-ez-item="modify" module="Layout_stateLogon" href="/member/modify.html">내정보수정</a>
-      <a data-ez-item="logout" module="Layout_stateLogon" href="{$action_logout}">로그아웃</a>
-      <a data-ez-item="order" href="/myshop/order/list.html">주문조회</a>
-      <a data-ez-item="mypage" module="Layout_stateLogon" href="/myshop/index.html">마이페이지</a>
-      <a data-ez-item="recent" href="/product/recent_view_product.html">최근본상품</a>
-    </div><!-- //navigation_state -->
-
-    <div data-ez-module="menu-side/1">
-      <div id="slideCateList" class="navigation-menu__category">
-        <ul id="slide_add_category">
-          <li><a href="/category/%EC%B9%B4%EC%8B%9C%ED%8A%B8/43/" class="view">카시트</a></li>
-          <li><a href="/category/%EC%95%84%EA%B8%B0%EB%9D%A0/44/" class="view">아기띠</a></li>
-          <li><a href="/category/%EB%93%B1%EC%82%B0%EC%9A%A9%EC%BA%90%EB%A6%AC%EC%96%B4/59/"
-              class="view">아웃도어 캐리어</a></li>
-          <li><a href="/category/%EA%B8%B0%EC%A0%80%EA%B7%80%EA%B0%80%EB%B0%A9/49/" class="view">기저귀
-              가방</a>
-            <ul class="sub_cate01">
-              <li><a href="/category/%EA%B8%B0%EC%A0%80%EA%B7%80%EA%B0%80%EB%B0%A9/49/"
-                  class="view">토트백</a></li>
-              <li><a href="/category/%EA%B8%B0%EC%A0%80%EA%B7%80%EA%B0%80%EB%B0%A9/49/"
-                  class="view">백팩</a></li>
-            </ul>
-          </li>
-          <li><a href="/category/%EC%95%A1%EC%84%B8%EC%84%9C%EB%A6%AC/51/" class="view">액세서리</a>
-            <ul class="sub_cate01">
-              <li><a href="/category/%EC%95%A1%EC%84%B8%EC%84%9C%EB%A6%AC/51/" class="view">카시트
-                  ACC</a></li>
-              <li><a href="/category/%EC%95%A1%EC%84%B8%EC%84%9C%EB%A6%AC/51/" class="view">아기띠
-                  ACC</a></li>
-              <li><a href="/category/%EC%95%A1%EC%84%B8%EC%84%9C%EB%A6%AC/51/" class="view">기타
-                  외출용품</a></li>
-            </ul>
-          </li>
-          <li><a href="guide/how-to-use.html" class="view">사용방법</a></li>
-          <li><a href="/service/warranty.html" class="view">서비스</a>
-            <ul class="sub_cate01">
-              <li><a href="/service/warranty.html" class="view">A/S 기준</a></li>
-              <li><a href="/service/authentication.html" class="view">정품 인증</a></li>
-              <li><a href="/service/carseat-replacement.html" class="view">카시트 무상교환</a></li>
-            </ul>
-          </li>
-          <li><a href="/about/forbstory.html" class="view">포브소개</a>
-            <ul class="sub_cate01">
-              <li><a href="/about/forbstory.html" class="view">포브스토리</a></li>
-              <li><a href="/about/craftsmanship.html" class="view">포브의 장인정신</a></li>
-              <li><a href="/about/sustainability.html" class="view">지속가능성</a></li>
-              <li><a href="/about/contribution.html" class="view">사회공헌</a></li>
-            </ul>
-          </li>
-          <li><a href="/board/%EB%A7%A4%EC%9E%A5%EC%95%88%EB%82%B4/5/" class="view">매장안내</a></li>
-        </ul>
-      </div>
-    </div><!-- //menu-side/1 -->
-
-    <div class="cboth slide_line"></div>
-
-    <div module="Layout_BoardInfo" class="navigation-menu__board">
-      <div class="title">고객센터<button type="button" class="icoCategory">펼침</button></div>
-      <ul class="categoryList" style="display:none;">
-        <li class="menu"><a href="{$link_board_list}">{$board_name}</a> {$board_adult_icon}</li>
-        <li class="menu"><a href="{$link_board_list}">{$board_name}</a> {$board_adult_icon}</li>
-      </ul>
-    </div><!-- //tab_community -->
-
-    <div module="Layout_multishopList">
-      <button type="button" class="toggle">{$current_language} <i aria-hidden="true"
-          class="icon icoArrowBottom"></i></button>
-      <ul module="Layout_multishopListitem">
-        <li class="{$selected_class}">
-          <a href="//{$shop_domain}/">{$locale_language}</a>
-        </li>
-        <li class="{$selected_class}">
-          <a href="//{$shop_domain}/">{$locale_language}</a>
-        </li>
-      </ul>
+  <nav class="navigation-menu ap-side__nav" role="navigation">
+    <!-- 사이드바 상단 -->
+    <div class="ap-side__top">
+      <button type="button" class="btnClose"><i aria-hidden="true" class="icon icoClose"></i>닫기</button>
+      <a href="/" class="logo">FORB<!-- <img src="{$logo}" alt="{$mall_name}"> --> </a>
+      <!-- 마이페이지 장바구니 -->
+      <div class="ap-side__actions">
+        <a href="/myshop/index.html" class="ap-side__icon-btn" aria-label="마이페이지"><!--@import(/svg/icon-user.html)--></a><!-- 마이페이지 -->
+        <a href="/order/basket.html" class="ap-side__icon-btn" module="Layout_orderBasketcount" aria-label="장바구니">
+          <!--@import(/svg/icon-cart.html)-->
+          <span class="count {$basket_count_display|display} {$basket_count_display_class}">
+            <span class="{$basket_count_class}">{$basket_count}</span>
+          </span>
+        </a><!-- 장바구니 -->
+      </div><!-- //ap-side__actions -->
+    </div><!-- //ap-side-top -->
+    <div class="ap-side__menu">
+      <div data-ez-module="menu-side/1">
+        <div id="slideCateList" class="navigation-menu__category">
+          <ul id="slide_add_category">
+            <li><a href="/category/%EC%B9%B4%EC%8B%9C%ED%8A%B8/43/" class="view">카시트</a></li>
+            <li><a href="/category/%EC%95%84%EA%B8%B0%EB%9D%A0/44/" class="view">아기띠</a></li>
+            <li><a href="/category/%EB%93%B1%EC%82%B0%EC%9A%A9%EC%BA%90%EB%A6%AC%EC%96%B4/59/" class="view">아웃도어 캐리어</a></li>
+            <li><a href="/category/%EA%B8%B0%EC%A0%80%EA%B7%80%EA%B0%80%EB%B0%A9/49/" class="view">기저귀 가방</a>
+              <ul class="sub_cate01">
+                <li><a href="/category/%EA%B8%B0%EC%A0%80%EA%B7%80%EA%B0%80%EB%B0%A9/49/" class="view">토트백</a></li>
+                <li><a href="/category/%EA%B8%B0%EC%A0%80%EA%B7%80%EA%B0%80%EB%B0%A9/49/" class="view">백팩</a></li>
+              </ul>
+            </li>
+            <li><a href="/category/%EC%95%A1%EC%84%B8%EC%84%9C%EB%A6%AC/51/" class="view">액세서리</a>
+              <ul class="sub_cate01">
+                <li><a href="/category/%EC%95%A1%EC%84%B8%EC%84%9C%EB%A6%AC/51/" class="view">카시트 ACC</a></li>
+                <li><a href="/category/%EC%95%A1%EC%84%B8%EC%84%9C%EB%A6%AC/51/" class="view">아기띠 ACC</a></li>
+                <li><a href="/category/%EC%95%A1%EC%84%B8%EC%84%9C%EB%A6%AC/51/" class="view">기타 외출용품</a></li>
+              </ul>
+            </li>
+            <li><a href="/service/warranty.html" class="view">서비스</a>
+              <ul class="sub_cate01">
+                <li><a href="/service/warranty.html" class="view">A/S 기준</a></li>
+                <li><a href="/service/authentication.html" class="view">정품 인증</a></li>
+                <li><a href="/service/carseat-replacement.html" class="view">카시트 무상교환</a></li>
+                <li><a href="/service/carseat-replacement.html" class="view">사용방법</a></li>
+              </ul>
+            </li>
+            <li><a href="/about/forbstory.html" class="view">아기띠 대표 브랜드, 포브</a>
+              <ul class="sub_cate01">
+                <li><a href="/about/forbstory.html" class="view">포브스토리</a></li>
+                <li><a href="/about/craftsmanship.html" class="view">포브의 장인정신</a></li>
+                <li><a href="/about/sustainability.html" class="view">지속가능성</a></li>
+                <li><a href="/about/contribution.html" class="view">사회공헌</a></li>
+              </ul>
+            </li>
+            <li class="ap-side__promotion">
+              <a href="/event/20th_anniversary/index.html">
+                <!-- <img src="https://forbmaster.cafe24.com/web/img/img-placeholder.png" alt="기획전이미지"> -->
+                <img src="https://forbmaster.cafe24.com/web/img/img-side-promotion.jpeg" alt="2026 봄 기획전">
+                <span>기획전 이미지 & 문구</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div><!-- //menu-side/1 -->
+      <div class="ap-side__footer">
+        <!-- 주문조회, 로그인 -->
+        <div class="navigation_state" data-ez-group="top-util-menu" data-ez-role="list">
+          <a href="/board/%EB%A7%A4%EC%9E%A5%EC%95%88%EB%82%B4/5/" class="view">매장안내</a>
+          <a href="https://pf.kakao.com/_Rkfld/chat" target="_blank" class="view">1:1 카카오톡 문의</a>
+         <!--  <a data-ez-item="order" href="/myshop/order/list.html">주문조회</a>
+          <a data-ez-item="login" module="Layout_statelogoff" href="/member/login.html">로그인</a>
+          <a data-ez-item="logout" module="Layout_stateLogon" href="{$action_logout}">로그아웃</a> -->
+        </div><!-- //navigation_state -->
+      </div><!-- ap-side-footer -->
     </div>
   </nav>
-  <button type="button" class="btnClose"><i aria-hidden="true" class="icon icoClose"></i>닫기</button>
 </aside>
 <!--#ez="1/20"-->

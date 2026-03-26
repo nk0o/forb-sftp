@@ -14,7 +14,7 @@
 .forb #header .inner .top_nav_box .top_logo a{height:100%;}
 .forb #header .inner .top_nav_box .top_logo img{display: block;height: 100%;}
 .forb #header .inner .top_nav_box .top_mypage{z-index: 1;}
-.forb #header .inner .top_nav_box .top_mypage a{margin:0;}
+.forb #header .inner .top_nav_box .top_mypage a{margin:0; color: var(--ap-color-text-secondary);}
 .forb .eNavFold.ap-nav__hamburger{display: none;}
 
 .forb #header.fixed{position: fixed; transform: none;}
@@ -25,8 +25,8 @@
 /* ── ap-nav (2단 구조) ── */
 .ap-nav { position: sticky; top: 0; z-index: 200; width: 100%; height: 100%; background: rgba(255,253,249,0.97); backdrop-filter: blur(10px); /* border-bottom: 1px solid var(--ap-color-border-light); */ }
 /* 1단: 로고 행 */
-.ap-nav__top { position: relative; display: flex; align-items: center; justify-content: space-between; height: 58px; padding: 0 var(--ap-gutter); max-width: var(--ap-max-width); margin: 0 auto; border-bottom: 1px solid var(--ap-color-border-light); }
-.ap-nav__logo {z-index: 2; font-family: var(--ap-font-sans); font-size: var(--ap-text-lg); font-weight: 300; color: var(--ap-color-text-primary); letter-spacing: 0.22em; text-transform: uppercase; position: absolute; left: 50%; transform: translateX(-50%); text-decoration: none; }
+.ap-nav__top { position: relative; display: flex; align-items: center; justify-content: space-between; height: 58px; padding: 0 calc(var(--ap-gutter) - 6px); max-width: var(--ap-max-width); margin: 0 auto; border-bottom: 1px solid var(--ap-color-border-light); }
+.ap-nav__logo {z.ap-nav__top-index: 2; font-family: var(--ap-font-sans); font-size: var(--ap-text-lg); font-weight: 300; color: var(--ap-color-text-primary); letter-spacing: 0.22em; text-transform: uppercase; position: absolute; left: 50%; transform: translateX(-50%); text-decoration: none; }
 /* 햄버거 — 좌측 */
 .ap-nav__hamburger { z-index: 1; display: flex; flex-direction: column; justify-content: center; gap: 5px; flex-shrink: 0; width: 32px; height: 32px; padding: 6px; background: none; border: none; cursor: pointer; color: var(--ap-color-text-secondary); border-radius: 4px; transition: background var(--ap-transition-fast), color var(--ap-transition-fast); }
 .ap-nav__hamburger:hover { background: var(--ap-color-ivory); color: var(--ap-color-text-primary); }
@@ -39,6 +39,7 @@
 /* 아이콘 — 우측 */
 .ap-nav__actions { display: flex; align-items: center; gap: var(--ap-space-xs); }
 .ap-nav__icon-btn { width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: none; border: none; color: var(--ap-color-text-secondary); cursor: pointer; border-radius: var(--ap-radius-sm) transition: color var(--ap-transition-fast), background var(--ap-transition-fast); }
+.ap-nav__icon-btn svg{ width: 20px; height: 20px;}
 .ap-nav__icon-btn:hover { color: var(--ap-color-text-primary); background: var(--ap-color-ivory); }
 
 /* 2단: 메뉴 행 */
@@ -109,6 +110,11 @@
 .ap-search__kw-item { font-family: var(--ap-font-sans); font-size: var(--ap-text-sm); font-weight: 300; color: var(--ap-color-text-secondary); background: var(--ap-color-ivory); border: 1px solid var(--ap-color-border-light); border-radius: var(--ap-radius-pill); padding: 6px 14px; cursor: pointer; text-decoration: none; transition: background 0.15s, color 0.15s, border-color 0.15s; }
 .ap-search__kw-item:hover { background: var(--ap-color-text-primary); color: #fff; border-color: var(--ap-color-text-primary); }
 
+input:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px var(--ap-color-cream) inset ; -webkit-text-fill-color: var(--ap-color-text-primary); }
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active { transition: background-color 5000s ease-in-out 0s; }
 /* ── (≤1024px) ── */
 @media (max-width: 1024px) {
   /* 상단띠배너 */
@@ -138,7 +144,7 @@
   #hamburgerBtn{display: none;}
   .ap-nav__actions { margin-left: var(--ap-space-xs); }
   .ap-nav__bar { display: none; }
-  .ap-nav__top { height: 100%; position: relative; }
+  .ap-nav__top { height: 100%; position: relative; border-bottom: none;}
   .ap-nav__logo { font-size: var(--ap-text-lg); letter-spacing: 0.2em; }
   .mega-menu, .fullnav { top: 52px; }
   .drawer-dim { top: 52px; }

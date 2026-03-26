@@ -1,3 +1,4 @@
+body{ scroll-behavior: smooth;}
 /* ======================================================
 PAGE-SPECIFIC — 메인페이지 전용 컴포넌트
  ====================================================== */
@@ -29,10 +30,18 @@ PAGE-SPECIFIC — 메인페이지 전용 컴포넌트
 .ap-hero__swiper-buttons .swiper-button-prev{left: var(--ap-gutter);transform: rotate(90deg);}
 .ap-hero__swiper-buttons .swiper-button-next{right: var(--ap-gutter);transform: rotate(-90deg);}
 .ap-hero:hover .ap-hero__swiper-buttons {opacity: 0.7;}
+.ap-hero__content {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
 
-
+.ap-hero__content.is-animated {
+  opacity: 1;
+  transform: translateY(0);
+}
 /******** 브랜드 철학 ********/
-.ap-philosophy { background: var(--ap-color-ivory); }
+.ap-philosophy {overflow: hidden; background: var(--ap-color-ivory); }
 .ap-philosophy__inner { padding: 120px var(--ap-gutter) 90px; text-align: center; }
 .ap-philosophy__text {color: var(--ap-color-text-primary); letter-spacing: 0.01em;  line-height: 1.25;}
 .ap-philosophy__text em, .ap-philosophy__text strong { color: var(--ap-color-gold);}
@@ -68,14 +77,14 @@ PAGE-SPECIFIC — 메인페이지 전용 컴포넌트
 
  /******** 제품군 ********/
  /* 제품군 인트로 제목 */
-.ap-products { background: var(--ap-color-bg-base); }
+.ap-products {overflow: hidden; background: var(--ap-color-bg-base); }
 .ap-products__header { text-align: center; margin-bottom: var(--ap-space-3xl); padding-top: 144px;}
 .ap-products__eyebrow { display: block; font-size: var(--ap-text-xs); font-weight: 500; letter-spacing: var(--ap-tracking-wider); text-transform: uppercase; color: var(--ap-color-gold); margin-bottom: var(--ap-space-sm); }
 .ap-products__title { color: var(--ap-color-text-primary); line-height: var(--ap-leading-tight); }
 
 /* 제품군 이미지+설명 */
-.ap-products-row { display: grid; grid-template-columns: 63% 1fr; min-height: 520px; border-top: 1px solid var(--ap-color-border-light); }
-.ap-products-row--reverse{grid-template-columns: 1fr 63%;}
+.ap-products-row { display: grid; grid-template-columns: 63% 1fr; min-height: 520px; border-top: 1px solid var(--ap-color-border-light); background: var(--ap-color-cream);}
+.ap-products-row--reverse{grid-template-columns: 1fr 63%;background: var(--ap-color-ivory);}
 .ap-products-row--reverse .ap-products-row__img { order: 2; }
 .ap-products-row--reverse .ap-products-row__body { order: 1; }
 .ap-products-row__img { background: var(--ap-color-beige); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; min-height: 400px; }
@@ -83,8 +92,7 @@ PAGE-SPECIFIC — 메인페이지 전용 컴포넌트
 .ap-products-row:nth-last-child(2) .ap-products-row__img{background:linear-gradient(135deg,#EAE0D4,#F2EAE0);}
 .ap-products-row:nth-last-child(1) .ap-products-row__img{background:linear-gradient(135deg,#FEF0A0,#F2EAE0);}
 .ap-products-row__placeholder { font-family: var(--ap-font-sans); font-size: var(--ap-text-xs); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ap-color-text-muted); }
-.ap-products-row__body { display: flex; flex-direction: column; justify-content: center; padding: 64px 72px; background: var(--ap-color-cream); }
-.ap-products-row--reverse .ap-products-row__body { background: var(--ap-color-ivory); }
+.ap-products-row__body { display: flex; flex-direction: column; justify-content: center; padding: 64px 72px;  }
 .ap-products-row__tag { font-family: var(--ap-font-sans); font-size: var(--ap-text-xs); font-weight: 400; letter-spacing: var(--ap-tracking-wider); text-transform: uppercase; color: var(--ap-color-gold); margin-bottom: 12px; }
 .ap-products-row__name { font-family: var(--ap-font-sans); font-size: clamp(24px, 2.8vw, 40px); font-weight: 300; color: var(--ap-color-text-primary); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 16px; }
 .ap-products-row__desc { font-family: var(--ap-font-sans); font-size: var(--ap-text-base); font-weight: 300; color: var(--ap-color-text-secondary); line-height: 1.8; margin-bottom: 32px; max-width: 420px; }

@@ -1,0 +1,35 @@
+.ap-side#aside{background-color: #fff !important;}
+.ap-side#aside .navigation-menu{padding: 0;}
+.ap-side#aside .navigation-menu__category{padding-bottom: 24px;}
+.ap-side#aside .navigation-menu__category .view, .ap-side#aside .navigation-menu__project .view{font-size: var(--ap-text-sm);}
+.ap-side#aside .navigation-menu__category #slide_add_category li.selected {background-color: var(--ap-color-cream);}
+.ap-side#aside .navigation-menu__category #slide_add_category li.selected a{font-weight:500;}
+.ap-side#aside .navigation-menu__category #slide_add_category li > a{color: var(--ap-color-text-primary);padding: 12px 33px 20px 20px;}
+.ap-side#aside .navigation-menu__board, .ap-side#aside .navigation-menu__category, #aside .navigation-menu__project{margin-top: 12px;}
+.ap-side#aside .navigation-menu__category #slide_add_category li.selected .sub_cate01{padding: 0 0 14px 32px;}
+.ap-side#aside .navigation-menu__category #slide_add_category li.selected .sub_cate01 a.view{font-size: var(--ap-text-sm);color: var(--ap-color-text-secondary);}
+.ap-side#aside .navigation-menu__board .title, .ap-side#aside .navigation-menu__project .title{padding: 12px 33px 20px 20px;font-size: 14px; color: var(--ap-color-text-primary);}
+.ap-side#aside .navigation_state{margin-bottom: 0;padding: 14px 20px 30px;justify-content: space-between;flex-direction: column;align-items: start;background-color: var(--ap-color-ivory);}
+.ap-side#aside .navigation_state a{position: relative; flex: 50%;margin: 0;justify-content: center;align-items: center; padding: 10px 4px; font-size:var(--ap-text-xs); color: var(--ap-color-text-secondary);}
+/* .ap-side#aside .navigation_state a::after{content:'';position:absolute; top:50%; right: 0; transform: translateY(-50%); width: 1px; height: 12px; background-color: var(--ap-color-text-muted);} 
+.ap-side#aside .navigation_state a:last-child::after{display: none;}*/
+
+
+
+.ap-side__divider{position:relative}
+.ap-side__divider::before{content:''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);width: 90%; height: 1px; background-color: var(--ap-color-border-light);}
+.ap-side#aside .ap-side__top{position: relative;flex-shrink: 0; display: flex; align-items: center; justify-content: space-between;width: 100%; height: var(--ap-header-height); padding: 0 calc(var(--ap-gutter) - 6px); max-width: var(--ap-max-width); margin: 0 auto; border-bottom: 1px solid var(--ap-color-border-light);}
+.ap-side#aside .ap-side__menu{height: calc(100dvh - var(--ap-header-height));overflow: auto;display: flex; flex-direction: column; align-items: stretch; justify-content: space-between;}
+.ap-side#aside .btnClose {position: relative; inset:auto;}
+.ap-side#aside .btnClose .icon.icoClose{width: 16px; height: 16px;}
+.ap-side#aside .logo { z-index: 2; font-family: var(--ap-font-sans); font-weight: 300; color: var(--ap-color-text-primary); font-size: var(--ap-text-lg); letter-spacing: 0.2em; text-transform: uppercase; position: absolute; left: 50%; transform: translateX(-50%); text-decoration: none;}
+.ap-side__actions { display: flex; align-items: center; gap: var(--ap-space-xs); margin-left: var(--ap-space-xs); }
+.ap-side__icon-btn{position: relative; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: none; border: none; color: var(--ap-color-text-secondary); cursor: pointer; border-radius: var(--ap-radius-sm) transition: color var(--ap-transition-fast), background var(--ap-transition-fast);}
+.ap-side__icon-btn svg{ width: 20px; height: 20px;}
+.ap-side__icon-btn .count {position: absolute; top: -3px; right: -8px; width: 18px; height: 18px; border-radius: 50%; background-color: #000; color: #fff; text-align: center; line-height: 1; font-size: 11px; display: flex; align-items: center; justify-content: center; margin-left: 5px; font-family: Arial, sans-serif !important;}
+.ap-side__promotion {padding: 13px 24px 16px 24px !important;}
+.ap-side__promotion a{position: relative; display:block;width: 100%; height: 84px;padding: 0 !important; overflow: hidden;}
+.ap-side__promotion a::after{z-index: 1; content: ''; position: absolute; inset:0; background-color: rgba(0, 0,  0, 0.2); pointer-events: none;}
+.ap-side__promotion span{z-index:2; position: absolute; inset:0; display: flex; align-items: center; justify-content: center;color: #fff;font-size: var(--ap-text-sm);}
+.ap-side__promotion img{width: 100%; height: 100%; object-fit: cover; overflow: hidden;}
+.ap-side__footer{margin-top: auto;}
