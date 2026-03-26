@@ -17,6 +17,20 @@
           <a href="/" class="ap-ft-brand__name"><img src="/web/upload/_dj/img/p_logo.png" alt="{$mall_name}"></a>
           <span class="ap-ft-brand__rule"></span>
           <p class="ap-ft-brand__desc">부모가 가장 믿고 선택할 수 있는<br/>프리미엄 제품을 만듭니다.</p>
+          <ul class="ap-ft-sns" data-ez-role="list">
+            <li>
+              <a href="https://pf.kakao.com/_Rkfld/" data-ez-item="kakao"><img src="https://forbmaster.cafe24.com/web/img/icon-ft_kakao.svg" alt></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/forbkorea/" data-ez-item="instagram"><img src="https://forbmaster.cafe24.com/web/img/icon-ft_instagram.svg" alt></a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/@forb9126" data-ez-item="youtube"><img src="https://forbmaster.cafe24.com/web/img/icon-ft_youtube.svg" alt></a>
+            </li>
+            <li>
+              <a href="https://blog.naver.com/forb_kr" data-ez-item="blog"><img src="https://forbmaster.cafe24.com/web/img/icon-ft_blog.svg" alt></a>
+            </li>
+          </ul>
         </div>
         <!-- 푸터 메뉴 리스트 -->
         <ul class="ap-ft-nav">
@@ -60,7 +74,7 @@
               </div>
             </div>
           </li>
-          <li class="ap-ft-nav__col" data-ez-group="sns">
+          <!-- <li class="ap-ft-nav__col" data-ez-group="sns">
             <button class="mob-toggle" aria-expanded="false" onclick="toggleCol(this)">미디어<span class="arrow">▾</span></button>
             <div class="ap-ft-nav__title" data-ez-role="title">미디어</div>
             <div class="ap-ft-nav__body">
@@ -89,7 +103,7 @@
                 </ul>
               </div>
             </div>
-          </li>
+          </li> -->
         </ul><!-- //ap-ft-nav -->
       </div><!-- //ap-ft-upper__grid -->
     </div>
@@ -127,9 +141,9 @@
               <span data-ez-role="field">전화:&nbsp;</span> 
               <span data-ez-role="value">{$phone}</span>
             </li>
-            <li class="ap-ft-legal__item" data-ez-item="cpo_name">
+            <li class="ap-ft-legal__item cpo-name" data-ez-item="cpo_name">
               <span data-ez-role="field">개인정보관리책임자:&nbsp;</span> 
-              <span data-ez-role="value"><a href="{$cpo_name}">{$cpo_name}</a></span>
+              <span data-ez-role="value"><a href="mailto:{$cpo_name}">{$cpo_name}</a></span>
             </li>
             <li class="ap-ft-legal__item">
               <span data-ez-role="field">호스팅제공자:&nbsp;</span> 
