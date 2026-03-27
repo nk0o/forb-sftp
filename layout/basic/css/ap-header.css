@@ -99,6 +99,7 @@
 .forb .ap-search fieldset .ap-search__form input::placeholder { color: var(--ap-color-text-disabled); }
 .forb .ap-search fieldset .ap-search__form .ap-search__delete{display: block;height: 100%;padding: 4px;}
 .forb .ap-search fieldset .ap-search__form .ap-search__submit{height: 100%;font-size: var(--ap-text-sm); color: var(--ap-color-text-primary); line-height: 1; text-indent: 0;cursor: pointer;padding: 4px; transition: color var(--ap-transition-fast); flex-shrink: 0;}
+.forb .ap-search fieldset .ap-search__form .ap-search__submit svg{width: 20px;}
 .forb .ap-search .ap-search__close{display: flex; align-items: center; gap: 4px; width: auto;font-size: var(--ap-text-sm); color: var(--ap-color-text-primary); line-height: 1.4; text-indent: 0;inset:auto; bottom:var(--ap-gutter); left: 50%;transform: translateX(-50%); border: 0;border-radius: 0;cursor: pointer;text-transform: uppercase;}
 .forb .ap-search .ap-search__close::after{content:'';display: inline-block; width: 16px;height: 16px; background:url('https://img.echosting.cafe24.com/skin/mobile/common/ico_arrow.svg') center/contain no-repeat}
 
