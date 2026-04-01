@@ -1,0 +1,37 @@
+<!--@layout(/layout/basic/layout.html)-->
+<div class="ap-login">
+  <div class="login__card ap-form-width">
+    <div class="section path" data-ez="module-1xovwkk-1" data-ez-module="user-defined/1"
+      data-ez-name="USER DEFINED" data-ez-type="plain">
+      <span>현재 위치</span>
+      <ol>
+        <li><a href="/">홈</a></li>
+        <li title="현재 위치"><strong>비회원 주문조회</strong></li>
+      </ol>
+    </div>
+    <h2 class="login__title">비회원 주문조회</h2>
+    <div module="MyShop_OrderHistoryNologin" id="order_history_nologin_id" data-ez="contents-0l140l4-1">
+      <!--@css(/css/module/member/login.css)-->
+      <!--@css(/css/module/myshop/orderHistoryNologin.css)-->
+      <!--
+            $orderDetailUrl = /myshop/order/list.html
+        -->
+      <div class="login">
+        <div class="txtInfo typeDot">비회원의 경우, 주문시의 주문번호로 주문조회가 가능합니다.</div>
+        <div class="form">
+          {$form.order_name}
+          {$form.order_id}
+          {$form.order_password}
+          <div class="login__button">
+            <button type="submit" class="btnSubmit gFull sizeL ap-btn ap-btn--primary ap-btn--lg">확인</button>
+          </div>
+        </div><!-- //form -->
+      </div><!-- //login -->
+      <div class="login__util">
+        <div class="login__util-text">아직 회원이 아니신가요?<br>포브의 다양한 혜택 경험해보세요.</div>
+        <a href="/member/agreement.html" class="ap-btn ap-btn--outline ap-btn--lg">회원가입</a>
+      </div><!-- //login__util -->
+    </div>
+  </div><!-- //login__card -->
+</div><!-- //ap-login -->
+<!--#ez="1/1"-->

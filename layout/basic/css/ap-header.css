@@ -8,7 +8,7 @@
 
 /* 헤더 */
 .forb #header{ position: relative; height: var(--ap-header-height); padding: 0 !important;background: rgba(255,253,249,0.97) !important;backdrop-filter: blur(10px);border-bottom: 1px solid var(--ap-color-border-light) !important;}
-.forb #header .inner{width:100%;padding: 0 !important;}
+.forb #header .inner{width:100%;max-width: var(--ap-max-width);padding: 0 !important;}
 .forb #header .inner .top_nav_box{position:static;}
 .forb #header .inner .top_nav_box .top_logo{top:50%; transform: translate(-50%,-50%);}
 .forb #header .inner .top_nav_box .top_logo a{height:100%;}
@@ -94,13 +94,17 @@
 
 /* ── 검색 레이어 ── */
 .forb .ap-search{top:var(--ap-header-height); width: 100%; background: var(--ap-color-cream);box-shadow: 0 20px 60px rgba(26,20,16,0.10);}
-.forb .ap-search .ap-search__inner{position:relative; height: 100%; max-width: var(--ap-max-width); margin: 0 auto;padding: var(--ap-gutter);}
+.forb .ap-search .ap-search__inner{position:relative;display: flex;flex-direction: column;align-items: stretch; height: 100%; max-width: var(--ap-max-width); margin: 0 auto;padding: var(--ap-gutter) var(--ap-gutter) 0; }
+.forb .ap-search.xans-layout-searchheader fieldset{
+  width: 100%;
+  max-width: 1160px;}
 .forb .ap-search fieldset .ap-search__form{height: 44px;}
 .forb .ap-search fieldset .ap-search__form input::placeholder { color: var(--ap-color-text-disabled); }
 .forb .ap-search fieldset .ap-search__form .ap-search__delete{display: block;height: 100%;padding: 4px;}
 .forb .ap-search fieldset .ap-search__form .ap-search__submit{height: 100%;font-size: var(--ap-text-sm); color: var(--ap-color-text-primary); line-height: 1; text-indent: 0;cursor: pointer;padding: 4px; transition: color var(--ap-transition-fast); flex-shrink: 0;}
 .forb .ap-search fieldset .ap-search__form .ap-search__submit svg{width: 20px;}
-.forb .ap-search .ap-search__close{display: flex; align-items: center; gap: 4px; width: auto;font-size: var(--ap-text-sm); color: var(--ap-color-text-primary); line-height: 1.4; text-indent: 0;inset:auto; bottom:var(--ap-gutter); left: 50%;transform: translateX(-50%); border: 0;border-radius: 0;cursor: pointer;text-transform: uppercase;}
+.forb .ap-search__closebar{margin-top: auto; border-top: 1px solid var(--ap-color-border-light); display: flex; justify-content: center; align-items: center; padding: 12px 0;}
+.forb .ap-search .ap-search__close{position: relative; inset: auto; transform: none; display: flex; justify-content: center; align-items: center; gap: 4px; width: auto;padding: 6px 20px;font-size: var(--ap-text-xs);font-weight: 500; color: var(--ap-color-text-primary); line-height: 1.4; text-indent: 0;border: 0;border-radius: 0;text-transform: uppercase;letter-spacing: 0.14em;}
 .forb .ap-search .ap-search__close::after{content:'';display: inline-block; width: 16px;height: 16px; background:url('https://img.echosting.cafe24.com/skin/mobile/common/ico_arrow.svg') center/contain no-repeat}
 
 /* 검색 - 자주 찾는 키워드 */
@@ -151,7 +155,7 @@ input:-webkit-autofill:active { transition: background-color 5000s ease-in-out 0
   .drawer-dim { top: 52px; }
   /* ── 검색 레이어 ── */
   .forb .ap-search{padding-bottom: 0;}
-  .forb .ap-search .ap-search__inner{padding-bottom: 72px;}
+  .forb .ap-search__closebar{ margin-top: 40px;}
   .forb .ap-search .ap-search__keywords,
   .forb .ap-search fieldset .ap-search__form{width:100%;}
   .forb .ap-search fieldset .ap-search__form #keyword{text-overflow: ellipsis;}
