@@ -1,5 +1,101 @@
 .forb #wrap{overflow: visible;}
+.forb #container{padding-bottom: 0;}
+/* 로그인 */
 
-@media (max-width: 1024px) {}
+#contents:has(.ap-login) .RTMB { display: none !important; }
+.ap-login{padding:52px 20px var(--ap-btm-padding); background-color: var(--ap-color-ivory);}
+.login__card{margin-bottom: 28px;padding: 44px 40px 40px; background-color: var(--ap-color-cream);}
+.login__title{ margin-bottom: 5px;font-family: var(--ap-font-serif); font-size: var(--ap-text-2xl); font-weight: 300; letter-spacing: 0.06em; text-align: center; color: var(--ap-color-text-primary); }
+.login__desc{margin-bottom: 32px;font-size: var(--ap-text-xs); font-weight: 300; color: var(--ap-color-text-muted); text-align: center; letter-spacing: .04em; }
+
+.login-divider{display: flex; align-items: center; gap: 12px; margin: 12px 0 20px;font-size: var(--ap-text-sm); font-size: var(--ap-text-xs); color: var(--ap-color-text-muted); white-space: nowrap; letter-spacing: 0.04em; }
+.login-divider__line { flex: 1; height: 1px; background: var(--ap-color-border-light); }
+.forb .xans-member-login .login { max-width: none; }
+.forb .xans-member-login .login__sns{margin-top: 0;}
+.forb .xans-member-login .login__sns .wrap_sns_log a{justify-content: center; gap: 8px;width: 100%;height: 46px; background-image: none;border-radius:var(--ap-radius-sm) !important;}
+.forb .xans-member-login .wrap_find{justify-content: space-between;margin-bottom: 20px;}
+.forb .xans-member-login .wrap_find div{display: flex;align-items: center;margin: 0;font-size: var(--ap-text-xs);color: var(--ap-color-text-muted);}
+.forb .xans-member-login .wrap_find div:nth-child(2){background:none;padding: 0 10px;}
+.forb .xans-member-login .wrap_find .login__security{margin-right: auto;padding-left: 0;}
+.forb .xans-member-login .wrap_find .login__find-id{border-right: 1px solid var(--ap-color-border);}
+.forb .xans-member-login .login__security .secret{width: 14px; height: 14px;margin-right: 4px;}
+.forb .xans-member-login .wrap_find input[type="checkbox"]{width: 100%; height: 100%;background-position: center;background-size:contain}
+.forb .xans-member-login .login__sns .btnKakao{background-color: rgb(254, 229, 0); border:0;}
+.forb .xans-member-login .login__button [class^='btn'].sizeL{height: 50px;margin-bottom: 8px; font-weight: 600 !important;}
+
+.forb .ap-login .login__card .login__util{display: flex; flex-direction: column; justify-content: center; margin: 20px 0 0 0; width: 100%; border: 1px solid var(--ap-color-border-light); box-sizing: border-box; margin-left: auto; margin-right: auto;height: auto; padding: 24px 0 0; border-width: 0; border-top-width: 1px;border-color: var(--ap-color-border-light);}
+.forb .ap-login .login__card div.login__util-text{ font-size: var(--ap-text-sm);font-weight: 400; color: var(--ap-color-text-muted); margin-bottom: 12px; line-height: 1.7;font-size: var(--ap-text-sm);font-weight: 400; color: var(--ap-color-text-muted); margin-bottom: 12px; line-height: 1.7;}
+.login__guest-order{ display: block; text-align: right; font-size: 11px; color: var(--ap-color-text-muted); margin-bottom: 8px; transition: color var(--ap-transition-fast);    text-decoration: underline; }
+
+.ap-join{padding:0 20px var(--ap-btm-padding);}
+
+
+@media all and (min-width: 1025px) {
+  .path + .titleArea { margin: 0; padding-top: 55px; }
+  .titleArea { margin: 0; padding: 45px 0 40px; text-align: center; }
+  .forb .xans-member-login .login { width: 100%; margin: 0 auto; }
+}
+@media all and (max-width: 1024px) {
+  .forb #container #contents{width: 100%;}
+  .forb .titleArea { margin: 0; padding: 40px 0; }
+}
+
+@media all and (min-width: 768px) and (max-width:1024px) {
+  .forb .titleArea { margin: 0; padding: 40px 24px 30px; }
+}
 /* ── 모바일 (≤768px) ── */
-@media (max-width: 768px) {}
+@media all and (max-width: 768px) {
+  .login__card{padding: 40px 20px 40px;}  
+}
+
+
+/* 제품 목록 */
+.forb .ec-base-tab.typeMenu, .forb .product_top_image{max-width: var(--ap-max-width) !important;}
+.forb .ec-base-product .prdList > li:hover .thumbnail{box-shadow: none;}
+.forb .ec-base-product ul.grid3 > li{}
+.forb .ec-base-product .prdList .description .name a{}
+.forb .ec-base-product .prdList{margin: 0 -12px 0;}
+.forb .ec-base-product .prdList .prdList__item{margin: 0 12px;}
+@media all and (max-width: 768px) {
+  .forb .ec-base-product .prdList{margin: 0 -8px 0;}
+  .forb .ec-base-product .prdList .prdList__item{margin: 0 8px;}
+  .forb .ec-base-product .prdList > li{margin-bottom: 24px;}
+}
+@media all and (max-width: 1024px) {
+  .forb .ec-base-product ul.grid3 > li{width: 50%;} 
+}
+
+/* ──ap-card ── */
+.ap-card { background: var(--ap-color-bg-card); border-radius: 0; overflow: hidden; }
+.ap-card__thumbnail { position: relative; width: 100% !important; overflow: hidden; background: var(--ap-color-ivory); display: flex; align-items: center; justify-content: center;margin:0 !important; color: var(--ap-color-text-muted); font-size: var(--ap-text-xs); letter-spacing: 0.1em; text-transform: uppercase; }
+.ap-card__thumbnail::before{ content: ""; display: block; width: 100%; padding-top: 90%; }
+.ap-card__thumbnail a{z-index: 1;}
+.ap-card__thumbnail a, .ap-card__thumbnail .ap-card__thumbnail-img {position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;}
+.ap-card__overlay{position: absolute !important; inset: 0 !important; display: flex !important; align-items: flex-end !important; height: auto !important;padding: 20px !important; opacity: 0; transition: opacity .25s ease; pointer-events: none !important;}
+.ap-card:hover .ap-card__overlay { opacity: 1 !important; pointer-events: all !important; }
+
+.ap-card__badge { position: absolute; top: var(--ap-space-sm); left: var(--ap-space-sm); z-index: 1; background: var(--ap-color-text-primary); color: #fff; font-family: var(--ap-font-sans); font-size: 10px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 8px; border-radius: var(--ap-radius-sm); }
+.ap-card__badge--gold { background: var(--ap-color-gold-light); color: var(--ap-color-text-primary); }
+
+.ap-card__buy{width: 100% !important; height: 46px !important; background: rgba(255, 253, 249, 0.95) !important; backdrop-filter: blur(6px) !important; border: 1px solid var(--ap-color-border) !important; border-radius: var(--ap-radius-md) !important; font-size: 12px !important; font-weight: 400 !important; letter-spacing: .1em !important; text-transform: uppercase !important; color: var(--ap-color-text-primary) !important; transition: background var(--ap-transition-fast), border-color var(--ap-transition-fast) !important;}
+.ap-card__buy:hover { background: var(--ap-color-text-primary) !important; color: var(--ap-color-cream) !important; border-color: var(--ap-color-text-primary) !important; }
+.ap-card__body { display: flex; flex-direction: column; gap: 0;padding: 14px 4px 4px; margin: 0;}
+.ap-card__notice{margin-bottom: 4px;font-size: var(--ap-text-xs); font-weight: 600; color: var(--ap-color-success); line-height: 1.5; }
+.ap-card__name, .ap-card__name span { font-size: var(--ap-text-md) !important; font-weight: 400; color: var(--ap-color-text-primary) !important; line-height: 1.35; margin-bottom: var(--ap-space-xs);word-break: keep-all;}
+.ap-card__desc {margin-top: 4px; font-size: var(--ap-text-sm); color: var(--ap-color-text-muted); line-height: 1.5;}
+.ap-card__price-row { display: flex; align-items: center; gap: var(--ap-space-xs);margin-top:var(--ap-space-sm);line-height: 1;}
+.ap-card__price { font-size: var(--ap-text-base); font-weight: 400; color: var(--ap-color-text-primary); }
+.ap-card__price--custom { font-size: var(--ap-text-sm); font-weight: 400; color: var(--ap-color-text-muted);text-decoration: line-through;}
+.ap-card__price--sale {font-size: var(--ap-text-base); color: var(--ap-color-error); font-weight: 500; }
+.ap-card__price.displaynone { text-decoration: none !important; display: block !important;}
+.ap-card__price:not(.displaynone) { text-decoration: line-through !important; color: var(--ap-color-text-disabled);font-size: var(--ap-text-sm);}
+.ap-card__icon{margin: 16px 0 0;}
+.ap-card__colorchip .color-chip { display: inline-block; width:20px; height:20px; border-radius: 50%; border:1px solid rgba(4,30,58,.5); position: relative }
+.ap-card__colorchip .color-chip .chips {top: 50%; left: 50%; position: absolute; transform: translate(-50%, -50%); border-radius: 50%;  height: calc(100% - 5px); width: calc(100% - 5px);}
+
+
+@media (max-width: 768px) {
+  .ap-card__name, .ap-card__name span { font-size: var(--ap-text-base) !important;}
+  .ap-card__price{font-size: var(--ap-text-sm); }
+  .ap-card__body { padding: 12px 12px 14px; }
+}

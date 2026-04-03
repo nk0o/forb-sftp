@@ -95,10 +95,8 @@
 /* ── 검색 레이어 ── */
 .forb .ap-search{top:var(--ap-header-height); width: 100%; background: var(--ap-color-cream);box-shadow: 0 20px 60px rgba(26,20,16,0.10);}
 .forb .ap-search .ap-search__inner{position:relative;display: flex;flex-direction: column;align-items: stretch; height: 100%; max-width: var(--ap-max-width); margin: 0 auto;padding: var(--ap-gutter) var(--ap-gutter) 0; }
-.forb .ap-search.xans-layout-searchheader fieldset{
-  width: 100%;
-  max-width: 1160px;}
-.forb .ap-search fieldset .ap-search__form{height: 44px;}
+.forb .ap-search.xans-layout-searchheader fieldset{ width: 100%; max-width: var(--ap-max-width-narrow);}
+.forb .ap-search fieldset .ap-search__form{width: 100%; height: 44px;}
 .forb .ap-search fieldset .ap-search__form input::placeholder { color: var(--ap-color-text-disabled); }
 .forb .ap-search fieldset .ap-search__form .ap-search__delete{display: block;height: 100%;padding: 4px;}
 .forb .ap-search fieldset .ap-search__form .ap-search__submit{height: 100%;font-size: var(--ap-text-sm); color: var(--ap-color-text-primary); line-height: 1; text-indent: 0;cursor: pointer;padding: 4px; transition: color var(--ap-transition-fast); flex-shrink: 0;}
@@ -108,8 +106,8 @@
 .forb .ap-search .ap-search__close::after{content:'';display: inline-block; width: 16px;height: 16px; background:url('https://img.echosting.cafe24.com/skin/mobile/common/ico_arrow.svg') center/contain no-repeat}
 
 /* 검색 - 자주 찾는 키워드 */
-.forb .ap-search fieldset .ap-search__form #keyword{ flex: 1;height: 40px;padding: 0 0 0 15px; font-family: var(--ap-font-sans); font-size: var(--ap-text-md); font-weight: 300; color: var(--ap-color-text-primary); background: none; border: none; outline: none; letter-spacing: 0.01em; line-height: 1.4; }
-.ap-search__keywords { display: flex; flex-direction: column; gap: 0; padding: 0 15px;}
+.forb .ap-search fieldset .ap-search__form #keyword{ flex: 1;height: 40px;color: var(--ap-color-text-primary); border: none !important; letter-spacing: 0.01em; line-height: 1.4; background-color: var(--ap-color-cream) !important;}
+.ap-search__keywords {display: flex; flex-direction: column; gap: 0;width: 100% !important; max-width: var(--ap-max-width-narrow); margin-inline:auto; }
 .ap-search__kw-label {font-size:var(--ap-text-xs); font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ap-color-gold); margin-bottom: 12px; }
 .ap-search__kw-list { display: flex; flex-wrap: wrap; gap: 8px; }
 .ap-search__kw-item { font-family: var(--ap-font-sans); font-size: var(--ap-text-sm); font-weight: 300; color: var(--ap-color-text-secondary); background: var(--ap-color-ivory); border: 1px solid var(--ap-color-border-light); border-radius: var(--ap-radius-pill); padding: 6px 14px; cursor: pointer; text-decoration: none; transition: background 0.15s, color 0.15s, border-color 0.15s; }
@@ -159,4 +157,20 @@ input:-webkit-autofill:active { transition: background-color 5000s ease-in-out 0
   .forb .ap-search .ap-search__keywords,
   .forb .ap-search fieldset .ap-search__form{width:100%;}
   .forb .ap-search fieldset .ap-search__form #keyword{text-overflow: ellipsis;}
+}
+
+.forb #wrap .ap-header .ap-nav__bar .ap-nav__logo,
+.forb #wrap .ap-header .ap-nav__bar .ap-nav__actions{display: none;}
+.forb #wrap .ap-header.fixed .ap-nav__bar .ap-nav__logo,
+.forb #wrap .ap-header.fixed .ap-nav__bar .ap-nav__actions{display: flex;}
+
+.forb #wrap .ap-header.fixed{height: 44px;}
+.forb #wrap .ap-header.fixed .inner{transform: translateY(-58px);}
+.forb #wrap .ap-header.fixed .ap-nav__bar{justify-content: space-between;}
+.forb #wrap .ap-header.fixed .ap-nav__bar .ap-nav__links{position: absolute;left: 50%; transform: translateX(-50%); width: 100%; justify-content: center;}
+.forb #wrap .ap-header.fixed .ap-nav__bar .top_logo{position: static; transform:none; inset:auto;;}
+
+@media all and (max-width:768px){
+  .forb #wrap .ap-header.fixed .inner{transform:none;}
+
 }

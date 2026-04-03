@@ -40,18 +40,18 @@ function toggleClass(element, handler, className){
     });
 }
 
-function fixedHeader() { // 210804 1111서정환 수정
+function fixedHeader() { // 210804 서정환 수정
     var header = document.getElementById("header");
 	var fixed_margin = document.getElementById("contents");
 	var scrollY = window.pageYOffset || document.documentElement.scrollTop;
 	var header_height = document.getElementById("header").scrollHeight+'px';
 
-	if(scrollY >= header.offsetHeight) {
+	if(scrollY > header.offsetTop) {
         header.classList.add("fixed");
-		    fixed_margin.style.marginTop  = header_height;
+		fixed_margin.style.marginTop  = header_height;
     } else {
         header.classList.remove("fixed");
-		    fixed_margin.style.marginTop  = '0px';
+		fixed_margin.style.marginTop  = '0px';
     }
 }
 

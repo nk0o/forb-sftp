@@ -86,10 +86,14 @@
   --ap-transition-normal: 300ms ease;
   --ap-transition-slow:   600ms ease;
 }
+@media (max-width: 1024px) {
+  :root { 
+    --ap-gutter:          20px; 
+  }
+}
 /* ── 모바일 (≤768px) ── */
 @media (max-width: 768px) {
   :root { 
-    --ap-gutter:          20px; 
     --ap-header-height:   58px;
   }
 }
@@ -114,12 +118,10 @@ body.forb{font-family: var(--ap-font-sans) !important;}
 .ap-form-width{width:100%; max-width: var(--ap-max-width-form);margin: 0 auto;}
 .forb .path{display:none;}
 .forb .xans-product-headcategory.titleArea.section{max-width: var(--ap-max-width) !important;}
-@media all and (min-width: 1024px) {
-  .forb #contents > .section {
-      max-width: var(--ap-max-width);
-      width: 100%;
-      padding-inline:20px;
-  }
+.forb #contents > .section {
+    max-width: var(--ap-max-width);
+    width: 100%;
+    padding-inline:20px;
 }
 /* ──ap-btn ── */
 .ap-btn {

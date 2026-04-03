@@ -13,17 +13,23 @@ PAGE-SPECIFIC — 메인페이지 전용 컴포넌트
 .ap-hero { position: relative; width: 100%; height: calc(88dvh - var(--ap-header-height)); min-height: 520px; overflow: hidden; background: var(--ap-color-beige); } 
 .ap-hero__slider { height: 100%; } 
 .ap-hero__bg { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-family: var(--ap-font-sans); font-size: var(--ap-text-sm); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ap-color-text-muted); } 
-.ap-hero__bg img{width:100%; height: 100%; object-fit: cover;}
+.ap-hero__img, .ap-hero__bg img{width:100%; height: 100%; object-fit: cover;}
 .ap-hero__bg::after {content:''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(255, 253, 249, 0.55) 0%, transparent 60%); pointer-events: none; } 
 .ap-hero__content { position: absolute; width: 100%; inset: 0; display: flex; flex-direction: column; padding: 32px 8%; justify-content: center; } 
 .ap-hero__eyebrow { display: block; font-family: var(--ap-font-sans); font-size: var(--ap-text-xs); font-weight: 400; letter-spacing: var(--ap-tracking-wider); text-transform: uppercase; color: var(--ap-color-gold); margin-bottom: 16px; } 
-.ap-hero__title {margin-bottom: 20px; font-size: clamp(26px, 3.5vw, 46px); color: var(--ap-color-text-primary); letter-spacing: -0.01em; } 
+.ap-hero__title {margin-bottom: 20px; font-size: clamp(32px, 3.5vw, 46px); color: var(--ap-color-text-primary); letter-spacing: -0.01em; } 
 .ap-hero__desc { font-family: var(--ap-font-sans); font-size: clamp(16px, 2.4vw, 18px); font-weight: 300; color: var(--ap-color-text-primary); line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 20px; } 
 .ap-hero__actions { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; } 
 /* 슬라이드 표시 버튼 */
-.swiper-pagination.ap-hero__pagination{position: absolute; bottom: var(--ap-space-2xl); left: var(--ap-space-2xl); z-index: 10; display: flex; align-items: center;gap: var(--ap-space-xs);}
+.ap-hero__pagination.swiper-pagination{position: absolute; bottom: var(--ap-space-2xl); left: 8%; z-index: 10; display: flex; align-items: center;gap: var(--ap-space-xs);}
 .ap-hero__pagination .swiper-pagination-bullet { width: 28px; height: 2px; background: rgba(255, 255, 255, 0.3); border: none; cursor: pointer; transition: all var(--ap-transition-normal); border-radius: 2px; padding: 0; opacity: 1;}
 .ap-hero__pagination .swiper-pagination-bullet-active { background: var(--ap-color-gold-light); width: 48px; }
+@media all and (max-width:768px) {
+  .ap-hero__pagination.swiper-pagination{position: absolute; bottom: var(--ap-space-md); left: auto; right: var(--ap-gutter);gap: var(--ap-space-sm);}
+  .ap-hero__pagination .swiper-pagination-bullet { width: 5px; height: 5px;border-radius: 100%;}
+  .ap-hero__pagination .swiper-pagination-bullet-active { width: 8px; height: 8px;}
+  
+}
 /* 슬라이드 이동 버튼 */
 .ap-hero__swiper-buttons {opacity: 0; z-index: 1; position: absolute; top: 50%; transform: translateY(-50%); display: flex;width: 100%; gap: 2px; transition: opacity var(--ap-transition-normal);} 
 .ap-hero__swiper-buttons .swiper-button-next, .ap-hero__swiper-buttons .swiper-button-prev{position:absolute; width: 38px; height: 38px; background: rgba(255, 253, 249, 0.7); border: 1px solid var(--ap-color-border); color: var(--ap-color-text-primary); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 16px; transition: opacity background var(--ap-transition-fast); backdrop-filter: blur(4px); border-radius: 100%;background-image: url('https://forbmaster.cafe24.com/web/icon/ico-chevron-down.svg');background-repeat: no-repeat; background-position: center;} 
@@ -42,17 +48,16 @@ PAGE-SPECIFIC — 메인페이지 전용 컴포넌트
 }
 /******** 브랜드 철학 ********/
 .ap-philosophy {overflow: hidden; background: var(--ap-color-ivory); }
-.ap-philosophy__inner { padding: 120px 0 90px; text-align: center; }
-.ap-philosophy__text {max-width: var(--ap-max-width); padding-inline:var(--ap-gutter);margin: 0 auto; color: var(--ap-color-text-primary); letter-spacing: 0.01em;  line-height: 1.25;}
+.ap-philosophy__inner { padding: 120px var(--ap-gutter) 90px; text-align: center; }
+.ap-philosophy__text {max-width: var(--ap-max-width);margin: 0 auto; color: var(--ap-color-text-primary); letter-spacing: 0.01em;  line-height: 1.25;}
 .ap-philosophy__text em, .ap-philosophy__text strong { color: var(--ap-color-gold);}
 .ap-philosophy__sub { margin-top: 20px; font-size: var(--ap-text-xs); letter-spacing: var(--ap-tracking-wider); text-transform: uppercase; color: var(--ap-color-text-muted); }
 
 
 /******** 브랜드 소개 ********/
 .ap-brand{background: var(--ap-color-ivory);padding: 0 64px 72px;}
-.ap-brand__row { display: grid; grid-template-columns: 1fr 1fr; max-width: var(--ap-max-width);margin:0 auto; border-top: 1px solid var(--ap-color-border-light); border-bottom: 1px solid var(--ap-color-border-light); } 
+.ap-brand__row { display: grid; grid-template-columns: 1fr 1fr; max-width: var(--ap-max-width);gap: 1px; margin:0 auto; border-top: 1px solid var(--ap-color-border-light); border-bottom: 1px solid var(--ap-color-border-light); } 
 .ap-brand__card { position: relative; overflow: hidden; aspect-ratio: 1.5;} 
-.ap-brand__card:first-child { border-right: 1px solid var(--ap-color-border-light); } 
 /* 플레이스홀더 (이미지 없을 때 배경) */
 .ap-brand__card-bg { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--ap-font-sans); font-size: var(--ap-text-xs); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ap-color-text-muted); transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); } 
 .ap-brand__card:hover .ap-brand__card-bg { transform: scale(1.04); } 

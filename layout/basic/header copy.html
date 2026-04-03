@@ -111,7 +111,6 @@
         </div><!-- //ap-nav__top -->
         <!-- 2단: 메뉴 -->
         <div class="ap-nav__bar">
-          <a href="/" class="top_logo ap-nav__logo">FORB<!-- <img src="{$logo}" alt="{$mall_name}"> --> </a>
           <ul class="ap-nav__links">
             <li class="ap-nav__item">
               <a class="ap-nav__link" href="/event/list.html">
@@ -140,19 +139,6 @@
               <a class="ap-nav__link" href="/service/warranty.html">서비스</a>
             </li>
           </ul>
-          <div class="top_mypage ap-nav__actions">
-            <div module="Layout_MobileAction" class="tablet_detail_only">
-              <a href="#none" onclick="{$go_back}"><!--@import(/svg/icon-search.html)--></a>
-            </div>
-            <a href="javascript:void(0);" class="eSearch ap-nav__icon-btn" aria-label="검색"><!--@import(/svg/icon-search.html)--></a><!-- 검색 -->
-            <a href="/myshop/index.html" class="ap-nav__icon-btn" aria-label="마이페이지"><!--@import(/svg/icon-user.html)--></a><!-- 마이페이지 -->
-            <a href="/order/basket.html" class="ap-nav__icon-btn" module="Layout_orderBasketcount" aria-label="장바구니">
-              <!--@import(/svg/icon-cart.html)-->
-              <span class="count {$basket_count_display|display} {$basket_count_display_class}">
-                <span class="{$basket_count_class}">{$basket_count}</span>
-              </span>
-            </a><!-- 장바구니 -->
-          </div><!-- //top_mypage.ap-nav__actions -->
         </div><!-- //ap-nav__bar -->
       </nav>
     </div><!-- //top_nav_box -->
@@ -294,42 +280,24 @@
 
 <script>
   const topBnr   = document.querySelector('.main_top_banner'); 
-  const apHeader = document.querySelector('#header');
+  const apHeader   = document.querySelector('#header');
+  const HEADER_H = 103;
   const BNR_H    = 32;
 
   function topBnrState(){
-    topBnr.classList.add('hidden');
+    topBnr.classList.add('hidden')
   }
 
   function getHeaderOffset() {
-    // HEADER_H를 매번 새로 계산 (고정값이 아님)
-    const currentHeaderHeight = document.getElementById("header").offsetHeight;
-    
-    if(topBnr.classList.contains('hidden') || apHeader.classList.contains('fixed')){
-      return currentHeaderHeight; // fixed일 때는 44px
+    if(topBnr.classList.contains('hidden') || apHeader.classList.contains('fixed')){ 
+      return HEADER_H
     }
-    return currentHeaderHeight + BNR_H;
+    return HEADER_H + BNR_H;
   }
 
-  // 메가메뉴와 드로어 위치 업데이트 함수
-  function updateMenuPositions() {
-    const offset = getHeaderOffset();
-    const megaMenu = document.getElementById('megaMenu');
-    const drawer = document.getElementById('allMenuDrawer');
-    
-    // 메가메뉴가 열려있으면 위치 업데이트
-    if (megaMenu && megaMenu.classList.contains('is-open')) {
-      megaMenu.style.top = `${offset}px`;
-    }
-    
-    // 드로어가 열려있으면 위치 업데이트
-    if (drawer && drawer.classList.contains('is-open')) {
-      drawer.style.top = `${offset}px`;
-    }
-  }
+  getHeaderOffset(); // 초기 실행
+  window.addEventListener('scroll', getHeaderOffset);
 
-  // 스크롤 시 메뉴 위치 업데이트
-  window.addEventListener('scroll', updateMenuPositions);
   // ── 메가메뉴 ──
   (function () {
     const MENUS = {
@@ -428,15 +396,15 @@
       const data = MENUS[key];
       if (!data) return;
 
-       // 메뉴를 열 때 현재 헤더 offset에 맞춰 위치 설정
       menu.style.top = `${getHeaderOffset()}px`;
-
+      window.addEventListener('scroll', function(){
+        getHeaderOffset()
+        menu.style.top = `${getHeaderOffset()}px`;
+      });
 
       if (currentMenu === key && menu.classList.contains('is-open')) return;
       currentMenu = key;
-
       data.image == null ? mmImg.setAttribute("src", data.image) :mmImg.setAttribute("src", 'https://forbmaster.cafe24.com/web/img/img-placeholder.png')
-
       heading.textContent = data.heading;
       caption.textContent = data.caption;
       visTitle.textContent = data.visualTitle;
@@ -484,6 +452,7 @@
     // ── 드로어 ──
     function openDrawer() {
       drawer.style.top = `${getHeaderOffset()}px`;
+      console.log(getHeaderOffset())
       drawer.classList.add('is-open');
       dim.classList.add('is-open');
       btn.classList.add('is-open');

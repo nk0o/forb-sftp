@@ -1,7 +1,7 @@
 <!--@layout(/layout/basic/layout.html)-->
 <!--@js(/js/module/product/menucategory.js)-->
 <!--@css(/css/module/product/menupackage.css)-->
-<div class="path maxwidth1680 section" module="product_headcategory"
+<div class="path section" module="product_headcategory"
   data-ez-module="product-head-breadcrumb/1" data-ez="contents-0i627kb-1">
   <span>현재 위치</span>
   <ol>
@@ -13,13 +13,14 @@
           href="{$link_product_list_4}">{$name_4}</a></strong></li>
   </ol>
 </div>
-<div class="section maxwidth1680 titleArea" module="product_headcategory"
+<div class="section titleArea" module="product_headcategory"
   data-ez-module="product-list-head-title/1" data-ez="contents-0mpbd2y-1">
   <h2>{$title_text_or_image}</h2>
   <span class="likeButton {$disp_likecate_class}"><button
       type="button">{$disp_likecate_icon}<strong>{$disp_likecate_count}</strong></button></span>
 </div>
-<div class="section ec-base-tab typeMenu" data-ez-module="product-list-subcategory/1"
+<!-- 상품 분류 이동 탭 -->
+<!-- <div class="section ec-base-tab typeMenu" data-ez-module="product-list-subcategory/1"
   data-ez="contents-0p3uk7o-1">
   <div class="display_tablet_only">
     <ul class="menuCategory menu">
@@ -107,12 +108,15 @@
       </li>
     </ul>
   </div>
-</div>
+</div> -->
+
 <div module="product_headcategory" data-ez-module="product-list-categoryimage/1"
   class="section product_top_image" data-ez="contents-1svxo5n-1">
-  {$top_image1_tag}{$top_image2_tag}{$top_image3_tag}</div>
-<div class="section normalpackage_box maxwidth1680" data-ez-module="product-normalpackage/1"
-  data-ez-layout="grid4" data-ez="contents-170v7bx-1">
+  {$top_image1_tag}{$top_image2_tag}{$top_image3_tag}
+</div>
+
+<div class="section normalpackage_box" data-ez-module="product-normalpackage/1"
+  data-ez-layout="grid3" data-ez="contents-170v7bx-1">
   <!--@import(/product/shoppQ/searchContent.html)-->
   <div module="product_normalpackage" class="product_scrollx">
     <!--@css(/css/module/product/listnormal.css)-->
@@ -127,6 +131,7 @@
         <ez-item data-id="grid5 list_gallery" data-name="이미지강조5단형(PC 5열/MOBILE 2열)"></ez-item>
       </ez-var>
     </ez-prop>
+
     <div module="product_normalmenu">
       <!--
 				$compare_page = /product/compare.html
@@ -160,7 +165,8 @@
         </p>
       </fieldset>
     </div>
-    <div data-ez-holder="product_list">
+
+    <div data-ez-holder="product_list" class="ap-product-list">
       <div module="product_listnormal" class="ec-base-product">
         <!--
 					$count = 20
@@ -171,7 +177,7 @@
 					$basket_result = /product/add_basket.html
 					$basket_option = /product/basket_option.html
 				-->
-        <ul class="prdList grid4" data-ez-role="layout ez-discount-tag">
+        <ul class="prdList grid3" data-ez-role="layout ez-discount-tag">
           <!--@import(/product/list_product.html)-->
         </ul>
       </div>
@@ -198,8 +204,9 @@
         </ol>
         <a href="{$param_next}">다음 페이지</a>
         <a href="{$param_last}" class="last">마지막 페이지</a>
-      </div>
-    </div><!-- //product_list -->
+      </div><!-- //ec-base-paginate -->
+
+    </div><!-- //product_list.ap-product-list -->
   </div><!-- //product_normalpackage -->
 </div>
 <!--#ez="1/1"-->
