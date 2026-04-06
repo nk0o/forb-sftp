@@ -69,6 +69,7 @@
   --ap-gutter:            32px;
   --ap-top-banner-height: 32px;
   --ap-header-height:     103px;
+  --ap-fix-header-height:     62px;
 
   /* === BORDER RADIUS === */
   --ap-radius-sm:   4px;

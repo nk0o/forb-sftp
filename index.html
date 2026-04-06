@@ -16,9 +16,9 @@
       <div class="swiper-slide ap-hero__slide">
         <div class="ap-hero__bg">
           <picture class="ap-hero__img">
-            <source class="ap-hero__bg-desktop" srcset="https://forbmaster.cafe24.com/web/img/img-main-hero-1.png" media="(min-width: 768px)">
+          <!--   <source class="ap-hero__bg-desktop" srcset="https://forbmaster.cafe24.com/web/img/img-main-hero-1.png" media="(min-width: 768px)">
             <source class="ap-hero__bg-mobile" srcset="https://www.ralphlauren.co.kr/on/demandware.static/-/Library-Sites-RalphLauren_EU_Library/ko_KR/v1775161955610/img/202603/20260303-kr-wlp-w-polo-play-spring/0303_kr_wlp_w_polo_play_spring_m_c01c_img.jpg" media="(max-width: 767px)">
-            <img src="https://forbmaster.cafe24.com/web/img/img-main-hero-1.png" alt loading="lazy" ez-prevent="img">
+            <img src="https://forbmaster.cafe24.com/web/img/img-main-hero-1.png" alt loading="lazy" ez-prevent="img"> -->
            </picture>
         </div><!-- //ap-hero__bg -->
         <div class="ap-hero__content">
@@ -94,6 +94,62 @@
 </section><!-- //ap-hero -->
 
 <!-- ======================================================
+  베스트 제품
+====================================================== -->
+ <section class="ap-category">
+  <div module="product_listmain_1"> 
+    <!--
+        $count = 4
+        $basket_result = /product/add_basket.html
+        $basket_option = /product/basket_option.html
+    -->
+    <ul class="ap-category__grid">
+      <li class="category-card" name="anchorBoxName_{$product_no}">
+        <a href="/product/detail.html{$param}">
+          <div class="category-card__bg" style="background-image:url({$image_medium});"></div>
+          <div class="category-card__overlay"></div>
+          <div class="category-card__body">
+            <span class="category-card__name">액세서리</span>
+            <span class="category-card__arrow">더 알아보기</span>
+          </div>
+        </a>
+      </li>
+      <li class="category-card" name="anchorBoxName_{$product_no}">
+        <a href="/product/detail.html{$param}">
+          <div class="category-card__bg" style="background-image:url({$image_medium});"></div>
+          <div class="category-card__overlay"></div>
+          <div class="category-card__body">
+            <span class="category-card__name">아기띠</span>
+            <!-- <span class="category-card__arrow">더 알아보기</span> -->
+          </div>
+        </a>
+      </li>
+      <li class="category-card" name="anchorBoxName_{$product_no}">
+        <a href="/product/detail.html{$param}">
+          <div class="category-card__bg" style="background-image:url({$image_medium});"></div>
+          <div class="category-card__overlay"></div>
+          <div class="category-card__body">
+            <span class="category-card__name">아웃도어<br>캐리어</span>
+            <!-- <span class="category-card__arrow">더 알아보기</span> -->
+          </div>
+        </a>
+      </li>
+      <li class="category-card" name="anchorBoxName_{$product_no}">
+        <a href="/product/detail.html{$param}">
+          <div class="category-card__bg" style="background-image:url({$image_medium});"></div>
+          <div class="category-card__overlay"></div>
+          <div class="category-card__body">
+            <span class="category-card__name">카시트</span>
+            <!-- <span class="category-card__arrow">더 알아보기</span> -->
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section> 
+
+
+<!-- ======================================================
   메인 포브 철학
 ====================================================== -->
 <section class="ap-philosophy" data-ez="module-12diyid-1" data-ez-module="user-defined/1" data-ez-name="USER DEFINED" data-ez-type="plain">
@@ -164,8 +220,8 @@
     <div class="ap-products-row__img">
       <span class="ap-products-row__placeholder">
         이미지 — 아기띠
-        <!-- <img src="/web/img/img-main-prd-1.png" alt loading="lazy" ez-prevent="img"> -->
       </span>
+      <!-- <img src="/web/img/img-main-prd-1.png" alt loading="lazy" ez-prevent="img"> -->
     </div>
     <div class="ap-products-row__body" data-aos="fade-left" data-aos-duration="1000">
       <span class="ap-products-row__tag">Baby Carrier</span>
@@ -181,8 +237,8 @@
     <div class="ap-products-row__img">
       <span class="ap-products-row__placeholder">
         이미지 — 카시트
-        <!-- <img src="/web/img/img-main-prd-2.png" alt loading="lazy" ez-prevent="img"> -->
       </span>
+      <!-- <img src="/web/img/img-main-prd-2.png" alt loading="lazy" ez-prevent="img"> -->
     </div>
     <div class="ap-products-row__body" data-aos="fade-right" data-aos-duration="1050">
       <span class="ap-products-row__tag">Car Seat</span>
@@ -198,8 +254,8 @@
     <div class="ap-products-row__img">
       <span class="ap-products-row__placeholder">
         이미지 — 기저귀가방
-        <!-- <img src="/web/img/img-main-prd-3.png" alt loading="lazy" ez-prevent="img"> -->
       </span>
+      <!-- <img src="/web/img/img-main-prd-3.png" alt loading="lazy" ez-prevent="img"> -->
     </div>
     <div class="ap-products-row__body" data-aos="fade-left" data-aos-duration="1100">
       <span class="ap-products-row__tag">Outdoor carrier</span>

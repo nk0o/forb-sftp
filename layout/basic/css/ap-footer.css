@@ -3,13 +3,13 @@
 /* ══ UPPER ══ */
 #footer.ap-ft{ background: #2C2420;}
 .ap-ft-upper { padding: 64px 0 52px; }
-.ap-ft-upper__grid { display: grid; grid-template-columns: 220px 1fr; gap: 72px; align-items: start; }
+.ap-ft-upper__grid { display: grid; grid-template-columns: 220px minmax(auto, 860px); gap: 72px; align-items: start; justify-content: space-between; }
 .ap-ft-brand__name { font-family: var(--ap-font-serif); font-size: 24px; font-weight: 400; letter-spacing: 0.28em; color: var(--ap-color-cream); display: block; margin-bottom: 14px; height: 30px;}
 .ap-ft-brand__name img{display: inline-block;width: auto; height: 100%;}
 .ap-ft-brand__rule { display: block; width: 20px; height: 1px; background: var(--ap-color-beige-deep); margin-bottom: 14px; }
 .ap-ft-brand__desc { font-size: var(--ap-text-base); color: var(--ap-color-beige-deep); line-height: 1.5; font-weight: 300; word-break: keep-all; }
 .ap-ft-brand .ap-ft-sns{display: flex; gap: 12px; margin-top: 24px;}
-.ap-ft-nav { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
+.ap-ft-nav { display: grid; grid-template-columns: repeat(4, 1fr); gap: 36px; }
 .ap-ft-nav__title {  font-size: var(--ap-text-xs) font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ap-color-gold); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--ap-color-text-secondary); }
 .ap-ft-nav__col { list-style: none; }
 .ap-ft-nav__col li a { display: block; font-size: var(--ap-text-sm); color: var(--ap-color-beige-mid); font-weight: 300; text-decoration: none; line-height: 2.15; transition: color 0.2s; }
@@ -20,7 +20,6 @@
 .ap-ft-sns { list-style: none; }
 .ap-ft-sns li a { display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--ap-color-text-muted); font-weight: 300; text-decoration: none; line-height: 2.15; transition: color 0.2s; }
 .ap-ft-sns li img{display: inline-block; height: 20px; width: auto;}
-
 
 
 /* ══ LEGAL INFO BAND ══ */
@@ -60,9 +59,9 @@
 
 @media (max-width: 1024px) { 
   .ap-ft#footer{padding-bottom: 0;}
-  .ap-ft-upper__grid {gap: 40px; }
+  .ap-ft-upper__grid {gap: 24px; }
   .ap-ft-legal__row{justify-content: center;}
-  .ap-ft-nav { gap: 32px 40px; }
+  .ap-ft-nav { gap: 32px 24px; }
   .ap-ft-legal__grid { grid-template-columns: 1fr; gap: 20px; justify-items: center;}
   .ap-ft-escrow { justify-content: flex-start; }
 }
@@ -78,13 +77,16 @@
   .ap-ft-nav { grid-template-columns: 1fr; gap: 0; margin-top: 8px; }
   .ap-ft-nav__col { border-top: 1px solid var(--ap-color-text-secondary); }
   .mob-toggle { display: flex; align-items: center; justify-content: space-between; width: 100%; background: none; border: none; padding: 15px 0; cursor: pointer; font-size: var(--ap-text-sm); font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ap-color-beige-deep); font-family: var(--ap-font-sans); }
-  .mob-toggle .icoArrowBottom { border-color: var(--ap-color-beige-deep); }
-  .mob-toggle[aria-expanded="true"] .icoArrowBottom { transform: rotate(-225deg); }
+  .mob-toggle svg { transform: rotate(0deg); transition: transform var(--ap-transition-normal);}
+  .mob-toggle[aria-expanded="true"] svg { transform: rotate(-180deg); }
   .ap-ft-nav__title { display: none; }
   .ap-ft-nav__body { overflow: hidden; max-height: 0; transition: max-height 0.3s ease; }
   .ap-ft-nav__body.open { max-height: 360px; }
   .ap-ft-nav__inner { padding-bottom: 16px; }
-  .ap-ft-cs{order:-1;}
+  .ap-ft-cs {order:-1;border: none;}
+  .ap-ft-cs .mob-toggle{justify-content: center;}
+  .ap-ft-cs .ap-ft-nav__body{text-align: center;}
+  .ap-ft-cs .ap-ft-nav__inner{padding-bottom: 52px;}
   /* Legal band */
   .ap-ft-legal { padding: 24px 0; }
   .ap-ft-legal__item { font-size: 12px; margin-bottom: 4px;}
@@ -94,6 +96,7 @@
   .ap-ft-escrow{max-width: 100%;}
   .ap-ft-escrow__icon{width: 24px;}
   /* Bottom */
-  .ap-ft-bottom-inner { flex-direction: column; align-items: flex-start; gap: 12px; padding: 18px 0 24px; }
+  .ap-ft-bottom__inner {justify-content: center; gap: 12px; padding: 18px 0 24px; }
   .ap-ft-bottom__copyright { text-align: left; }
+  .ap-ft-bottom__policy{ gap: 8px 0; justify-content: center;flex-wrap: wrap;}
 }

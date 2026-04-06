@@ -24,28 +24,15 @@ PAGE-SPECIFIC — 메인페이지 전용 컴포넌트
 .ap-hero__pagination.swiper-pagination{position: absolute; bottom: var(--ap-space-2xl); left: 8%; z-index: 10; display: flex; align-items: center;gap: var(--ap-space-xs);}
 .ap-hero__pagination .swiper-pagination-bullet { width: 28px; height: 2px; background: rgba(255, 255, 255, 0.3); border: none; cursor: pointer; transition: all var(--ap-transition-normal); border-radius: 2px; padding: 0; opacity: 1;}
 .ap-hero__pagination .swiper-pagination-bullet-active { background: var(--ap-color-gold-light); width: 48px; }
-@media all and (max-width:768px) {
-  .ap-hero__pagination.swiper-pagination{position: absolute; bottom: var(--ap-space-md); left: auto; right: var(--ap-gutter);gap: var(--ap-space-sm);}
-  .ap-hero__pagination .swiper-pagination-bullet { width: 5px; height: 5px;border-radius: 100%;}
-  .ap-hero__pagination .swiper-pagination-bullet-active { width: 8px; height: 8px;}
-  
-}
+
 /* 슬라이드 이동 버튼 */
 .ap-hero__swiper-buttons {opacity: 0; z-index: 1; position: absolute; top: 50%; transform: translateY(-50%); display: flex;width: 100%; gap: 2px; transition: opacity var(--ap-transition-normal);} 
 .ap-hero__swiper-buttons .swiper-button-next, .ap-hero__swiper-buttons .swiper-button-prev{position:absolute; width: 38px; height: 38px; background: rgba(255, 253, 249, 0.7); border: 1px solid var(--ap-color-border); color: var(--ap-color-text-primary); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 16px; transition: opacity background var(--ap-transition-fast); backdrop-filter: blur(4px); border-radius: 100%;background-image: url('https://forbmaster.cafe24.com/web/icon/ico-chevron-down.svg');background-repeat: no-repeat; background-position: center;} 
 .ap-hero__swiper-buttons .swiper-button-prev{left: var(--ap-gutter);transform: rotate(90deg);}
 .ap-hero__swiper-buttons .swiper-button-next{right: var(--ap-gutter);transform: rotate(-90deg);}
 .ap-hero:hover .ap-hero__swiper-buttons {opacity: 0.7;}
-.ap-hero__content {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.ap-hero__content.is-animated {
-  opacity: 1;
-  transform: translateY(0);
-}
+.ap-hero__content { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.ap-hero__content.is-animated { opacity: 1; transform: translateY(0); }
 /******** 브랜드 철학 ********/
 .ap-philosophy {overflow: hidden; background: var(--ap-color-ivory); }
 .ap-philosophy__inner { padding: 120px var(--ap-gutter) 90px; text-align: center; }
@@ -57,7 +44,7 @@ PAGE-SPECIFIC — 메인페이지 전용 컴포넌트
 /******** 브랜드 소개 ********/
 .ap-brand{background: var(--ap-color-ivory);padding: 0 64px 72px;}
 .ap-brand__row { display: grid; grid-template-columns: 1fr 1fr; max-width: var(--ap-max-width);gap: 1px; margin:0 auto; border-top: 1px solid var(--ap-color-border-light); border-bottom: 1px solid var(--ap-color-border-light); } 
-.ap-brand__card { position: relative; overflow: hidden; aspect-ratio: 1.5;} 
+.ap-brand__card { position: relative; overflow: hidden;padding-top: 66.6666%; height: 0;} 
 /* 플레이스홀더 (이미지 없을 때 배경) */
 .ap-brand__card-bg { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--ap-font-sans); font-size: var(--ap-text-xs); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ap-color-text-muted); transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); } 
 .ap-brand__card:hover .ap-brand__card-bg { transform: scale(1.04); } 
@@ -114,8 +101,9 @@ PAGE-SPECIFIC — 메인페이지 전용 컴포넌트
 .ap-service-item { padding: 56px 40px; border-right: 1px solid var(--ap-color-border-light); display: flex; flex-direction: column; align-items: flex-start; gap: 16px; background: var(--ap-color-cream); transition: background var(--ap-transition-normal); }
 .ap-service-item:last-child { border-right: none; }
 .ap-service-item:hover { background: var(--ap-color-ivory); }
-.ap-service-item__img { width: 100%; aspect-ratio: 4/3; background: var(--ap-color-beige); display: flex; align-items: center; justify-content: center; margin-bottom: 8px; }
-.ap-service-item__img-placeholder { font-family: var(--ap-font-sans); font-size: var(--ap-text-xs); letter-spacing: 0.1em; text-transform: uppercase; color: var(--ap-color-text-muted); }
+.ap-service-item__img { position: relative; width: 100%; background: var(--ap-color-beige); display: flex; align-items: center; justify-content: center; margin-bottom: 8px; padding-top: 75%; height: 0;}
+.ap-service-item__img img{position: absolute; top: 0; left: 0;width: 100%; height: 100%; object-fit: cover;}
+.ap-service-item__img-placeholder {position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--ap-font-sans); font-size: var(--ap-text-xs); letter-spacing: 0.1em; text-transform: uppercase; color: var(--ap-color-text-muted); }
 .ap-service-item__icon { width: 36px; height: 1px; background: var(--ap-color-gold); }
 .ap-service-item__title { font-family: var(--ap-font-sans); font-size: var(--ap-text-lg); font-weight: 300; color: var(--ap-color-text-primary); }
 .ap-service-item__desc { font-family: var(--ap-font-sans); font-size: var(--ap-text-sm); font-weight: 300; color: var(--ap-color-text-muted); line-height: 1.7; flex: 1; }
@@ -137,25 +125,28 @@ PAGE-SPECIFIC — 메인페이지 전용 컴포넌트
   .product-row__body { padding: 48px 40px; }
   .ap-brand{padding-inline: var(--ap-gutter);}
 }
-
-
 /* ── 모바일 (≤768px) ── */
 @media (max-width: 768px) {
   /* 히어로 */
   .ap-hero { height: 68dvh;}
+  .ap-hero__bg::after { background: linear-gradient(to top, rgba(255, 253, 249, 0.55) 0%, transparent 60%);} 
+  .ap-hero__content { align-items: center; justify-content: end; padding-bottom: 56px; transform: translateY(0); }
   /* .ap-hero__content { bottom: 52px; left: 20px; right: 20px; max-width: none; } */
   .ap-hero__title { font-size: clamp(24px, 6.5vw, 34px); margin-bottom: 16px; }
   .ap-hero__eyebrow { margin-bottom: 10px; }
   .ap-hero__actions { flex-direction: column; gap: 10px; align-items: flex-start; }
   .ap-hero__actions .ap-btn { padding: 14px 28px; }
   .ap-hero__swiper-buttons { display: none; }
+  .ap-hero__pagination.swiper-pagination{position: absolute; bottom: var(--ap-space-md); left: auto; right: var(--ap-gutter);gap: var(--ap-space-sm);}
+  .ap-hero__pagination .swiper-pagination-bullet { width: 5px; height: 5px;border-radius: 100%;}
+  .ap-hero__pagination .swiper-pagination-bullet-active { width: 8px; height: 8px;}
 
   /* 철학 */
   .philosophy-strip { padding: 52px 20px; }
 
   /* 브랜드 카드 */
   .ap-brand__row { grid-template-columns: 1fr;gap: var(--ap-gutter);}
-  .ap-brand__card { aspect-ratio: 4/3; }
+  .ap-brand__card {padding-top: 75%;}
   .ap-brand__card:first-child { border-right: none; border-bottom: 1px solid var(--ap-color-border-light); }
   .ap-brand__card-body { padding: 24px 24px 32px; }
   .ap-brand__card-title { font-size: clamp(20px, 5vw, 26px); }
@@ -163,7 +154,9 @@ PAGE-SPECIFIC — 메인페이지 전용 컴포넌트
 
   /* 제품 교차행 */
   .ap-products-row { grid-template-columns: 1fr; min-height: auto; }
-  .ap-products-row__img { min-height: 260px; aspect-ratio: 1.4; order: 0 !important; }
+  .ap-products-row__img {position: relative; min-height: 260px; padding-top:71.428% ; order: 0 !important; }
+  .ap-products-row__img img {position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;}
+  .ap-products-row__placeholder {position: absolute; inset:0;display: flex; justify-content: center; align-items: center;}
   .ap-products-row__body { order: 1 !important; padding: 32px 20px; }
   .ap-products-row__name { font-size: clamp(22px, 6vw, 30px); }
   .ap-products-row__desc { font-size: 12px; max-width: none; }
@@ -176,13 +169,42 @@ PAGE-SPECIFIC — 메인페이지 전용 컴포넌트
   .ap-service-3col { grid-template-columns: 1fr; }
   .ap-service-item { border-right: none !important; border-bottom: 1px solid var(--ap-color-border-light); padding: 40px var(--ap-gutter); }
   .ap-service-item:last-child { border-bottom: none; }
-  .ap-service-item__img { aspect-ratio: 16/9; }
+  .ap-service-item__img { padding-top: 56.25%; }
 
   /* CTA */
   .ap-cta { padding: 64px 20px; }
   .ap-cta__actions { flex-direction: column; gap: 12px; }
   .ap-cta__actions .ap-btn { width: 100%; justify-content: center; }
-}
+}/* 768 */
 
-@media (max-width: 480px) {
+
+
+ 
+/* ── 카테고리 섹션 ── */
+.ap-category { background: var(--ap-color-cream); padding: 48px var(--ap-gutter); border-bottom: 1px solid var(--ap-color-border-light); }
+.ap-category__grid { max-width: 1440px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.category-card { position: relative; overflow: hidden; padding-top: 120%; height: 0; display: block; text-decoration: none; background: var(--ap-color-beige); cursor: pointer; }
+.category-card__bg { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.6s cubic-bezier(0.4,0,0.2,1); }
+.category-card:hover .category-card__bg { transform: scale(1.05); }
+.category-card__overlay { position: absolute; inset: 0; background: linear-gradient( to bottom, transparent 40%, rgba(26,20,16,0.25) 70%, rgba(26,20,16,0.72) 100% ); }
+.category-card__body { position: absolute; bottom: 0; left: 0; right: 0; padding: 18px 16px 20px; }
+.category-card__name { font-family: var(--ap-font-sans); font-size: 15px; font-weight: 300; color: #fff; line-height: 1.2; letter-spacing: -0.01em; display: block; margin-bottom: 8px; }
+.category-card__arrow { display: inline-flex; align-items: center; gap: 5px; font-family: var(--ap-font-sans); font-size: 9px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7); border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; }
+.category-card:hover .category-card__arrow { color: var(--ap-color-gold-light); border-color: var(--ap-color-gold-light); }
+ 
+/* 카테고리 모바일 */
+@media (max-width: 1024px) {
+  .ap-category { padding: 36px var(--ap-gutter); }
 }
+@media (max-width: 768px) {
+  .ap-category { padding: 28px 20px; }
+  .ap-category__grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .category-card__name { font-size: 13px; }
+  .category-card__body { padding: 12px 10px 14px; }
+}
+@media (max-width: 480px) {
+  .ap-category { padding: 20px 12px; }
+  .category-card__name { font-size: 12px; }
+  .category-card__arrow { display: none; }
+}
+ 
