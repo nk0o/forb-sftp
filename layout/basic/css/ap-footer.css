@@ -4,7 +4,7 @@
 #footer.ap-ft{ background: #2C2420;}
 .ap-ft-upper { padding: 64px 0 52px; }
 .ap-ft-upper__grid { display: grid; grid-template-columns: 220px minmax(auto, 860px); gap: 72px; align-items: start; justify-content: space-between; }
-.ap-ft-brand__name { font-family: var(--ap-font-serif); font-size: 24px; font-weight: 400; letter-spacing: 0.28em; color: var(--ap-color-cream); display: block; margin-bottom: 14px; height: 30px;}
+.ap-ft-brand__name { font-family: var(--ap-font-serif); font-size: 24px; font-weight: 400; letter-spacing: 0.28em; color: var(--ap-color-cream); display: block; margin-bottom: 14px; height: 20px;}
 .ap-ft-brand__name img{display: inline-block;width: auto; height: 100%;}
 .ap-ft-brand__rule { display: block; width: 20px; height: 1px; background: var(--ap-color-beige-deep); margin-bottom: 14px; }
 .ap-ft-brand__desc { font-size: var(--ap-text-base); color: var(--ap-color-beige-deep); line-height: 1.5; font-weight: 300; word-break: keep-all; }

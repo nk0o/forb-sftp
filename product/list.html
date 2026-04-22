@@ -1,26 +1,44 @@
 <!--@layout(/layout/basic/layout.html)-->
 <!--@js(/js/module/product/menucategory.js)-->
 <!--@css(/css/module/product/menupackage.css)-->
-<div class="path section" module="product_headcategory"
-  data-ez-module="product-head-breadcrumb/1" data-ez="contents-0i627kb-1">
-  <span>현재 위치</span>
-  <ol>
-    <li><a href="/">홈</a></li>
-    <li class="{$disp_cate_1|display}"><a href="{$link_product_list_1}">{$name_1}</a></li>
-    <li class="{$disp_cate_2|display}"><a href="{$link_product_list_2}">{$name_2}</a></li>
-    <li class="{$disp_cate_3|display}"><a href="{$link_product_list_3}">{$name_3}</a></li>
-    <li class="{$disp_cate_4|display}"><strong><a
-          href="{$link_product_list_4}">{$name_4}</a></strong></li>
-  </ol>
-</div>
-<div class="section titleArea" module="product_headcategory"
-  data-ez-module="product-list-head-title/1" data-ez="contents-0mpbd2y-1">
-  <h2>{$title_text_or_image}</h2>
-  <span class="likeButton {$disp_likecate_class}"><button
-      type="button">{$disp_likecate_icon}<strong>{$disp_likecate_count}</strong></button></span>
-</div>
-<!-- 상품 분류 이동 탭 -->
-<!-- <div class="section ec-base-tab typeMenu" data-ez-module="product-list-subcategory/1"
+<div class="ap-titleArea">
+  <div class="ap-container">
+    <!-- 브래드크럼 -->
+    <div class="ap-list-path path section" module="product_headcategory" data-ez-module="product-head-breadcrumb/1" data-ez="contents-0i627kb-1">
+      <span>현재 위치</span>
+      <ol>
+        <li><a href="/">홈</a></li>
+        <li class="{$disp_cate_1|display}"><a href="{$link_product_list_1}">{$name_1}</a></li>
+        <li class="{$disp_cate_2|display}"><strong><a href="{$link_product_list_2}">{$name_2}</a></strong></li>
+        <li class="{$disp_cate_3|display}"><a href="{$link_product_list_3}">{$name_3}</a></li>
+        <li class="{$disp_cate_4|display}"><strong><a href="{$link_product_list_4}">{$name_4}</a></strong></li>
+      </ol>
+    </div><!-- //ap-path -->
+    <!-- 제품목록 타이틀 -->
+    <div class="ap-titleArea__tit section titleArea" module="product_headcategory" data-ez-module="product-list-head-title/1" data-ez="contents-0mpbd2y-1">
+      <h2>{$title_text_or_image}</h2>
+      <span class="likeButton {$disp_likecate_class}"><button type="button">{$disp_likecate_icon}<strong>{$disp_likecate_count}</strong></button></span>
+    </div>
+    <div module="product_normalmenu">
+      <!--
+        $compare_page = /product/compare.html
+      -->
+      <div class="function" id="{$listmenu_position}">
+        <p class="prdCount">TOTAL<strong class="txtEm">{$total_count}</strong></p>
+        <div class="sort">
+          <select id="selArray" name="selArray" module="product_Orderby">
+            <option value>- 정렬방식 -</option>
+            <option value="{$param}">{$sort_name}</option>
+            <option value="{$param}">{$sort_name}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div><!-- //ap-container -->
+</div><!-- //ap-list-title -->
+
+<!-- 상품 분류 이동 탭 --> <!-- 소분류로 나눠서 하면 좋을듯 -->
+<div class="section ec-base-tab typeMenu" data-ez-module="product-list-subcategory/1"
   data-ez="contents-0p3uk7o-1">
   <div class="display_tablet_only">
     <ul class="menuCategory menu">
@@ -108,7 +126,7 @@
       </li>
     </ul>
   </div>
-</div> -->
+</div><!-- //typeMenu -->
 
 <div module="product_headcategory" data-ez-module="product-list-categoryimage/1"
   class="section product_top_image" data-ez="contents-1svxo5n-1">
@@ -210,3 +228,17 @@
   </div><!-- //product_normalpackage -->
 </div>
 <!--#ez="1/1"-->
+<script>
+const observer = new MutationObserver(() => {
+  document.querySelectorAll('.ap-card').forEach(function(el) {
+    if (el.querySelector('.icon_img[alt="품절"]')) {
+      el.classList.add('soldoutItem');
+    }
+  });
+});
+
+observer.observe(document.body, {
+  childList: true,
+  subtree: true
+});
+</script>

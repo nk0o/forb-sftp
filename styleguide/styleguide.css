@@ -23,7 +23,8 @@ a { text-decoration: none; color: inherit; }
 .sg-toc__inner { max-width: var(--ap-max-width); margin: 0 auto; padding: 0 var(--ap-gutter); display: flex; gap: 4px; flex-wrap: wrap; }
 .sg-toc__link { font-family: var(--ap-font-sans); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ap-color-text-muted); padding: 5px 10px; border-radius: var(--ap-radius-pill); transition: background 0.15s, color 0.15s; }
 .sg-toc__link:hover { background: var(--ap-color-beige); color: var(--ap-color-text-primary); }
-
+.fix-toc{position: fixed; bottom: 30px; right: 30px; width: 150px; height: 300px;overflow: auto;background: var(--ap-color-ivory);}
+.fix-toc .sg-toc__inner{padding: 0;}
 /* 섹션 공통 */
 .sg-section { padding: 72px 0; border-bottom: 1px solid var(--ap-color-border-light); }
 .sg-section:last-child { border-bottom: none; }

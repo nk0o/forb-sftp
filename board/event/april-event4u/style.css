@@ -1,0 +1,144 @@
+/* =============================================
+ event-april (BEM) Block: event-april 
+============================================= */ 
+/* Block */ 
+.event-april { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #f0f0f0; font-family: 'Noto Sans KR', sans-serif; }
+/* __card */ 
+.event-april__card { background: #fff; border-radius: 16px; width: 360px; overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12); }
+/* __header */ 
+.event-april__header { padding: 22px 24px 16px; text-align: center; }
+/* __title */ 
+.event-april__title { font-size: 26px; font-weight: 900; color: #1a1a1a; letter-spacing: -0.5px; margin-bottom: 12px; }
+/* __meta */ 
+.event-april__meta { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; font-size: 13px; color: #444; }
+/* __meta-item */ 
+.event-april__meta-item { display: flex; align-items: center; gap: 6px; }
+/* __meta-label */ 
+.event-april__meta-label { border: 1px solid #ccc; border-radius: 4px; padding: 2px 7px; font-size: 12px; color: #555; }
+/* __meta-text */ 
+.event-april__meta-text { font-size: 13px; color: #444; }
+/* __banner */ 
+.event-april__banner { background: linear-gradient(135deg, #f5c842 0%, #f0a800 100%); height: 120px; position: relative; overflow: hidden; display: flex; align-items: flex-end; justify-content: center; }
+/* __banner-characters */ 
+.event-april__banner-characters { display: flex; align-items: flex-end; justify-content: center; height: 100%; }
+/* __char */ 
+.event-april__char { font-size: 56px; line-height: 1; animation: forb-float 3s ease-in-out infinite; }
+.event-april__char:nth-child(1) { animation-delay: 0s; }
+.event-april__char:nth-child(2) { animation-delay: 0.4s; font-size: 62px; }
+.event-april__char:nth-child(3) { animation-delay: 0.8s; font-size: 58px; }
+.event-april__char:nth-child(4) { animation-delay: 1.2s; }
+@keyframes forb-float { 0%, 100% { transform: translateY(0); }
+50%       { transform: translateY(-8px); }
+}
+/* __quiz */ 
+.event-april__quiz { margin: 16px; background: #fff; border: 1.5px solid #e8e8e8; border-radius: 14px; padding: 18px 16px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); }
+/* __question */ 
+.event-april__question { font-size: 14px; color: #222; margin-bottom: 14px; line-height: 1.5; }
+/* __q-label */ 
+.event-april__q-label { font-size: 16px; font-weight: 900; color: #f0a800; margin-right: 6px; }
+/* __letters */ 
+.event-april__letters { display: flex; gap: 8px; justify-content: center; margin-bottom: 14px; }
+/* __letter-btn */ 
+.event-april__letter-btn { width: 60px; height: 48px; border: 1.5px solid #ddd; border-radius: 10px; background: #fafafa; font-size: 18px; font-weight: 700; color: #333; cursor: pointer; transition: all 0.15s; font-family: 'Noto Sans KR', sans-serif; }
+.event-april__letter-btn:hover { border-color: #f0a800; background: #fff8e6; color: #d48b00; transform: translateY(-2px); box-shadow: 0 3px 8px rgba(240, 168, 0, 0.2); }
+/* __letter-btn--selected (Modifier) */ 
+.event-april__letter-btn--selected { border-color: #f0a800; background: #f0a800; color: #fff; transform: translateY(-2px); box-shadow: 0 3px 8px rgba(240, 168, 0, 0.3); }
+/* __input */ 
+.event-april__input { width: 100%; border: 1.5px solid #e0e0e0; border-radius: 10px; padding: 10px 14px; font-size: 15px; font-family: 'Noto Sans KR', sans-serif; color: #222; outline: none; margin-bottom: 12px; transition: border-color 0.2s; text-align: center; letter-spacing: 2px; }
+.event-april__input:focus { border-color: #f0a800; box-shadow: 0 0 0 3px rgba(240, 168, 0, 0.1); }
+/* __actions */ 
+.event-april__actions { display: flex; gap: 8px; }
+/* __btn-confirm */ 
+.event-april__btn-confirm { flex: 1; padding: 12px; border: none; border-radius: 10px; background: #1a1a1a; font-size: 14px; font-weight: 700; color: #fff; cursor: pointer; transition: all 0.15s; font-family: 'Noto Sans KR', sans-serif; }
+.event-april__btn-confirm:hover { background: #333; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); }
+/* __feedback */ 
+.event-april__feedback { margin-top: 10px; font-size: 13px; text-align: center; color: #e53935; font-weight: 500; min-height: 18px; transition: opacity 0.2s; }
+/* __feedback--hidden (Modifier) */ 
+.event-april__feedback--hidden { opacity: 0; }
+/* __hint-btn */ 
+.event-april__hint-btn { display: block; width: calc(100% - 32px); margin: 0 16px 16px; padding: 16px; border: 1.5px solid #e8e8e8; border-radius: 12px; background: #fff; font-size: 16px; font-weight: 700; color: #1a1a1a; cursor: pointer; text-align: center; transition: all 0.15s; font-family: 'Noto Sans KR', sans-serif; text-decoration: none; }
+.event-april__hint-btn:hover { background: #fafafa; border-color: #ccc; transform: translateY(-1px); box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08); }
+/* __modal-overlay */ 
+.event-april__modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.5); z-index: 100; align-items: center; justify-content: center; animation: forb-fadeIn 0.2s; }
+/* __modal-overlay--show (Modifier) */ 
+.event-april__modal-overlay.event4u-show { display: flex; }
+@keyframes forb-fadeIn { from { opacity: 0; }
+to   { opacity: 1; }
+}
+/* __modal */ 
+.event-april__modal { background: #fff; border-radius: 20px; padding: 32px 28px; width: 300px; text-align: center; animation: forb-popIn 0.25s cubic-bezier(0.34, 1.56, 0.64, 1); }
+@keyframes forb-popIn { from { opacity: 0; transform: scale(0.8); }
+to   { opacity: 1; transform: scale(1); }
+}
+/* __modal-icon */ 
+.event-april__modal-icon { font-size: 48px; margin-bottom: 12px; }
+/* __modal-title */ 
+.event-april__modal-title { font-size: 20px; font-weight: 900; color: #1a1a1a; margin-bottom: 8px; }
+/* __modal-desc */ 
+.event-april__modal-desc { font-size: 13px; color: #666; line-height: 1.6; margin-bottom: 20px; }
+/* __modal-btn */ 
+.event-april__modal-btn { display: block; width: 100%; padding: 14px; border: none; border-radius: 12px; background: #f0a800; font-size: 15px; font-weight: 700; color: #fff; cursor: pointer; text-decoration: none; font-family: 'Noto Sans KR', sans-serif; transition: background 0.15s; }
+.event-april__modal-btn:hover { background: #d48b00; }
+/* __modal-close */ 
+.event-april__modal-close { display: block; margin-top: 12px; font-size: 13px; color: #999; cursor: pointer; background: none; border: none; font-family: 'Noto Sans KR', sans-serif; }
+.event-april__modal-close:hover { color: #666; }
+/* 투표 */ 
+.event4u-container { max-width: 600px; margin: 0 auto; background: white; border-radius: 20px; padding: 40px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); }
+.event4u-container h1 { color: #333; text-align: center; margin-bottom: 10px; font-size: 28px; }
+.event4u-subtitle { text-align: center; color: #666; margin-bottom: 40px; font-size: 14px; }
+.event4u-vote-option { cursor: pointer; }
+.event4u-vote-option:hover {  }
+.event4u-vote-option.event4u-selected { }
+.event4u-vote-option.event4u-selected:nth-child(1){background-image: url('/web/event/april-poll-1-active.png');}
+.event4u-vote-option.event4u-selected:nth-child(2){background-image: url('/web/event/april-poll-2-active.png');}
+.event4u-vote-option.event4u-selected:nth-child(3){background-image: url('/web/event/april-poll-3-active.png');}
+.event4u-vote-option input[type="radio"] { position: absolute; opacity: 0; }
+.event4u-vote-option input[type="radio"]:checked { position: absolute; opacity: 0; }
+.event4u-option-content { display: flex; align-items: center; gap: 15px; cursor: pointer; }
+.event4u-radio-custom { width: 24px; height: 24px; border-radius: 50%; position: relative; flex-shrink: 0; transition: all 0.3s ease; }
+.event4u-option-text h3 { color: #333; font-size: 18px; margin-bottom: 5px; }
+.event4u-option-text p { color: #666; font-size: 14px; }
+.event4u-button-group { display: flex; gap: 12px; margin-top: 30px; }
+.event4u-btn { flex: 1; padding: 16px; border: none; border-radius: 10px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
+.event4u-btn-primary { background: #667eea; color: white; }
+.event4u-btn-primary:hover { background: #5568d3; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4); }
+.event4u-btn-primary:disabled { background: #ccc; cursor: not-allowed; transform: none; }
+.event4u-btn-secondary { background: #f5f5f5; color: #333; }
+.event4u-btn-secondary:hover { background: #e0e0e0; }
+/* 모달 스타일 */ 
+.event4u-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1000; align-items: center; justify-content: center; }
+.event4u-modal.event4u-show { display: flex; }
+.event4u-modal-content { background: white; border-radius: 16px; padding: 40px; max-width: 500px; width: 90%; text-align: center; animation: event4uModalSlideIn 0.3s ease; }
+@keyframes event4uModalSlideIn { from { opacity: 0; transform: translateY(-50px); }
+to { opacity: 1; transform: translateY(0); }
+}
+.event4u-modal-icon { font-size: 60px; margin-bottom: 20px; }
+.event4u-modal h2 { color: #333; margin-bottom: 15px; font-size: 24px; }
+.event4u-modal p { color: #666; margin-bottom: 25px; line-height: 1.6; }
+.event4u-result-item { background: #f8f9ff; border-radius: 12px; padding: 20px; margin-bottom: 15px; text-align: left; }
+.event4u-result-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.event4u-result-name { font-weight: 600; color: #333; font-size: 16px; }
+.event4u-result-count { color: #667eea; font-weight: 700; font-size: 18px; }
+.event4u-result-bar { height: 8px; background: #e0e0e0; border-radius: 4px; overflow: hidden; }
+.event4u-result-fill { height: 100%; background: linear-gradient(90deg, #667eea, #764ba2); border-radius: 4px; transition: width 0.6s ease; }
+.event4u-result-percentage { text-align: right; color: #999; font-size: 14px; margin-top: 5px; }
+.event4u-loading { text-align: center; padding: 20px; color: #666; }
+.event4u-error-message { background: #fee; color: #c33; padding: 15px; border-radius: 8px; margin-bottom: 20px; display: none; }
+.event4u-error-message.event4u-show { display: block; }
+.event4u-disabled { opacity: 0.5; pointer-events: none; }
+.btn-poll img:first-child {
+  display: inline; /* 투표하기 이미지 표시 */
+}
+ 
+.btn-poll img:last-child {
+  display: none; /* 투표완료 이미지 숨김 */
+}
+ 
+/* 투표 완료 후 상태 */
+.btn-poll.event4u-disabled img:first-child {
+  display: none; /* 투표하기 이미지 숨김 */
+}
+ 
+.btn-poll.event4u-disabled img:last-child {
+  display: inline; /* 투표완료 이미지 표시 */
+}

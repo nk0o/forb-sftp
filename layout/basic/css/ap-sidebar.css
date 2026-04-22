@@ -23,7 +23,8 @@
 .ap-side#aside .ap-side__menu{height: calc(100dvh - var(--ap-header-height));overflow: auto;display: flex; flex-direction: column; align-items: stretch; justify-content: space-between;}
 .ap-side#aside .btnClose {position: relative; inset:auto;}
 .ap-side#aside .btnClose .icon.icoClose{width: 16px; height: 16px;}
-.ap-side#aside .logo { z-index: 2; font-family: var(--ap-font-sans); font-weight: 300; color: var(--ap-color-text-primary); font-size: var(--ap-text-lg); letter-spacing: 0.2em; text-transform: uppercase; position: absolute; left: 50%; transform: translateX(-50%); text-decoration: none;}
+.ap-side#aside .logo { z-index: 2; height: 14px; font-family: var(--ap-font-sans); font-weight: 300; color: var(--ap-color-text-primary); font-size: var(--ap-text-lg); letter-spacing: 0.2em; text-transform: uppercase; position: absolute; left: 50%; transform: translateX(-50%); text-decoration: none;}
+.ap-side#aside .logo img{display: block; height: 100%; width: auto; }
 .ap-side__actions { display: flex; align-items: center; gap: var(--ap-space-xs); margin-left: var(--ap-space-xs); }
 .ap-side__icon-btn{position: relative; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: none; border: none; color: var(--ap-color-text-secondary); cursor: pointer; border-radius: var(--ap-radius-sm) transition: color var(--ap-transition-fast), background var(--ap-transition-fast);}
 .ap-side__icon-btn svg{ width: 20px; height: 20px;}

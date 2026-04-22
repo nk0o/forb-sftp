@@ -11,7 +11,7 @@
 
   /* === COLOR — Gold (#FDD000 / #F3A700) === */
   --ap-color-gold:               #F3A700;
-  --ap-color-gold-light:         #FDD000;
+  --ap-color-gold-light:         #fdd000;
   --ap-color-gold-pale:          #FEF0A0;
   --ap-color-warm-brown:         #A07848;
   --ap-color-warm-brown-deep:    #7A5A32;
@@ -63,7 +63,7 @@
 
   /* === LAYOUT === */
   --ap-max-width:         1920px;
-  --ap-max-width-narrow:  850px;
+  --ap-max-width-narrow:  1440px;
   --ap-max-width-form:    420px;
   --ap-btm-padding:       100px;
   --ap-gutter:            32px;
@@ -115,7 +115,7 @@ body.forb{font-family: var(--ap-font-sans) !important;}
 
 /* ──ap-container ── */
 .ap-container { max-width: var(--ap-max-width); margin: 0 auto; padding: 0 20px;}
-.ap-container--narrow { max-width: var(--ap-max-width-narrow); }
+.ap-container--narrow { max-width: var(--ap-max-width-narrow);  margin: 0 auto; padding: 0 20px;}
 .ap-form-width{width:100%; max-width: var(--ap-max-width-form);margin: 0 auto;}
 .forb .path{display:none;}
 .forb .xans-product-headcategory.titleArea.section{max-width: var(--ap-max-width) !important;}

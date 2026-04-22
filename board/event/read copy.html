@@ -1,0 +1,948 @@
+<!--@layout(/layout/basic/layout.html)-->
+<div class="section" module="board_ReadPackage_2">
+    <!--@css(/css/module/board/readPackage.css)-->
+    <!--@js(/js/module/board/readPackage.js)-->
+    <div module="board_title_2">
+        <div class="path">
+            <span>현재 위치</span>
+            <ol>
+                <li><a href="/">홈</a></li>
+                <li><a href="#">게시판</a></li>
+                <li title="현재 위치"><strong>{$board_name}</strong></li>
+            </ol>
+        </div>
+
+        <div class="titleArea">
+            <h2>{$board_title} {$board_adult_icon}</h2>
+            <p>{$board_info}</p>
+        </div>
+    </div>
+    <div module="board_read_2" class="{$block_target_class}" {$block_data_attr}>
+        <!--
+            $delete_success_url = /board/gallery/list.html
+            $login_page_url = /member/login.html
+            $deny_access_url = /board/gallery/list.html
+        -->
+        <div class="ec-base-table typeWrite">
+            <div class="head">
+                <h3 class="{$block_content_class}">{$subject}</h3>
+                <div class="description">
+                    <span class="name">{$member_icon} {$writer} <span class="{$config.display_ip|display}">(ip:{$ip})</span> {$admin_mileage}</span>
+                    <ul class="etcArea">
+                        <li class="{$config.use_date|display}">
+                            <span class="txtNum">{$write_date}</span>
+                        </li>
+                        <li class="{$config.is_use_recom|display} displaynone">
+                            <span>추천</span>
+                            <span class="txtNum">{$vote_count} <a href="#none" class="btnNormal sizeS" onclick="{$action_vote}">추천하기</a></span>
+                        </li>
+                        <li class="{$config.use_cnt|display}">
+                            <span>조회</span> <span class="txtNum">{$hit_count}</span>
+                        </li>
+                        <li class="{$config.is_use_point|display}">
+                            <img src="//img.echosting.cafe24.com/skin/skin/board/icon-star-rating{$point_count}.svg" alt="{$point_count}점">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="{$delete_button_auth|display} {$config.use_password|display}">{$form.password}
+                <span class="ec-base-help txtInfo">삭제하려면 비밀번호를 입력하세요.</span>
+            </div>
+            <div class="attach {$config.use_attach|display}">{$attach_file}</div>
+            <div class="event4u-auth-state" style="display:none;">
+              <div module="Layout_stateLogon">
+                <span id="eventLoginState" data-login="true" data-member-id="{$member_id}"></span>
+              </div>
+              <div module="Layout_stateLogoff">
+                <span id="eventLoginState" data-login="false" data-member-id=""></span>
+              </div>
+            </div>
+			<div class="detail {$block_content_class}">
+        {$content_image}{$content}
+        <template id="event-april-template">
+          <div id="event-april">
+            <!--@css(/board/event/april-event4u/style.css)-->
+            <div class="event-april__card">
+              <!-- Header -->
+              <div class="event-april__header">
+                <h1 class="event-april__title">포브 20주년 퀴즈 이벤트</h1>
+                <div class="event-april__meta">
+                  <div class="event-april__meta-item">
+                    <span class="event-april__meta-label">참여기간</span>
+                    <span class="event-april__meta-text">6.1(월) ~ 6.3(수)</span>
+                  </div>
+                  <div class="event-april__meta-item">
+                    <span class="event-april__meta-label">결과발표</span>
+                    <span class="event-april__meta-text">6.8(월)</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Banner -->
+              <div class="event-april__banner">
+                <div class="event-april__banner-characters">
+                  <span class="event-april__char">🕵️</span>
+                  <span class="event-april__char">🐦</span>
+                  <span class="event-april__char">🦢</span>
+                  <span class="event-april__char">👩‍🔬</span>
+                </div>
+              </div>
+              <!-- Quiz Box -->
+              <div class="event-april__quiz">
+                <div class="event-april__question">
+                  <span class="event-april__q-label">Q.</span>
+                  포브의 2006년을 함께한 유모차 겸 카시트는 무엇일까요?
+                </div>
+                <div class="event-april__letters">
+                  <span class="event-april__letter-btn" onclick="pickLetter(this, 'ㅋ')">ㅋ</span>
+                  <span class="event-april__letter-btn" onclick="pickLetter(this, 'ㅂ')">ㅂ</span>
+                  <span class="event-april__letter-btn" onclick="pickLetter(this, 'ㅌ')">ㅌ</span>
+                  <span class="event-april__letter-btn" onclick="pickLetter(this, 'ㅂ')">ㅂ</span>
+                </div>
+                <input type="text" class="event-april__input" id="answerInput" placeholder="정답을 입력하세요"
+                  maxlength="20" />
+                <div class="event-april__actions">
+                  <span class="event-april__btn-confirm" onclick="checkAnswer()">정답 확인</span>
+                </div>
+                <div class="event-april__feedback event-april__feedback--hidden" id="feedback">
+                  아쉽지만, 정답이 아닙니다.
+                </div>
+              </div>
+              <!-- Hint Button -->
+              <a class="event-april__hint-btn" href="https://www.forbshop.com/shopinfo/aboutus.html"
+                target="_blank" onclick="goHint(event)">힌트 보러가기 👁</a>
+            </div><!-- //event-april__card -->
+            <!-- Coupon Modal -->
+            <div class="event-april__modal-overlay" id="modalOverlay">
+              <div class="event-april__modal">
+                <div class="event-april__modal-icon">🎉</div>
+                <h2 class="event-april__modal-title">정답입니다!</h2>
+                <p class="event-april__modal-desc">축하드립니다!<br>포브 20주년 기념 쿠폰을 발급해 드립니다.</p>
+                <a class="event-april__modal-btn" id="couponBtn" href="#" onclick="issueCoupon(event)">쿠폰 받기</a>
+                <span class="event-april__modal-close" onclick="closeModal('modalOverlay')">닫기</span>
+              </div>
+            </div>
+            <!------------------ 투표 ------------------>
+              <div class="event4u-container">
+                <h1>포브 외출용품 BEST3 중 한가지를 골라 투표해주세요!</h1>
+                <p class="event4u-subtitle">가장 인기있는 외출용품을 투표해주신 분들 중 추첨을 통해 해당 상품을 드려요!</p>
+                <div class="event4u-error-message" id="errorMessage"></div>
+                <form id="voteForm">                  
+                    <div class="event4u-vote-option" data-value="bonete">
+                        <input type="radio" name="vote" value="bonete" id="bonete">
+                        <label for="bonete" class="event4u-option-content">
+                            <div class="event4u-radio-custom"></div>
+                            <div class="event4u-option-text">
+                                <h3>보네떼</h3>
+                                <p>차타고 근교 캠핑/여행 갈때 딱 좋아!</p>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="event4u-vote-option" data-value="freeafit">
+                        <input type="radio" name="vote" value="freeafit" id="freeafit">
+                        <label for="freeafit" class="event4u-option-content">
+                            <div class="event4u-radio-custom"></div>
+                            <div class="event4u-option-text">
+                                <h3>프리아핏 에어</h3>
+                                <p>가벼운 짐 챙겨 집 앞 산책로 갈때 딱 좋아!</p>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="event4u-vote-option" data-value="bolle">
+                        <input type="radio" name="vote" value="bolle" id="bolle">
+                        <label for="bolle" class="event4u-option-content">
+                            <div class="event4u-radio-custom"></div>
+                            <div class="event4u-option-text">
+                                <h3>볼레 프로</h3>
+                                <p>볼거리가 많은 테마파크, 공원 갈때 딱 좋아!</p>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="event4u-button-group">
+
+                      <!-- 로그인 상태 -->
+                      <div module="Layout_stateLogon">
+                        <span class="event4u-btn event4u-btn-primary event4u-disabled" id="voteBtn">
+                          투표하기
+                        </span>
+                      </div>
+                    
+                      <!-- 로그아웃 상태 -->
+                      <div module="Layout_stateLogoff">
+                        <a href="/member/login.html" class="event4u-btn event4u-btn-primary">
+                          로그인 후 투표하기
+                        </a>
+                      </div>
+                    
+                      <span class="event4u-btn event4u-btn-secondary" id="resultBtn">
+                        결과 보기
+                      </span>
+                    
+                    </div>
+                </form>
+            </div>
+            <!-- 투표 완료 모달 -->
+            <div class="event4u-modal" id="successModal">
+                <div class="event4u-modal-content">
+                    <div class="event4u-modal-icon">✅</div>
+                    <h2>투표 완료!</h2>
+                    <p>소중한 의견 감사합니다.<br>투표 결과를 확인해보세요!</p>
+                    <span class="event4u-btn event4u-btn-primary" onclick="showResults(this)">결과 보기</span>
+                </div>
+            </div>
+            <!-- 결과 보기 모달 -->
+            <div class="event4u-modal" id="resultModal">
+                <div class="event4u-modal-content">
+                    <h2>📊 투표 결과</h2>
+                    <div id="resultContent" class="event4u-loading">
+                        결과를 불러오는 중...
+                    </div>
+                    <span class="event4u-btn event4u-btn-secondary" onclick="closeModal('resultModal')" style="margin-top: 20px;">닫기</span>
+                </div>
+            </div>
+            <!-- //투표 이벤트 -->
+          </div>
+        </template>   
+      </div>
+			<div class="ec-base-button report-button">
+				<span class="gRight">
+					<a href="#none" class="btnNormalFix sizeS {$is_report_display|display}" onclick="{$board_report_display}">신고</a>
+					<a href="#none" class="btnNormalFix sizeS {$block_request_btn}" onclick="{$block_action}">차단</a>
+					<a href="#none" class="btnNormalFix sizeS {$unblock_request_btn}" onclick="{$unblock_action}">차단해제</a>
+				</span>
+			</div>
+			<!--@import(/board/report_popup.html)-->
+        </div>
+
+        <div class="ec-base-button gBottom gBreak">
+            <span class="gLeft">
+                <span class="{$config.is_admin|display}">
+                    <a href="#none" onclick="{$action_post}" class="btnNormalFix sizeS admin {$config.is_post|display}">{$admin_publish_message}</a>
+                    <a href="#none" onclick="{$action_post}" class="btnNormalFix sizeS admin {$config.not_post|display}">{$not_publish_message}</a>
+                    <a href="#none" onclick="{$action_spam}" class="btnNormalFix sizeS {$is_global_display|display}">스팸신고</a>
+                    <a href="#none" onclick="{$action_spam_cancle}" class="btnNormalFix sizeS {$is_global_display|display}">스팸해제</a>
+                </span>
+                <a href="#none" onclick="{$action_delete}" class="btnNormalFix sizeM {$delete_button_auth|display}">삭제</a>
+                <a href="/board/product/modify.html{$param_modify}" class="btnNormalFix sizeM {$modify_button_auth|display}">수정</a>
+            </span>
+            <span class="gRight gBreak">
+                <a href="{$link_board_list}" class="btnNormalFix sizeM">목록</a>
+                <a href="/board/product/reply.html{$param_reply}" class="btnSubmitFix sizeM {$reply_button_auth|display}">답변쓰기</a>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="section" module="board_CommentPackage_2" id="eventComment">
+    <!--@css(/css/module/board/commentPackage.css)-->
+    <div module="board_commentlist_2">
+        <!--
+            $delete_page_url = /board/gallery/comment_del.html
+            $delete_success_url = /board/gallery/
+        -->
+        <ul class="boardComment">
+            <li class="first {$comment_reply_css}" id="{$comment_reply_id}">
+                <div class="commentTop">
+                    <strong class="name">{$checkbox} {$member_icon} {$comment_name}</strong>
+                    <span class="date">{$comment_write_date}</span>
+                    <span class="grade {$config.is_use_point|display}"><img src="//img.echosting.cafe24.com/skin/skin/board/icon-star-rating{$comment_point_count}.svg" alt="{$comment_point_count}점" /></span>
+                </div>
+                <div class="comment">
+                    <span class="{$is_spam_display|display}"><img src="//img.echosting.cafe24.com/skin/skin/board/ico_spam.gif" alt="스팸글" /></span>
+                    {$comment_icon_lock} {$comment_content}
+                </div>
+                <div class="formGroup">
+                    <button type="button" class="btnNormal sizeS typeReplyList eReply {$comment_reply_list_display|display}" onclick="{$action_comment_view}">댓글<span class="number">{$comment_reply_count}</span><i aria-hidden="true" class="icon icoArrowBottom"></i>
+                    </button>
+                    <span class="button">
+                        <a href="javascript:;" class="btnNormal sizeS {$comment_modify_display|display}" onclick="{$action_comment_update}">수정</a>
+                        <a href="javascript:;" class="btnNormal sizeS {$comment_delete_display|display}" onclick="{$action_comment_delete}">삭제</a>
+                        <a href="javascript:;" onclick="{$action_comment_reply}" class="btnNormal sizeS {$comment_reply_display|display}">쓰기</a>
+                    </span>
+                </div>
+            </li>
+            <li class="{$comment_reply_css}" id="{$comment_reply_id}">
+                <div class="commentTop">
+                    <strong class="name">{$checkbox} {$member_icon} {$comment_name}</strong>
+                    <span class="date">{$comment_write_date}</span>
+                    <span class="grade {$config.is_use_point|display}"><img src="//img.echosting.cafe24.com/skin/skin/board/icon-star-rating{$comment_point_count}.svg" alt="{$comment_point_count}점" /></span>
+                </div>
+                <div class="comment">
+                    <span class="{$is_spam_display|display}"><img src="//img.echosting.cafe24.com/skin/skin/board/ico_spam.gif" alt="스팸글" /></span>
+                    {$comment_icon_lock} {$comment_content}
+                </div>
+                <div class="formGroup">
+                    <button type="button" class="btnNormal sizeS typeReplyList eReply {$comment_reply_list_display|display}" onclick="{$action_comment_view}">댓글<span class="number">{$comment_reply_count}</span><i aria-hidden="true" class="icon icoArrowBottom"></i>
+                    </button>
+                    <span class="button">
+                        <a href="javascript:;" class="btnNormal sizeS {$comment_modify_display|display}" onclick="{$action_comment_update}">수정</a>
+                        <a href="javascript:;" class="btnNormal sizeS {$comment_delete_display|display}" onclick="{$action_comment_delete}">삭제</a>
+                        <a href="javascript:;" onclick="{$action_comment_reply}" class="btnNormal sizeS {$comment_reply_display|display}">쓰기</a>
+                    </span>
+                </div>
+            </li>
+        </ul>
+
+        <div class="ec-base-button spam {$config.is_admin|display}">
+            <span class="gLeft">
+                <a href="#none" onclick="{$action_spam}" class="btnNormalFix sizeS {$is_global_display|display}">스팸신고</a>
+                <a href="#none" onclick="{$action_spam_cancle}" class="btnNormalFix sizeS {$is_global_display|display}">스팸해제</a>
+            </span>
+        </div>
+    </div>
+
+    <div module="board_commentpaging_2" class="ec-base-paginate typeList">
+        <a href="{$param_prev}">이전 페이지</a>
+        <ol>
+            <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+            <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+        </ol>
+        <a href="{$param_next}">다음 페이지</a>
+    </div>
+
+    <div module="board_commentform_2">
+        <fieldset>
+            <legend>댓글 수정</legend>
+            <div class="view">
+                {$form.comment_modify}
+                <div class="input">
+                    <span class="inside">
+                        <span>
+                            <label for="comment_password">비밀번호</label>
+                            {$form.comment_password}
+                        </span>
+                    </span>
+                    <span class="outside">
+                        <span class="secret {$comment_secret_display|display}">
+                            <label>{$form.secure}비밀댓글</label>
+                        </span>
+                        <span class="submit">
+                            <a href="#none" class="btnNormal sizeM" onclick="{$action_comment_cancel}">취소</a>
+                            <a href="#none" class="btnSubmit sizeM" onclick="{$action_comment_update}">수정</a>
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+    <div module="board_commentformsecret_2">
+        <p>{$form.secure_password}
+            <span class="">
+                <a href="#none" class="btnNormal" onclick="{$action_secret_submit}">확인</a>
+                <a href="#none" class="btnNormal" onclick="{$action_secret_cancel}">취소</a>
+            </span>
+        </p>
+    </div>
+
+    <div module="board_commentwrite_2" id="eventCommentWrite" style="scroll-margin-top: 100px;">
+        <!-- 댓글 권한 있음 -->
+        <div class="{$comment_write_display|display}">
+            <fieldset>
+                <legend>댓글 입력</legend>
+                <h4>댓글달기</h4>
+                <div class="comment-box">
+                    {$form.comment}
+                    <div class="input">
+                        <span class="inside {$comment_input_name|display}">
+                            <span>
+                                <label for="comment_name">이름</label>
+                                {$form.comment_name}
+                            </span>
+                            <span>
+                                <label for="comment_password">비밀번호</label>
+                                {$form.comment_password}
+                            </span>
+                        </span>
+                        <span class="outside">
+                            <span class="secret {$comment_secret_display|display}">
+                                <label>{$form.secure}비밀댓글</label>
+                            </span>
+                            <span class="ec-base-help {$password_rule_help_display|display}">영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자</span>
+                            <a href="#none" onclick="{$action_comment_insert}" class="btnSubmit {$comment_button|display}">등록</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="grade-box">
+                    <span class="grade {$config.is_use_point|display}">{$form.comment_point}</span>
+                    <span class="byte {$config.comment_size|display}">{$comment_byte} / {$comment_size} byte</span>
+                </div>
+                <div class="captcha {$config.use_captcha_comment|display}">
+                    {$captcha_image} {$captcha_refresh}
+                    {$form.captcha}
+                    <span class="ec-base-help txtInfo">왼쪽의 문자를 공백없이 입력하세요.(대소문자구분)</span>
+                </div>
+            </fieldset>
+        </div>
+        <!-- 댓글 권한 없음 -->
+        <div class="{$comment_write_display_none|display}">
+            <p>{$comment_auth_name}에게만 댓글 작성 권한이 있습니다.</p>
+        </div>
+    </div>
+
+    <div module="board_commentreply_2">
+        <!-- 댓글 권한 있음 -->
+        <div class="{$comment_write_display|display}">
+            <fieldset>
+                <legend>댓글 입력</legend>
+                <div class="comment-box">
+                    {$form.comment}
+                    <div class="input">
+                        <span class="inside {$comment_input_name|display}">
+                            <span>
+                                <label for="comment_name">이름</label>
+                                {$form.comment_name}
+                            </span>
+                            <span>
+                                <label for="comment_password">비밀번호</label>
+                                {$form.comment_password}
+                            </span>
+                        </span>
+                        <span class="outside">
+                            <span class="secret {$comment_secret_display|display}">
+                                <label>{$form.secure}비밀댓글</label>
+                            </span>
+                            <span class="ec-base-help {$password_rule_help_display|display}">영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자</span>
+                            <a href="#none" onclick="{$action_comment_insert}" class="btnSubmit sizeM {$comment_button|display}">등록</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="grade-box">
+                    <span class="grade {$config.is_use_point|display}">{$form.comment_point}</span>
+                    <span class="byte {$config.comment_size|display}">{$comment_byte} / {$comment_size} byte</span>
+                </div>
+                <div class="captcha {$config.use_captcha_comment|display}">
+                    {$captcha_image} {$captcha_refresh}
+                    {$form.captcha}
+                    <span class="ec-base-help txtInfo">왼쪽의 문자를 공백없이 입력하세요.(대소문자구분)</span>
+                </div>
+            </fieldset>
+        </div>
+        <!-- 댓글 권한 없음 -->
+        <div class="{$comment_write_display_none|display}">
+            <p>{$comment_auth_name}에게만 댓글 작성 권한이 있습니다.</p>
+        </div>
+    </div>
+</div>
+
+<div class="section" module="board_movement_2">
+    <!--@css(/css/module/board/movement.css)-->
+    <ul>
+        <li class="prev {$prev_display|display}"><strong>이전<i aria-hidden="true" class="icon icoArrowTop"></i></strong><a href="{$link_board_detail_prev}">{$prev_subject}</a></li>
+        <li class="next {$next_display|display}"><strong>다음<i aria-hidden="true" class="icon icoArrowBottom"></i></strong><a href="{$link_board_detail_next}">{$next_subject}</a></li>
+    </ul>
+</div>
+
+<!-- Admin only -->
+<div class="section" module="board_function_2">
+    <!--@css(/css/module/board/function.css)-->
+    <!--
+    	$success_return_url = /board/gallery/list.html
+    -->
+    <span class="gColumn">{$board_function_selectbox}</span>
+    <span class="gColumn">
+        <a href="#none" class="btnNormal sizeS" onclick="{$action_article_move}">{$article_move}</a>
+        <a href="#none" class="btnNormal sizeS" onclick="{$action_article_copy}">{$article_copy}</a>
+    </span>
+    <span class="ec-base-help">{$board_function_help|replace:*,}</span>
+</div>
+<!-- // Admin only -->
+<!--@define(cmc_log)-->
+<script type="module">
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
+  import { getFirestore, collection, addDoc, getDocs, query, where, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDWlEt3mljPeoMJzAIxFiC-PC-Ctf7dEmk",
+    authDomain: "forb-event.firebaseapp.com",
+    projectId: "forb-event",
+    storageBucket: "forb-event.firebasestorage.app",
+    messagingSenderId: "511481383945",
+    appId: "1:511481383945:web:b24d8bef02008e1eb5fcd8",
+    measurementId: "G-9YNDD2ECGR"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  const CORRECT_ANSWER = '컨버터블';
+  const _c = atob('Ly9mb3Jic2hvcC5jb20vZXhlYy9mcm9udC9uZXdjb3Vwb24vSXNzdWVEb3dubG9hZD9jb3Vwb25fbm89NjA4NDcwMDA3MzIwMDAwMDY2MQ==');
+
+  const products = {
+    bonete: { name: '보네떼', desc: '차타고 근교 캠핑/여행 갈때 딱 좋아!' },
+    freeafit: { name: '프리아핏 에어', desc: '가벼운 짐 챙겨 집 앞 산책로 갈때 딱 좋아!' },
+    bolle: { name: '볼레 프로', desc: '볼거리가 많은 테마파크, 공원 갈때 딱 좋아!' }
+  };
+
+  let selectedLetters = [];
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const savedReturnUrl = sessionStorage.getItem('eventReturnUrl');
+    if (
+      savedReturnUrl &&
+      document.referrer.includes('/member/login.html') &&
+      window.location.href !== savedReturnUrl
+    ) {
+      sessionStorage.removeItem('eventReturnUrl');
+      window.location.href = savedReturnUrl;
+      return;
+    }
+
+    console.log('event js loaded');
+
+    const href = window.location.href;
+    const url = new URL(href);
+
+    let boardNo = url.searchParams.get('board_no') || url.searchParams.get('bbs_no') || '';
+    let articleNo = url.searchParams.get('no') || url.searchParams.get('article_no') || '';
+
+    if (!boardNo || !articleNo) {
+      const decodedPath = decodeURIComponent(window.location.pathname);
+      const match = decodedPath.match(/\/article\/[^/]+\/(\d+)\/(\d+)(?:\/|$)/);
+
+      if (match) {
+        boardNo = match[1];
+        articleNo = match[2];
+      }
+    }
+
+    if (boardNo !== '2' || articleNo !== '6904') return;
+
+    const target =
+      document.querySelector('.typeWrite .detail') ||
+      document.querySelector('.boardView .detail') ||
+      document.querySelector('.viewArea .detail') ||
+      document.querySelector('.ec-base-table .detail') ||
+      document.querySelector('.boardView') ||
+      document.querySelector('.viewArea');
+
+    const template = document.getElementById('event-april-template');
+
+    if (!target || !template) return;
+
+    const clone = template.content.cloneNode(true);
+    target.prepend(clone);
+
+    // DOM 삽입 후 초기화
+    setTimeout(() => {
+      initQuizSection();
+      initVoteSection();
+    }, 100);
+  });
+
+  function initQuizSection() {
+    const modalOverlay = document.getElementById('modalOverlay');
+
+    if (modalOverlay) {
+      modalOverlay.addEventListener('click', function (e) {
+        if (e.target === this) closeQuizModal();
+      });
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeQuizModal();
+    });
+  }
+
+  function initVoteSection() {
+    console.log('=== initVoteSection 시작 ===');
+
+    const voteForm = document.getElementById('voteForm');
+    const voteBtn = document.getElementById('voteBtn');
+    const resultBtn = document.getElementById('resultBtn');
+    const errorMessage = document.getElementById('errorMessage');
+    const voteOptions = document.querySelectorAll('.event4u-vote-option');
+
+    console.log('voteForm:', voteForm);
+    console.log('voteBtn:', voteBtn);
+    console.log('voteBtn type:', voteBtn ? voteBtn.tagName : 'null');
+    console.log('resultBtn:', resultBtn);
+    console.log('voteOptions length:', voteOptions.length);
+
+    if (!voteForm || !voteBtn || !resultBtn || !errorMessage || !voteOptions.length) {
+      console.log('❌ 투표 DOM 못 찾음');
+      return;
+    }
+
+    // 라디오 버튼 선택 이벤트
+    voteOptions.forEach(option => {
+      option.addEventListener('click', function () {
+        console.log('option clicked:', this.dataset.value);
+
+        // 모든 옵션에서 선택 해제
+        voteOptions.forEach(opt => opt.classList.remove('event4u-selected'));
+        
+        // 현재 옵션 선택
+        this.classList.add('event4u-selected');
+
+        // 라디오 버튼 체크
+        const radio = this.querySelector('input[type="radio"]');
+        console.log('radio:', radio);
+
+        if (radio) {
+          radio.checked = true;
+        }
+
+        // 투표 버튼 활성화
+        voteBtn.classList.remove('event4u-disabled');
+        console.log('voteBtn 활성화');
+      });
+    });
+
+    // ⭐ 중요: 클릭 이벤트 직접 등록
+    console.log('=== 투표 버튼에 이벤트 리스너 등록 ===');
+    
+    voteBtn.addEventListener('click', function(e) {
+      console.log('🔥 투표 버튼 클릭됨!');
+      handleVoteSubmit(e);
+    });
+
+    // 등록 확인
+    console.log('✅ 이벤트 리스너 등록 완료');
+
+    // 결과 보기 버튼 클릭 이벤트
+    resultBtn.addEventListener('click', showResults);
+
+    // 모달 외부 클릭 시 닫기
+    document.querySelectorAll('.event4u-modal').forEach(modal => {
+      modal.addEventListener('click', function (e) {
+        if (e.target === this) {
+          this.classList.remove('event4u-show');
+        }
+      });
+    });
+
+    console.log('=== initVoteSection 완료 ===');
+  }
+
+  async function handleVoteSubmit(e) {
+    console.log('🎯 handleVoteSubmit 호출됨');
+    
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+
+    const voteBtn = document.getElementById('voteBtn');
+    const errorMessage = document.getElementById('errorMessage');
+
+    console.log('voteBtn in handleVoteSubmit:', voteBtn);
+    console.log('disabled 상태:', voteBtn.classList.contains('event4u-disabled'));
+
+    // 비활성화 상태 확인
+    if (voteBtn.classList.contains('event4u-disabled')) {
+      console.log('⚠️ 버튼 비활성 상태 - 종료');
+      return;
+    }
+
+    // 선택된 옵션 확인
+    const selectedOption = document.querySelector('input[name="vote"]:checked');
+    console.log('selectedOption:', selectedOption);
+    console.log('selectedOption value:', selectedOption ? selectedOption.value : 'null');
+
+    if (!selectedOption) {
+      console.log('❌ 선택된 옵션 없음');
+      showError('투표할 상품을 선택해주세요.', errorMessage);
+      return;
+    }
+
+    // 버튼 비활성화
+    voteBtn.classList.add('event4u-disabled');
+    const originalText = voteBtn.textContent;
+    voteBtn.textContent = '처리 중...';
+
+    console.log('🔄 투표 처리 시작...');
+
+
+    function getMemberId(callback) {
+      if (window.CAFE24API) {
+        CAFE24API.getMemberID(function (memberId) {
+          callback(memberId);
+        });
+      } else if (typeof CAPP_ASYNC_METHODS !== 'undefined' && CAPP_ASYNC_METHODS.AppCommon) {
+        callback(CAPP_ASYNC_METHODS.AppCommon.getMemberID());
+      } else {
+        const memberId = getCookie('EncMemberId') || getCookie('member_id');
+        callback(memberId || null);
+      }
+    }
+
+
+
+    try {
+      // 회원 정보 가져오기
+      const member = getCafe24MemberFromModule();
+      console.log('member 정보:', member);
+
+      if (!member || !member.member_id) {
+        console.log('❌ 회원 정보 없음');
+        showError('회원 정보를 가져올 수 없습니다.', errorMessage);
+        return;
+      }
+
+      const memberId = member.member_id;
+      const selectedProduct = selectedOption.value;
+
+      console.log('✅ memberId:', memberId);
+      console.log('✅ selectedProduct:', selectedProduct);
+
+      // 중복 투표 체크
+      console.log('🔍 중복 투표 체크 중...');
+      const votesRef = collection(db, 'votes');
+      const q = query(votesRef, where('memberId', '==', memberId));
+      const querySnapshot = await getDocs(q);
+
+      console.log('중복 투표 체크 결과:', querySnapshot.empty ? '없음(투표 가능)' : '있음(이미 투표함)');
+
+      if (!querySnapshot.empty) {
+        console.log('❌ 이미 투표함');
+        showError('이미 투표에 참여하셨습니다.', errorMessage);
+        return;
+      }
+
+      // 투표 저장
+      console.log('💾 투표 저장 중...');
+      await addDoc(votesRef, {
+        memberId: memberId,
+        product: selectedProduct,
+        timestamp: serverTimestamp()
+      });
+
+      console.log('✅ 투표 저장 완료!');
+
+      // 성공 모달 표시
+      showModalById('successModal');
+
+    } catch (error) {
+      console.error('❌ vote error:', error);
+      showError('투표 처리 중 오류가 발생했습니다. 다시 시도해주세요.', errorMessage);
+    } finally {
+      // 버튼 원래 상태로 복구
+      voteBtn.classList.remove('event4u-disabled');
+      voteBtn.textContent = originalText;
+      console.log('🔄 버튼 상태 복구 완료');
+    }
+  }
+
+  function getCafe24MemberFromModule() {
+    console.log('=== 회원 정보 가져오기 시작 ===');
+
+    // 방법 1: CAFE24 모듈에서 가져오기
+    try {
+      if (typeof CAFE24 !== 'undefined' && CAFE24.FRONT_JS_CONFIG_MEMBER) {
+        const memberId = CAFE24.FRONT_JS_CONFIG_MEMBER.member_id;
+        if (memberId) {
+          console.log('✅ CAFE24 모듈에서 memberId 획득:', memberId);
+          return { member_id: memberId };
+        }
+      }
+    } catch (e) {
+      console.log('⚠️ CAFE24 모듈 접근 실패:', e);
+    }
+
+    // 방법 2: 쿠키에서 가져오기
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) {
+        return parts.pop().split(';').shift();
+      }
+      return null;
+    }
+
+    const memberIdCookie = getCookie('member_id');
+    if (memberIdCookie) {
+      console.log('✅ 쿠키에서 memberId 획득:', memberIdCookie);
+      return { member_id: decodeURIComponent(memberIdCookie) };
+    }
+
+    // 방법 3: 로그인 상태 확인용 hidden element
+    const loginEl = document.querySelector('#event-auth-marker [data-login="true"]');
+    if (loginEl) {
+      const memberId = loginEl.dataset.memberId || '';
+      if (memberId) {
+        console.log('✅ hidden element에서 memberId 획득:', memberId);
+        return { member_id: memberId };
+      }
+    }
+
+    console.log('❌ 회원 정보를 가져올 수 없음');
+    return null;
+  }
+
+  function showError(message, errorEl) {
+    if (!errorEl) return;
+    
+    errorEl.textContent = message;
+    errorEl.classList.add('event4u-show');
+
+    setTimeout(() => {
+      errorEl.classList.remove('event4u-show');
+    }, 5000);
+  }
+
+  function showModalById(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.classList.add('event4u-show');
+    }
+  }
+
+  function closeQuizModal() {
+    const modal = document.getElementById('modalOverlay');
+    if (modal) {
+      modal.classList.remove('event-april__modal-overlay--show');
+    }
+  }
+
+  async function showResults() {
+    showModalById('resultModal');
+
+    const resultContent = document.getElementById('resultContent');
+    if (!resultContent) return;
+
+    resultContent.innerHTML = '<div class="event4u-loading">결과를 불러오는 중...</div>';
+
+    try {
+      const votesRef = collection(db, 'votes');
+      const querySnapshot = await getDocs(votesRef);
+
+      const voteCounts = {
+        bonete: 0,
+        freeafit: 0,
+        bolle: 0
+      };
+
+      querySnapshot.forEach((doc) => {
+        const product = doc.data().product;
+        if (voteCounts.hasOwnProperty(product)) {
+          voteCounts[product]++;
+        }
+      });
+
+      const totalVotes = Object.values(voteCounts).reduce((a, b) => a + b, 0);
+
+      if (totalVotes === 0) {
+        resultContent.innerHTML = '<p>아직 투표 결과가 없습니다.</p>';
+        return;
+      }
+
+      let html = `<p style="margin-bottom: 20px; color: #666;">총 ${totalVotes}명이 투표하셨습니다.</p>`;
+
+      Object.entries(voteCounts).forEach(([key, count]) => {
+        const percentage = ((count / totalVotes) * 100).toFixed(1);
+        const product = products[key];
+
+        html += `
+          <div class="event4u-result-item">
+            <div class="event4u-result-header">
+              <span class="event4u-result-name">${product.name}</span>
+              <span class="event4u-result-count">${count}표</span>
+            </div>
+            <div class="event4u-result-bar">
+              <div class="event4u-result-fill" style="width: ${percentage}%"></div>
+            </div>
+            <div class="event4u-result-percentage">${percentage}%</div>
+          </div>
+        `;
+      });
+
+      resultContent.innerHTML = html;
+
+    } catch (error) {
+      console.error('결과 조회 실패:', error);
+      resultContent.innerHTML = '<p style="color: #c33;">결과를 불러오는데 실패했습니다.</p>';
+    }
+  }
+
+  function pickLetter(btn, letter) {
+    if (btn.classList.contains('event-april__letter-btn--selected')) {
+      btn.classList.remove('event-april__letter-btn--selected');
+      selectedLetters = selectedLetters.filter(l => l !== letter);
+    } else {
+      btn.classList.add('event-april__letter-btn--selected');
+      selectedLetters.push(letter);
+    }
+    hideFeedback();
+  }
+
+  function clearAnswer() {
+    const input = document.getElementById('answerInput');
+    if (input) input.value = '';
+
+    document.querySelectorAll('.event-april__letter-btn').forEach(b => {
+      b.classList.remove('event-april__letter-btn--selected');
+    });
+
+    selectedLetters = [];
+    hideFeedback();
+  }
+
+  function checkAnswer() {
+    const input = document.getElementById('answerInput');
+    if (!input) return;
+
+    const val = input.value.trim().replace(/\s/g, '');
+
+    if (!val) {
+      showFeedback('정답을 입력해 주세요.');
+      return;
+    }
+
+    if (val === CORRECT_ANSWER) {
+      showQuizModal();
+    } else {
+      showFeedback('아쉽지만, 정답이 아닙니다.');
+    }
+  }
+
+  function showFeedback(msg) {
+    const el = document.getElementById('feedback');
+    if (!el) return;
+
+    el.textContent = msg;
+    el.classList.remove('event-april__feedback--hidden');
+  }
+
+  function hideFeedback() {
+    const el = document.getElementById('feedback');
+    if (!el) return;
+
+    el.classList.add('event-april__feedback--hidden');
+  }
+
+  function showQuizModal() {
+    const modal = document.getElementById('modalOverlay');
+    if (modal) {
+      modal.classList.add('event-april__modal-overlay--show');
+    }
+  }
+
+  function issueCoupon(e) {
+    e.preventDefault();
+    window.location.href = _c;
+  }
+
+  function goHint(e) {
+    e.preventDefault();
+    window.location.href = 'https://www.forbshop.com/shopinfo/aboutus.html';
+  }
+
+  // 전역 함수로 노출
+  window.pickLetter = pickLetter;
+  window.clearAnswer = clearAnswer;
+  window.checkAnswer = checkAnswer;
+  window.issueCoupon = issueCoupon;
+  window.goHint = goHint;
+  window.showResults = showResults;
+  console.log(window.closeModal);
+
+</script>
+<script>
+    const closeModal = function (modalId) {
+    const modal = document.getElementById(modalId);
+    console.log(modal);
+    if (modal) {
+      modal.classList.remove('event-april__modal-overlay--show');
+    }
+  };
+</script>

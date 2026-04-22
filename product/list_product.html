@@ -10,11 +10,11 @@
       </a>
       <div class="badge"><span></span></div>
       <div class="icon__box ap-card__overlay">
-        <span class="cart ap-card__buy">{$basket_icon}구매하기</span>
+        <span class="cart ap-card__buy">{$basket_icon}바로 구매하기</span>
       </div><!-- //icon__box -->
     </div><!-- //ap-card__img.thumbnail -->
 
-    <div class="ap-card__body" ec-data-custom="{$product_custom}" ec-data-price="{$product_price}">
+    <div class="ap-card__body" ec-data-custom="{$product_custom|default:'0'}" ec-data-price="{$product_price}">
       <a href="{$link_product_detail}">
         <!-- 단독상품일때 -->
         <p class="ap-card__notice {$exclusive_purchase_olny|display}">단독구매상품</p>
@@ -49,11 +49,11 @@
       </a>
       <div class="badge"><span></span></div>
       <div class="icon__box ap-card__overlay">
-        <span class="cart ap-card__buy">{$basket_icon}구매하기</span>
+        <span class="cart ap-card__buy">{$basket_icon}바로 구매하기</span>
       </div><!-- //icon__box -->
     </div><!-- //ap-card__img.thumbnail -->
 
-    <div class="ap-card__body" ec-data-custom="{$product_custom}" ec-data-price="{$product_price}">
+    <div class="ap-card__body" ec-data-custom="{$product_custom|default:'0'}" ec-data-price="{$product_price}">
       <a href="{$link_product_detail}">
         <!-- 단독상품일때 -->
         <p class="ap-card__notice {$exclusive_purchase_olny|display}">단독구매상품</p>

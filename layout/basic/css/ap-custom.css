@@ -61,6 +61,12 @@
 }
 
 /******** 제품 목록 카드 ********/
+.forb .ap-list-path{display: flex; align-items: center; height: auto; line-height: normal; gap: 6px; font-size: var(--ap-text-xs); color: var(--ap-color-text-disabled); letter-spacing: .04em; margin-bottom: 12px;padding: 0;}
+.forb .ap-list-path strong{color: var(--ap-color-text-secondary);}
+.forb .ap-titleArea{padding: 32px 0 0; border-bottom: 1px solid var(--border-lt); margin-bottom: 0;}
+.forb .ap-titleArea__tit{padding: 0;}
+.forb .ap-titleArea__tit h2{text-align: left; font-size: var(--ap-text-2xl); font-weight: 300; letter-spacing: .02em; color: var(--ap-color-text-primary); margin-bottom: 4px;padding: 0;}
+
 .ap-card { background: var(--ap-color-bg-card); border-radius: 0; overflow: hidden; }
 .ap-card__thumbnail { position: relative; width: 100% !important; overflow: hidden; background: var(--ap-color-ivory); display: flex; align-items: center; justify-content: center;margin:0 !important; color: var(--ap-color-text-muted); font-size: var(--ap-text-xs); letter-spacing: 0.1em; text-transform: uppercase; }
 .ap-card__thumbnail::before{ content: ""; display: block; width: 100%; padding-top: 90%; }
@@ -85,9 +91,13 @@
 .ap-card__icon{margin: 16px 0 0;}
 .ap-card__colorchip .color-chip { display: inline-block; width:20px; height:20px; border-radius: 50%; border:1px solid rgba(4,30,58,.5); position: relative }
 .ap-card__colorchip .color-chip .chips {top: 50%; left: 50%; position: absolute; transform: translate(-50%, -50%); border-radius: 50%;  height: calc(100% - 5px); width: calc(100% - 5px);}
+/* 품절상품 */
+.ap-card.soldoutItem { opacity: 0.4; }
+.ap-card.soldoutItem::after { content: "SOLD OUT"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-weight: bold; }
 
 @media (max-width: 768px) {
   .ap-card__name, .ap-card__name span { font-size: var(--ap-text-base) !important;}
   .ap-card__price{font-size: var(--ap-text-sm); }
   .ap-card__body { padding: 12px 12px 14px; }
 }
+

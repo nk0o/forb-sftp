@@ -423,7 +423,6 @@
 
     let currentMenu = null;
     let closeTimer  = null;
-    let openTimer   = null;
 
     function showMenu(key) {
       clearTimeout(closeTimer);
@@ -467,27 +466,12 @@
     }
 
     navItems.forEach(item => {
-      item.addEventListener('mouseenter', () => {
-        clearTimeout(closeTimer);
-        openTimer = setTimeout(() => {
-          showMenu(item.dataset.menu);
-        }, 180); // 👈 열림 딜레이
-      });
-
-      item.addEventListener('mouseleave', () => {
-        clearTimeout(openTimer); // 👈 열리기 전에 나가면 취소
-        hideMenu();
-      });
+      item.addEventListener('mouseenter', () => showMenu(item.dataset.menu));
+      item.addEventListener('mouseleave', () => hideMenu());
     });
 
-    menu.addEventListener('mouseenter', () => {
-      clearTimeout(closeTimer);
-      clearTimeout(openTimer);
-    });
-
-    menu.addEventListener('mouseleave', () => {
-      hideMenu();
-    });
+    menu.addEventListener('mouseenter', () => clearTimeout(closeTimer));
+    menu.addEventListener('mouseleave', () => hideMenu());
   })();
   
   // ── 전체메뉴 드로어 + 헤더 스크롤 ──

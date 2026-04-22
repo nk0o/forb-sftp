@@ -1,0 +1,122 @@
+<!--@layout(/layout/basic/layout.html)-->
+<div class="xans-board-readpackage">
+  <!--@css(/css/module/board/readPackage.css)-->
+  <div class="xans-board-title">
+    <div class="path">
+      <span>현재 위치</span>
+      <ol>
+        <li><a href="/">홈</a></li>
+        <li><a href="/board/index.html">게시판</a></li>
+        <li title="현재 위치"><strong>4월 이벤트</strong></li>
+      </ol>
+    </div>
+
+    <div class="title">
+      <h2>
+        <font color="#333333">EVENT</font>
+      </h2>
+    </div>
+  </div>
+  <div class="xans-board-read">
+    <!--
+          $delete_success_url = /board/gallery/list.html
+          $login_page_url = /member/login.html
+          $deny_access_url = /board/gallery/list.html
+      -->
+    <div class="ec-base-table typeWrite">
+      <div class="event4u">
+        <!-- 인트로 -->
+        <section class=" ">
+        </section>
+        <!-- 초성퀴즈 -->
+        <section class="">
+        </section>
+        <!-- 투표 -->
+        <section class="event4u-poll">
+          <div module="Layout_Poll">
+            <h2> 4월은 봄바람 솔솔~ 외출의 계절! 외출시 사용하고싶은 아이템은?</h2>
+            <h3><strong>질문 :</strong><span>{$poll_title}</span></h3>
+            <fieldset>
+              <legend class="displaynone">설문조사 항목</legend>
+              <ul>
+                <li>{$poll}{$poll_name}</li>
+                <li>{$poll}{$poll_name}</li>
+                <li>{$poll}{$poll_name}</li>
+                <li>{$poll}{$poll_name}</li>
+              </ul>
+              <p class="btnResult">
+                <a href="#none" onclick="document.querySelector('.modal__poll').style.display = 'block';">결과보기</a>
+              </p>
+              <p class="btnPoll"><a href="#none" onclick="{$action_poll_submit}">투표하기</a></p>
+            </fieldset>
+          </div>
+          <div class="modal__poll" style="display: none;">
+            <div module="poll_result">
+              <!--@css(/css/module/poll/result.css)-->
+              <div class="header">
+                <h1>설문조사 결과</h1>
+              </div>
+              <div class="content">
+                <div class="summary">
+                  <h2>{$title}</h2>
+                  <p>- 총 투표수: {$total_count}</p>
+                </div>
+                <ol class="result">
+                  <li>
+                    <p class="title"><strong title="항목">{$comment_title}</strong><span
+                        title="투표수">({$comment_count}표)</span></p>
+                    <p class="graph">
+                      <em title="투표율">{$comment_percentage}%</em>
+                      <span class="box"><span
+                          style="width:{$comment_percentage}%;">&nbsp;</span></span>
+                    </p>
+                  </li>
+                  <li>
+                    <p class="title"><strong title="항목">{$comment_title}</strong><span
+                        title="투표수">({$comment_count}표)</span></p>
+                    <p class="graph">
+                      <em title="투표율">{$comment_percentage}%</em>
+                      <span class="box"><span
+                          style="width:{$comment_percentage}%;">&nbsp;</span></span>
+                    </p>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- 유의사항 -->
+         <section class="event4u-notice"></section>
+        <!-- 유의사항 -->
+         <section class="event4u-notice"></section>
+      </div><!-- //.event4u -->
+    </div>
+
+    <div class="ec-base-button">
+      <span class="gLeft">
+        <span class="displaynone">
+          <a href="#none" onclick="" class="admin displaynone"><img
+              src="//img.echosting.cafe24.com/skin/base_ko_KR/board/btn_admin.gif" alt="관리자게시"></a>
+          <a href="#none" onclick="" class="admin displaynone"><img
+              src="//img.echosting.cafe24.com/skin/base_ko_KR/board/btn_admin2.gif" alt="게시안함"></a>
+          <a href="#none" onclick=""><img
+              src="//img.echosting.cafe24.com/skin/base_ko_KR/board/btn_spam1.gif" alt="스팸신고"></a>
+          <a href="#none" onclick=""><img
+              src="//img.echosting.cafe24.com/skin/base_ko_KR/board/btn_spam2.gif" alt="스팸해제"></a>
+        </span>
+        <a href="/board/event/8/"><img
+            src="//img.echosting.cafe24.com/skin/base_ko_KR/board/btn_list.gif" alt="목록"></a>
+      </span>
+      <span class="gRight">
+        <a href="#none" onclick="BOARD_READ.article_delete('BoardDelForm','8');"
+          class="displaynone"><img
+            src="//img.echosting.cafe24.com/skin/base_ko_KR/board/btn_delete.gif" alt="삭제"></a>
+        <a href="/board/gallery/modify.html?board_act=edit&amp;no=50&amp;board_no=8"
+          class="displaynone"><img
+            src="//img.echosting.cafe24.com/skin/base_ko_KR/board/btn_modify.gif" alt="수정"></a>
+        <a href="/board/gallery/reply.html" class="displaynone"><img
+            src="//img.echosting.cafe24.com/skin/base_ko_KR/board/btn_reply.gif" alt="답변"></a>
+      </span>
+    </div>
+  </div>
+</div>
