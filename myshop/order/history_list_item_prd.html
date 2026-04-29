@@ -1,0 +1,89 @@
+<div module="Myshop_OrderHistoryListitem" class="ap-orderhistoryitem-prd">
+    <!--@css(/css/module/myshop/orderHistoryListItem.css)-->
+    <!--@css(/layout/basic/css/ap-myshop.css)-->
+    <!--
+        $count = 2
+        $login_url = /member/login.html
+    -->
+    <h3 class="blind">최근 주문 제품</h3>
+    <div class="swiper swiper-prd-orderList {$list_display|display}">
+      <div class="swiper-wrapper prd-orderList">
+        <div class="order swiper-slide">
+          <a href="/myshop/order/detail.html{$param_detail}">
+            <span class="txtStatus">{$status}</span>
+            <div class="thumbnail"><img src="{$product_image}"
+              onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';"
+              width="83" height="83" alt="{$product_name}"/></div><!-- //thumbnail -->
+            <div class="prdName" title="상품명">{$product_name}</div>
+            <p class="date" title="주문일자">{$order_date}</p>
+          </a>
+        </div><!-- //order -->
+        <div class="order swiper-slide">
+          <a href="/myshop/order/detail.html{$param_detail}">
+            <span class="txtStatus">{$status}</span>
+            <div class="thumbnail"><img src="{$product_image}"
+              onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';"
+              width="83" height="83" alt="{$product_name}"/></div><!-- //thumbnail -->
+            <div class="prdName" title="상품명">{$product_name}</div>
+            <p class="date" title="주문일자">{$order_date}</p>
+          </a>
+        </div><!-- //order -->
+        <div class="order swiper-slide">
+          <a href="/myshop/order/detail.html{$param_detail}">
+            <span class="txtStatus">{$status}</span>
+            <div class="thumbnail"><img src="{$product_image}"
+              onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';"
+              width="83" height="83" alt="{$product_name}"/></div><!-- //thumbnail -->
+            <div class="prdName" title="상품명">{$product_name}</div>
+            <p class="date" title="주문일자">{$order_date}</p>
+          </a>
+        </div><!-- //order -->
+        <div class="order swiper-slide">
+          <a href="/myshop/order/detail.html{$param_detail}">
+            <span class="txtStatus">{$status}</span>
+            <div class="thumbnail"><img src="{$product_image}"
+              onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';"
+              width="83" height="83" alt="{$product_name}"/></div><!-- //thumbnail -->
+            <div class="prdName" title="상품명">{$product_name}</div>
+            <p class="date" title="주문일자">{$order_date}</p>
+          </a>
+        </div><!-- //order -->
+      </div><!-- //swiper-wrapper -->
+      <div class="swiper-pagination"></div><!-- //swiper-pagination -->
+    </div><!-- //swiper-prd-orderList -->
+    <div class="ec-base-prdEmpty {$empty_display|display}"><!--@import(/svg/icon-empty.html)--> 아직 주문 내역이 없습니다. </div>
+</div>
+<script>
+let ww = window.innerWidth;
+let mySwiper = undefined;
+
+function initSwiper() {
+  if (ww < 1025 && mySwiper === undefined) {
+    mySwiper = new Swiper(".swiper-prd-orderList", {
+      slidesPerView: 2.1,
+      spaceBetween: 8,
+      simulateTouch: true,
+      loop: false,
+      pagination: {
+        el: '.swiper-prd-orderList .swiper-pagination',
+        clickable: true, 
+      },
+    });
+  } else if (ww >= 1025 && mySwiper !== undefined) {
+    mySwiper.destroy(true, true);
+    mySwiper = undefined;
+  }
+}
+
+initSwiper();
+
+let resizeTimer;
+
+window.addEventListener("resize", function () {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    ww = window.innerWidth;
+    initSwiper();
+  }, 100);
+});
+</script>

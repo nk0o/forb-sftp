@@ -1,13 +1,17 @@
 <!--@layout(/layout/basic/layout.html)-->
 <!--@css(/layout/basic/css/ap-myshop.css)-->
-<div class="section path" data-ez="module-1m43s3j-1" data-ez-module="user-defined/1"
-  data-ez-name="USER DEFINED" data-ez-type="plain">
-  <span>현재 위치</span>
-  <ol>
-    <li><a href="/">홈</a></li>
-    <li title="현재 위치">마이 쇼핑</li>
-  </ol>
-</div>
+<div class="ap-titleArea">
+  <div class="ap-container--narrow">
+    <!-- 브래드크럼 -->
+    <div class="ap-list-path path section">
+      <span>현재 위치</span>
+      <ol>
+        <li><a href="/"><!--@import(/svg/icon-home.html)--></a></li>
+        <li title="현재 위치"><strong>마이페이지</strong></li>
+      </ol>
+    </div><!-- //ap-path -->
+  </div><!-- //ap-container--narrow -->
+</div><!-- //ap-titleArea -->
 
 <div module="layout_logincheck" data-ez="contents-0n78ilv-1">
   <!--
@@ -15,90 +19,44 @@
 -->
 </div>
 
-<section class="ap-myshop ap-container--narrow">
+<section class="ap-myshop ap-myshop__main ap-container--narrow">
   <div class="ap-myshop__title" data-ez="module-0uycjk9-1" data-ez-module="user-defined/1" data-ez-name="USER DEFINED" data-ez-type="plain">
     <h2>마이 페이지</h2>
   </div>
   
   <div class="ap-myshop__container">
-    <div class="ap-myshop__nav"><!--@import(/myshop/myshop_main.html)--></div>
+    <div class="ap-myshop__nav display_pc_only"><!--@import(/myshop/myshop_main.html)--></div>
 
     <div class="ap-myshop__content">
       <!-- 마이페이지 메인 - 베네핏 -->
       <div class="ap-myshop__section benefit" data-ez="contents-1ijuc8f-1">
         <div module="myshop_asyncbankbook">
           <!--@css(/css/module/myshop/bankbook.css)-->
-          <div module="myshop_asyncbenefit" class="{$display_benefit}">
+          <div module="myshop_asyncbenefit" class="{$display_benefit} user__benefit">
             <div class="user">
               <!-- <span class="user__thumb"><img src="{$group_image}" alt onerror="this.src='//img.echosting.cafe24.com/skin/base_ko_KR/member/img_member_default.gif';" width="42" class="{$group_image_tag_class}" loading="lazy" ez-prevent="img"></span> -->
               <div class="user__info">
-                <div class="user__name"> <a href="/skin-skin15/member/modify.html">안녕하세요, {$member_name} 님!</a> </div>
-                <a href="/service/warranty.html" class="user__data user__grade">
-                  <div class="{$displayGroupIcon|display}"><img src="{$group_icon}" class="{$group_icon_tag_class}" loading="lazy" ez-prevent="img"></div>
-                   <div class="ap-badge ap-badge--gold">{$group_name}</div>
-                </a>
-                <p class="{$display_no_benefit|display} {$display_no_benefit_class}"><strong
-                    class="txtEm">{$dc_pay} {$dc_min_price}</strong> 구매시 <strong
-                    class="txtEm">{$dc_price}{$dc_type}</strong>을 {$use_dc} 받으실 수 있습니다.
-                  {$dc_max_percent}</p>
-                <p class="{$display_with_all|display} {$display_with_all_class}"><strong
-                    class="txtEm">{$dc_pay} {$dc_min_price_mileage}</strong> 구매시 <strong
-                    class="txtEm">{$dc_price_mileage}{$dc_type_mileage}</strong>을 {$use_dc_mileage} 받으실
-                  수 있습니다. {$dc_max_mileage_percent}</p>
+                <div class="user__name">
+                  <div class="user__intro">
+                    <a href="/skin-skin15/member/modify.html">{$member_name}님</a><span>, 안녕하세요</span>
+                    <a href="/service/warranty.html" class="user__data user__grade">
+                      <!-- <div class="{$displayGroupIcon|display}"><img src="{$group_icon}" class="{$group_icon_tag_class}" loading="lazy" ez-prevent="img"></div>
+                       <div class="ap-badge ap-badge--gold">{$group_name}</div> -->
+                    </a>
+                  </div>
+                  <p>최근 주문과 혜택을 확인해보세요!</p>
+                </div>
+                <p class="{$display_no_benefit|display} {$display_no_benefit_class}"><strong class="txtEm">{$dc_pay} {$dc_min_price}</strong> 구매시 <strong class="txtEm">{$dc_price}{$dc_type}</strong>을 {$use_dc} 받으실 수 있습니다. {$dc_max_percent}</p>
+                <p class="{$display_with_all|display} {$display_with_all_class}"><strong class="txtEm">{$dc_pay} {$dc_min_price_mileage}</strong> 구매시 <strong class="txtEm">{$dc_price_mileage}{$dc_type_mileage}</strong>을 {$use_dc_mileage} 받으실 수 있습니다. {$dc_max_mileage_percent}</p>
                 <div class="{$bGradeAutoDisplay|display} gBlank5" id="{$sGradeAutoDisplayId}">
-                  <p class="{$bChangeTypePrice|display} {$sAutoGradeDisplay}"><strong>[<span
-                        class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img
-                          src="{$group_icon}" alt class="{$next_group_icon_tag_class}" loading="lazy"
-                          ez-prevent="img"></span>{$sNextGrade}]</strong> 까지 남은 구매금액은
-                    <strong>{$sGradeIncreasePrice}</strong> 입니다. ({$sApplyPeriod} {$sGradePeriod} 구매금액 :
-                    {$sPeriodOrderPrice})</p>
-                  <p class="{$bChangeTypeCount|display} {$sAutoGradeDisplay}"><strong>[<span
-                        class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img
-                          src="{$group_icon}" alt class="{$next_group_icon_tag_class}" loading="lazy"
-                          ez-prevent="img"></span>{$sNextGrade}]</strong> 까지 남은 구매건수는
-                    <strong>{$sGradeIncreaseCount}</strong> 입니다. ({$sApplyPeriod} {$sGradePeriod} 구매건수 :
-                    {$sPeriodOrderCount})</p>
-                  <p class="{$bChangeTypePriceAndCount|display} {$sAutoGradeDisplay}"><strong>[<span
-                        class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img
-                          src="{$group_icon}" alt class="{$next_group_icon_tag_class}" loading="lazy"
-                          ez-prevent="img"></span>{$sNextGrade}]</strong> 까지 남은 구매금액은
-                    <strong>{$sGradeIncreasePrice}</strong>, 남은 구매건수는
-                    <strong>{$sGradeIncreaseCount}</strong> 입니다. ({$sApplyPeriod} {$sGradePeriod} 구매금액 :
-                    {$sPeriodOrderPrice}｜구매건수 : {$sPeriodOrderCount})</p>
-                  <p class="{$bChangeTypePriceOrCount|display} {$sAutoGradeDisplay}"><strong>[<span
-                        class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img
-                          src="{$group_icon}" alt class="{$next_group_icon_tag_class}" loading="lazy"
-                          ez-prevent="img"></span>{$sNextGrade}]</strong> 까지 남은 구매금액은
-                    <strong>{$sGradeIncreasePrice}</strong>, 또는 남은 구매건수
-                    <strong>{$sGradeIncreaseCount}</strong> 입니다. ({$sApplyPeriod} {$sGradePeriod} 구매금액 :
-                    {$sPeriodOrderPrice}｜구매건수 : {$sPeriodOrderCount})</p>
-                  <p class="{$bChangeMaxTypePrice|display}" id="{$sChangeMaxTypePriceId}"><strong>[<span
-                        class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img
-                          src="{$group_icon}" alt class="{$next_group_icon_tag_class}" loading="lazy"
-                          ez-prevent="img"></span>{$sNextGrade}]</strong> 등급을 유지하기 위해 남은 구매금액은
-                    <strong>{$sGradeIncreasePrice}</strong> 입니다. ({$sApplyPeriod} {$sGradePeriod} 구매금액 :
-                    {$sPeriodOrderPrice})</p>
-                  <p class="{$bChangeMaxTypeCount|display}" id="{$sChangeMaxTypeCountId}"><strong>[<span
-                        class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img
-                          src="{$group_icon}" alt class="{$next_group_icon_tag_class}" loading="lazy"
-                          ez-prevent="img"></span>{$sNextGrade}]</strong> 등급을 유지하기 위해 남은 구매건수는
-                    <strong>{$sGradeIncreaseCount}</strong> 입니다. ({$sApplyPeriod} {$sGradePeriod} 구매건수 :
-                    {$sPeriodOrderCount})</p>
-                  <p class="{$bChangeMaxTypePriceAndCount|display}"
-                    id="{$sChangeMaxTypePriceAndCountId}"><strong>[<span
-                        class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img
-                          src="{$group_icon}" alt class="{$next_group_icon_tag_class}" loading="lazy"
-                          ez-prevent="img"></span>{$sNextGrade}]</strong> 등급을 유지하기 위해 남은 구매금액은
-                    <strong>{$sGradeIncreasePrice}</strong>, 남은 구매건수는
-                    <strong>{$sGradeIncreaseCount}</strong> 입니다. ({$sApplyPeriod} {$sGradePeriod} 구매금액 :
-                    {$sPeriodOrderPrice}｜구매건수 : {$sPeriodOrderCount})</p>
-                  <p class="{$bChangeMaxTypePriceOrCount|display}" id="{$sChangeMaxTypePriceOrCountId}">
-                    <strong>[<span class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img
-                          src="{$group_icon}" alt class="{$next_group_icon_tag_class}" loading="lazy"
-                          ez-prevent="img"></span>{$sNextGrade}]</strong> 등급을 유지하기 위해 남은 구매금액은
-                    <strong>{$sGradeIncreasePrice}</strong>, 또는 남은 구매건수
-                    <strong>{$sGradeIncreaseCount}</strong> 입니다. ({$sApplyPeriod} {$sGradePeriod} 구매금액 :
-                    {$sPeriodOrderPrice}｜구매건수 : {$sPeriodOrderCount})</p>
+                  <p class="{$bChangeTypePrice|display} {$sAutoGradeDisplay}"><strong>[<span class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img src="{$group_icon}" alt class="{$next_group_icon_tag_class}" loading="lazy" ez-prevent="img"></span>{$sNextGrade}]</strong> 까지 남은 구매금액은 <strong>{$sGradeIncreasePrice}</strong> 입니다. ({$sApplyPeriod} {$sGradePeriod} 구매금액 : {$sPeriodOrderPrice})</p>
+                  <p class="{$bChangeTypeCount|display} {$sAutoGradeDisplay}"><strong>[<span class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img src="{$group_icon}" alt class="{$next_group_icon_tag_class}" loading="lazy" ez-prevent="img"></span>{$sNextGrade}]</strong> 까지 남은 구매건수는 <strong>{$sGradeIncreaseCount}</strong> 입니다. ({$sApplyPeriod} {$sGradePeriod} 구매건수 : {$sPeriodOrderCount})</p>
+                  <p class="{$bChangeTypePriceAndCount|display} {$sAutoGradeDisplay}"><strong>[<span class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img src="{$group_icon}" alt class="{$next_group_icon_tag_class}" loading="lazy" ez-prevent="img"></span>{$sNextGrade}]</strong> 까지 남은 구매금액은 <strong>{$sGradeIncreasePrice}</strong>, 남은 구매건수는 <strong>{$sGradeIncreaseCount}</strong> 입니다. ({$sApplyPeriod} {$sGradePeriod} 구매금액 : {$sPeriodOrderPrice}｜구매건수 : {$sPeriodOrderCount})</p>
+                  <p class="{$bChangeTypePriceOrCount|display} {$sAutoGradeDisplay}"><strong>[<span class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img src="{$group_icon}" alt class="{$next_group_icon_tag_class}" loading="lazy" ez-prevent="img"></span>{$sNextGrade}]</strong> 까지 남은 구매금액은 <strong>{$sGradeIncreasePrice}</strong>, 또는 남은 구매건수 <strong>{$sGradeIncreaseCount}</strong> 입니다. ({$sApplyPeriod} {$sGradePeriod} 구매금액 : {$sPeriodOrderPrice}｜구매건수 : {$sPeriodOrderCount})</p>
+                  <p class="{$bChangeMaxTypePrice|display}" id="{$sChangeMaxTypePriceId}"><strong>[<span class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img src="{$group_icon}" alt class="{$next_group_icon_tag_class}" loading="lazy" ez-prevent="img"></span>{$sNextGrade}]</strong> 등급을 유지하기 위해 남은 구매금액은 <strong>{$sGradeIncreasePrice}</strong> 입니다. ({$sApplyPeriod} {$sGradePeriod} 구매금액 : {$sPeriodOrderPrice})</p>
+                  <p class="{$bChangeMaxTypeCount|display}" id="{$sChangeMaxTypeCountId}"><strong>[<span class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img src="{$group_icon}" alt class="{$next_group_icon_tag_class}" loading="lazy" ez-prevent="img"></span>{$sNextGrade}]</strong> 등급을 유지하기 위해 남은 구매건수는 <strong>{$sGradeIncreaseCount}</strong> 입니다. ({$sApplyPeriod} {$sGradePeriod} 구매건수 : {$sPeriodOrderCount})</p>
+                  <p class="{$bChangeMaxTypePriceAndCount|display}" id="{$sChangeMaxTypePriceAndCountId}"><strong>[<span class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img src="{$group_icon}" alt class="{$next_group_icon_tag_class}" loading="lazy" ez-prevent="img"></span>{$sNextGrade}]</strong> 등급을 유지하기 위해 남은 구매금액은 <strong>{$sGradeIncreasePrice}</strong>, 남은 구매건수는 <strong>{$sGradeIncreaseCount}</strong> 입니다. ({$sApplyPeriod} {$sGradePeriod} 구매금액 : {$sPeriodOrderPrice}｜구매건수 : {$sPeriodOrderCount})</p>
+                  <p class="{$bChangeMaxTypePriceOrCount|display}" id="{$sChangeMaxTypePriceOrCountId}"> <strong>[<span class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img src="{$group_icon}" alt class="{$next_group_icon_tag_class}" loading="lazy" ez-prevent="img"></span>{$sNextGrade}]</strong> 등급을 유지하기 위해 남은 구매금액은 <strong>{$sGradeIncreasePrice}</strong>, 또는 남은 구매건수 <strong>{$sGradeIncreaseCount}</strong> 입니다. ({$sApplyPeriod} {$sGradePeriod} 구매금액 : {$sPeriodOrderPrice}｜구매건수 : {$sPeriodOrderCount})</p>
                   <p class="txtInfo txt11">승급 기준에 따른 예상 금액이므로 총주문 금액과 다를 수 있습니다.</p>
                 </div>
               </div>
@@ -113,24 +71,26 @@
           </div>
           <ul>
             <li>
+              <span class="thumb"><!--@import(/svg/icon-mileage-yellow.html)--></span>
+              <div class="title">총 {$mileage_name}</div>
               <a href="/myshop/mileage/historyList.html">
-                <!-- <span class="thumb">@import(/svg/icon-mileage.html)</span> -->
-                <div class="title">총 {$mileage_name}</div>
-                <div class="data">{$total_mileage}</div>
+                <div class="data">{$total_mileage}</div><!--@import(/svg/icon-chevron-right.html)-->
               </a>
             </li>
             <li class="{$display_coupon|display}">
+              <span class="thumb"><!--@import(/svg/icon-coupon-yellow.html)--></span>
+              <div class="title">쿠폰</div>
               <a href="/myshop/coupon/coupon.html">
-                <div class="title">쿠폰</div>
-                <div class="data">{$coupon_cnt} 장</div>
+                <div class="data">{$coupon_cnt} 장</div><!--@import(/svg/icon-chevron-right.html)-->
               </a>
             </li>
-            <li>
+            <!-- <li>
               <a href="/myshop/order/list.html">
+                <span class="thumb">@import(/svg/icon-order.html)</span>
                 <div class="title">총 주문</div>
-                <div class="data"><!-- {$total_order_price} -->{$total_order_count}건</div>
+                <div class="data">{$total_order_price}{$total_order_count}건</div>
               </a>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div><!-- //benefit -->
@@ -139,7 +99,7 @@
       <div class="ap-myshop__section order-process" data-ez="contents-0iwnz5b-1">
         <div class="ap-myshop__subtitle">
           <h3 class="ap-myshop__subtitle-txt">주문현황 <span class="desc">(최근 3개월 기준)</span></h3>
-          <a href="https://www.forbshop.com/myshop/order/list.html?mode=cs" class="ap-myshop__subtitle-btn">취소/환불/반품 내역<!--@import(/svg/icon-chevron-right.html)--></a>
+          <a href="/myshop/order/list.html?mode=cs" class="ap-myshop__subtitle-btn">취소/환불/반품 내역<!--@import(/svg/icon-chevron-right.html)--></a>
         </div>
         <div module="myshop_orderstate">
           <!--@css(/css/module/myshop/orderState.css)-->
@@ -191,12 +151,72 @@
       <!-- 마이페이지 메인 - 주문내역 조회 -->
       <div class="ap-myshop__section order-history">
         <div class="ap-myshop__subtitle">
-          <h3 class="ap-myshop__subtitle-txt">최근 주문내역</h3>
+          <h3 class="ap-myshop__subtitle-txt">최근 주문 제품</h3>
+          <a href="/myshop/order/list.html" class="ap-myshop__subtitle-btn">주문내역 더보기<!--@import(/svg/icon-chevron-right.html)--></a>
         </div>
-        <!--@import(/myshop/order/history_list_item.html)-->
+        <!--@import(/myshop/order/history_list_item_prd.html)-->
       </div><!-- //order-history -->
 
-    </div><!-- //ap-myshop__content -->
+      <div class="ap-myshop__nav display_tablet_only"><!--@import(/myshop/myshop_main.html)--></div>
+
+      <!-- 마이페이지 메인 - 서비스 -->
+      <div class="ap-myshop__section ap-myshop-service">
+        <div class="services-grid">
+          <a href="#" class="service-card">
+              <div class="service-icon">
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 5C11.716 5 5 11.716 5 20C5 28.284 11.716 35 20 35C28.284 35 35 28.284 35 20C35 11.716 28.284 5 20 5Z" stroke="#8b7355" stroke-width="2"></path>
+                      <path d="M20 15V20L23 23" stroke="#8b7355" stroke-width="2" stroke-linecap="round"></path>
+                  </svg>
+              </div>
+              <div class="service-content">
+                  <h3>1:1 문의하기</h3>
+                  <p>궁금한 사항을 빠르게 답변해드립니다</p>
+              </div>
+          </a>
+
+          <a href="#" class="service-card">
+              <div class="service-icon">
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="8" y="10" width="24" height="20" rx="2" stroke="#8b7355" stroke-width="2"></rect>
+                      <path d="M8 15L20 22L32 15" stroke="#8b7355" stroke-width="2" stroke-linecap="round"></path>
+                  </svg>
+              </div>
+              <div class="service-content">
+                  <h3>카카오톡 플러스친구</h3>
+                  <p>플친 등록하고 적립금 혜택 받기</p>
+              </div>
+          </a>
+
+          <a href="#" class="service-card">
+              <div class="service-icon">
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 8L24 16H32L26 22L28 30L20 25L12 30L14 22L8 16H16L20 8Z" stroke="#8b7355" stroke-width="2" stroke-linejoin="round"></path>
+                  </svg>
+              </div>
+              <div class="service-content">
+                  <h3>정품 인증</h3>
+                  <p>구매하신 제품의 정품을 인증하세요</p>
+              </div>
+          </a>
+
+          <a href="#" class="service-card">
+              <div class="service-icon">
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="20" cy="20" r="12" stroke="#8b7355" stroke-width="2"></circle>
+                      <path d="M16 20L19 23L25 17" stroke="#8b7355" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+              </div>
+              <div class="service-content">
+                  <h3>사용 가이드</h3>
+                  <p>제품 사용법과 관리 방법 안내</p>
+              </div>
+          </a>
+        </div><!-- //service-grid -->
+        <!-- 모바일 - 로그아웃 -->
+        <a href="/exec/front/Member/logout/" class="ap-myshop__logout"><!--@import(/svg/icon-logout.html)-->로그아웃</a>
+      </div><!-- //ap-myshop-service -->
+    </div><!-- //ap-myshop__content -->   
   </div><!-- //ap-myshop__container -->
 </section><!-- //ap-myshop -->
 <!--#ez="1/1"-->

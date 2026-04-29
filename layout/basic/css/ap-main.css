@@ -25,11 +25,6 @@ PAGE-SPECIFIC — 메인페이지 전용 컴포넌트
 .ap-hero .swiper-slide .ap-hero__content { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; will-change: transform, opacity; }
 .ap-hero .swiper-slide-active .ap-hero__content { opacity: 1; transform: translateY(0); }
 
-/* 슬라이드 표시 버튼 */
-.ap-hero__pagination.swiper-pagination{position: absolute; bottom: var(--ap-space-2xl); left: 8%; z-index: 10; display: flex; align-items: center;gap: var(--ap-space-xs);}
-.ap-hero__pagination .swiper-pagination-bullet { width: 28px; height: 2px; background: rgba(255, 255, 255, 0.7); border: none; cursor: pointer; transition: all var(--ap-transition-normal); border-radius: 2px; padding: 0; opacity: 1;}
-.ap-hero__pagination .swiper-pagination-bullet-active { background: var(--ap-color-gold-light); width: 48px; }
-
 /* 슬라이드 이동 버튼 */
 .ap-hero__swiper-buttons {opacity: 0; z-index: 1; position: absolute; top: 50%; transform: translateY(-50%); display: flex;width: 100%; gap: 2px; transition: opacity var(--ap-transition-normal);} 
 .ap-hero__swiper-buttons .swiper-button-next, .ap-hero__swiper-buttons .swiper-button-prev{position:absolute; width: 38px; height: 38px; background: rgba(255, 253, 249, 0.7); border: 1px solid var(--ap-color-border); color: var(--ap-color-text-primary); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 16px; transition: opacity background var(--ap-transition-fast); backdrop-filter: blur(4px); border-radius: 100%;background-image: url('https://forbmaster.cafe24.com/web/icon/ico-chevron-down.svg');background-repeat: no-repeat; background-position: center;} 
@@ -168,11 +163,11 @@ PAGE-SPECIFIC — 메인페이지 전용 컴포넌트
   .ap-hero__actions { flex-direction: column; gap: 10px; align-items: flex-start; }
   .ap-hero__actions .ap-btn { padding: 14px 28px; }
   .ap-hero__swiper-buttons { display: none; }
-  .ap-hero__pagination.swiper-pagination{position: absolute; bottom: 28px; left: auto; right: 28px;gap: var(--ap-space-sm);}
-  .ap-hero__pagination .swiper-pagination-bullet { width: 6px; height: 6px;border-radius: 100%;}
-  .ap-hero__pagination .swiper-pagination-bullet-active { width: 10px; height: 10px;}
   .ap-hero__img, .ap-hero__bg img, .ap-hero__bg video {object-position: 88% center;}
   .ap-hero--white-mo .ap-hero__title, .ap-hero--white-mo .ap-hero__desc{ color: var(--ap-color-cream);}
+  .forb .ap-hero .swiper-pagination{left: auto; right: 28px;transform: none;gap: 8px;}
+  .forb .ap-hero .swiper-pagination-bullet{width: 8px;height: 8px;border: none;}
+  .forb .ap-hero .swiper-pagination-bullet-active { width: 12px; height: 12px;}
 
   .ap-best{margin-top: 48px;}
   .ap-best__scroll{margin-bottom: 48px;}
