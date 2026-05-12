@@ -7,7 +7,7 @@
       <span>현재 위치</span>
       <ol>
         <li><a href="/"><!--@import(/svg/icon-home.html)--></a></li>
-        <li><a href="/myshop/"><strong>마이페이지</strong></a></li>
+        <li><a href="/myshop/">마이페이지</a></li>
         <li title="현재 위치"><strong>쿠폰</strong></li>
       </ol>
     </div><!-- //ap-path -->
@@ -23,142 +23,205 @@
   <div class="ap-myshop__container">
     <div class="ap-myshop__nav"><!--@import(/myshop/myshop_main.html)--></div>
     <div class="ap-myshop__content">
+      
       <!-- 쿠폰 등록 -->
-      <div class="{$serial_coupon_input_display|display}" module="myshop_CouponSerial">
-        <!--@css(/css/module/myshop/couponSerial.css)-->
+      <div class="ap-myshop__section ap-coupon__regist">
+        <div class="ap-myshop__subtitle">
+          <h3 class="ap-myshop__subtitle-txt">쿠폰번호 등록</h3>
+        </div>
+        <div class="{$serial_coupon_input_display|display}" module="myshop_CouponSerial">
+          <!--@css(/css/module/myshop/couponSerial.css)-->
+          <div class="couponSerial coupon-regist">
+              <!--
+                  $login_page_url = /member/login.html
+              -->
+              <fieldset><legend>쿠폰번호 등록</legend>
+                  <p class="txtInfo">쇼핑몰에서 발행한 쿠폰번호를 입력해주세요.<br class="display_tablet_only">(10~35자 일련번호 "-" 제외)</p>
+                  <div class="coupon-regist__input">
+                    {$form.coupon_code}
+                    <a href="#none" class="ap-btn--primary ap-btn ap-btn--lg" onclick="{$action_coupon_submit}">쿠폰번호 등록</a>
+                  </div>
+              </fieldset>
+          </div><!-- //couponSerial -->
+        </div>
+      </div><!-- //ap-myshop__section -->
 
-        <div class="couponSerial">
+      <div class="ap-myshop__section">
+        <!-- 쿠폰 내역 -->
+        <div module="myshop_CouponList">
+            <!--@css(/css/module/myshop/couponList.css)-->
+            <!--@js(/js/module/myshop/couponList.js)-->
             <!--
-                $login_page_url = /member/login.html
+                $product_list_url = coupon_product_list.html
             -->
-            <fieldset><legend>쿠폰번호 등록</legend>
-                {$form.coupon_code}
-                <a href="#none" class="btnSubmitFix sizeM" onclick="{$action_coupon_submit}">쿠폰번호인증</a>
-                <p class="txtInfo">반드시 쇼핑몰에서 발행한 쿠폰번호만 입력해주세요.<br class="display_tablet_only">(10~35자 일련번호 "-" 제외)</p>
-            </fieldset>
-        </div><!-- //couponSerial -->
-      </div>
-
-      <!-- 쿠폰 내역 -->
-      <div module="myshop_CouponList">
-          <!--@css(/css/module/myshop/couponList.css)-->
-          <!--@js(/js/module/myshop/couponList.js)-->
-          <!--
-              $product_list_url = coupon_product_list.html
-          -->
-          <div class="couponList">
-              <div class="ec-base-table {$display_coupon_list|display}">
-                  <table border="1">
-                      <caption>마이 쿠폰 목록</caption>
-                      <colgroup>
-                          <col style="width:10%;" class="RW">
-                          <col style="width:50%;">
-                          <col style="width:13%;">
-                          <col style="width:13%;">
-                          <col style="width:14%;">
-                      </colgroup>
-                      <thead>
-                          <tr>
-                              <th scope="col" class="RW">번호</th>
-                              <th scope="col">쿠폰명</th>
-                              <th scope="col">할인</th>
-                              <th scope="col">적립</th>
-                              <th scope="col">상세</th>
-                          </tr>
-                      </thead>
-                      <tbody class="center">
-                          <tr>
-                              <td class="RW">{$coupon_no}</td>
-                              <td class="coupon_name"><span class="display_tablet_only">쿠폰명</span>{$coupon_name}</td>
-                              <td><span class="display_tablet_only">할인</span>{$coupon_discount}<br>{$coupon_discount_max_benefit_price}</td>
-                              <td><span class="display_tablet_only">적립</span>{$coupon_mileage}<br>{$coupon_mileage_max_benefit_price}</td>
-                              <td class="layer"><span class="display_tablet_only">쿠폰 상세보기</span>
-                                  <a href="#none">상세</a>
-                              </td>
-                          </tr>
-                          <tr>
-                              <td colspan="5" class="contents">
-                                  <ul>
-                                      <li><strong>쿠폰번호</strong><span class="content">{$coupon_no}</span></li>
-                                      <li><strong>구매금액</strong><span class="content">{$coupon_use_price}</span></li>
-                                      <li class="{$display_paymethod|display}"><strong>결제수단</strong><span class="content">{$coupon_paymethod}</span></li>
-                                      <li><strong>쿠폰혜택</strong><span class="content">{$coupon_benefit_result} <span>{$coupon_max_benefit_price}</span></span></li>
-                                      <li><strong>할인액(률)</strong><span class="content">{$coupon_discount}</span></li>
-                                      <li><strong>적립액(률)</strong><span class="content">{$coupon_mileage}</span></li>
-                                      <li><strong>예치금</strong><span class="content">{$coupon_deposit}</span></li>
-                                      <li><strong>사용가능 기간</strong><span class="content">{$coupon_start_end_date}</span></li>
-                                      <li class="gButton"><strong>쿠폰적용상품</strong><span class="content">{$coupon_use_product_icon}</span></li>
-                                  </ul>
-                              </td>
-                          </tr>
-                      </tbody>
-                      <tbody class="center">
-                          <tr>
-                              <td class="RW">{$coupon_no}</td>
-                              <td class="coupon_name"><span class="display_tablet_only">쿠폰명</span>{$coupon_name}</td>
-                              <td><span class="display_tablet_only">할인</span>{$coupon_discount}<br>{$coupon_discount_max_benefit_price}</td>
-                              <td><span class="display_tablet_only">적립</span>{$coupon_mileage}<br>{$coupon_mileage_max_benefit_price}</td>
-                              <td class="layer"><span class="display_tablet_only">쿠폰 상세보기</span>
-                                  <a href="#none">상세</a>
-                              </td>
-                          </tr>
-                          <tr>
-                              <td colspan="5" class="contents" title="쿠폰정보">
-                                  <ul>
-                                      <li><strong>쿠폰번호</strong><span class="content">{$coupon_no}</span></li>
-                                      <li><strong>구매금액</strong><span class="content">{$coupon_use_price}</span></li>
-                                      <li class="{$display_paymethod|display}"><strong>결제수단</strong><span class="content">{$coupon_paymethod}</span></li>
-                                      <li><strong>쿠폰혜택</strong><span class="content">{$coupon_benefit_result}<span>{$coupon_max_benefit_price}</span></span></li>
-                                      <li><strong>할인액(률)</strong><span class="content">{$coupon_discount}</span></li>
-                                      <li><strong>적립액(률)</strong><span class="content">{$coupon_mileage}</span></li>
-                                      <li><strong>예치금</strong><span class="content">{$coupon_deposit}</span></li>
-                                      <li><strong>사용가능 기간</strong><span class="content">{$coupon_start_end_date}</span></li>
-                                      <li class="gButton"><strong>쿠폰적용상품</strong><span class="content">{$coupon_use_product_icon}</span></li>
-                                  </ul>
-                              </td>
-                          </tr>
-                      </tbody>
-                  </table>
+            <div class="couponList">
+              <div class="ap-myshop__subtitle">
+                <h3 class="ap-myshop__subtitle-txt">보유 쿠폰&nbsp;&nbsp;<span class="">{$coupon_count}개</span></h3>
               </div>
-
-              <p class="ec-base-prdEmpty {$display_no_coupon_list|display}">
-          <!--@import(/svg/icon-empty.html)-->
-                  보유하고 계신 쿠폰 내역이 없습니다.
-              </p>
-
-              <div class="ec-base-button gCenter {$coupon_mileage_display|display}">
+                <div class="ec-base-table {$display_coupon_list|display}">
+                  <ul class="ap-coupon__list">
+                    <li>
+                      <div class="coupon__card">
+                        <div class="coupon__benefit">
+                          <span class="{$coupon_discount|display}">{$coupon_discount} <span class="{$coupon_discount_max_benefit_price|display}">{$coupon_discount_max_benefit_price}</span></span>
+                          <span class="{$display_coupon_mileage|display}">{$coupon_mileage}</span>
+                          <span class="coupon__price">(최소구매금액 {$coupon_use_price})</span>
+                        </div><!-- //coupon__benefit -->
+                        <div class="coupon__name">{$coupon_name}</div><!-- //coupon__name -->
+                        <div class="{$coupon_paymethod_display|display}">결제수단 {$coupon_paymethod}</div>
+                        <div class="coupon__date">{$coupon_start_end_date}</div>
+                        <div class="coupon__prd">{$coupon_use_product_icon}</div>
+                      </div><!-- //coupon__card -->
+                    </li>
+                    <li>
+                      <div class="coupon__card">
+                        <div class="coupon__benefit">
+                          <span class="{$coupon_discount|display}">{$coupon_discount} <span class="{$coupon_discount_max_benefit_price|display}">{$coupon_discount_max_benefit_price}</span></span>
+                          <span class="{$display_coupon_mileage|display}">{$coupon_mileage}</span>
+                          <span class="coupon__price">(최소구매금액 {$coupon_use_price})</span>
+                        </div><!-- //coupon__benefit -->
+                        <div class="coupon__name">{$coupon_name}</div><!-- //coupon__name -->
+                        <div class="{$coupon_paymethod_display|display}">결제수단 {$coupon_paymethod}</div>
+                        <div class="coupon__date">{$coupon_start_end_date}</div>
+                        <div class="coupon__prd">{$coupon_use_product_icon}</div>
+                      </div><!-- //coupon__card -->
+                    </li>
+                  </ul>
+                </div>
+                <p class="ec-base-prdEmpty {$display_no_coupon_list|display}"><!--@import(/svg/icon-empty.html)-->아직 쿠폰이 없습니다.</p>
+                <div class="ec-base-button gCenter {$coupon_mileage_display|display}">
                   <button type="button" class="btnStrong" onclick="COUPON.useCoupon()">사용하기</button>
-              </div>
-          </div>
-      </div>
+                </div>
+            </div><!-- //couponList -->
+        </div>
+        <!-- 쿠폰 페이징 -->
+        <div module="myshop_CouponListPaging" class="ec-base-paginate typeList">
+            <a href="{$first_url}" class="first">첫 페이지</a>
+            <a href="{$prev_url}">이전 페이지</a>
+            <ol>
+                <li><a href="{$url_query}" class="{$param_class}">{$n}</a></li>
+                <li><a href="{$url_query}" class="{$param_class}">{$n}</a></li>
+                <li><a href="{$url_query}" class="{$param_class}">{$n}</a></li>
+            </ol>
+            <a href="{$next_url}">다음 페이지</a>
+            <a href="{$last_url}" class="last">마지막 페이지</a>
+        </div>
+      </div><!-- //ap-myshop__section -->
 
-      <!-- 쿠폰 페이징 -->
-      <div module="myshop_CouponListPaging" class="ec-base-paginate typeList">
-          <a href="{$first_url}" class="first">첫 페이지</a>
-          <a href="{$prev_url}">이전 페이지</a>
-          <ol>
-              <li><a href="{$url_query}" class="{$param_class}">{$n}</a></li>
-              <li><a href="{$url_query}" class="{$param_class}">{$n}</a></li>
-              <li><a href="{$url_query}" class="{$param_class}">{$n}</a></li>
-          </ol>
-          <a href="{$next_url}">다음 페이지</a>
-          <a href="{$last_url}" class="last">마지막 페이지</a>
-      </div>
       
       <!-- 쿠폰 이용안내 -->
-      <div class="ec-base-help">
-        <h3>쿠폰 이용 안내</h3>
-        <div class="inner">
-          <ul>
-            <li><strong>쿠폰인증번호 등록하기</strong>에서 쇼핑몰에서 발행한 종이쿠폰/시리얼쿠폰/모바일쿠폰 등의 인증번호를 등록하시면 온라인쿠폰으로 발급되어 사용이 가능합니다.</li>
-            <li>쿠폰은 주문 시 1회에 한해 적용되며, 1회 사용 시 재 사용이 불가능합니다.</li>
-            <li>쿠폰은 적용 가능한 상품이 따로 적용되어 있는 경우 해당 상품 구매 시에만 사용이 가능합니다.</li>
-            <li>특정한 종이쿠폰/시리얼쿠폰/모바일쿠폰의 경우 단 1회만 사용이 가능할 수 있습니다.</li>
-            <li>기본 배송비 할인쿠폰은 배송구분이 '기본배송'인 상품에 부과된 배송비만 할인이 적용됩니다.</li>
-            <li>전체 배송비 할인쿠폰은 배송구분이 '기본배송', '개별배송', '공급사배송'인 상품에 부과된 배송비 할인이 적용됩니다.</li>
-          </ul>
+      <div class="ap-myshop__section ap-coupon__info">
+        <div class="ap-myshop__subtitle no_margin">
+          <h3 class="ap-myshop__subtitle-txt">쿠폰 이용 안내</h3>
         </div>
-      </div>
+        <ul class="txtList">
+          <li>- <strong>쿠폰인증번호 등록하기</strong>에서 쇼핑몰에서 발행한 종이쿠폰/시리얼쿠폰/모바일쿠폰 등의 인증번호를 등록하시면 온라인쿠폰으로 발급되어 사용이 가능합니다.</li>
+          <li>- 쿠폰은 주문 시 1회에 한해 적용되며, 1회 사용 시 재 사용이 불가능합니다.</li>
+          <li>- 쿠폰은 적용 가능한 상품이 따로 적용되어 있는 경우 해당 상품 구매 시에만 사용이 가능합니다.</li>
+          <li>- 특정한 종이쿠폰/시리얼쿠폰/모바일쿠폰의 경우 단 1회만 사용이 가능할 수 있습니다.</li>
+        </ul>
+      </div><!-- //ap-mileage__info -->
+      <!-- 쿠폰사용하기 - 추천 -->
+      <div class="ap-myshop__section coupon-recommend">
+        <div class="ap-myshop__subtitle no_margin">
+          <h3 class="ap-myshop__subtitle-txt">쿠폰 사용하기</h3>
+        </div>
+        <div module="product_listmain_1" class="mileage-recommend">
+          <!--@css(/css/module/product/listnormal.css)-->
+          <!--
+              $count = 4
+              $basket_result = /product/add_basket.html
+          -->
+          <ul class="ap-recommendPrd__grid">
+            <li class="item ap-recommendPrd__item" id="anchorBoxId_{$product_no}">
+              <div class="box">
+                  <a href="/product/detail.html{$param}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="" class="thumb" /></a>
+                  <p class="name">
+                    <strong>
+                      <a href="/product/detail.html{$param}" class="{$product_name_display|display}"> {$product_name}</a>
+                    </strong>
+                  </p>
+                  <ul module="product_ListItem" class="prd-info">
+                      <li class="{$item_display|display}">{$item_content}</li>
+                      <li class="{$item_display|display}">{$item_content}</li>
+                  </ul>
+                  <div class="status">
+                    <div class="icon">{$soldout_icon} {$recommend_icon} {$new_icon} {$product_icons} {$benefit_icons}</div>
+                    <div class="btn_basket">{$basket_icon}</div>
+                </div>
+              </div>
+            </li>
+            <li class="item ap-recommendPrd__item" id="anchorBoxId_{$product_no}">
+              <div class="box">
+                  <a href="/product/detail.html{$param}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="" class="thumb" /></a>
+                  <p class="name">
+                    <strong>
+                      <a href="/product/detail.html{$param}" class="{$product_name_display|display}"> {$product_name}</a>
+                    </strong>
+                  </p>
+                  <ul module="product_ListItem" class="prd-info">
+                    <li class="{$item_display|display}">{$item_content}</li>
+                    <li class="{$item_display|display}">{$item_content}</li>
+                  </ul>
+                  <div class="status">
+                    <div class="icon">{$soldout_icon} {$recommend_icon} {$new_icon} {$product_icons} {$benefit_icons}</div>
+                    <div class="btn_basket">{$basket_icon}</div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div><!-- //ap-recommendPrd -->
+      </div><!-- //ap-myshop__section.mileage-recommend -->
+      
     </div><!-- //ap-myshop__content -->
   </div><!-- //ap-myshop__container -->  
 </section><!-- //ap-myshop -->
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const couponDates = document.querySelectorAll('.coupon__date');
+  
+    couponDates.forEach(function (el) {
+      const rawText = el.textContent.trim();
+      if (!rawText.includes('~')) return;
+  
+      const [startRaw, endRaw] = rawText.split('~').map(v => v.trim());
+  
+      // "YYYY-MM-DD HH:MM:SS" → "YYYY-MM-DD HH:MM"
+      function formatDateTime(str) {
+        const [date, time] = str.split(' ');
+        if (!time) return date;
+        const [hh, mm] = time.split(':');
+        return `${date} ${hh}:${mm}`;
+      }
+  
+      const startText = formatDateTime(startRaw);
+      const endText = formatDateTime(endRaw);
+  
+      // 남은 일수 계산 (종료일 기준)
+      const endDate = new Date(endRaw.replace(' ', 'T'));
+      const now = new Date();
+  
+      const diffTime = endDate.getTime() - now.getTime();
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  
+      let remainText = '';
+  
+      if (diffTime > 0) {
+        if (diffDays > 1) {
+          remainText = `${diffDays}일 남음`;
+        } else {
+          // 하루 미만이면 시간 기준으로
+          const diffHours = Math.ceil(diffTime / (1000 * 60 * 60));
+          remainText = diffHours > 0 ? `${diffHours}시간 남음` : '곧 종료';
+        }
+      } else {
+        remainText = '기간 종료';
+      }
+  
+      el.innerHTML = `<span class="coupon__remain">${remainText}</span> · ${startText} ~ ${endText}`;
+    });
+  });
+  </script>

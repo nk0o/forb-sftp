@@ -12,12 +12,12 @@ display:-webkit-flex; display:-ms-flex; display:-moz-flex; display:flex; -webkit
 
 /* theme1 */
 .ec-base-fold.theme1 { position:relative; }
-.ec-base-fold.theme1 > .title {  border-top:1px solid #000; }
-.ec-base-fold.theme1 > .title h2 { padding:25px 0; font-weight:normal; }
-.ec-base-fold.theme1 > .title h3 { padding:20px 0; font-size:13px; }
-.ec-base-fold.theme1 > .title:after { content:""; position:absolute; top:20px; right:5px; overflow:hidden; display:inline-block; width:10px; height:10px; border-left:1px solid #000; border-bottom:1px solid #000; -webkit-transform:rotate(-45deg); transform:rotate(-45deg); }
+.ec-base-fold.theme1 > .title {  border-top:1px solid var(--ap-color-text-secondary); }
+.ec-base-fold.theme1 > .title h2 { padding:25px 0 12px; font-weight:normal;font-size:var(--ap-text-md);}
+.ec-base-fold.theme1 > .title h3 { padding:20px 0 12px; font-size:var(--ap-text-base); }
+.ec-base-fold.theme1 > .title:after { content:""; position:absolute; top:20px; right:5px; overflow:hidden; display:inline-block; width:10px; height:10px; border-left:1px solid var(--ap-color-text-secondary); border-bottom:1px solid var(--ap-color-text-secondary); -webkit-transform:rotate(-45deg); transform:rotate(-45deg); }
 .ec-base-fold.theme1.selected > .title:after { top:25px; -webkit-transform:rotate(135deg); transform:rotate(135deg); }
-	.ec-base-fold.theme1.gBottomLine > .title { border-top:0; border-bottom:1px solid #000; }
+	.ec-base-fold.theme1.gBottomLine > .title { border-top:0; border-bottom:1px solid var(--ap-color-text-secondary); }
 	.ec-base-fold.theme1.gClearLine > .title { border-top:0; border-bottom:1px solid transparent; }
 .ec-base-fold.theme1 + .ec-base-fold.theme1 { margin-top:30px; }
 
@@ -33,10 +33,6 @@ display:-webkit-flex; display:-ms-flex; display:-moz-flex; display:flex; -webkit
     .ec-base-fold.theme1 > .title:after { right:21px; }
     .ec-base-fold.theme1.selected > .title:after { top:32px; }
     /* ec-base-table */
-    .ec-base-fold.theme1 .ec-base-table.typeList { border-color:#e5e5e5 }
+    .ec-base-fold.theme1 .ec-base-table.typeList { border-color:var(--ap-color-gray-50) }
 }
 
-/********************* PC *********************/
-@media all and (min-width:1025px) {
-    .ec-base-fold.theme1 .title > h2 { font-size:18px; }
-}

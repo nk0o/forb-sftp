@@ -1,71 +1,67 @@
 <!--@layout(/layout/basic/layout.html)-->
-<div class="ap-join">
-  <div class="section path">
-    <span>현재 위치</span>
-    <ol>
-      <li><a href="/">홈</a></li>
-      <li title="현재 위치"><strong>회원 가입 완료</strong></li>
-    </ol>
-  </div>
-  
-  <div class="section titleArea">
-    <h2>회원 가입 완료</h2>
-  </div>
-  
-  <div class="section ec-base-step">
-    <ol class="step">
-      <li>1. 약관동의</li>
-      <li>2. 정보입력</li>
-      <li class="selected">3. 가입완료</li>
-    </ol>
-  </div>
+<!--@css(/layout/basic/css/ap-member.css)-->
+<div class="ap-member">
+  <div class="ap-form__wrap ap-form__wrap--wide">
+    <div class="section path blind">
+      <span>현재 위치</span>
+      <ol>
+        <li><a href="/">홈</a></li>
+        <li title="현재 위치"><strong>회원 가입</strong></li>
+      </ol>
+    </div><!-- //path -->
+    <div class="ap-member__titArea displaynone">
+      <h2 class="ap-member__title">회원 가입</h2>
+    </div><!-- //ap-member__titArea -->
+    <div class="section ec-base-step displaynone">
+      <ol class="step">
+        <li>1. 약관동의</li>
+        <li>2. 정보입력</li>
+        <li class="selected">3. 가입완료</li>
+      </ol>
+    </div><!-- //ec-base-step -->
   
   <div module="member_joinComplete" class="memberArea">
     <!--@css(/css/module/member/joincomplete.css)-->
-    <div class="joinComplete">
-      <div class="member_icon">
-        <img src="/SkinImg/img/icon_joincomplete.svg" alt="아이콘">
-      </div>
-      <div>For Baby, For Happiness</div>
-      <div>{$member_name} 님, 환영합니다.</div>
-      <p class="desc">회원가입이 완료 되었습니다.</p>
-  
-      <div class="memberSpecial" module="member_BenefitJoin">
-        <p><strong>{$member_name} 님</strong>은 <strong>[{$group_name}]</strong> 회원이십니다.</p>
-        <ul>
-          <li class="{$display_no_benefit|display}"><strong>{$dc_pay} {$dc_min_price}</strong> 구매시
-            <strong class="price">{$dc_price}{$dc_type}</strong>을 {$use_dc} 받으실 수 있습니다.
-            {$dc_max_percent}
-          </li>
-          <li class="{$display_with_all|display}"><strong>{$dc_pay} {$dc_min_price_mileage}</strong>
-            구매시 <strong class="price">{$dc_price_mileage}{$dc_type_mileage}</strong>을
-              {$use_dc_mileage} 받으실 수 있습니다. {$dc_max_mileage_percent}
-          </li>
-        </ul>
-      </div>
-      <div class="ec-base-box typeMember gMessage">
-        <div class="information">
-          <div class="description">
-            <dl class="ec-base-desc">
-              <dt>아이디</dt>
-              <dd>{$member_id}</dd>
-              <dt>이름</dt>
-              <dd>{$member_name}</dd>
-              <dt>이메일</dt>
-              <dd>{$member_email}</dd>
-            </dl>
-          </div>
-        </div>
-      </div>
+    <div class="joinComplete ap-member__section">
+      <div class="ap-joinComp__welcome">
+        <img src="/web/img/icon-forb.png" alt>WELCOME TO FORB</div>
+      <div class="ap-joinComp__name">
+        <span class="{$display_member_name|display}">{$member_name}&nbsp;</span>{$member_id}&nbsp;님, 환영합니다.
+        <p>아이와의 특별한 순간을 포브가 함께하세요.💛</p>
+      </div><!-- //ap-joinComp__name -->
       <p class="memberEmail {$display_email_auth|display}">이메일 주소로 발송된 인증 메일을 통해 인증하신 후에 로그인이 가능합니다.</p>
       <p class="memberAge {$under_fourteen_display|display}">
-        <strong>{$member_name} 님</strong>은 14세 미만 회원이므로 <br />관리자 인증 후 아이디 사용이 가능합니다.
+        <strong>{$member_name} 님</strong>은 14세 미만 회원이므로 <br/>관리자 인증 후 아이디 사용이 가능합니다.
       </p>
-    </div>
-    <div class="ec-base-button gBottom">
-      <a href="{$redirect_function}" class="btnNormalFix sizeM">메인으로 이동</a>
-      <a href="/member/login.html" class="btnSubmitFix sizeM {$display_login_chk|display}">로그인</a>
-    </div>
+      <div class="login-benefit ap-form__wrap">
+        <div class="login-benefit__head">
+          <span class="login-benefit__title">신규가입<em>혜택</em></span>
+        </div><!-- //login-benefit__head -->
+        <ul class="login-benefit__grid">
+          <li class="login-benefit__item">
+            <span class="login-benefit__value">3,000<small>원</small></span>
+            <span class="login-benefit__label">가입 즉시 적립</span>
+          </li>
+          <li class="login-benefit__item">
+            <span class="login-benefit__value">5,000<small>원</small></span>
+            <span class="login-benefit__label">카카오채널<br>추가 쿠폰</span>
+          </li>
+          <li class="login-benefit__item">
+            <span class="login-benefit__value" style="font-size:20px;line-height:1.2;">무료배송</span>
+            <span class="login-benefit__label">회원 전용</span>
+          </li>
+          <li class="login-benefit__item">
+            <span class="login-benefit__value">10<small>%</small></span>
+            <span class="login-benefit__label">생일 축하<br>쿠폰</span>
+          </li>
+        </ul>
+      </div><!-- //login-benefit -->
+      <div class="ec-base-button gBottom">
+        <a href="{$redirect_function}" class="ap-btn ap-btn--primary">첫 구매 혜택 사용하기</a>
+        <a href="/member/login.html" class="ap-btn ap-btn--primary {$display_login_chk|display}">로그인</a>
+      </div><!-- //ec-base-button -->
+      <div class="ap-text--right"><a href="/member/modify.html" class="ap-btn ap-btn--ghost">추가정보 입력하기<!--@import(/svg/icon-arrow-right.html)--></a></div>
+    </div><!-- //ap-member__section -->
   </div><!-- //memberArea -->
   
   <div module="coupon_join">
@@ -89,4 +85,5 @@
       </ul>
     </div><!-- //couponSkinArea -->
   </div><!-- //coupon_join -->
-</div><!-- //ap-join -->
+</div><!-- //ap-form__wrap -->
+</div><!-- //ap-member -->

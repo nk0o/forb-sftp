@@ -8,7 +8,7 @@
       <ol>
         <li><a href="/"><!--@import(/svg/icon-home.html)--></a></li>
         <li><a href="/myshop">마이페이지</a></li>
-        <li><a href="/myshop/mileage/historyList.html"><strong>적립금 내역</strong></a></li>
+        <li title="현재위치"><strong>적립금 내역</strong></li>
       </ol>
     </div><!-- //ap-path -->
   </div>
@@ -58,7 +58,9 @@
         <div class="ap-myshop__section">
           <!-- 적립금 안내 -->
           <div module="myshop_head" class="ap-mileage__info">
-            <h3 class="ap-myshop__subtitle-txt">{$mileage_name} 안내</h3>
+            <div class="ap-myshop__subtitle no_margin">
+              <h3 class="ap-myshop__subtitle-txt">{$mileage_name} 안내</h3>
+            </div>
             <ul class="txtList" module="myshop_historyInfo">
               <li>- 주문으로 발생한 {$mileage_name}은 배송완료 후 {$mileage_period} 부터 실제 사용 가능한 {$mileage_name}으로 전환됩니다. 배송완료 시점으로부터 {$mileage_period} 동안은 미가용 {$mileage_name}으로 분류됩니다.</li>
               <li>- 미가용 {$mileage_name}은 반품, 구매취소 등을 대비한 임시 {$mileage_name}으로 사용가능 {$mileage_name}으로 전환되기까지 상품구매에 사용하실 수 없습니다.</li>
@@ -77,13 +79,15 @@
 
           <!-- 적립금 내역 -->
           <div module="myshop_historyList" class="ap-mileage-list">
-            <h3 class="ap-myshop__subtitle-txt display_tablet_only">{$mileage_name} 내역</h3>
+            <div class="ap-myshop__subtitle display_tablet_only">
+              <h3 class="ap-myshop__subtitle-txt">{$mileage_name} 내역</h3>
+            </div>
             <!--
                 $only_html = no
                 $count = 10
                 $login_page = /member/login.html
             -->
-            <div class="ap-mileage-list__item {$display_history|display}">
+            <div class="ap-mileage-list__item">
               <div class="ec-base-table gClearBorderTop">
                 <table border="1">
                   <caption>적립금</caption>
@@ -127,7 +131,7 @@
           </div><!-- ap-mileage-list -->
 
           <!-- 적립금 페이징 -->
-          <div module="myshop_historyPaging" class="ec-base-paginate typeList">
+          <div module="myshop_historyPasssssing" class="ec-base-paginate typeList">
             <a href="{$first_url}" class="first">첫 페이지</a>
             <a href="{$prev_url}">이전 페이지</a>
             <ol>
@@ -150,7 +154,9 @@
 
         <!-- 마이페이지 메인 - 추천 -->
         <div class="ap-myshop__section mileage-recommend">
-          <h3 class="ap-myshop__subtitle-txt">적립금 사용하기</h3>
+          <div class="ap-myshop__subtitle no_margin">
+            <h3 class="ap-myshop__subtitle-txt">적립금 사용하기</h3>
+          </div>
           <div module="product_listmain_1" class="mileage-recommend">
             <!--@css(/css/module/product/listnormal.css)-->
             <!--

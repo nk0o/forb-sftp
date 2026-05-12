@@ -1,4 +1,383 @@
 <!--@layout(/layout/basic/layout.html)-->
+<!--@css(/layout/basic/css/ap-service.css)-->
+<div module="layout_logincheck" data-ez="contents-0n78ilv-1">
+  <!--
+    $url = /member/login.html
+-->
+</div>
+<div class="ap-service">
+  <div class="ap-service__top">
+    <div class="ap-titleArea">
+      <div class="ap-container--narrow">
+        <!-- 브래드크럼 -->
+        <div class="ap-list-path path section">
+          <span>현재 위치</span>
+          <ol>
+            <li><a href="/"><!--@import(/svg/icon-home.html)--></a></li>
+            <li title="현재 위치"><strong>정품인증</strong></li>
+          </ol>
+        </div><!-- //ap-path -->
+      </div><!-- //ap-container--narrow -->
+    </div><!-- //ap-titleArea -->
+    
+    <div class="ap-container--narrow">
+      <div class="ap-service__hero">
+        <div class="ap-service__left">
+          <h2 class="ap-service__title">정품 인증</h2>
+          <p class="ap-service__desc">
+            포브가 직접 만들고 관리하는 제품,<br>정품 인증으로 확인하세요.            
+          </p>
+        </div><!-- //auto-hero-left -->
+        <div class="ap-service__badges">
+          <div class="ap-service-badge">
+            <div class="ap-service-badge__icon"><!--@import(/svg/icon-certified.html)--></div>
+            <div class="ap-service-badge__content">
+              <div class="ap-service-badge__label">공식 정품 보증</div>
+              <div class="ap-service-badge__desc">정식 유통 제품만 보증</div>
+            </div>
+          </div>
+          <div class="ap-service-badge">
+            <div class="ap-service-badge__icon"><!--@import(/svg/icon-file-text.html)--></div>
+            <div class="ap-service-badge__content">
+              <div class="ap-service-badge__label">제품 이력 관리</div>
+              <div class="ap-service-badge__desc">내 구매 제품을 한눈에 관리</div>
+            </div>
+          </div>
+          <div class="ap-service-badge">
+            <div class="ap-service-badge__icon"><!--@import(/svg/icon-exchange.html)--></div>
+            <div class="ap-service-badge__content">
+              <div class="ap-service-badge__label">교환/AS 지원</div>
+              <div class="ap-service-badge__desc">등록 제품은 바로 접수</div>
+            </div>
+          </div>
+        </div>
+      </div><!-- //ap-service__hero -->
+    </div><!-- //ap-container--narrow -->
+  </div><!-- //ap-service__top -->
+  
+  <main class="ap-auth__main ap-container--narrow">  
+    <!-- AUTH FORM -->
+    <section class="auth-section ap-grid">
+      <div class="auth-card">
+        <div class="auth-card__body">
+          <div class="auth-section__header">
+            <h2 class="auth-section__title"><em>01</em> 제품 등록</h2>
+          </div><!-- //auth-section__header -->
+          <!-- Category -->
+          <div class="auth-card__field auth-category">
+            <label for="categorySelect">제품 카테고리</label>
+            <div class="ap-select__wrapper">
+              <select id="categorySelect" class="ap-select">
+                <option value="CARRIER">아기띠 & 힙시트</option>
+                <option value="CARSEAT">카시트</option>
+                <option value="OUTDOOR">아웃도어 캐리어</option>
+                <option value="ACC">액세서리 & 기타</option>
+                <option value="">카테고리를 선택해 주세요</option>
+              </select>
+              <span class="ap-select__arrow"><!--@import(/svg/icon-chevron-down.html)--></span>
+            </div>
+          </div><!-- //auth-card__field -->
+  
+          <!-- Serial -->
+          <div class="auth-card__field">
+            <label for="serialInput">시리얼 번호</label>
+            <input type="text" id="serialInput" placeholder="예: FB-2024-AERO-8812" autocomplete="off" spellcheck="false" />
+            <p class="auth-card__hint">
+              제품 태그 또는 보증서에서 시리얼 번호를 확인하세요.(시리얼 번호 부착 위치 안내)
+            </p>
+          </div>
+  
+          <!-- Button -->
+          <button class="auth-btn ap-btn-primary ap-btn--lg" id="authBtn" disabled>
+            <span id="btnText">정품 등록하기</span>
+            <span class="arrow">→</span>
+          </button>
 
-<div module="Layout_Dummy">
-정품인증</div>
+          <!-- Status -->
+          <div id="statusMsg" class="auth-status"></div>
+
+        </div><!-- //auth-card__body -->
+      </div><!-- //auth-card -->
+      <div class="auth-info__card">
+        <div class="auth-info__img"><img src="/web/img/icon-auth.png?v=3" alt></div>
+        <h3 class="auth-info__title">정품 등록을 하시면<br>이런 혜택을 누릴 수 있어요.</h3>
+        <p class="auth-info__subtitle"></p>
+        
+        <div class="auth-info__checklist">
+          <div class="auth-info__checkItem"><span class="icon"><!--@import(/svg/icon-check.html)--></span>공식 정품 보증 서비스</div>
+          <div class="auth-info__checkItem"><span class="icon"><!--@import(/svg/icon-check.html)--></span>제품 이력 및 보유 관리 관리</div>
+          <div class="auth-info__checkItem"><span class="icon"><!--@import(/svg/icon-check.html)--></span>교환/AS 등 고객 서비스 지원</div>
+          <div class="auth-info__checkItem"><span class="icon"><!--@import(/svg/icon-check.html)--></span>이벤트 및 신제품 소식 우선 안내</div>
+        </div>
+      </div><!-- //auth-info__card -->
+    </section>
+  
+    <!-- RECORDS -->
+    <section class="auth-section auth-section--record">
+      <div class="auth-section__header">
+        <h2 class="auth-section__title"><em>02</em>인증 내역
+          <span class="auth-record__count" id="recordsCount" style="display:none;"></span>
+        </h2>
+      </div>
+      <div id="recordsList"></div>
+    </section>
+  
+  </main>
+</div><!-- //ap-auth -->
+
+<script>
+  const PRODUCTS = {
+    CARRIER: {
+      label: "아기띠 & 힙시트",
+      prdImg: "/web/img/main/img-best-prd-1.png",
+      serials: {
+        "FB-2024-AERO-8812": "프리아핏 에어 올인원 아기띠",
+        "FB-2024-AERO-4491": "프리아핏 에어 올인원 + 패딩워머 세트",
+        "FB-2023-HIP-2291":  "포브 힙시트 캐리어 PRO",
+      }
+    },
+    CARSEAT: {
+      label: "카시트",
+      prdImg: "/web/product/extra/big/20251113/4ece385d99f542325cafc2ad91a3c548.jpg",
+      serials: {
+        "FB-2024-CS01-3312": "프리아핏 에어 올인원 카시트",
+        "FB-2023-CS02-7721": "포브 보네떼 회전형 카시트",
+      }
+    },
+    OUTDOOR: {
+      label: "아웃도어 캐리어",
+      prdImg: "/web/img/main/img-best-prd-2.png",
+      serials: {
+        "FB-2024-VPR-1193": "볼레 프로 VOLER PRO 캐리어",
+        "FB-2023-VPR-5542": "볼레 프로 캐리어 라이트",
+      }
+    },
+    ACC: {
+      label: "액세서리 & 기타",
+      prdImg: "/web/img/img-auth-accessory.jpg",
+      serials: {
+        "FB-2024-WRM-9981": "아기띠 패딩 워머",
+        "FB-2024-BIB-3367": "올인원 침받이",
+        "FB-2024-MAT-6612": "카시트 보호매트",
+        "FB-2024-MAT-6614": "카시트",
+      }
+    }
+  };
+
+  let records = [
+    /* { id: Date.now(),
+        serial,
+        product: catData.serials[serial],
+        category: catData.label,
+        prdImg: catData.prdImg,
+        date: dateStr,
+        time: timeStr,
+    }, */
+    {
+      id: 1,
+      serial: "FB-2024-AERO-8812",
+      product: "프리아핏 에어 올인원 아기띠",
+      category: "아기띠 & 힙시트",
+      prdImg: PRODUCTS.CARRIER.prdImg,
+      date: "2025년 3월 2일",
+      time: "10:24",
+    },
+    {
+      id: 2,
+      serial: "FB-2024-CS01-3312",
+      product: "프리아핏 에어 올인원 카시트",
+      category: "카시트",
+      prdImg: PRODUCTS.CARSEAT.prdImg,
+      date: "2025년 2월 18일",
+      time: "15:11",
+    },
+    {
+      id: 3,
+      serial: "FB-2024-WRM-9981",
+      product: "아기띠 패딩 워머",
+      category: "액세서리 & 기타",
+      prdImg: PRODUCTS.ACC.prdImg,
+      date: "2024년 12월 5일",
+      time: "13:47",
+    },
+    {
+      id: 4,
+      serial: "FB-2024-WRM-9981",
+      product: "아기띠 패딩 워머",
+      category: "액세서리 & 기타",
+      prdImg: PRODUCTS.ACC.prdImg,
+      date: "2025년 12월 5일",
+      time: "13:47",
+    },
+  ];
+  
+  const categorySelect = document.getElementById('categorySelect');
+  const serialInput = document.getElementById('serialInput');
+  const authBtn = document.getElementById('authBtn');
+  const statusMsg = document.getElementById('statusMsg');
+  const recordsList = document.getElementById('recordsList');
+  const recordsCount = document.getElementById('recordsCount');
+  
+  function validateForm() {
+    authBtn.disabled = !(categorySelect.value && serialInput.value.trim());
+  }
+  
+  categorySelect.addEventListener('change', () => {
+    hideStatus();
+    validateForm();
+  });
+  
+  serialInput.addEventListener('input', () => {
+    hideStatus();
+    serialInput.classList.remove('error');
+    validateForm();
+  });
+  
+  serialInput.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !authBtn.disabled) {
+      handleAuth();
+    }
+  });
+  
+  function hideStatus() {
+    statusMsg.classList.remove('show');
+  }
+  
+  function showStatus(type, title, desc) {
+    const icons = { success: '✓', error: '✕', warning: '!' };
+    statusMsg.className = `auth-status ${type} show`;
+    statusMsg.innerHTML = `
+      <div class="auth-status__icon">${icons[type]}</div>
+      <div class="auth-status__content">
+        <div class="auth-status__title">${title}</div>
+        <div class="auth-status__desc">${desc}</div>
+      </div>
+    `;
+  }
+  
+  function setLoading(loading) {
+    if (loading) {
+      authBtn.innerHTML = '<div class="auth-btn__spinner"></div>';
+      authBtn.disabled = true;
+    } else {
+      authBtn.innerHTML = '<span id="btnText">정품 인증하기</span><span class="arrow">→</span>';
+      validateForm();
+    }
+  }
+  
+  function handleAuth() {
+    const category = categorySelect.value;
+    const serial = serialInput.value.trim().toUpperCase();
+    
+    if (!category || !serial) return;
+  
+    hideStatus();
+    setLoading(true);
+  
+    setTimeout(() => {
+      setLoading(false);
+  
+      const catData = PRODUCTS[category];
+      if (!catData || !catData.serials[serial]) {
+        showStatus('error', '유효하지 않은 시리얼 번호', '카테고리와 시리얼 번호를 다시 확인해 주세요.');
+        serialInput.classList.add('error');
+        return;
+      }
+  
+      if (records.find(r => r.serial === serial)) {
+        showStatus('warning', '이미 인증된 제품', '동일한 시리얼 번호로 중복 인증할 수 없습니다.');
+        serialInput.classList.add('error');
+        return;
+      }
+  
+      const now = new Date();
+      const dateStr = now.toLocaleDateString('ko-KR', { year:'numeric', month:'long', day:'numeric' });
+      const timeStr = now.toLocaleTimeString('ko-KR', { hour:'2-digit', minute:'2-digit', hour12:false });
+  
+      records.unshift({
+        id: Date.now(),
+        serial,
+        product: catData.serials[serial],
+        category: catData.label,
+        prdImg: catData.prdImg,
+        date: dateStr,
+        time: timeStr,
+      });
+  
+      serialInput.value = '';
+      categorySelect.value = '';
+      showStatus('success', '정품 인증 완료', '제품이 인증 내역에 등록되었습니다.');
+      renderRecords();
+    }, 1000);
+  }
+  
+  authBtn.addEventListener('click', handleAuth);
+  
+  function renderRecords() {
+    if (records.length === 0) {
+      recordsCount.style.display = 'none';
+      recordsList.innerHTML = `
+        <div class="auth-empty__state">
+          <div class="auth-empty__icon">📦</div>
+          <div class="auth-empty__title">아직 인증된 제품이 없습니다</div>
+          <div class="auth-empty__desc">
+            첫 번째 제품을 인증하고<br>
+            보증 서비스를 활성화하세요.
+          </div>
+        </div>
+      `;
+      return;
+    }
+  
+    recordsCount.style.display = 'inline-flex';
+    recordsCount.textContent = `총 ${records.length}건`;
+  
+    recordsList.innerHTML = `
+      <div class="auth-record__list swiper">
+        <div class="auth-record__inner swiper-wrapper">
+          ${records.map((r, i) => `
+            <div class="swiper-slide auth-record__card" style="animation-delay: ${i * 0.05}s">
+              <div class="auth-record__img"><img src="${r.prdImg}"></div>
+              <div>
+                <div class="auth-record__header">
+                  <div class="auth-record__main">
+                    <div class="auth-record__product">${r.product}</div>
+                    <div class="auth-record__info">
+                      <div class="auth-record__category">${r.category}</div>
+                      <div class="auth-record__serial">${r.serial}</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="auth-record__footer">
+                  <div class="auth-record__date">${r.date} ${r.time} 등록</div>
+                </div>
+              </div>
+            </div>
+          `).join('')}
+          </div>
+          <div class="swiper-buttons">
+            <div class="swiper-button-prev"><!--@import(/svg/icon-chevron-left.html)--></div>
+            <div class="swiper-button-next"><!--@import(/svg/icon-chevron-right.html)--></div>
+          </div>
+      </div>
+    `;
+  }
+  
+  // Init
+  renderRecords();
+
+  // Record History Swiper
+    
+  document.addEventListener("DOMContentLoaded", () => {
+    const swiper = new Swiper('.auth-record__list.swiper', {
+      slidesPerView: 'auto',
+      spaceBetween: 12,
+      loop: false,
+      navigation: {
+        nextEl: '.auth-record__list .swiper-button-next',
+        prevEl: '.auth-record__list .swiper-button-prev',
+      }, 
+    });
+    console.log(swiper);
+  });
+</script>

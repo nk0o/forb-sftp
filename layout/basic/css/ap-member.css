@@ -1,0 +1,108 @@
+/******** 회원 공통  ********/
+#contents:has(.ap-member) .RTMB { display: none !important; }
+.ap-member{padding:52px 20px var(--ap-btm-padding); background-color: var(--ap-color-ivory);}
+.ap-member__titArea{text-align: center;}
+.ap-member__title{font-weight: 500;}
+.ap-member__desc{margin-top: 8px;font-size: var(--ap-text-sm);font-weight: 400; color: var(--ap-color-text-secondary);}
+.forb .ap-member__section {margin-top: 24px; padding: 32px 28px 28px;background-color: var(--ap-color-cream);border: 1px solid var(--ap-color-border) !important;}
+
+/******** 회원가입  ********/
+.forb .ec-base-step li{color: var(--ap-color-text-muted);font-size: var(--ap-text-base);}
+.forb .ec-base-step li:not(:last-child)::after{border-color: var(--ap-color-text-muted);}
+.forb .ec-base-step .selected{color: var(--ap-color-text-primary)}
+.forb .xans-member-join .agreeAll .blind{border: 0;padding-inline: 8px;}
+.forb .xans-member-join .agreeAll strong{font-weight: 600;}
+.forb .xans-member-join .agreeAll{border-bottom: 1px solid var(--ap-color-text-muted);}
+.forb .xans-member-join .agreeArea .additional li{display: flex; align-items: center;}
+.forb .xans-member-join .agreeArea .additional li + li{margin-top: 12px;}
+.forb .agreeArea .title{display: flex;align-items: center;}
+.forb .agreeArea-row .title{flex-direction: column; align-items: start;}
+.forb .xans-member-join .contents, .forb .xans-member-join #foreignerPersonWrap .content{background-color: #fff;}
+.forb .xans-member-join .contents span,.forb .xans-member-join .contents p{background-color: transparent !important;color: var(--ap-color-text-primary) !important;}
+.forb .xans-member-join .agreeInner{padding: 0 8px;}
+.ap-joinComp__welcome{display: flex;flex-direction: column; align-items: center; gap: 16px; justify-content: center; font-size: var(--ap-text-2xl); font-weight: 500; font-family: var(--ap-font-serif);line-height: 1.3;}
+.ap-joinComp__welcome p{margin-top: 4px; font-size: var(--ap-text-sm); color: var(--ap-color-text-muted); font-family: var(--ap-font-sans);}
+.ap-joinComp__name{position: relative;max-width: 360px;margin-inline: auto; margin-top: 28px;font-size: var(--ap-text-lg); line-height: 1.8; color: var(--ap-color-text-secondary);border-bottom: 1px solid var(--ap-color-border-light);}
+.ap-joinComp__name p{margin-bottom: 12px; color: var(--ap-color-text-secondary);font-size: var(--ap-text-sm);}
+.ap-member .ap-member__section.joinComplete{padding: 48px 20px 40px;}
+.ap-member__section.joinComplete .login-benefit{max-width: 430px;padding: 0;}
+.ap-member__section.joinComplete .login-benefit__item{background-color: var(--ap-color-bg-section);}
+.ap-member__section.joinComplete .login-benefit__head{ margin: 16px 0;padding-top: 16px;}
+
+
+.ap-member__section.joinComplete .ec-base-button, .ap-member__section.joinComplete .ap-text--right{max-width: 430px;}
+.ap-member__section.joinComplete .ec-base-button{margin: 42px auto 0;}
+.ap-member__section.joinComplete .ap-text--right{margin:12px auto 0;}
+@media (min-width: 1025px) {
+  .forb .xans-member-join select, .forb .xans-member-join input[type="text"], .forb .xans-member-join input[type="password"] {
+      width: 100%;
+  }
+}
+
+/******** 로그인  ********/
+.login__card{margin-bottom: 28px;padding: 44px 40px 32px; background-color: var(--ap-color-cream);}
+.login__title{ margin-bottom: 5px;font-family: var(--ap-font-serif); font-size: var(--ap-text-2xl); font-weight: 400; letter-spacing: 0.06em; text-align: center; color: var(--ap-color-text-primary); }
+.login__title--sans{font-family: var(--ap-font-sans); font-size: var(--ap-text-xl);}
+.login__desc{margin-bottom: 32px;font-size: var(--ap-text-sm); font-weight: 400; color: var(--ap-color-text-muted); text-align: center; letter-spacing: .04em; }
+
+.login-divider{display: flex; align-items: center; gap: 12px; margin: 12px 0 20px;font-size: var(--ap-text-sm);color: var(--ap-color-text-muted); white-space: nowrap; letter-spacing: 0.04em; }
+.login-divider__line { flex: 1; height: 1px; background: var(--ap-color-border-light); }
+.forb .xans-member-login .login { max-width: none; padding-bottom: 4px; }
+.forb .xans-member-login .login__sns{margin-top: 0;}
+.forb .xans-member-login .login__sns .wrap_sns_log{justify-content: center; gap: 12px;}
+.forb .xans-member-login .login__sns a{background: none;border: 1px solid var(--ap-color-border);}
+.forb .xans-member-login .login__sns .wrap_sns_log a.social-icon {position: relative; display: flex;align-items: center; justify-content: center; width: 48px; height: 48px;margin: 0 !important;padding: 0; border-radius: 50%;  transition: border-color var(--ap-transition-fast), transform var(--ap-transition-fast), box-shadow var(--ap-transition-fast); }
+.forb .xans-member-login .login__sns .wrap_sns_log a.social-icon:hover {transform: translateY(-2px); box-shadow: 0 4px 12px rgba(26,20,16,.08); }
+
+.forb .xans-member-login .wrap_find{justify-content: space-between;margin-bottom: 20px;}
+.forb .xans-member-login .wrap_find div{display: flex;align-items: center;margin: 0;font-size: var(--ap-text-sm);color: var(--ap-color-text-muted);}
+.forb .xans-member-login .wrap_find div:nth-child(2){background:none;padding: 0 10px;}
+.forb .xans-member-login .wrap_find .login__security{margin-right: auto;padding-left: 0;}
+.forb .xans-member-login .wrap_find .login__find-id{border-right: 1px solid var(--ap-color-border);}
+.forb .xans-member-login .login__security .secret{width: 14px; height: 14px;margin-right: 4px;}
+.forb .xans-member-login .wrap_find input[type="checkbox"]{display: block; width: 100%; height: 100%;background-position: center;background-size:contain}
+.forb .xans-member-login .login__sns .btnKakao{background-color: #fee500; border:0;}
+.forb .xans-member-login .login__button [class^='btn'].sizeL{height: 50px;margin-bottom: 18px; font-weight: 600 !important;}
+
+/* 로그인 버튼 */
+.forb .xans-member-login .login-guest__row{ display: flex; align-items: center; justify-content: space-between; margin: 0;padding-top: 16px;border: 1px solid var(--ap-color-border-light); border-width: 0; border-top-width: 1px; }
+.forb .xans-member-login .login-guest__order{ display: block; text-align: right; font-size: var(--ap-text-sm); color: var(--ap-color-text-muted); transition: color var(--ap-transition-fast);text-decoration: underline;}
+.forb .xans-member-login .login__button [class^='btn'].sizeL.login-guest__buy {display: flex;align-items: center;justify-content: center; width: auto; height: 32px;margin: 0; padding: 0 20px; border: 1px solid var(--ap-color-border); border-radius: var(--ap-radius-pill); background: transparent; font-size: var(--ap-text-sm); color: var(--ap-color-text-secondary); transition: background var(--ap-transition-fast), border-color var(--ap-transition-fast); font-weight: 400 !important;}
+.forb .xans-member-login .login__button [class^='btn'].sizeL.login-guest__buy:hover { background: var(--ap-color-ivory); border-color: var(--ap-color-beige-mid); }
+
+/* 신규가입 혜택 */
+.login-benefit { width: 100%; max-width: 340px; padding: 0 20px;}
+.login-benefit__head { text-align: center; margin: 56px 0 28px; }
+.login-benefit__head .ap-btn {display: flex; width: 100%; margin-top: 20px;}
+.login-benefit__title { font-size: var(--ap-text-sm); font-weight: 400; letter-spacing: .12em; text-transform: uppercase; color: var(--ap-color-text-muted); }
+.login-benefit__title em { color: var(--ap-color-gold); }
+.login-benefit__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; list-style: none; }
+.login-benefit__item { background: var(--ap-color-cream); border: 1px solid var(--ap-color-border-light); border-radius: var(--ap-radius-sm); padding: 18px 14px 16px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px; justify-content: center; }
+.login-benefit__value { font-family: var(--ap-font-serif); font-size: var(--ap-text-xl); font-weight: 400; color: var(--ap-color-gold); letter-spacing: -.01em; line-height: 1; }
+.login-benefit__value small { font-size: 14px; letter-spacing: 0; }
+.login-benefit__label { font-size: var(--ap-text-sm); font-weight: 400; color: var(--ap-color-text-muted); line-height: 1.5; }
+
+/******** 아이디 비번찾기 ********/
+.forb .ap-member__find .ec-base-help{margin: 24px 0; text-align: left;}
+.forb .ap-member__find .ec-base-help ul li{font-size: var(--ap-text-sm);color: var(--ap-color-text-secondary);line-height: 1.45;}
+.forb .ap-member__find .ap-tab{margin-bottom: 24px;}
+.forb .ap-member__find label{cursor: pointer;}
+.forb .ap-member__find .ec-base-button .ap-btn{width: 100%;}
+.forb .xans-member-findpasswdresult .description{font-size: var(--ap-text-base);font-weight: 400; word-break: keep-all; padding: 30px 0; color: var(--ap-color-text-secondary); line-height: 1.4; border-bottom: none;}
+.forb .xans-member-findpasswdresult .description strong{font-weight: 500;}
+.forb .xans-member-findpasswdresult .complete .headDesc{font-weight: 400; color: var(--ap-color-text-primary); word-break: keep-all;}
+
+/******** 약관(개인정보처리방침/이용안내/이용약관 ********/
+.ap-terms{padding-bottom: 100px;}
+.ap-terms .ec-base-fold{
+  
+}
+@media all and (min-width: 1025px) {
+  .forb .xans-member-login .login { width: 100%; margin: 0 auto; }
+}
+@media screen and (max-width: 1024px) {
+  .forb .xans-myshop-orderhistorynologin .login .txtInfo { display: block; }
+}
+@media all and (max-width: 768px) {
+  .login__card{padding: 40px 20px 32px;}  
+}

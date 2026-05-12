@@ -123,11 +123,6 @@
 .ap-search__kw-item { font-family: var(--ap-font-sans); font-size: var(--ap-text-sm); font-weight: 300; color: var(--ap-color-text-secondary); background: var(--ap-color-ivory); border: 1px solid var(--ap-color-border-light); border-radius: var(--ap-radius-pill); padding: 6px 14px; cursor: pointer; text-decoration: none; transition: background 0.15s, color 0.15s, border-color 0.15s; }
 .ap-search__kw-item:hover { background: var(--ap-color-text-primary); color: #fff; border-color: var(--ap-color-text-primary); }
 
-input:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px var(--ap-color-cream) inset ; -webkit-text-fill-color: var(--ap-color-text-primary); }
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active { transition: background-color 5000s ease-in-out 0s; }
 
 /* 스크롤 픽스 */
 .forb #wrap .ap-header .ap-nav__bar .ap-nav__logo,

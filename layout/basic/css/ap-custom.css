@@ -1,9 +1,7 @@
-.forb #wrap{overflow: visible;}
-.forb #container{padding-bottom: 0;}
+
 @media all and (min-width: 1025px) {
   .path + .titleArea { margin: 0; padding-top: 55px; }
   .titleArea { margin: 0; padding: 45px 0 40px; text-align: center; }
-  .forb .xans-member-login .login { width: 100%; margin: 0 auto; }
 }
 @media all and (max-width: 1024px) {
   .forb #container #contents{width: 100%;}
@@ -12,36 +10,6 @@
 
 @media all and (min-width: 768px) and (max-width:1024px) {
   .forb .titleArea { margin: 0; padding: 40px 24px 30px; }
-}
-
-/******** 로그인 & 회원가입 ********/
-#contents:has(.ap-login) .RTMB { display: none !important; }
-.ap-login{padding:52px 20px var(--ap-btm-padding); background-color: var(--ap-color-ivory);}
-.login__card{margin-bottom: 28px;padding: 44px 40px 40px; background-color: var(--ap-color-cream);}
-.login__title{ margin-bottom: 5px;font-family: var(--ap-font-serif); font-size: var(--ap-text-2xl); font-weight: 300; letter-spacing: 0.06em; text-align: center; color: var(--ap-color-text-primary); }
-.login__desc{margin-bottom: 32px;font-size: var(--ap-text-xs); font-weight: 300; color: var(--ap-color-text-muted); text-align: center; letter-spacing: .04em; }
-
-.login-divider{display: flex; align-items: center; gap: 12px; margin: 12px 0 20px;font-size: var(--ap-text-sm); font-size: var(--ap-text-xs); color: var(--ap-color-text-muted); white-space: nowrap; letter-spacing: 0.04em; }
-.login-divider__line { flex: 1; height: 1px; background: var(--ap-color-border-light); }
-.forb .xans-member-login .login { max-width: none; }
-.forb .xans-member-login .login__sns{margin-top: 0;}
-.forb .xans-member-login .login__sns .wrap_sns_log a{justify-content: center; gap: 8px;width: 100%;height: 46px; background-image: none;border-radius:var(--ap-radius-sm) !important;}
-.forb .xans-member-login .wrap_find{justify-content: space-between;margin-bottom: 20px;}
-.forb .xans-member-login .wrap_find div{display: flex;align-items: center;margin: 0;font-size: var(--ap-text-xs);color: var(--ap-color-text-muted);}
-.forb .xans-member-login .wrap_find div:nth-child(2){background:none;padding: 0 10px;}
-.forb .xans-member-login .wrap_find .login__security{margin-right: auto;padding-left: 0;}
-.forb .xans-member-login .wrap_find .login__find-id{border-right: 1px solid var(--ap-color-border);}
-.forb .xans-member-login .login__security .secret{width: 14px; height: 14px;margin-right: 4px;}
-.forb .xans-member-login .wrap_find input[type="checkbox"]{width: 100%; height: 100%;background-position: center;background-size:contain}
-.forb .xans-member-login .login__sns .btnKakao{background-color: rgb(254, 229, 0); border:0;}
-.forb .xans-member-login .login__button [class^='btn'].sizeL{height: 50px;margin-bottom: 8px; font-weight: 600 !important;}
-
-.forb .ap-login .login__card .login__util{display: flex; flex-direction: column; justify-content: center; margin: 20px 0 0 0; width: 100%; border: 1px solid var(--ap-color-border-light); box-sizing: border-box; margin-left: auto; margin-right: auto;height: auto; padding: 24px 0 0; border-width: 0; border-top-width: 1px;border-color: var(--ap-color-border-light);}
-.forb .ap-login .login__card div.login__util-text{ font-size: var(--ap-text-sm);font-weight: 400; color: var(--ap-color-text-muted); margin-bottom: 12px; line-height: 1.7;font-size: var(--ap-text-sm);font-weight: 400; color: var(--ap-color-text-muted); margin-bottom: 12px; line-height: 1.7;}
-.login__guest-order{ display: block; text-align: right; font-size: 11px; color: var(--ap-color-text-muted); margin-bottom: 8px; transition: color var(--ap-transition-fast);    text-decoration: underline; }
-.ap-join{padding:0 20px var(--ap-btm-padding);}
-@media all and (max-width: 768px) {
-  .login__card{padding: 40px 20px 40px;}  
 }
 
 /******** 제품 목록 ********/

@@ -1,36 +1,57 @@
 <aside class="ap-myshop-side" id="myshopMain" module="myshop_main">
     <!--@css(/css/module/myshop/main.css)-->
     <div module="myshop_benefit">
-      <div class="ap-myshop-side__name"><a href="/myshop/index.html">{$member_name}님</a></div>
+      <div class="ap-myshop-side__name">
+        <a href="/myshop/index.html">{$member_name}님</a>
+      </div>
     </div>
     <div class="ap-myshop-side__menu menu">
-        <li><a href="/myshop/order/list.html">주문내역</a></li>
-        <li><a href="/myshop/mileage/historyList.html">{$mileage_name}</a></li><!-- 적립금 내역 -->
-        <li class="{$deposit_display|display}"><a href="/myshop/deposits/historyList.html">{$deposit_name}</a></li><!-- 예치금내역 -->
-        <li><a href="/myshop/coupon/coupon.html">쿠폰</a></li><!-- 예치금내역 -->
-        <li><a href="/myshop/board_list.html">나의 게시글</a></li>
-        <li><a href="/board/free/list.html?board_no=3">자주 묻는 질문</a></li>
-        <li><a href="/member/modify.html">회원정보 수정</a></li>
-        <li class="ap-myshop-side__item--addr"><a href="/myshop/addr/list.html">배송지 관리</a></li>
+        <li><a href="/myshop/order/list.html" data-mymenu="order">주문내역</a></li>
+        <li><a href="/myshop/mileage/historyList.html" data-mymenu="mileage">{$mileage_name}</a></li><!-- 적립금 내역 -->
+        <li class="{$deposit_display|display}"><a href="/myshop/deposits/historyList.html" data-mymenu="deposits">{$deposit_name}</a></li><!-- 예치금내역 -->
+        <li><a href="/myshop/coupon/coupon.html" data-mymenu="coupon">쿠폰</a></li>
+        <li><a href="/myshop/board_list.html" data-mymenu="board">나의 게시글</a></li>
+        <li><a href="/board/free/list.html?board_no=3" data-mymenu="faq">자주 묻는 질문</a></li>
+        <li><a href="/member/modify.html" data-mymenu="modify">회원정보 수정</a></li>
+        <li class="ap-myshop-side__item--addr"><a href="/myshop/addr/list.html" data-mymenu="addr">배송지 관리</a></li>
         <li class="ap-myshop-side__item--logout display_pc_only" module="Layout_stateLogon">
           <a href="/exec/front/Member/logout/">로그아웃</a>
         </li>
     </div><!-- //ap-myshop-side__menu -->
 </aside>
 
-
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    var currentPath = location.pathname;
+    var path = location.pathname;
   
-    document.querySelectorAll('.ap-myshop-side__menu a[href]').forEach(function (link) {
-      var linkPath = link.pathname; // <a> 요소의 pathname 자동 파싱
+    // URL → data-mymenu 매핑
+    var menuMap = {
+      order: ['/myshop/order/'],
+      mileage: ['/myshop/mileage/'],
+      deposits: ['/myshop/deposits/'],
+      coupon: ['/myshop/coupon/'],
+      board: ['/myshop/board_list.html'],
+      modify: ['/member/modify.html'],
+      addr: ['/myshop/addr/'],
+    };
   
-      if (linkPath && currentPath === linkPath) {
-        link.classList.add('active');
-        // 부모 li에도 추가하고 싶으면:
-        // link.closest('li')?.classList.add('active');
+    var currentMenu = null;
+  
+    // 현재 path가 어떤 메뉴인지 찾기
+    for (var key in menuMap) {
+      if (menuMap[key].some(function (url) {
+        return path.indexOf(url) > -1;
+      })) {
+        currentMenu = key;
+        break;
       }
-    });
+    }
+  
+    // 매칭되는 메뉴에 active 추가
+    if (currentMenu) {
+      document.querySelectorAll('[data-mymenu="' + currentMenu + '"]').forEach(function (el) {
+        el.classList.add('active');
+      });
+    }
   });
   </script>

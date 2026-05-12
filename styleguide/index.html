@@ -100,7 +100,7 @@
 
   <span class="c">/* COLOR — Semantic */</span>
   <span class="p">--ap-color-success</span>:            <span class="v">#7A9E7E</span>;
-  <span class="p">--ap-color-error</span>:              <span class="v">#C27070</span>;
+  <span class="p">--ap-color-error</span>:              <span class="v">#EC2A1D</span>;
   <span class="p">--ap-color-info</span>:               <span class="v">#7A96B4</span>;
 
   <span class="c">/* FONT */</span>
@@ -335,6 +335,7 @@
   <section class="sg-section" id="s06">
     <div class="sg-section__num">06 — Form</div>
     <div class="sg-section__title">폼</div>
+    <!-- 인풋 UI -->
     <div style="max-width:520px;">
       <div class="sg-form-2col">
         <div class="ap-form__group">
@@ -357,6 +358,19 @@
         <span class="ap-form__error-msg">이메일 형식을 확인해 주세요</span>
       </div>
     </div>
+    <!-- 탭 UI -->
+    <div>
+      <div class="ap-tab">
+        <button class="ap-tab__item is-active" onclick="switchTab('panel-1', this)">아이디 찾기</button>
+        <button class="ap-tab__item" onclick="switchTab('panel-2', this)">비밀번호 찾기</button>
+      </div>
+      <div class="ap-tab__panel is-active" id="panel-1">tab content - 1</div>
+      <div class="ap-tab__panel" id="panel-2">tab content - 2</div>
+    </div>
+    <!-- 셀렉트박스 UI -->
+     <div>
+      
+     </div>
   </section>
 
   <!-- 07. GNB 2단 -->

@@ -1,27 +1,31 @@
 <!--@layout(/layout/basic/layout.html)-->
-<div class="section path">
-    <span>현재 위치</span>
-    <ol>
-        <li><a href="/">홈</a></li>
+<!--@css(/layout/basic/css/ap-member.css)-->
+<div class="ap-titleArea">
+  <div class="ap-container--narrow">
+    <!-- 브래드크럼 -->
+    <div class="ap-list-path path section">
+      <span>현재 위치</span>
+      <ol>
+        <li><a href="/"><!--@import(/svg/icon-home.html)--></a></li>
         <li title="현재 위치"><strong>개인정보처리방침</strong></li>
-    </ol>
-</div>
+      </ol>
+    </div><!-- //ap-path -->
+  </div><!-- //ap-container--narrow -->
+</div><!-- //ap-titleArea -->
 
-<div class="section titleArea">
-    <h2>개인정보처리방침</h2>
-</div>
-
-<div module="mall_privacy" class="section gInnerMargin">
-    <!--@css(/css/module/mall/privacy.css)-->
-    <p class="date {$displayEnforce|display}">{$enforce_date}</p>
-    <div class="ec-base-box typeThin">
+<div class="ap-container--narrow">
+  <h2 class="ap-section__title ap-text--center">개인정보처리방침</h2>
+  
+  <div module="mall_privacy" class="ap-terms">
+      <!--@css(/css/module/mall/privacy.css)-->
+      <p class="date {$displayEnforce|display}">{$enforce_date}</p>
+      <div class="ec-base-box typeThin">
         <div class="agree">
             {$privacy_agreement}
         </div>
-    </div>
-    <div class="ec-base-button {$displayBeforeEnforce|display}">
-        <span class="gLeft">
-        	<a href="{$before_enforce_link}" class="btnDate" target="_blank">{$before_enforce_date}</a>
-        </span>
-    </div>
-</div>
+        <div class="{$displayBeforeEnforce|display}">
+            <a href="{$before_enforce_link}" class="ap-btn ap-btn--outline ap-btn--sm" target="_blank">{$before_enforce_date}<!--@import(/svg/icon-chevron-right.html)--></a>
+        </div>
+      </div><!-- //ec-base-box -->
+  </div>
+</div><!-- //ap-container--narrow -->
