@@ -1,3 +1,929 @@
-<!--@layout(/layout/basic/layout.html)-->
+<!--@layout(/layout/basic/layout.html)--><!DOCTYPE html>
 
-<div module="Layout_Dummy">포브스토리</div>
+    <style>
+      :root {
+        /* === COLOR — Base === */
+        --ap-color-cream:              #FFFDF9;
+        --ap-color-ivory:              #FAF6EF;
+        --ap-color-beige:              #F2EAE0;
+        --ap-color-beige-mid:          #E4D6C8;
+        --ap-color-beige-deep:         #CDB99F;
+  
+        /* === COLOR — Gold (#FDD000 / #F3A700) === */
+        --ap-color-gold:               #F3A700;
+        --ap-color-gold-light:         #fdd000;
+        --ap-color-gold-pale:          #FEF0A0;
+        --ap-color-warm-brown:         #A07848;
+        --ap-color-warm-brown-deep:    #7A5A32;
+        --ap-color-dusty-rose:         #d4a99a;
+  
+        /* === COLOR — Text === */
+        --ap-color-text-primary:       #1A1410;
+        --ap-color-text-secondary:     #5A4E44;
+        --ap-color-text-muted:         #9A8A7A;
+        --ap-color-text-disabled:      #C8B8A8;
+  
+        /* === COLOR — Surface === */
+        --ap-color-bg-base:            #FFFDF9;
+        --ap-color-bg-section:         #FAF6EF;
+        --ap-color-bg-card:            #FFFFFF;
+        --ap-color-border:             #EAE0D4;
+        --ap-color-border-light:       #F2EAE0;
+  
+        /* === COLOR — Semantic === */
+        --ap-color-success:            #7A9E7E;
+        --ap-color-error:              #ec2a1d;
+        --ap-color-info:               #7A96B4;
+  
+        /* === COLOR — GrayScale === */
+        --ap-color-gray-950 : #1F1F1F;
+        --ap-color-gray-900 : #303030;
+        --ap-color-gray-800 : #404040;
+        --ap-color-gray-700 : #525252;
+        --ap-color-gray-600 : #5E5E5E;
+        --ap-color-gray-500 : #666666;
+        --ap-color-gray-400 : #868686;
+        --ap-color-gray-300 : #999999;
+        --ap-color-gray-200 : #BFBFBF;
+        --ap-color-gray-100 : #DBDBDB;
+        --ap-color-gray-50  : #F0F0F0;
+        --ap-color-gray-10  : #FAFAFA;
+  
+        /* === TYPOGRAPHY — Font Family === */
+        --ap-font-serif: 'Cormorant Garamond', serif;
+        --ap-font-sans: 'Pretendard Variable', 'Apple SD Gothic Neo', sans-serif;
+  
+        /* === TYPOGRAPHY — Size === */
+        --ap-text-xs:   11px;  --ap-text-sm:   13px;
+        --ap-text-base: 15px;  --ap-text-md:   17px;
+        --ap-text-lg:   20px;  --ap-text-xl:   26px;
+        --ap-text-2xl:  34px;  --ap-text-3xl:  44px;
+        --ap-text-4xl:  58px;
+  
+        /* === TYPOGRAPHY — Line Height === */
+        --ap-leading-tight:  1.2;
+        --ap-leading-normal: 1.75;
+        --ap-leading-loose:  1.9;
+  
+        /* === TYPOGRAPHY — Letter Spacing === */
+        --ap-tracking-tight:  -0.02em;
+        --ap-tracking-wide:    0.08em;
+        --ap-tracking-wider:   0.18em;
+  
+        /* === SPACING === */
+        --ap-space-xs:  4px;   --ap-space-sm:  8px;
+        --ap-space-md:  16px;  --ap-space-lg:  24px;
+        --ap-space-xl:  40px;  --ap-space-2xl: 64px;
+        --ap-space-3xl: 96px;  --ap-space-4xl: 128px;
+  
+        /* === LAYOUT === */
+        --ap-max-width:            1920px;
+        --ap-max-width-narrow:     1440px;
+        --ap-max-width-form:       420px;
+        --ap-max-width-form--wide: 600px;
+        --ap-btm-padding:          100px;
+        --ap-gutter:               32px;
+        --ap-top-banner-height:    32px;
+        --ap-header-height:        103px;
+        --ap-fix-header-height:    62px;
+  
+        /* === BORDER RADIUS === */
+        --ap-radius-sm:   4px;
+        --ap-radius-md:   6px;
+        --ap-radius-lg:   14px;
+        --ap-radius-pill: 999px;
+  
+        /* === SHADOW === */
+        --ap-shadow-sm: 0 1px 4px rgba(26,20,16,.05);
+        --ap-shadow-md: 0 4px 20px rgba(26,20,16,.07);
+        --ap-shadow-lg: 0 16px 48px rgba(26,20,16,.09);
+  
+        /* === TRANSITION === */
+        --ap-transition-fast:   150ms ease;
+        --ap-transition-normal: 300ms ease;
+        --ap-transition-slow:   600ms ease;
+      }
+  
+      @media (max-width: 1024px) {
+        :root { 
+          --ap-gutter: 20px; 
+        }
+      }
+  
+      @media (max-width: 768px) {
+        :root { 
+          --ap-header-height: 61px;
+        }
+      }
+  
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+  
+      body {
+        font-family: var(--ap-font-sans);
+        background-color: var(--ap-color-cream);
+        color: var(--ap-color-text-primary);
+        line-height: var(--ap-leading-normal);
+        overflow-x: hidden;
+      }
+  
+      /* Hero Section */
+      .hero {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(180deg, var(--ap-color-cream) 0%, var(--ap-color-ivory) 100%);
+      }
+  
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: var(--ap-gutter);
+      }
+  
+      .hero-title {
+        font-family: var(--ap-font-serif);
+        font-size: clamp(34px, 5vw, 58px);
+        font-weight: 600;
+        letter-spacing: var(--ap-tracking-tight);
+        margin-bottom: var(--ap-space-md);
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 1s ease forwards;
+      }
+  
+      .hero-subtitle {
+        font-size: var(--ap-text-md);
+        color: var(--ap-color-text-secondary);
+        margin-bottom: var(--ap-space-lg);
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 1s ease 0.2s forwards;
+      }
+  
+      .hero-subtitle .highlight {
+        color: var(--ap-color-gold);
+        font-weight: 600;
+      }
+  
+      .scroll-indicator {
+        position: absolute;
+        bottom: var(--ap-space-xl);
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        animation: fadeInUp 1s ease 0.4s forwards, bounce 2s ease-in-out 1.4s infinite;
+      }
+  
+      .scroll-indicator span {
+        display: block;
+        width: 1px;
+        height: 60px;
+        background: linear-gradient(to bottom, transparent, var(--ap-color-text-muted));
+        margin: 0 auto var(--ap-space-sm);
+      }
+  
+      .scroll-indicator p {
+        font-size: var(--ap-text-xs);
+        letter-spacing: var(--ap-tracking-wide);
+        color: var(--ap-color-text-muted);
+      }
+  
+      /* Section Base */
+      .section {
+        padding: var(--ap-space-4xl) var(--ap-gutter);
+        max-width: var(--ap-max-width-narrow);
+        margin: 0 auto;
+      }
+  
+      .section-tight {
+        padding: var(--ap-space-3xl) var(--ap-gutter);
+      }
+  
+      /* Story Content */
+      .story-block {
+        margin-bottom: var(--ap-space-4xl);
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+  
+      .story-block.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+  
+      .story-title {
+        font-size: clamp(26px, 3vw, 44px);
+        font-weight: 600;
+        letter-spacing: var(--ap-tracking-tight);
+        margin-bottom: var(--ap-space-xl);
+        line-height: var(--ap-leading-tight);
+      }
+  
+      .story-title.serif {
+        font-family: var(--ap-font-serif);
+      }
+  
+      .story-text {
+        font-size: var(--ap-text-md);
+        line-height: var(--ap-leading-normal);
+        color: var(--ap-color-text-secondary);
+        margin-bottom: var(--ap-space-lg);
+      }
+  
+      .story-text.large {
+        font-size: var(--ap-text-lg);
+        line-height: var(--ap-leading-loose);
+      }
+  
+      .story-text .emphasis {
+        color: var(--ap-color-text-primary);
+        font-weight: 600;
+      }
+  
+      .story-text .accent {
+        color: var(--ap-color-gold);
+        font-weight: 500;
+      }
+  
+      /* Split Section */
+      .split-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--ap-space-3xl);
+        align-items: center;
+        margin-bottom: var(--ap-space-4xl);
+      }
+  
+      .split-content {
+        opacity: 0;
+        transform: translateX(-40px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+  
+      .split-visual {
+        opacity: 0;
+        transform: translateX(40px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+  
+      .split-section.visible .split-content {
+        opacity: 1;
+        transform: translateX(0);
+      }
+  
+      .split-section.visible .split-visual {
+        opacity: 1;
+        transform: translateX(0);
+      }
+  
+      .split-section.reverse {
+        direction: rtl;
+      }
+  
+      .split-section.reverse > * {
+        direction: ltr;
+      }
+  
+      /* Visual Elements */
+      .visual-box {
+        aspect-ratio: 4/3;
+        background: var(--ap-color-beige);
+        border-radius: var(--ap-radius-lg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+      }
+  
+      .visual-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+  
+      /* Timeline Section */
+      .timeline-section {
+        background: var(--ap-color-ivory);
+        padding: var(--ap-space-4xl) var(--ap-gutter);
+        margin: var(--ap-space-4xl) 0;
+      }
+  
+      .timeline {
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+        padding: var(--ap-space-xl) 0;
+      }
+  
+      .timeline::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: var(--ap-color-border);
+        transform: translateX(-50%);
+      }
+  
+      .timeline-item {
+        display: grid;
+        grid-template-columns: 1fr 60px 1fr;
+        gap: var(--ap-space-xl);
+        margin-bottom: var(--ap-space-3xl);
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+  
+      .timeline-item.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+  
+      .timeline-item:nth-child(even) .timeline-content:first-child {
+        text-align: right;
+      }
+  
+      .timeline-year {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+  
+      .timeline-dot {
+        width: 12px;
+        height: 12px;
+        background: var(--ap-color-gold);
+        border-radius: 50%;
+        border: 3px solid var(--ap-color-cream);
+        box-shadow: 0 0 0 1px var(--ap-color-border);
+      }
+  
+      .timeline-year-text {
+        font-family: var(--ap-font-serif);
+        font-size: var(--ap-text-xl);
+        font-weight: 600;
+        color: var(--ap-color-text-primary);
+        position: absolute;
+        white-space: nowrap;
+      }
+  
+      .timeline-content h3 {
+        font-size: var(--ap-text-lg);
+        font-weight: 600;
+        margin-bottom: var(--ap-space-sm);
+        color: var(--ap-color-text-primary);
+      }
+  
+      .timeline-content p {
+        font-size: var(--ap-text-base);
+        color: var(--ap-color-text-secondary);
+        line-height: var(--ap-leading-normal);
+      }
+  
+      /* Values Grid */
+      .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--ap-space-xl);
+        margin-top: var(--ap-space-3xl);
+      }
+  
+      .value-card {
+        padding: var(--ap-space-xl);
+        background: var(--ap-color-bg-card);
+        border-radius: var(--ap-radius-lg);
+        box-shadow: var(--ap-shadow-sm);
+        transition: all var(--ap-transition-normal);
+        opacity: 0;
+        transform: translateY(30px);
+      }
+  
+      .value-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+  
+      .value-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--ap-shadow-md);
+      }
+  
+      .value-icon {
+        width: 60px;
+        height: 60px;
+        background: var(--ap-color-gold-pale);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: var(--ap-space-lg);
+        font-size: var(--ap-text-xl);
+      }
+  
+      .value-card h3 {
+        font-size: var(--ap-text-lg);
+        font-weight: 600;
+        margin-bottom: var(--ap-space-md);
+      }
+  
+      .value-card p {
+        font-size: var(--ap-text-base);
+        color: var(--ap-color-text-secondary);
+        line-height: var(--ap-leading-normal);
+      }
+  
+      /* Quote Section */
+      .quote-section {
+        text-align: center;
+        padding: var(--ap-space-4xl) var(--ap-gutter);
+        background: linear-gradient(180deg, transparent 0%, var(--ap-color-ivory) 50%, transparent 100%);
+      }
+  
+      .quote-content {
+        max-width: 800px;
+        margin: 0 auto;
+        opacity: 0;
+        transform: scale(0.95);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+  
+      .quote-content.visible {
+        opacity: 1;
+        transform: scale(1);
+      }
+  
+      .quote-mark {
+        font-family: var(--ap-font-serif);
+        font-size: 80px;
+        line-height: 1;
+        color: var(--ap-color-gold-light);
+        margin-bottom: var(--ap-space-md);
+      }
+  
+      .quote-text {
+        font-size: clamp(20px, 2.5vw, 34px);
+        line-height: var(--ap-leading-loose);
+        color: var(--ap-color-text-primary);
+        margin-bottom: var(--ap-space-xl);
+        font-weight: 500;
+      }
+  
+      .quote-author {
+        font-family: var(--ap-font-serif);
+        font-size: var(--ap-text-base);
+        color: var(--ap-color-text-muted);
+        letter-spacing: var(--ap-tracking-wide);
+      }
+  
+      /* Final CTA */
+      .final-cta {
+        text-align: center;
+        padding: var(--ap-space-4xl) var(--ap-gutter);
+        background: var(--ap-color-ivory);
+      }
+  
+      .final-cta h2 {
+        font-size: clamp(26px, 3vw, 44px);
+        font-weight: 600;
+        margin-bottom: var(--ap-space-lg);
+      }
+  
+      .final-cta p {
+        font-size: var(--ap-text-md);
+        color: var(--ap-color-text-secondary);
+        margin-bottom: var(--ap-space-xl);
+      }
+  
+      .cta-button {
+        display: inline-block;
+        padding: var(--ap-space-md) var(--ap-space-xl);
+        background: var(--ap-color-text-primary);
+        color: var(--ap-color-cream);
+        text-decoration: none;
+        border-radius: var(--ap-radius-pill);
+        font-weight: 600;
+        letter-spacing: var(--ap-tracking-wide);
+        transition: all var(--ap-transition-normal);
+      }
+  
+      .cta-button:hover {
+        background: var(--ap-color-gold);
+        transform: translateY(-2px);
+        box-shadow: var(--ap-shadow-md);
+      }
+  
+      /* Animations */
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+  
+      @keyframes bounce {
+        0%, 100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        50% {
+          transform: translateX(-50%) translateY(10px);
+        }
+      }
+  
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .split-section {
+          grid-template-columns: 1fr;
+          gap: var(--ap-space-xl);
+        }
+  
+        .split-section.reverse {
+          direction: ltr;
+        }
+  
+        .timeline::before {
+          left: 30px;
+        }
+  
+        .timeline-item {
+          grid-template-columns: 60px 1fr;
+          gap: var(--ap-space-lg);
+        }
+  
+        .timeline-item .timeline-content:first-child {
+          display: none;
+        }
+  
+        .timeline-item:nth-child(even) .timeline-content:first-child {
+          display: none;
+        }
+      }
+  
+      @media (max-width: 768px) {
+        .hero {
+          height: 80vh;
+        }
+  
+        .section {
+          padding: var(--ap-space-2xl) var(--ap-gutter);
+        }
+  
+        .section-tight {
+          padding: var(--ap-space-xl) var(--ap-gutter);
+        }
+  
+        .story-block {
+          margin-bottom: var(--ap-space-2xl);
+        }
+  
+        .timeline-section {
+          padding: var(--ap-space-2xl) var(--ap-gutter);
+        }
+  
+        .values-grid {
+          grid-template-columns: 1fr;
+          gap: var(--ap-space-lg);
+        }
+  
+        .quote-section {
+          padding: var(--ap-space-2xl) var(--ap-gutter);
+        }
+  
+        .quote-mark {
+          font-size: 60px;
+        }
+      }
+    </style>
+  
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">"For Baby, For Happiness"</h1>
+        <p class="hero-subtitle">
+          (행 복경 → 아이와 엄마가 웃는 곳만 / 일상)— 요기는 무주건축일
+          <br>
+          <span class="highlight">아이를 위한 선택은 곧 가족의 하루를 바꾸는 선택이라고 믿습니다.</span>
+        </p>
+      </div>
+      <div class="scroll-indicator">
+        <span></span>
+        <p>SCROLL</p>
+      </div>
+    </section>
+  
+    <!-- Brand Story Section -->
+    <section class="section">
+      <div class="story-block">
+        <h2 class="story-title">FORB Brand Story</h2>
+        <p class="story-text large">
+          아기를 위한 <span class="emphasis">선택은 곧 가족의 하루를 바꾸는 선택</span>이라고 믿습니다.
+        </p>
+      </div>
+  
+      <div class="story-block">
+        <p class="story-text">
+          아이의 편안함을 먼저 생각하고,<br>
+          부모의 사용 경험을 고민하며,<br>
+          나아가 가족 모두의 일상이 더 행복해질 수 있도록,
+        </p>
+        <p class="story-text">
+          포브는 그 고민에서 시작되었습니다.
+        </p>
+      </div>
+    </section>
+  
+    <!-- Split Section 1 -->
+    <section class="section section-tight">
+      <div class="split-section">
+        <div class="split-content">
+          <p class="story-text">
+            우리는 단순한 육아용품이 아닌<br>
+            아이와 부모가 함께 사용하는 시간 속에서<br>
+            오랫동안 신뢰할 수 있는 제품을 만듭니다.
+          </p>
+          <p class="story-text accent">
+            제품 제작 이미지
+          </p>
+        </div>
+        <div class="split-visual">
+          <div class="visual-box">
+            <img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=800&q=80" alt="제품 제작">
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Split Section 2 -->
+    <section class="section section-tight">
+      <div class="split-section reverse">
+        <div class="split-visual">
+          <div class="visual-box">
+            <img src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=800&q=80" alt="가족 순간">
+          </div>
+        </div>
+        <div class="split-content">
+          <p class="story-text">
+            아기를 위한 선택이<br>
+            곧 행복을 위한 선택이 될 수 있도록,
+          </p>
+          <p class="story-text">
+            그래서 우리는 더 깊이 고민합니다.
+          </p>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Values Section -->
+    <section class="section">
+      <div class="story-block">
+        <h2 class="story-title">아이가 중심인 하나지기 편안하지,<br>
+        부모의 손길이 만든 모든 순간이 자연스럽습니다</h2>
+        <p class="story-text accent">
+          이아가 음식이므니까
+        </p>
+      </div>
+  
+      <div class="story-block">
+        <p class="story-text">
+          아기의 작은 움직임 하나까지 편안하지,<br>
+          부모의 손길이 닿은 모든 순간이 자연스럽도록 하며<br>
+          매일 반복되는 육아의 흐름 속에서<br>
+          조금이라도 덜 힘들 수 있도록.
+        </p>
+      </div>
+  
+      <div class="story-block">
+        <p class="story-text">
+          <span class="emphasis">포브의 모든 제품은</span><br>
+          그 집에에서 시작해, 담은 <span class="accent">완성됩니다.</span>
+        </p>
+      </div>
+    </section>
+  
+    <!-- Image Section -->
+    <section class="section section-tight">
+      <div class="split-section">
+        <div class="split-visual">
+          <div class="visual-box">
+            <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=800&q=80" alt="손길">
+          </div>
+        </div>
+        <div class="split-visual">
+          <div class="visual-box">
+            <img src="https://images.unsplash.com/photo-1528459199957-0ff28496a7f6?w=800&q=80" alt="아이">
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Quote Section -->
+    <section class="quote-section">
+      <div class="quote-content">
+        <div class="quote-mark">"</div>
+        <p class="quote-text">
+          눈에 보이는 기능뿐 아니라,<br>
+          보이지 않는 구조의 디테일,<br>
+          그리고 시간이 지나도 변하지 않는 신뢰까지.
+        </p>
+        <p class="quote-author">FORB DESIGN PHILOSOPHY</p>
+      </div>
+    </section>
+  
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+      <div class="story-block" style="text-align: center; margin-bottom: var(--ap-space-3xl);">
+        <h2 class="story-title">우리는 '편안함'과 '안심'이<br>당연한 기준이 되어야 한다고 믿습니다.</h2>
+      </div>
+  
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-content"></div>
+          <div class="timeline-year">
+            <span class="timeline-year-text">1983</span>
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-content">
+            <h3>헤넬 설립</h3>
+            <p>세계 간접클릭 각각 넌다니, 구집법 사업<br>보드와 주요 문구</p>
+          </div>
+        </div>
+  
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>브랜드 확장</h3>
+            <p>아이를 위한 제품 라인 시작</p>
+          </div>
+          <div class="timeline-year">
+            <span class="timeline-year-text">1920</span>
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-content"></div>
+        </div>
+  
+        <div class="timeline-item">
+          <div class="timeline-content"></div>
+          <div class="timeline-year">
+            <span class="timeline-year-text">1950</span>
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-content">
+            <h3>혁신의 시작</h3>
+            <p>안전과 편안함에 대한 새로운 기준 제시</p>
+          </div>
+        </div>
+  
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>글로벌 진출</h3>
+            <p>세계 시장으로의 확장</p>
+          </div>
+          <div class="timeline-year">
+            <span class="timeline-year-text">2003</span>
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-content"></div>
+        </div>
+  
+        <div class="timeline-item">
+          <div class="timeline-content"></div>
+          <div class="timeline-year">
+            <span class="timeline-year-text">2024</span>
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-content">
+            <h3>30년<br>세구간클림의</h3>
+            <p>각각 년도나, 구집법 사업<br>보드와 주요 문구</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Values Grid -->
+    <section class="section">
+      <div class="story-block" style="text-align: center;">
+        <h2 class="story-title">아기를 위한 선택이<br>부모의 하루를 바꾸고,<br>그 하루가 모여 가족의 행복이 되니까요.</h2>
+      </div>
+  
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">🤍</div>
+          <h3>위중은바야는 무크, 이어 잘든 우을, 부모의 순 대하며 당연히 갤까?</h3>
+          <p>아이의 편안함을 먼저 생각하고, 부모의 편의를 함께 고민합니다.</p>
+        </div>
+  
+        <div class="value-card">
+          <div class="value-icon">✨</div>
+          <h3>제품 제작 이미지</h3>
+          <p>오랜 시간 사용해도 변하지 않는 품질과 신뢰를 약속합니다.</p>
+        </div>
+  
+        <div class="value-card">
+          <div class="value-icon">🌱</div>
+          <h3>손실로 제품을 만지는 장면, 아이가 자유롭게</h3>
+          <p>안전하고 지속 가능한 소재로 아이의 미래를 생각합니다.</p>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Final Section -->
+    <section class="section">
+      <div class="story-block" style="text-align: center;">
+        <p class="story-text large">
+          우리는 '편안함'과 '안심'이<br>
+          당연한 기준이 되어야 한다고 믿습니다.
+        </p>
+      </div>
+  
+      <div class="story-block" style="text-align: center;">
+        <p class="story-text">
+          아기를 위한 선택이<br>
+          부모의 하루를 바꾸고,<br>
+          그 하루가 모여 가족의 행복이 되니까요.
+        </p>
+      </div>
+  
+      <div class="story-block" style="text-align: center;">
+        <h2 class="story-title serif">For Baby, For Happiness</h2>
+      </div>
+  
+      <div class="story-block" style="text-align: center;">
+        <p class="story-text">
+          포브는 오늘도<br>
+          아이와 부모의 가장 가까운 순간을 함께합니다.
+        </p>
+      </div>
+    </section>
+  
+    <!-- Final CTA -->
+    <section class="final-cta">
+      <h2>포브의 제품을 만나보세요</h2>
+      <p>아이를 위한 선택, 가족을 위한 행복</p>
+      <a href="#" class="cta-button">SHOP NOW</a>
+    </section>
+  
+    <script>
+      // Intersection Observer for scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+      };
+  
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+  
+      // Observe all animatable elements
+      document.querySelectorAll('.story-block, .split-section, .timeline-item, .value-card, .quote-content').forEach(el => {
+        observer.observe(el);
+      });
+  
+      // Smooth scroll for internal links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+  
+      // Parallax effect for hero
+      window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const hero = document.querySelector('.hero-content');
+        if (hero && scrolled < window.innerHeight) {
+          hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+          hero.style.opacity = 1 - (scrolled / window.innerHeight);
+        }
+      });
+  
+      // Add stagger delay to value cards
+      document.querySelectorAll('.value-card').forEach((card, index) => {
+        card.style.transitionDelay = `${index * 0.1}s`;
+      });
+  
+      // Add stagger delay to timeline items
+      document.querySelectorAll('.timeline-item').forEach((item, index) => {
+        item.style.transitionDelay = `${index * 0.15}s`;
+      });
+    </script>

@@ -111,7 +111,7 @@
 /* ── 모바일 (≤768px) ── */
 @media (max-width: 768px) {
   :root { 
-    --ap-header-height:   58px;
+    --ap-header-height:   61px;
   }
 }
 
@@ -130,7 +130,7 @@ body.forb{font-family: var(--ap-font-sans) !important;min-width: 320px !importan
 .forb #container{padding-bottom: 0;}
 /* ──ap-container ── */
 .ap-container { max-width: var(--ap-max-width); margin: 0 auto; padding: 0 var(--ap-gutter);}
-.ap-container--narrow { max-width: var(--ap-max-width-narrow);  margin: 0 auto; padding: 0 var(--ap-gutter);}
+.ap-container--narrow { max-width: var(--ap-max-width-narrow) !important;  margin: 0 auto; padding: 0 var(--ap-gutter);}
 .ap-form__wrap{width:100%; max-width: var(--ap-max-width-form);margin: 0 auto;}
 .ap-form__wrap--wide{max-width: var(--ap-max-width-form--wide);}
 .forb .xans-product-headcategory.titleArea.section{max-width: var(--ap-max-width) !important;}
@@ -191,6 +191,7 @@ body.forb{font-family: var(--ap-font-sans) !important;min-width: 320px !importan
 .forb .ap-form__group .txtInfo{text-indent: 8px;}
 .forb .ap-form__group .error {color: var(--ap-color-error);margin-top: 4px;}
 .forb input[type=text], .forb input[type=password], .ap-form__input, .ap-form__select, .ap-form__textarea { font-family: var(--ap-font-sans) !important; font-size: var(--ap-text-base) !important; color: var(--ap-color-text-primary) !important; border: 1px solid var(--ap-color-border) !important; border-radius: var(--ap-radius-sm) !important; padding: 12px 14px !important; outline: none !important; transition: border-color var(--ap-transition-fast) !important; -webkit-appearance: none; }
+
 .forb input[type=text]:not([type=text][readonly]):focus, .forb input[type=password]:not([type=password][readonly]):focus, .ap-form__input:focus, .ap-form__select:focus, .ap-form__textarea:focus { border-color: var(--ap-color-gold) !important; }
 .forb input[type=text]::placeholder , .forb input[type=password]::placeholder, .ap-form__input::placeholder { color: var(--ap-color-text-disabled) !important; }
 .forb input[type=text].hasDatepicker{width: auto !important;}
@@ -239,6 +240,7 @@ h5, .ap-text--h5 { font-size: clamp(var(--ap-text-base), 1.8vw, var(--ap-text-md
 .ap-text--gold    { color: var(--ap-color-gold); }
 .ap-text--muted   { color: var(--ap-color-text-muted); }
 .ap-text--center  { text-align: center; }
+.ap-text--left  { text-align: left; }
 .ap-text--right  { text-align: right; }
 .ap-txt--under{text-decoration: underline; text-underline-offset: 4px;}
 
@@ -316,6 +318,18 @@ h5, .ap-text--h5 { font-size: clamp(var(--ap-text-base), 1.8vw, var(--ap-text-md
   .forb .ec-base-tab.typeMenu{ height: 38px;}
   .forb .ec-base-tab.typeMenu .menu li{padding: 4px 12px; font-size: var(--ap-text-sm);}
 }
+
+/* 카테고리 탭메뉴 */
+.ap-tabs.ap-tabs--category {display: flex; gap: var(--ap-space-sm); flex-wrap: wrap; margin-bottom: var(--ap-space-xl); }
+.ap-cate__tabs { display: flex; gap: var(--ap-space-sm); flex-wrap: wrap; margin-bottom: var(--ap-space-xl); }
+.ap-cate__tab { border: 1px solid var(--ap-color-border); background: var(--ap-color-bg-card); border-radius: var(--ap-radius-pill); padding: 7px 16px; font-size: var(--ap-text-sm); font-weight: 500; color: var(--ap-color-text-muted); cursor: pointer; transition: all var(--ap-transition-fast); white-space: nowrap; }
+.ap-cate__tab:hover { border-color: var(--ap-color-warm-brown); color: var(--ap-color-warm-brown); }
+.ap-cate__tab.active { background: var(--ap-color-text-primary); border-color: var(--ap-color-text-primary); color: var(--ap-color-cream); font-weight: 600; }
+@media all and (max-width:768px) {
+  .ap-cate__tabs { margin-bottom: var(--ap-space-lg); gap: var(--ap-space-xs); }
+  .ap-cate__tab { padding: 6px 13px; }
+}
+
 
 /* 추천상품 4grid */
 .ap-recommendPrd__grid{display: grid;grid-template-columns: repeat(4,1fr);gap: 12px;}

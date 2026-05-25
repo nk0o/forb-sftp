@@ -369,7 +369,7 @@
   // Record History Swiper
     
   document.addEventListener("DOMContentLoaded", () => {
-    const swiper = new Swiper('.auth-record__list.swiper', {
+    const autoSwiper = new Swiper('.auth-record__list.swiper', {
       slidesPerView: 'auto',
       spaceBetween: 12,
       loop: false,
@@ -378,6 +378,5 @@
         prevEl: '.auth-record__list .swiper-button-prev',
       }, 
     });
-    console.log(swiper);
   });
 </script>

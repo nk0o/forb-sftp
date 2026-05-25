@@ -119,10 +119,10 @@
               </a>
             </li>
             <li class="ap-nav__item" data-menu="carseat">
-              <a class="ap-nav__link" href="/product/list.html?cate_no=43">카시트</a>
+              <a class="ap-nav__link" href="/product/carseat.html?cate_no=43">카시트</a>
             </li>
             <li class="ap-nav__item" data-menu="carrier">
-              <a class="ap-nav__link" href="/product/list.html?cate_no=44">아기띠</a>
+              <a class="ap-nav__link" href="/product/baby-carrier.html?cate_no=44">아기띠</a>
             </li>
             <li class="ap-nav__item" data-menu="outdoor">
               <a class="ap-nav__link" href="/product/list.html?cate_no=59">아웃도어캐리어</a>
@@ -164,21 +164,24 @@
                 $category_page=/product/list.html
               -->
         <div class="top_search_title ap-search__title displaynone">SEARCH</div>
-        <fieldset>
-          <legend>검색</legend>
-          <div class="top_search_box ap-search__form">{$form.keyword}
-            <button type="button" class="btnDelete ap-search__delete">삭제</button>
-            <button type="button" class="btnSearch ap-search__submit" onclick="{$action_search_submit}"> <!--@import(/svg/icon-search.html)--> </button>
-            <ul class="autoDrop" id="{$search_auto_id}"></ul>
-          </div><!-- //top_search_box -->
-        </fieldset>
-        <div module="search_hotkeyword" class="ap-search__keywords">
-          <div class="ap-search__kw-label">자주 찾는 키워드</div>
-          <div class="ap-search__kw-list">
-            <a href="{$hot_keyword_url}" class="ap-search__kw-item">#{$hot_keyword_name}</a>
-            <a href="{$hot_keyword_url}" class="ap-search__kw-item">#{$hot_keyword_name}</a>
+        <div class="ap-search__field">
+          <fieldset>
+            <legend>검색</legend>
+            <div class="top_search_box ap-search__form">
+              {$form.keyword}
+              <button type="button" class="btnDelete ap-search__delete">삭제</button>
+              <button type="button" class="btnSearch ap-search__submit" onclick="{$action_search_submit}"> <!--@import(/svg/icon-search.html)--> </button>
+              <ul class="autoDrop" id="{$search_auto_id}"></ul>
+            </div><!-- //top_search_box -->
+          </fieldset>
+          <div module="search_hotkeyword" class="ap-search__keywords">
+            <div class="ap-search__kw-label">자주 찾는 키워드</div>
+            <div class="ap-search__kw-list">
+              <a href="{$hot_keyword_url}" class="ap-search__kw-item">#{$hot_keyword_name}</a>
+              <a href="{$hot_keyword_url}" class="ap-search__kw-item">#{$hot_keyword_name}</a>
+            </div>
           </div>
-        </div>
+        </div><!-- //ap-search__field -->
         <div class="ap-search__closebar"><button type="button" class="btnClose ap-search__close">close</button></div>
       </div><!-- //ap-search__inner -->
     </div><!-- //Layout_SearchHeader -->
@@ -190,7 +193,7 @@
 <div class="mega-menu" id="megaMenu" role="dialog" aria-label="메가메뉴">
   <div class="mega-menu__inner">
     <!-- 좌: 이미지 -->
-    <a href="#" class="mega-menu__visual-link">
+    <a href="#" class="mega-menu__visual-link" id="mmLink">
       <div class="mega-menu__visual">
         <div class="mega-menu__img"><img src="/web/upload/about_bg_45.jpg" class="mega-menu__visual-image" id="mmImage"></div>
         <div class="mega-menu__visual-caption" id="mmCaption"></div>
@@ -255,7 +258,7 @@
     <div class="all-menu-drawer__section">
       <!-- 메뉴 -->
       <div class="all-menu-drawer__list">
-        <h3 class="all-menu-drawer__tit"><a href="/guide/how-to-use.html">사용방법</a></h3>
+        <h3 class="all-menu-drawer__tit"><a href="/how-to-use/index.html">사용방법</a></h3>
       </div>
       <!-- 메뉴 -->
       <div class="all-menu-drawer__list">
@@ -336,6 +339,7 @@
     const MENUS = {
       carseat: {
         image:'https://forbmaster.cafe24.com/web/img/main/img-maga-carseat.webp?v=1', //메뉴 썸네일
+        menuLink:'/product/carseat.html?cate_no=43',
         heading: 'category', //메뉴 타이틀
         caption: 'Carseat', //썸네일 하단 캡션
         visualTitle: '안전을 위한 최선의 선택', //썸네일 하단 문구
@@ -346,6 +350,7 @@
       },
       carrier: {
         image:'https://forbmaster.cafe24.com/web/img/main/img-maga-carrier.webp',
+        menuLink:'/product/baby-carrier.html?cate_no=44',
         heading: 'category',
         caption: 'Baby Carrier',
         visualTitle: '아이와 더 가깝게, 더 편안하게',
@@ -358,6 +363,7 @@
       },
       outdoor: {
         image:'https://forbmaster.cafe24.com/web/img/main/img-maga-outdoorcarrier.webp?v=1',
+        menuLink:'/product/list.html?cate_no=59',
         heading: 'category',
         caption: 'Outdoor Carrier',
         visualTitle: '두 손은 자유롭게, 아이의 세상은 더 넓게',
@@ -367,6 +373,7 @@
       },
       bag: {
         image:'https://forbmaster.cafe24.com/web/img/main/img-maga-story.webp',
+        menuLink:'/product/list.html?cate_no=51',
         heading: 'category',
         caption: 'Diaper Bag',
         visualTitle: '스타일과 기능, 두 가지 모두',
@@ -377,6 +384,7 @@
       },
       acc: {
         image:'https://forbmaster.cafe24.com/web/img/main/img-maga-acc.webp',
+        menuLink:'/product/list.html?cate_no=51',
         heading: 'category',
         caption: 'Accessories',
         visualTitle: '포브 제품을 더 편리하게',
@@ -388,6 +396,7 @@
       },
       about: {
         image:'https://forbmaster.cafe24.com/web/img/main/img-maga-story.webp',
+        menuLink:'/about/forbstory.html',
         heading: 'forb',
         caption: 'About FORB',
         visualTitle: 'For Baby, For Happiness',
@@ -400,6 +409,7 @@
       },
       service: {
         image:'https://forbmaster.cafe24.com/web/img/main/img-maga-story.webp',
+        menuLink:'/service/warranty.html',
         heading: 'forb\'s service',
         caption: 'Service',
         visualTitle: '구매 후에도 함께합니다',
@@ -408,12 +418,14 @@
           { label: '정품 인증' , link:'/service/authentication.html'},
           { label: '카시트 무상 교환' , link:'/service/carseat-replacement.html'},
           { label: '사용 방법' , link:'/how-to-use/index.html'},
+          { label: 'FAQ' , link:'/board/free/list.html?board_no=3'},
         ]
       },
     };
 
     const menu      = document.getElementById('megaMenu');
     const mmImg      = document.getElementById('mmImage');
+    const mmLink      = document.getElementById('mmLink');
     const heading   = document.getElementById('mmHeading');
     const grid      = document.getElementById('mmGrid');
     const caption   = document.getElementById('mmCaption');
@@ -438,6 +450,7 @@
       currentMenu = key;
 
       data.image == null ? mmImg.setAttribute("src", '/web/img/img-placeholder.png') : mmImg.setAttribute("src", data.image);
+      data.menuLink == null ? mmLink.setAttribute("href", 'javascript:void(0)') : mmLink.setAttribute("href", data.menuLink);
 
       heading.textContent = data.heading;
       caption.textContent = data.caption;

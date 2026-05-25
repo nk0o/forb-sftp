@@ -3,56 +3,156 @@
   <span>현재 위치</span>
   <ol>
     <li><a href="/">홈</a></li>
-    <li title="현재 위치"><strong>이벤트</strong></li>
+    <li><a href="/board/gallery/list.html?board_no=8">이벤트</a></li>
+    <li title="현재 위치"><strong>포브 성년의 날 이벤트</strong></li>
   </ol>
 </div>
 
 <div class="section titleArea">
-  <h2>이벤트</h2>
+  <h2>EVENT</h2>
 </div>
 
-<div class="section forb-event">
+<div class="section">
   <!--@css(/event/rolling-to-forb/style.css)-->
-
-  <div class="event-container">
-
-    <div class="event-container__header">
-      <div class="event__confetti-row">🎊 🎁 🎈 🎀 🎉</div>
-      <h1 class="event-container__title"><em>1주년</em> 축하 방명록</h1>
-      <p class="event-container__desc">
-        함께해주신 덕분에 여기까지 왔어요.<br>
-        소중한 한마디를 보드에 붙여주세요!
-      </p>
-      <div class="event__reward-badge">🎁 참여 시 적립금 즉시 지급</div>
-    </div>
-
-    <div class="event__content">
-
-      <!-- 이미 참여 안내 -->
-      <div id="alreadyParticipated" class="notice-box hidden">
-        <div class="notice-box__title">✅ 이미 참여하셨습니다</div>
-        <div class="notice-box__text">방명록에 메시지를 남겨주셔서 감사해요 💛</div>
+  
+  <div class="event-container__header">
+    <div class="event-container">
+      <div class="header__left">
+        <div class="event__badge">EVENT | 성년의 날</div>
+        <h1 class="event-container__title">어른이 된 <em>포브</em>에게<br>마음을&nbsp;전해요!</h1>
+        <p class="event-container__desc">스무 살이 된 FORB의 새로운 시작을 응원해주세요.<br>따듯한 축하 메시지를 남기고 선물을 받아가세요!</p>
+        <a href="#writeArea" class="header__btn">메시지 남기고 선물받기 <span>→</span></a>
+        <div class="event__reward-badge">이벤트기간: 2026.05.18 ~ 2026.05.31</div>
+        <!-- <div class="event__reward-badge">* 참여 시 추첨을 통해 특별한 선물을 드립니다.</div> -->
       </div>
+      <div class="header__right event__confetti"><img src="/web/event/rolling/img-intro.png?v=2" alt class="dear"/><!-- <img src="/web/event/rolling/img-gift.png" alt="경품" class="gift"> --></div>
+    </div><!-- //event-container -->
+  </div><!-- //event-container__header -->
 
-      <!-- 보드 섹션 -->
-      <div class="board-section">
+  <div class="event__content">
+    <!-- 이벤트 상품 안내 -->
+    <div class="board-section">
+      <div class="event-container">
+        <div class="gift-section">
+          <!-- <div class="board-section__heading">
+            <h3><img src="/web/event/rolling/icon_gift.png" alt>포브를 축하해주시는 분들께 드리는 선물</h3>
+          </div> -->
+          <div class="gift-card">
+            <!-- LEFT: product image -->
+            <div class="gift-img-wrap">
+              <img src="/web/event/rolling/img-gift-wide.webp?v=1" alt><div class="gift-img-overlay"></div> <div class="gift__btns pc_only">
+                <a href="/product/네온큐브-파우치보온보냉/35/" target="_blank" class="btn-gift">네온큐브 파우치 자세히 보기 →</a>
+                <a href="#writeArea" class="btn-gift btn-gift--msg">포브 성년 축하하고 선물받기 →</a>
+              </div><!-- //gift__btns -->
+            </div><!-- //gift-img-wrap -->
+        
+            <!-- RIGHT: copy -->
+            <div class="gift-copy">
+              <div class="gift-eyebrow">FORB 20TH GIFT</div>
+        
+              <h2 class="gift-title">
+                포브의 성년을<br>
+                함께 축하해주신 분들께<br>
+                <em>선물을 준비했어요</em>
+              </h2>
+        
+              <p class="gift-desc">
+                아이와의 외출을 더 편안하게 만들어주는<br>
+                <em>포브 네온큐브 파우치</em>를 선물로 드립니다. <span>(총 10명)</span>
+              </p>
+        
+              <ul class="gift-points">
+                <li>
+                  <span class="img"><img src="/web/event/rolling/icon-01.png?v=1" alt></span>
+                  <p>아이와 외출할 때 필수 아이템</p>
+                </li>
+                <li>
+                  <span class="img"><img src="/web/event/rolling/icon-02.png?v=1" alt></span>
+                  <p>여름엔 시원하게, 겨울엔 따뜻하게 온도 유지</p>
+                </li>
+                <li>
+                  <span class="img"><img src="/web/event/rolling/icon-03.png?v=1" alt></span>
+                  <p>가벼워서 들고 다니기 딱좋아서 어디든 OK</p>
+                </li>
+              </ul>
+              <div class="gift__btns mo_only">
+                <a href="/product/네온큐브-파우치보온보냉/35/" target="_blank" class="btn-gift">네온큐브 파우치 자세히 보기 →</a>
+                <a href="#writeArea" class="btn-gift btn-gift--msg">포브 성년 축하하고 선물받기 →</a>
+              </div><!-- //gift__btns -->
+            </div><!-- gift-copy -->
+        
+          </div><!-- //gift-card -->
+        </div>
+      </div><!-- //event-container -->
+    </div><!-- //board-section -->
+
+    <!-- 보드 섹션 -->
+    <div class="board-section postit-section">
+      <div class="event-container">
         <div class="board-section__heading">
-          📌 방명록 보드
+          <!-- <span class="board-badge">방명록 보드</span> -->
+          <h3><img src="/web/event/rolling/icon_envelope.png?v=2" alt> 포브에게 온 편지들</h3>
           <span class="board-section__count" id="boardCount">불러오는 중...</span>
         </div>
+        <!-- 포스트잇 보드 -->
+        <div class="postit-board paper-wrap">
+          <div class="paper-focal">
+            <div class="focal-ring2"></div>
+            <div class="focal-ring">
+              <div class="focal-num">20</div>
+              <div class="focal-sub">FORB · 성년의 날</div>
+            </div>
+          </div>
+          <div id="postitBoard" class="stickers-layer">
+            <div class="postit-board__loading">
+              <div class="postit-board__loading-spinner"></div>
+              <span>메시지를 불러오는 중...</span>
+            </div>
+          </div>
+        </div><!-- //postit-board page-wrap -->
 
-        <!-- 댓글 입력 영역 -->
-        <div id="writeArea" class="board-section__write">
-          <div class="board-section__write-label">✏️ 축하 메시지를 써주세요</div>
-          <textarea
-            id="commentText"
-            class="board-section__textarea"
-            maxlength="80"
-            placeholder="1주년을 진심으로 축하합니다! (최대 80자)"
-            oninput="onTextareaInput(this)"
-          ></textarea>
+        <!-- ✅ 페이지네이션 추가 -->
+        <div class="pagination-wrap" id="paginationWrap" style="display: none;">
+          <button class="pagination-btn pagination-btn--prev" id="prevBtn" onclick="goToPrevPage()">←</button>
+          <div class="pagination-info" id="paginationInfo"> <span class="current-page">1</span>/<span class="total-pages">1</span> </div>
+          <button class="pagination-btn pagination-btn--next" id="nextBtn" onclick="goToNextPage()">→</button>
+        </div>
+      </div><!-- //event-container -->
+    </div><!-- //board-section -->
 
+    <!-- 댓글 입력 영역 -->
+    <div class="board-section">
+      <div class="event-container">
+        <div class="board-section__heading">
+          <h3><img src="/web/event/rolling/icon_pencile.png?v=1" alt>포브에게 축하메시지 남기기</h3>
+        </div>
+        
+        <div id="writeArea" class="board-section__write note-preview">
+          <div class="color-pick" id="colorPick">
+            <div class="color-dot cd-y active" data-color="postit--y" data-tape="y" onclick="pickColor(this)"></div>
+            <div class="color-dot cd-p" data-color="postit--p" data-tape="p" onclick="pickColor(this)"></div>
+            <div class="color-dot cd-m" data-color="postit--m" data-tape="m" onclick="pickColor(this)"></div>
+            <div class="color-dot cd-b" data-color="postit--b" data-tape="b" onclick="pickColor(this)"></div>
+            <div class="color-dot cd-g" data-color="postit--g" data-tape="g" onclick="pickColor(this)"></div>
+            <div class="color-dot cd-o" data-color="postit--o" data-tape="o" onclick="pickColor(this)"></div>
+          </div><!-- //color-pick -->
+          <div class="board-section__write-label">종이색을 고르고, 축하 메시지를 남겨주세요.</div>
+          <div class="textarea-wrap">
+            <textarea
+              id="commentText"
+              class="board-section__textarea"
+              maxlength="80"
+              placeholder="포브가 성년이된걸 진심으로 축하해! (최대 80자)"
+              oninput="onTextareaInput(this)"
+            ></textarea>
+            <span class="textarea__cursor"></span>
+          </div>
           <!-- 비로그인 오버레이 -->
+           <!-- 이미 참여 안내 -->
+          <div id="alreadyParticipated" class="notice-box write-overlay hidden">
+            <div class="notice-box__title">이미 참여해주셨네요!</div>
+            <div class="notice-box__text">축하 메시지를 남겨주셔서 감사합니다💛</div>
+          </div>
           <div module="Layout_stateLogoff">
               <div id="loginOverlay" class="write-overlay">  <!-- hidden 제거 -->
                   <span class="write-overlay__icon">🔒</span>
@@ -60,7 +160,6 @@
                   <button class="write-overlay__btn" onclick="goToLogin()">로그인하러 가기</button>
               </div>
             </div>
-
           <div class="board-section__submit-row">
             <span class="board-section__char-count" id="charCount">0 / 80</span>
             <button id="submitBtn" class="board-section__submit-btn" onclick="submitComment()" disabled>
@@ -68,32 +167,28 @@
             </button>
           </div>
         </div>
+      </div><!-- //event-container -->
+    </div><!-- //board-section -->
 
-        <!-- 포스트잇 보드 -->
-        <div id="postitBoard" class="postit-board">
-          <div class="postit-board__loading">
-            <div class="postit-board__loading-spinner"></div>
-            <span>메시지를 불러오는 중...</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 이벤트 안내 -->
+    <!-- 이벤트 안내 -->
+    <div class="event-container">
       <div class="info-section">
         <h3 class="info-section__title">📋 이벤트 안내</h3>
         <ul class="info-section__list">
-          <li>로그인한 회원만 참여 가능합니다</li>
-          <li>1인 1회 참여 가능합니다</li>
-          <li>참여 후 적립금은 자동으로 지급됩니다</li>
-          <li>적립금은 마이페이지 &gt; 적립금 내역에서 확인 가능합니다</li>
-          <li>이벤트 기간: 2025.00.00 ~ 2025.00.00</li>
-          <li>이벤트 내용은 사전 공지 없이 변경될 수 있습니다</li>
+          <li>로그인한 회원만 참여 가능합니다.</li>
+          <li>1인 1회 참여 가능합니다.</li>
+          <li>참여 후 당첨자는 홈페이지 이벤트 페이지 상단에서 확인 가능합니다.</li>
+          <li>당첨자발표: 2026.06.02(화)</li>
+          <li>이벤트 내용은 사전 공지 없이 변경될 수 있습니다.</li>
+          <li>욕설.비방.도배 등 부적절한 내용은 통보 없이 삭제될 수 있습니다.</li>
         </ul>
-      </div>
-
-    </div>
+      </div><!-- //info-section -->
+    </div><!-- //event-container -->
+    
+  </div><!-- //event__content -->
+  <div class="ec-base-button ">
+    <a href="/board/event/8/"><img src="//img.echosting.cafe24.com/skin/base_ko_KR/board/btn_list.gif" alt="목록"></a>
   </div>
-
 <!-- 토스트 -->
 <div id="evtToast" class="evt-toast"></div>
   <!-- SDK 먼저 로드 -->
@@ -155,15 +250,16 @@
    설정값
    ════════════════════════════════════════ */
 var FIREBASE_CONFIG = {
- 	apiKey: "AIzaSyA_RxAOrsEuqFx9IsWSJyZ-UWjtJzktEAc",
-    authDomain: "event-test-82762.firebaseapp.com",
-    projectId: "event-test-82762",
-    storageBucket: "event-test-82762.firebasestorage.app",
-    messagingSenderId: "137570959648",
-    appId: "1:137570959648:web:9cafde8a7c20fbba901745"
+  apiKey: "AIzaSyDWlEt3mljPeoMJzAIxFiC-PC-Ctf7dEmk",
+  authDomain: "forb-event.firebaseapp.com",
+  projectId: "forb-event",
+  storageBucket: "forb-event.firebasestorage.app",
+  messagingSenderId: "511481383945",
+  appId: "1:511481383945:web:c62a60c86a3250cab5fcd8",
+  measurementId: "G-6HL8MCFX9K"
 };
 
-var APPS_SCRIPT_URL  = "https://script.google.com/macros/s/AKfycbyXSaXsikw93KEOAYyVRjeT5wz8ZpHCLWhZnjWEW2hJ8tBBwOtWyq9eMir2lzWeuVdV/exec";
+var APPS_SCRIPT_URL  = "https://script.google.com/macros/s/AKfycbx-z-JWRlQZocWhcFFe4GZiBjGvxt7ZuyBjxvfk880B_ZVaIhugJaPLlRrczykXzOzd/exec";
 var COLLECTION_NAME  = "anniversary_comments";
 var MAX_POSTITS      = 60;
 
@@ -178,14 +274,42 @@ var col = db.collection(COLLECTION_NAME);
    전역 상태
    ════════════════════════════════════════ */
 var COLORS      = ['y','p','m','b','g','o'];
-var postitIndex = 0;
+var postitColor = 'y';
 var totalCount  = 0;
 var currentMember = null; // getMemberId 콜백 후 세팅
+var occupiedPositions = [];
+
+// ✅ 페이지네이션 변수
+var allPostits = []; // 전체 포스트잇 데이터
+var currentPage = 1;
+var ITEMS_PER_PAGE = 4; // 페이지당 포스트잇 개수 (모바일: 8, 데스크톱: 12)
+
+/* ════════════════════════════════════════
+   페이지당 아이템 수 계산
+   ════════════════════════════════════════ */
+function getItemsPerPage() {
+  return window.innerWidth <= 768 ? 4 : 8;
+}
 
 /* ════════════════════════════════════════
    유틸 함수
    ════════════════════════════════════════ */
-function getColor(i) { return COLORS[i % COLORS.length]; }
+//function getColor(i) { return COLORS[i % COLORS.length]; }
+function getColor() {
+  if (COLORS.indexOf(postitColor) !== -1) return postitColor;
+  return COLORS[Math.floor(Math.random() * COLORS.length)];
+}
+
+function pickColor(el) {
+  document.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
+  el.classList.add('active');
+  selectedColor = el.dataset.color;
+  selectedTape  = el.dataset.tape;
+  postitColor = selectedTape ;
+  const colorMap = { 's-yellow':'#FFF59D','s-pink':'#FFD6E8','s-blue':'#C8E6FF','s-green':'#C8F5D8','s-lavender':'#E8DEFF','s-peach':'#FFE0C8','s-mint':'#C8F5F0','s-coral':'#FFCFC8' };
+  const prev = document.getElementById('writeArea');
+  prev.className = 'board-section__write note-preview ' + selectedColor;
+}
 
 function maskId(id) {
   if (!id) return '익명';
@@ -224,50 +348,203 @@ function updateCount(delta) {
   if (el) el.textContent = totalCount + '개의 메시지';
 }
 
+
 /* ════════════════════════════════════════
    포스트잇 보드에 추가
    ════════════════════════════════════════ */
-function addToBoard(data, isMine) {
-  var board = document.getElementById('postitBoard');
-  var ph    = board.querySelector('.postit-board__empty, .postit-board__loading');
-  if (ph) ph.remove();
+  function addToBoard(data, isMine) {
+    var board = document.getElementById('postitBoard');
+    var ph = board.querySelector('.postit-board__empty, .postit-board__loading');
+    if (ph) ph.remove();
 
-  var el = document.createElement('div');
-  el.className = 'postit postit--' + getColor(postitIndex++) + (isMine ? ' postit--mine' : '');
-  el.innerHTML =
-    '<div class="postit__id">'   + maskId(data.memberId)        + '</div>' +
-    '<div class="postit__text">' + escapeHtml(data.comment)     + '</div>' +
-    '<div class="postit__time">' + formatDate(data.createdAt)   + '</div>';
-  board.appendChild(el);
-}
+    var color = data.color || 'y';
+
+    var el = document.createElement('div');
+    el.className = 'postit postit--' + color + (isMine ? ' postit--mine' : '');
+    el.innerHTML =
+      '<div class="postit__id">'   + maskId(data.memberId)        + '</div>' +
+      '<div class="postit__text">' + escapeHtml(data.comment)     + '</div>' +
+      '<div class="postit__time">' + formatDate(data.createdAt)   + '</div>';
+    
+    board.appendChild(el);
+    
+    requestAnimationFrame(function() {
+      var position = findNonOverlappingPosition(board);
+      el.style.left = position.x + 'px';
+      el.style.top = position.y + 'px';
+      el.dataset.posX = position.x;
+      el.dataset.posY = position.y;
+      adjustBoardHeight();
+    });
+  }
+
+
+/* ════════════════════════════════════════
+   겹치지 않는 위치 찾기
+   ════════════════════════════════════════ */
+  function findNonOverlappingPosition(board) {
+    var boardWidth = board.offsetWidth;
+    var boardHeight = board.offsetHeight;
+    
+    var isMobile = window.innerWidth <= 768;
+    var postitWidth = isMobile ? 144 : 168;
+    var postitHeight = isMobile ? 148 : 165;
+    
+    var padding = isMobile ? 16 : 24;
+    var safeMargin = isMobile ? 10 : 40;
+    
+    var availableWidth = boardWidth - (padding * 2);
+    var availableHeight = boardHeight - (padding * 2);
+    
+    var maxX = availableWidth - postitWidth;
+    var maxY = availableHeight - postitHeight;
+    
+    var maxAttempts = 100;
+    
+    for (var attempt = 0; attempt < maxAttempts; attempt++) {
+      var x = padding + Math.random() * Math.max(10, maxX);
+      var y = padding + Math.random() * Math.max(10, maxY);
+      
+      // 중앙 로고 영역 피하기
+      var centerX = boardWidth / 2;
+      var centerY = boardHeight / 2;
+      var distanceFromCenter = Math.sqrt(
+        Math.pow(x + postitWidth/2 - centerX, 2) + 
+        Math.pow(y + postitHeight/2 - centerY, 2)
+      );
+      
+      var minDistance = isMobile ? 75 : 130;
+      if (distanceFromCenter < minDistance) {
+        continue;
+      }
+      
+      // 경계 체크
+      if (x < padding || x + postitWidth > boardWidth - padding ||
+          y < padding || y + postitHeight > boardHeight - padding) {
+        continue;
+      }
+      
+      // 충돌 체크
+      var overlapping = false;
+      var buffer = isMobile ? 10 : 18;
+      
+      for (var i = 0; i < occupiedPositions.length; i++) {
+        var occupied = occupiedPositions[i];
+        
+        var overlapX = !(x + postitWidth + buffer <= occupied.x || 
+                        x >= occupied.x + occupied.width + buffer);
+        var overlapY = !(y + postitHeight + buffer <= occupied.y || 
+                        y >= occupied.y + occupied.height + buffer);
+        
+        if (overlapX && overlapY) {
+          overlapping = true;
+          break;
+        }
+      }
+      
+      if (!overlapping) {
+        occupiedPositions.push({
+          x: x,
+          y: y,
+          width: postitWidth,
+          height: postitHeight
+        });
+        return { x: x, y: y };
+      }
+    }
+    
+    // Fallback
+    var cols = isMobile ? 2 : 3;
+    var gap = isMobile ? 12 : 16;
+    var row = Math.floor(occupiedPositions.length / cols);
+    var col = occupiedPositions.length % cols;
+    
+    var gridX = padding + col * (postitWidth + gap);
+    var gridY = padding + row * (postitHeight + gap);
+    
+    occupiedPositions.push({
+      x: gridX,
+      y: gridY,
+      width: postitWidth,
+      height: postitHeight
+    });
+    
+    return { x: gridX, y: gridY };
+  }
+/* ════════════════════════════════════════
+   보드 높이 자동 조정
+   ════════════════════════════════════════ */
+  function adjustBoardHeight() {
+    var board = document.getElementById('postitBoard');
+    
+    if (occupiedPositions.length === 0) return;
+    
+    var maxY = 0;
+    var isMobile = window.innerWidth <= 768;
+    
+    occupiedPositions.forEach(function(pos) {
+      var bottom = pos.y + pos.height;
+      if (bottom > maxY) maxY = bottom;
+    });
+    
+    // ✅ 모바일 여유 공간 대폭 증가
+    var bottomPadding = isMobile ? 120 : 100; // (60→120)
+    var minHeight = isMobile ? 500 : 720;      // (500→600)
+    var newHeight = Math.max(minHeight, maxY + bottomPadding);
+    
+    console.log('📏 보드 높이 조정:', 
+                'maxY:', Math.round(maxY), 
+                'newHeight:', Math.round(newHeight),
+                'isMobile:', isMobile);
+    
+    board.style.minHeight = newHeight + 'px';
+    
+    var paperWrap = board.closest('.paper-wrap');
+    if (paperWrap) {
+      paperWrap.style.minHeight = newHeight + 'px';
+    }
+  }
 
 /* ════════════════════════════════════════
    Firestore: 댓글 목록 불러오기
    ════════════════════════════════════════ */
-function loadComments() {
-  col.orderBy('createdAt', 'asc').limit(MAX_POSTITS).get()
-    .then(function(snap) {
-      var board = document.getElementById('postitBoard');
-      var ph    = board.querySelector('.postit-board__loading');
-      if (ph) ph.remove();
+  function loadComments() {
+    occupiedPositions = [];
+    allPostits = []; // 전체 데이터 초기화
+    
+    col.orderBy('createdAt', 'desc').limit(60).get() // ✅ desc로 최신순 정렬
+      .then(function(snap) {
+        var board = document.getElementById('postitBoard');
+        var ph = board.querySelector('.postit-board__loading');
+        if (ph) ph.remove();
 
-      if (snap.empty) {
-        board.innerHTML = '<div class="postit-board__empty">아직 메시지가 없어요.<br>첫 번째 포스트잇을 붙여주세요! 🌟</div>';
-      } else {
+        if (snap.empty) {
+          board.innerHTML = '<div class="postit-board__empty">아직 메시지가 없어요.<br>첫 번째 포스트잇을 붙여주세요! 🌟</div>';
+          return;
+        }
+        
+        // ✅ 전체 데이터 저장
         snap.forEach(function(doc) {
-          var data   = doc.data();
+          var data = doc.data();
           var isMine = !!currentMember && data.memberId === currentMember;
-          addToBoard(data, isMine);
+          allPostits.push({
+            data: data,
+            isMine: isMine
+          });
         });
-      }
-      updateCount(snap.size);
-    })
-    .catch(function(err) {
-      console.error('[loadComments]', err);
-      document.getElementById('postitBoard').innerHTML =
-        '<div class="postit-board__empty">메시지를 불러올 수 없어요. 잠시 후 다시 시도해주세요.</div>';
-    });
-}
+        
+        updateCount(allPostits.length);
+        
+        // ✅ 첫 페이지 렌더링
+        currentPage = 1;
+        renderPage(currentPage);
+      })
+      .catch(function(err) {
+        console.error('[loadComments]', err);
+        document.getElementById('postitBoard').innerHTML =
+          '<div class="postit-board__empty">메시지를 불러올 수 없어요. 잠시 후 다시 시도해주세요.</div>';
+      });
+  }
 
 /* ════════════════════════════════════════
    Firestore: 참여 여부 확인
@@ -300,70 +577,216 @@ function sendToSheets(data) {
   });
 }
 
+function smoothScrollTo(elementId, offset) {
+  var element = document.getElementById(elementId);
+  if (!element) return;
+  
+  var elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+  var offsetPosition = elementPosition - (offset || 100);
+  
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: 'smooth'
+  });
+}
 /* ════════════════════════════════════════
    댓글 제출
    ════════════════════════════════════════ */
-function submitComment() {
-  var textarea = document.getElementById('commentText');
-  var text     = textarea ? textarea.value.trim() : '';
-  var btn      = document.getElementById('submitBtn');
+  function submitComment() {
+    var textarea = document.getElementById('commentText');
+    var text = textarea ? textarea.value.trim() : '';
+    var btn = document.getElementById('submitBtn');
 
-  if (!text || text.length < 2) { showToast('두 글자 이상 입력해주세요 ✏️'); return; }
-  if (!currentMember)           { showToast('로그인 후 참여해주세요 🔐'); return; }
+    if (!text || text.length < 2) { showToast('두 글자 이상 입력해주세요 ✏️'); return; }
+    if (!currentMember) { showToast('로그인 후 참여해주세요 🔐'); return; }
 
-  btn.disabled    = true;
-  btn.className  += ' loading';
-  btn.textContent = '저장 중';
+    btn.disabled = true;
+    btn.className += ' loading';
+    btn.textContent = '저장 중';
 
-  var now = Date.now();
+    var now = Date.now();
+    var selectedColor = postitColor;
+    if (!selectedColor) {
+      var activeDot = document.querySelector('.color-dot.active');
+      if (activeDot) {
+        selectedColor = activeDot.dataset.tape;
+      } else {
+        selectedColor = 'y';
+      }
+    }
 
-    // ✅ 제출 시점에 고객정보가 없으면 한 번 더 시도
-  function doSubmit() {
-    col.add({
-      memberId   : currentMember,
-      memberName : customerName,
-      phone      : customerPhone,
-      comment    : text,
-      createdAt  : firebase.firestore.FieldValue.serverTimestamp()
-    })
-    .then(function () {
-      sendToSheets({
-        memberId  : currentMember,
-        comment   : text,
-        createdAt : now,
-        phone     : customerPhone,
-        name      : customerName,
-        email     : customerEmail
+    var performSubmit = function() {
+      col.add({
+        memberId: currentMember,
+        memberName: customerName,
+        phone: customerPhone,
+        comment: text,
+        color: selectedColor,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+      })
+      .then(function () {
+        // ✅ 전체 데이터 앞에 추가 (최신순)
+        allPostits.unshift({
+          data: {
+            memberId: currentMember,
+            comment: text,
+            createdAt: now,
+            color: selectedColor
+          },
+          isMine: true
+        });
+        
+        updateCount(allPostits.length);
+        
+        // ✅ 첫 페이지로 이동 & 렌더링
+        currentPage = 1;
+        renderPage(currentPage);
+        
+        textarea.value = '';
+        document.getElementById('charCount').textContent = '0 / 80';
+        
+        var writeArea = document.getElementById('writeArea');
+        if (writeArea) {
+          writeArea.querySelector('.color-pick').style.display = 'none';
+          writeArea.querySelector('.board-section__write-label').style.display = 'none';
+          writeArea.querySelector('.textarea-wrap').style.display = 'none';
+          writeArea.querySelector('.board-section__submit-row').style.display = 'none';
+        }
+        
+        document.getElementById('alreadyParticipated').classList.remove('hidden');
+        showToast('포스트잇이 붙었어요! 🎉 감사합니다');
+        
+        setTimeout(function() {
+          smoothScrollTo('postitBoard', 200);
+        }, 400);
+      })
+      .catch(function (err) {
+        console.error('[submitComment]', err);
+        showToast('저장 오류가 발생했어요. 다시 시도해주세요.');
+        btn.disabled = false;
+        btn.className = btn.className.replace(' loading', '');
+        btn.textContent = '포스트잇 붙이기 📌';
       });
-      addToBoard({ memberId: currentMember, comment: text, createdAt: now }, true);
-      updateCount(1);
-      textarea.value = '';
-      document.getElementById('charCount').textContent = '0 / 80';
-      document.getElementById('writeArea').classList.add('hidden');
-      document.getElementById('alreadyParticipated').classList.remove('hidden');
-      showToast('포스트잇이 붙었어요! 🎉 감사합니다');
-    })
-    .catch(function (err) {
-      console.error('[submitComment]', err);
-      showToast('저장 오류가 발생했어요. 다시 시도해주세요.');
-      btn.disabled    = false;
-      btn.className   = btn.className.replace(' loading', '');
-      btn.textContent = '포스트잇 붙이기 📌';
-    });
+    };
+
+    if (!customerName && !customerPhone) {
+      CAFE24API.getCustomerInfo(function (err, res) {
+        if (!err && res && res.customer) {
+          customerPhone = res.customer.cellphone || '';
+          customerName = res.customer.name || '';
+          customerEmail = res.customer.email || '';
+        }
+        performSubmit();
+      });
+    } else {
+      performSubmit();
+    }
   }
 
-  // 고객정보 아직 없으면 다시 호출 후 제출
-  if (!customerName && !customerPhone) {
-    CAFE24API.getCustomerInfo(function (err, res) {
-      if (!err && res && res.customer) {
-        customerPhone = res.customer.cellphone || '';
-        customerName  = res.customer.name      || '';
-        customerEmail = res.customer.email     || '';
-      }
-      doSubmit();
+/* ════════════════════════════════════════
+   페이지 렌더링
+   ════════════════════════════════════════ */
+  function renderPage(pageNum) {
+    var board = document.getElementById('postitBoard');
+    board.innerHTML = ''; // 기존 포스트잇 제거
+    occupiedPositions = []; // 위치 초기화
+    
+    ITEMS_PER_PAGE = getItemsPerPage();
+    var startIdx = (pageNum - 1) * ITEMS_PER_PAGE;
+    var endIdx = Math.min(startIdx + ITEMS_PER_PAGE, allPostits.length);
+    var pagePostits = allPostits.slice(startIdx, endIdx);
+    
+    if (pagePostits.length === 0) {
+      board.innerHTML = '<div class="postit-board__empty">이 페이지에는 메시지가 없습니다.</div>';
+      return;
+    }
+    
+    // 포스트잇 렌더링
+    pagePostits.forEach(function(postitData) {
+      addToBoard(postitData.data, postitData.isMine);
     });
+    
+    // 페이지 정보 업데이트
+    updatePaginationUI();
+  }
+
+/* ════════════════════════════════════════
+   리사이즈 이벤트 (페이지 재렌더링)
+   ════════════════════════════════════════ */
+    var resizeTimer;
+    var lastWidth = window.innerWidth;
+
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function() {
+        var currentWidth = window.innerWidth;
+        
+        if ((lastWidth <= 768 && currentWidth > 768) || 
+            (lastWidth > 768 && currentWidth <= 768)) {
+          renderPage(currentPage);
+          lastWidth = currentWidth;
+        }
+      }, 300);
+    });
+    
+/* ════════════════════════════════════════
+   페이지네이션 UI 업데이트
+   ════════════════════════════════════════ */
+function updatePaginationUI() {
+  ITEMS_PER_PAGE = getItemsPerPage();
+  var totalPages = Math.ceil(allPostits.length / ITEMS_PER_PAGE);
+  
+  var paginationWrap = document.getElementById('paginationWrap');
+  var prevBtn = document.getElementById('prevBtn');
+  var nextBtn = document.getElementById('nextBtn');
+  var currentPageEl = document.querySelector('.current-page');
+  var totalPagesEl = document.querySelector('.total-pages');
+  
+  // 포스트잇이 ITEMS_PER_PAGE보다 많으면 페이지네이션 표시
+  if (allPostits.length > ITEMS_PER_PAGE) {
+    paginationWrap.style.display = 'flex';
   } else {
-    doSubmit();
+    paginationWrap.style.display = 'none';
+    return;
+  }
+  
+  currentPageEl.textContent = currentPage;
+  totalPagesEl.textContent = totalPages;
+  
+  // 버튼 활성화/비활성화
+  prevBtn.disabled = currentPage === 1;
+  nextBtn.disabled = currentPage >= totalPages;
+}
+
+/* ════════════════════════════════════════
+   페이지 이동
+   ════════════════════════════════════════ */
+function goToPrevPage() {
+  if (currentPage > 1) {
+    currentPage--;
+    renderPage(currentPage);
+    scrollToBoard();
+  }
+}
+
+function goToNextPage() {
+  ITEMS_PER_PAGE = getItemsPerPage();
+  var totalPages = Math.ceil(allPostits.length / ITEMS_PER_PAGE);
+  if (currentPage < totalPages) {
+    currentPage++;
+    renderPage(currentPage);
+    scrollToBoard();
+  }
+}
+
+function scrollToBoard() {
+  var board = document.getElementById('postitBoard');
+  if (board) {
+    var boardPosition = board.getBoundingClientRect().top + window.pageYOffset;
+    window.scrollTo({
+      top: boardPosition - 200,
+      behavior: 'smooth'
+    });
   }
 }
 

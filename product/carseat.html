@@ -1,128 +1,187 @@
 <!--@layout(/layout/basic/layout.html)-->
 <!--@js(/js/module/product/menucategory.js)-->
 <!--@css(/css/module/product/menupackage.css)-->
-<div class="section path" module="product_headcategory" data-ez-module="product-head-breadcrumb/1" data-ez="contents-1pvbocc-1">
-	<span>현재 위치</span>
-	<ol>
-		<li><a href="/">홈</a></li>
-		<li class="{$disp_cate_1|display}"><a href="{$link_product_list_1}">{$name_1}</a></li>
-		<li class="{$disp_cate_2|display}"><a href="{$link_product_list_2}">{$name_2}</a></li>
-		<li class="{$disp_cate_3|display}"><a href="{$link_product_list_3}">{$name_3}</a></li>
-		<li class="{$disp_cate_4|display}"><strong><a href="{$link_product_list_4}">{$name_4}</a></strong></li>
-	</ol>
-</div>
-<div class="section titleArea" module="product_headcategory" data-ez-module="product-list-head-title/1" data-ez="contents-0taxcwn-1">
-    <h2>{$title_text_or_image}</h2>
-    <span class="likeButton {$disp_likecate_class}"><button type="button">{$disp_likecate_icon}<strong>{$disp_likecate_count}</strong></button></span>
-</div>
+<!--@css(/layout/basic/css/ap-product.css)-->
 
-<section class="carseat__intro">
-  <div class="ap-container">
-    <h2>아이의 하루를 지키는 힘</h2>
-    <p>가볍지만, 가장 강한 이유</p>
-    <div>
-      아이를 위한 카시트는
-      아이를 감싸주는 프레임 부터 달라야 한다고 믿습니다.
+<div class="ap-prdIntro">
+  
+  <div class="ap-titleArea">
+    <div class="ap-container--narrow">
+      <!-- 브래드크럼 -->
+      <div class="ap-list-path path section" module="product_headcategory">
+        <span>현재 위치</span>
+        <ol>
+          <li><a href="/"><!--@import(/svg/icon-home.html)--></a></li>
+          <!-- <li class="{$disp_cate_1|display}"><a href="{$link_product_list_1}">{$name_1}</a></li> -->
+          <li class="{$disp_cate_2|display}"><a href="/product/carseat.html?cate_no=43">{$name_2}</a></li>
+        </ol>
+      </div><!-- //ap-list-path -->
+    </div><!-- //ap-container--narrow -->
+  </div><!-- //ap-titleArea -->
+  <!-- PRD - HERO -->
+  <section class="prd-hero prd-hero--sticky">
+    <div class="prd-hero__inner">
+      <div class="prd-hero__bg-text">FORB</div>
+      <p class="prd-hero__tag">Premium Child Safety</p>
+      <h1 class="prd-hero__title">아이의 하루를 지키는&nbsp;힘</h1>
+      <p class="prd-hero__subtitle">가볍지만, 가장 강한 이유</p>
+    </div><!-- //hero__inner -->
+  </section>
+  
+  <div class="prd-container">
+    <!-- PRD - CATCH -->
+    <section class="prd-catch" id="about">
+      <div class="prd-catch__inner">
+        <p> 아이를 위한 <span class="prd-catch__accent">카시트</span>는<br>아이를 감싸주는 <span class="highlight">프레임</span>부터 달라야 한다고 믿습니다.</p>
+        <p> 포브가 <span class="highlight">알루미늄</span>을 선택한 이유.<br>순간의 충격에도 <span class="highlight">형태를 지키며</span> 아이를 지켜줄 수 있어야 하기&nbsp;때문입니다. </p>
+        <p> 그래서 <span class="prd-catch__accent">포브는 세계 최초로 알루미늄 카시트</span>를 만들었습니다.</p>
     
-      포브가 알루미늄을 선택한 이유.
-      순간의 충격에도 형태를 지키며 아이를 지켜줄수 있어야 하기 때문입니다.
+        <div class="key-features">
+          <div class="feature-item">
+            <div class="feature-icon">🛡️</div>
+            <div class="feature-title">알루미늄 합금 프레임</div>
+            <div class="feature-desc">플라스틱 대비 9배 강한 프레임</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">⚖️</div>
+            <div class="feature-title">초경량 설계</div>
+            <div class="feature-desc">이동과 장착이 편한 경량 디자인</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">✓</div>
+            <div class="feature-title">안전인증</div>
+            <div class="feature-desc">NHTSA(미국도로교통안전국)<br>KC 안전인증 완료</div>
+          </div>
+        </div>
+      </div><!-- //prd-catch__inner -->
+    </section>
     
-      그래서 포브는 세계 최초로 알루미늄 카시트를 만들었습니다.
-    </div>
-  </div>
-</section><!-- //carseat__intro -->
-<section class="carseat__compare">
-  <div class="ap-container">
-    <h2>카시트 비교</h2>
-    리니 vs 보네떼
-  </div>
-</section><!-- //carseat__compare -->
+    <!-- COMPARE -->
+    <section class="carseat-compare" id="compare">
+      <div class="prd__header reveal">
+        <p class="prd__num">Selection Guide</p>
+        <h2 class="prd__title prd__title--white">아이에게 맞는 카시트는?</h2>
+      </div>
+    
+      <div class="compare__grid">
+        <div class="compare-product" id="col-left">
+          <div class="compare-product__name">RINI2</div>
+          <div class="compare-product__img"><img src="/web/img/prdList/img-carseat-rini.png?v=1" alt="리니2"></div>
+          <div id="specs-left" class="compare-spec">
+            <div class="compare-spec__value left-specs bold" data-spec="0">2.6 kg</div>
+            <div class="compare-spec__value left-specs" data-spec="1">9~18 kg</div>
+            <div class="compare-spec__value left-specs" data-spec="2">3점식 안전벨트</div>
+            <div class="compare-spec__value left-specs" data-spec="3">₩340,000</div>
+          </div>
+        </div><!-- //compare-product -->
+    
+        <div class="compare-spec__labels" id="compare-spec__labels">
+          <div class="compare-spec__row-label" data-spec="0">무게</div>
+          <div class="compare-spec__row-label" data-spec="1">사용연령</div>
+          <div class="compare-spec__row-label" data-spec="2">장착방법</div>
+          <div class="compare-spec__row-label" data-spec="3">가격</div>
+        </div><!-- //compare-spec__labels -->
+    
+        <div class="compare-product" id="col-right">
+          <div class="compare-product__name">BONETE</div>
+          <div class="compare-product__img"><img src="/web/img/main/img-best-prd-3.png" alt="보네떼"></div>
+          <div id="specs-right" class="compare-spec">
+            <div class="compare-spec__value right-specs" data-spec="0">4 kg</div>
+            <div class="compare-spec__value right-specs" data-spec="1">9 ~ 25 kg</div>
+            <div class="compare-spec__value right-specs bold" data-spec="2">3점식&nbsp;안전벨트 + ISOFIX</div>
+            <div class="compare-spec__value right-specs" data-spec="3">₩420,000</div>
+          </div>
+        </div><!-- //compare-product -->
+      </div><!-- //compare__grid -->
+    </section>
+    
+    <!-- 제품 -->
+    <div class="prd-lineup">
+      <div class="normalpackage_box" data-ez-module="product-normalpackage/1" data-ez-layout="grid4" data-ez="contents-0ozazsd-1">
+        <div class="ap-container--narrow">
+          <div class="prd__header reveal ap-text--left">
+            <p class="prd__num">Product Lineup</p>
+            <h2 class="prd__title">전체 카시트<br>라인업</h2>
+          </div>
+          <!--@import(/product/shoppQ/searchContent.html)-->
+          <div module="product_normalpackage" class="product_scrollx">
+            <!--@css(/css/module/product/listnormal.css)-->
+            <!--@js(/js/module/product/normalmenu.js)-->
+            <ez-prop data-version="1.0.0">
+              <ez-var data-prop="layout" data-namespace="ez.module.product-list.layout" data-type="array">
+                <ez-item data-id="grid3" data-name="일반3단형(PC 3열/MOBILE 1열)"></ez-item>
+                <ez-item data-id="grid4" data-name="일반4단형(PC 4열/MOBILE 2열)"></ez-item>
+                <ez-item data-id="grid5" data-name="일반5단형(PC 5열/MOBILE 2열)"></ez-item>
+                <ez-item data-id="grid3 list_gallery" data-name="이미지강조3단형(PC 3열/MOBILE 1열)"></ez-item>
+                <ez-item data-id="grid4 list_gallery" data-name="이미지강조4단형(PC 4열/MOBILE 2열)"></ez-item>
+                <ez-item data-id="grid5 list_gallery" data-name="이미지강조5단형(PC 5열/MOBILE 2열)"></ez-item>
+              </ez-var>
+            </ez-prop>
+            <div module="product_normalmenu">
+              <!--
+                $compare_page = /product/compare.html
+              -->
+            </div>
+            <div data-ez-holder="product_list">
+              <div module="product_listnormal" class="ec-base-product">
+                <!--
+                  $count = 20
+                  ※ 상품진열갯수를 설정하는 변수입니다. 설정하지 않을 경우, 최대 200개의 상품이 진열 됩니다.
+                  ※ 진열된 상품이 많으면, 쇼핑몰에 부하가 발생할 수 있습니다.
+                  $moreview = yes
+                  $cache = yes
+                  $basket_result = /product/add_basket.html
+                  $basket_option = /product/basket_option.html
+                -->
+                <ul class="prdList grid4" data-ez-role="layout ez-discount-tag">
+                  <!--@import(/product/list_product.html)-->
+                </ul>
+              </div><!-- //ec-base-product -->
+            </div><!-- //product_list -->
+          </div><!-- //product_normalpackage -->
+        </div><!-- //ap-container--narrow -->
+      </div>
+    </div><!-- //prd-lineup -->
+  </div><!-- //prd-container -->
+</div><!-- //ap-prdIntro -->
 
-<div module="product_headcategory" data-ez-module="product-list-categoryimage/1" class="section product_top_image" data-ez="contents-0z0fv51-1">{$top_image1_tag}{$top_image2_tag}{$top_image3_tag}</div>
-<div class="normalpackage_box section" data-ez-module="product-normalpackage/1" data-ez-layout="grid4" data-ez="contents-0ozazsd-1">
-	<!--@import(/product/shoppQ/searchContent.html)-->
-	<div module="product_normalpackage" class="product_scrollx">
-		<!--@css(/css/module/product/listnormal.css)-->
-		<!--@js(/js/module/product/normalmenu.js)-->
-		<ez-prop data-version="1.0.0">
-			<ez-var data-prop="layout" data-namespace="ez.module.product-list.layout" data-type="array">
-				<ez-item data-id="grid3" data-name="일반3단형(PC 3열/MOBILE 1열)"></ez-item>
-				<ez-item data-id="grid4" data-name="일반4단형(PC 4열/MOBILE 2열)"></ez-item>
-				<ez-item data-id="grid5" data-name="일반5단형(PC 5열/MOBILE 2열)"></ez-item>
-				<ez-item data-id="grid3 list_gallery" data-name="이미지강조3단형(PC 3열/MOBILE 1열)"></ez-item>
-				<ez-item data-id="grid4 list_gallery" data-name="이미지강조4단형(PC 4열/MOBILE 2열)"></ez-item>
-				<ez-item data-id="grid5 list_gallery" data-name="이미지강조5단형(PC 5열/MOBILE 2열)"></ez-item>
-			</ez-var>
-		</ez-prop>
-		<div module="product_normalmenu">
-			<!--
-				$compare_page = /product/compare.html
-			-->
-			<div class="function" id="{$listmenu_position}">
-				<p class="prdCount">총<strong class="txtEm">{$total_count}</strong>개의 상품이 있습니다.</p>
-				<div class="sort">
-					<select id="selArray" name="selArray" module="product_Orderby">
-						<option value>- 정렬방식 -</option>
-						<option value="{$param}">{$sort_name}</option>
-						<option value="{$param}">{$sort_name}</option>
-					</select>
-				</div>
-			</div>
+<script>
+  /* ── REVEAL ON SCROLL ── */
+  const revealEls = document.querySelectorAll('.reveal');
+  const brandAccents = document.querySelectorAll('.prd-catch__accent');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
 
-			<fieldset class="condition {$select_search_display|display}">
-				<legend>조건별 검색</legend>
-				<p>
-					<!--@js(/js/module/product/product_selectsearch.js)-->
-					<select class="FirstSelect" module="product_FirstSelect">
-						<option value>-조건선택-</option>
-						<option value="{$value}" {$selected}>{$title}</option>
-						<option value="{$value}" {$selected}>{$title}</option>
-					</select>
-					<select class="SecondSelect" module="product_SecondSelect">
-						<option value>-조건선택-</option>
-						<option value="{$value}" {$selected}>{$title}</option>
-						<option value="{$value}" {$selected}>{$title}</option>
-					</select>
-					<a href="#SelectSearch" class="btnSubmitFix">검색</a>
-				</p>
-			</fieldset>
-		</div>
-		<div data-ez-holder="product_list">
-			<div module="product_listnormal" class="ec-base-product">
-				<!--
-					$count = 20
-					※ 상품진열갯수를 설정하는 변수입니다. 설정하지 않을 경우, 최대 200개의 상품이 진열 됩니다.
-					※ 진열된 상품이 많으면, 쇼핑몰에 부하가 발생할 수 있습니다.
-					$moreview = yes
-					$cache = yes
-					$basket_result = /product/add_basket.html
-					$basket_option = /product/basket_option.html
-				-->
-				<ul class="prdList grid4" data-ez-role="layout ez-discount-tag">
-					<!--@import(/product/list_product.html)-->
-				</ul>
-			</div>
+  const accentIo = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); accentIo.unobserve(e.target); }
+    });
+  }, { threshold: 0.8 });
+  brandAccents.forEach(el => accentIo.observe(el));
 
-			<div module="product_listmore" class="more">
-				<a href="#none" onclick="{$more_action}" class="btnMore">
-					상품 더보기<div>(<span id="more_current_page">{$current_page}</span>/<span id="more_total_page">{$total_page}</span>)</div>
-				</a>
-			</div>
+  /* ── SPEC HIGHLIGHT ── */
+  document.querySelectorAll('.compare-spec__row-label').forEach(label => {
+    const idx = label.dataset.spec;
+    label.addEventListener('mouseenter', () => {
+      document.querySelectorAll(`.compare-spec__value[data-spec="${idx}"]`).forEach(v => v.classList.add('hl'));
+      label.classList.add('hl');
+    });
+    label.addEventListener('mouseleave', () => {
+      document.querySelectorAll(`.compare-spec__value[data-spec="${idx}"]`).forEach(v => v.classList.remove('hl'));
+      label.classList.remove('hl');
+    });
+  });
 
-			<div module="product_normalpaging" class="ec-base-paginate typeList">
-				<a href="{$param_first}" class="first">첫 페이지</a>
-				<a href="{$param_before}">이전 페이지</a>
-				<ol>
-					<li><a href="{$param}" class="{$param_class}">{$no}</a></li>
-					<li><a href="{$param}" class="{$param_class}">{$no}</a></li>
-					<li><a href="{$param}" class="{$param_class}">{$no}</a></li>
-					<li><a href="{$param}" class="{$param_class}">{$no}</a></li>
-					<li><a href="{$param}" class="{$param_class}">{$no}</a></li>
-				</ol>
-				<a href="{$param_next}">다음 페이지</a>
-				<a href="{$param_last}" class="last">마지막 페이지</a>
-			</div>
-		</div><!-- //product_list -->
-	</div><!-- //product_normalpackage -->
-</div>
-<!--#ez="1/1"-->
+  /* ── SWATCH SELECT ── */
+  function selectSwatch(el, cardId) {
+    document.querySelectorAll(`#${cardId} .swatch`).forEach(s => s.classList.remove('active'));
+    el.classList.add('active');
+  }
+</script>

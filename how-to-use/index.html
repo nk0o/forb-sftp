@@ -1,0 +1,465 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/layout/basic/css/ap-service.css)-->
+<div class="ap-service ap-howto">
+  <div class="ap-service__top">
+    <div class="ap-titleArea">
+      <div class="ap-container--narrow">
+        <!-- 브래드크럼 -->
+        <div class="ap-list-path path section">
+          <span>현재 위치</span>
+          <ol>
+            <li><a href="/"><!--@import(/svg/icon-home.html)--></a></li>
+            <li title="현재 위치"><strong>제품 사용 방법</strong></li>
+          </ol>
+        </div><!-- //ap-list-path -->
+      </div><!-- //ap-container--narrow -->
+    </div><!-- //ap-titleArea -->
+    
+    <div class="ap-container--narrow">
+      <div class="ap-service__hero ap-service__hero--center">
+        <div class="ap-service__left">
+          <div class="ap-service__eyebrow">How-to Guide</div>
+          <h2 class="ap-service__title">제품 사용 방법을<br>영상으로 확인하세요</h2>
+          <p class="ap-service__desc">카테고리와 제품을 선택하면 연령별 착용 방법 영상을 바로 볼 수 있습니다.</p>
+        </div><!-- //ap-hero-left -->
+      </div><!-- //ap-service__hero -->
+    </div><!-- //ap-container--narrow -->
+  </div><!-- //ap-service__top -->
+  
+  <!-- 사용방법내용 -->
+  <div class="howto-body ap-container--narrow">
+    <aside class="howto-sidebar">
+      <div class="howto-sidebar__inner">
+        <div class="howto-sidebar__label">카테고리</div>
+        <div class="howto-nav__swiper swiper">
+          <div id="howtoNav" class="howto-nav swiper-wrapper"></div>
+        </div><!-- //howto-nav__swiper -->
+      </div>
+    </aside>
+
+    <main class="howto-main" id="howtoMain"></main>
+  </div><!-- //howto-body -->
+
+  <!-- 사용방법 모달 -->
+  <div class="howto-modal__overlay" id="modal-overlay">
+    <div class="howto-modal">
+      <div class="howto-modal__thumb">
+        <div class="howto-modal__video" id="modal-video"></div>
+        <div class="howto-modal__glyph"><img id="modal-thumb" src="/web/img/howto/img_howto_thumb.png" alt=""></div>
+        <div class="howto-play" id="modal-play">
+          <div class="howto-play__circle"><div class="play-tri"></div></div>
+        </div><!-- //howto-play -->
+      </div><!-- //howto-modal__thumb -->
+      <div class="howto-modal__body">
+        <div class="howto-modal__prod" id="modal-prod"></div>
+        <h3 id="modal-title"></h3>
+        <p class="howto-modal__desc" id="modal-desc"></p>
+        <div class="howto-modal__actions">
+          <button class="ap-btn ap-btn--outline" id="modal-close">확인</button>
+        </div>
+      </div><!-- //howto-modal__body -->
+    </div><!-- //howto-modal -->
+  </div><!-- //howto-modal__overlay -->
+
+</div><!-- //ap-service -->
+
+
+<script>
+  /* ── DATA ─────────────────────────────────────────────────────────────────── */
+  const CATS = [  
+    {
+      id: 'carrier', label: '아기띠', icon: '👶',
+      products: [
+        {
+          id: 'freeafitAir', label: '프리아핏 에어 아기띠',
+          desc: '신생아부터 24개월까지 사용 가능한 소프트 구조형 아기띠입니다.',
+          videos: [
+            { 
+              title:'신생아 전면 착용법',  
+              desc:'신생아 안전 착용법과 M자 다리 확인법을 안내합니다.',  
+              dur:'6:10',
+              url:'1-J06eNt8CE?si=WM2ByPJqjJpSwETF',
+              thumbnail:'/web/img/howto/img_howto_thumb.png',
+            },
+            { 
+              title:'전면 착용',      
+              desc:'전면 착용하는 방법과 아이 위치 조정 팁을 안내합니다.',    
+              dur:'3:13',
+              url:'X4CYmZ3vlz6U-izd',
+              thumbnail:'/web/img/howto/img_howto_thumb-1.png',
+            },
+            { 
+              title:'등 착용법',                   
+              desc:'목 가누기 이후 아이의 등 착용 방법과 안전 확인 절차를 안내합니다.',   
+              dur:'5:05',
+              url:'1-J06eNt8CE?si=WM2ByPJqjJpSwETF',
+              thumbnail:'/web/img/howto/img_howto_thumb.png',
+            },
+            { 
+              title:'힙시트 겸용 착용법',          
+              desc:'힙시트 모드와 아기띠 모드를 결합한 착용법을 안내합니다.',             
+              dur:'3:40',
+              url:'1-J06eNt8CE?si=WM2ByPJqjJpSwETF',
+              thumbnail:'/web/img/howto/img_howto_thumb.png',
+            },
+          ],
+        },
+        {
+          id: 'freeafit', label: '프리아핏 아기띠',
+          desc: '신생아부터 24개월까지 사용 가능한 소프트 구조형 아기띠입니다.',
+          videos: [
+            { 
+              title:'신생아 전면 착용법',  
+              desc:'안전 착용법과 M자 다리 확인법을 안내합니다.',  
+              dur:'3:13',
+              url:'X4CYmZ3vlz6U-izd',
+              thumbnail:'/web/img/howto/img_howto_thumb.png',
+            },
+            { 
+              title:'전면 착용',      
+              desc:'전면 착용하는 방법과 아이 위치 조정 팁을 안내합니다.',    
+              dur:'4:22',
+              url:'1-J06eNt8CE?si=WM2ByPJqjJpSwETF',
+              thumbnail:'/web/img/howto/img_howto_thumb-1.png',
+            },
+          ],
+        },
+      ]
+    },  
+    {
+      id: 'carseat', label: '카시트', icon: '🪑',
+      products: [
+        {
+          id: 'bonete', label: '보네떼 카시트',
+          desc: '9개월신생아부터 8세 아이까지 사용 가능한 휴대용 카시트입니다.',
+          videos: [
+            { 
+              title:'보네떼 사용 매뉴얼',
+              desc:'올바른 설치방법과 벨트 장착방법',
+              dur:'3:53',
+              url:'1-J06eNt8CE?si=WM2ByPJqjJpSwETF',
+              thumbnail:'/web/img/howto/img_howto_thumb.png', 
+            },
+          ]
+        },
+      ]
+    },
+    {
+      id: 'outdoor', label: '아웃도어캐리어', icon: '🏕️',
+      products: [
+        {
+          id: 'hiking', label: '하이킹 캐리어',
+          desc: '6개월 이상 어린이와 함께하는 트레킹용 백팩 캐리어입니다.',
+          videos: [
+            { 
+              title:'초기 탑승 및 안전벨트 조절', 
+              desc:'6개월 이상 아이의 첫 탑승 방법과 안전벨트 조절을 안내합니다.',     
+              dur:'5:50',
+              url:'1-J06eNt8CE?si=WM2ByPJqjJpSwETF',
+              thumbnail:'/web/img/howto/img_howto_thumb.png', 
+            },
+            { 
+              title:'일반 하이킹 탑승 가이드',    
+              desc:'활동량이 많은 유아를 위한 탑승 및 보호자 피팅 방법을 안내합니다.', 
+              dur:'4:30',
+              url:'1-J06eNt8CE?si=WM2ByPJqjJpSwETF',
+              thumbnail:'/web/img/howto/img_howto_thumb.png', 
+            },
+            { 
+              title:'장시간 착용 피팅 조절',      
+              desc:'허리벨트·어깨끈 세밀 조절과 무게 분산 방법을 안내합니다.',         
+              dur:'3:55',
+              url:'1-J06eNt8CE?si=WM2ByPJqjJpSwETF',
+              thumbnail:'/web/img/howto/img_howto_thumb.png', 
+            },
+          ],
+        },
+        {
+          id: 'travel', label: '여행용 경량유모차',
+          desc: '여행에 특화된 접이식 경량 유모차입니다.',
+          videos: [
+            { 
+              title:'원터치 폴딩 방법',       
+              desc:'한 손으로 간편하게 접고 펼치는 방법을 안내합니다.',              
+              dur:'1:40',
+              url:'1-J06eNt8CE?si=WM2ByPJqjJpSwETF',
+              thumbnail:'/web/img/howto/img_howto_thumb.png', 
+            },
+            { 
+              title:'안전벨트 및 캐노피 조절', 
+              desc:'아이 체형에 맞는 안전벨트 조절과 캐노피 사용법을 안내합니다.', 
+              dur:'2:20',
+              url:'1-J06eNt8CE?si=WM2ByPJqjJpSwETF',
+              thumbnail:'/web/img/howto/img_howto_thumb.png', 
+            },
+            { 
+              title:'항공기 수하물 보관법',    
+              desc:'공항에서 유모차를 수하물로 처리하는 방법을 안내합니다.',        
+              dur:'2:05',
+              url:'1-J06eNt8CE?si=WM2ByPJqjJpSwETF',
+              thumbnail:'/web/img/howto/img_howto_thumb.png', 
+            },
+          ],
+        },
+      ]
+    },
+    {
+      id: 'accessory', label: '액세서리', icon: '🎒',
+      products: [
+        {
+          id: 'insert', label: '신생아',
+          desc: '아기띠 전용',
+          videos: [
+            { 
+              title:'인서트 아기띠 장착 방법', 
+              desc:'올바르게 장착하는 방법입니다.', 
+              dur:'3:10',
+              url:'1-J06eNt8CE?si=WM2ByPJqjJpSwETF',
+              thumbnail:'/web/img/howto/img_howto_thumb.png', 
+            },
+            { 
+              title:'인서트 아기띠 장착 방법', 
+              desc:'올바르게 장착하는 방법입니다.', 
+              dur:'3:10',
+              url:'1-J06eNt8CE?si=WM2ByPJqjJpSwETF',
+              thumbnail:'/web/img/howto/img_howto_thumb.png', 
+            },
+          ],
+        },
+        {
+          id: 'sunshade', label: '카시트 햇빛 가리개',
+          desc: '차량 창문에 부착하는 UV 차단 햇빛 가리개입니다.',
+          videos: [
+            { 
+              title:'차량 장착 방법', 
+              desc:'흡착식 햇빛 가리개를 차량 창문에 안전하게 부착하는 방법입니다.', 
+              dur:'1:30',
+              url:'1-J06eNt8CE?si=WM2ByPJqjJpSwETF',
+              thumbnail:'/web/img/howto/img_howto_thumb.png', 
+            },
+          ],
+        },
+        {
+          id: 'raincover', label: '유모차 레인커버',
+          desc: '유모차에 장착하는 전용 방수 레인커버입니다.',
+          videos: [
+            { 
+              title:'레인커버 장착 및 탈거', 
+              desc:'유모차에 레인커버를 빠르게 장착하고 탈거하는 방법입니다.', 
+              dur:'2:15',
+              url:'1-J06eNt8CE?si=WM2ByPJqjJpSwETF',
+              thumbnail:'/web/img/howto/img_howto_thumb.png',  
+            },
+            { 
+              title:'환기 조절 방법',       
+              desc:'레인커버 착용 시 쾌적함을 위한 환기 조절 방법입니다.',    
+              dur:'1:45',
+              url:'1-J06eNt8CE?si=WM2ByPJqjJpSwETF',
+              thumbnail:'/web/img/howto/img_howto_thumb.png',  
+            },
+          ],
+        },
+      ]
+    },
+  ];
+  
+  
+  /* ── STATE ─────────────────────────────────────────────────────────────────── */
+  // prodId에 'all' 추가
+  let S = { catId: CATS[0].id, prodId: 'all' };
+  const cat = () => CATS.find(c => c.id === S.catId);
+  const prod = () => {
+    if (S.prodId === 'all') return null;
+    return cat()?.products.find(p => p.id === S.prodId);
+  };
+
+  
+  /* ── SIDEBAR ───────────────────────────────────────────────────────────────── */
+  function renderSidebar() {
+    const nav = document.getElementById('howtoNav');
+    nav.innerHTML = CATS.map(c => `
+      <div class="howto-nav__item swiper-slide">
+        <button class="howto-cat__btn ${c.id===S.catId?'active':''}" data-cat="${c.id}">
+          ${c.label}
+          <span class="howto-cat__chevron"><!--@import(/svg/icon-chevron-right.html)--></span>
+        </button>
+      </div>
+    `).join('');
+  
+    nav.querySelectorAll('.howto-cat__btn').forEach(b => b.addEventListener('click', () => {
+      const c = CATS.find(x => x.id === b.dataset.cat);
+      S = { catId: c.id, prodId: 'all' };
+      render(); closeDrawer();
+    }));
+    nav.querySelectorAll('.howto-sidebar__prd').forEach(b => b.addEventListener('click', () => {
+      S.catId=b.dataset.cat; S.prodId=b.dataset.prod;
+      render(); closeDrawer();
+    }));
+  }
+
+  /* ── MAIN ──────────────────────────────────────────────────────────────────── */
+  function renderMain() {
+    const main = document.getElementById('howtoMain');
+    const c = cat();
+    if (!c) return;
+
+    // 전체면 모든 제품 영상 합치기, 아니면 해당 제품만
+    const shown = S.prodId === 'all'
+      ? c.products.flatMap(pr => pr.videos.map(v => ({ ...v, _prodLabel: pr.label })))
+      : (cat()?.products.find(p => p.id === S.prodId)?.videos ?? []);
+
+    main.innerHTML = `
+      <div class="howto-header">
+        <div class="howto-header__icon">${c.icon}</div>
+        <div class="howto-header__text">
+          <h2>${c.label}</h2>
+          <p>${c.desc || ''}</p>
+        </div>
+      </div>
+
+      <div class="ap-tabs ap-tabs--category howto-cate__tabs">
+        <button class="ap-cate__tab ${'all' === S.prodId ? 'active' : ''}"
+                data-prod="all">
+          전체
+        </button>
+        ${c.products.map(pr => `
+          <button class="ap-cate__tab ${pr.id === S.prodId ? 'active' : ''}"
+                  data-prod="${pr.id}">
+            ${pr.label}
+          </button>
+        `).join('')}
+      </div>
+
+      <div>
+        <div class="howto-video__header">
+          <div class="howto__label">사용방법 영상</div>
+          <span class="howto-video__count">총 ${shown.length}개</span>
+        </div>
+        ${shown.length ? `
+        <div class="howto-video__grid">
+          ${shown.map((v, i) => `
+            <div class="howto-card" data-vi="${i}">
+              <div class="howto-thumb">
+                <div class="howto-thumb__glyph"><img src="${v.thumbnail}" alt="${v.title}"></div>
+                <div class="play-ring"><div class="play-tri"></div></div>
+                <span class="howto-thumb__dur">${v.dur}</span>                
+              </div>
+              <div class="howto-card__body">
+                ${S.prodId === 'all' && v._prodLabel
+                  ? `<span class="howto-thumb__prod">${v._prodLabel}</span>`
+                  : ''}
+                <h4>${v.title}</h4>
+                <p>${v.desc}</p>
+              </div>
+            </div>
+          `).join('')}
+        </div>` : `
+        <div class="howto-empty">
+          <div class="howto-empty__icon">🔍</div>
+          <p>영상이 없습니다.</p>
+        </div>`}
+      </div>
+    `;
+
+    main.querySelectorAll('.howto-cate__tabs .ap-cate__tab').forEach(b => b.addEventListener('click', () => {
+      S.prodId = b.dataset.prod;
+      render();
+    }));
+
+    main.querySelectorAll('.howto-thumb').forEach(thumb => thumb.addEventListener('click', () => {
+      openModal(shown[+thumb.closest('.howto-card').dataset.vi], c);
+    }));
+  }
+  /* ── MODAL ─────────────────────────────────────────────────────────────────── */
+  function openModal(v,c){
+    document.getElementById('modal-title').textContent=v.title;
+    document.getElementById('modal-desc').textContent=v.desc;
+    document.getElementById('modal-thumb').setAttribute( 'src', v.thumbnail)
+    document.getElementById('modal-video').innerHTML=`<iframe src="https://www.youtube.com/embed/${v.url}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+   /*  const tags=document.getElementById('modal-tags');
+    tags.innerHTML=''; */
+    document.getElementById('modal-prod').innerHTML=` ${S.prodId === 'all' && v._prodLabel ? `<span class="howto-thumb__prod">${v._prodLabel}</span>` : ''}`;
+    const d=document.createElement('span');d.className='modal-tag';
+    document.getElementById('modal-overlay').classList.add('open');
+  }
+
+  const closeModal = () => {
+    document.getElementById('modal-overlay').classList.remove('open');
+
+    // iframe innerHTML 비워서 유튜브 재생 중단
+    document.getElementById('modal-video').innerHTML = '';
+
+    // 플레이 버튼 & 썸네일 원상 복원
+    document.getElementById('modal-play').style.display = '';
+    document.querySelector('.howto-modal__glyph').style.display = '';
+
+    isPlaying = false;
+  };
+
+  document.getElementById('modal-close').addEventListener('click', closeModal);
+  document.getElementById('modal-overlay').addEventListener('click', e => {
+    if (e.target === e.currentTarget) closeModal();
+  });
+  /* ── MODAL PLAY LOGIC ─────────────────────────────────── */
+  let isPlaying = false;
+
+  document.getElementById('modal-play').addEventListener('click', () => {
+    // 모달이 열려있고, 재생 중이 아닐 때만 실행
+    if (!document.getElementById('modal-overlay').classList.contains('open')) return;
+    if (isPlaying) return;
+
+    // 플레이 버튼 & 썸네일 숨기기
+    document.getElementById('modal-play').style.display = 'none';
+    document.querySelector('.howto-modal__glyph').style.display = 'none';
+
+    // iframe에 autoplay=1 추가하여 재생 시작
+    const iframe = document.querySelector('#modal-video iframe');
+    if (iframe) {
+      iframe.src = iframe.src + '&autoplay=1';
+    }
+    isPlaying = true;
+  });
+
+  /* ── RENDER ────────────────────────────────────────────────────────────────── */
+  function render(){ renderSidebar(); renderMain(); }
+
+  render();
+
+  /* swiper */
+  let howtoSwiper = undefined;
+
+  function initSwiper() {
+    const ww = window.innerWidth;
+    
+    if (ww < 769) {
+      if (howtoSwiper === undefined) {
+        console.log('Swiper 초기화 (모바일)');
+        howtoSwiper = new Swiper('.howto-nav__swiper.swiper', {
+          slidesPerView: 'auto',
+          loop: false,
+          slideToClickedSlide: true,   
+        });
+      }
+    } else {
+      if (howtoSwiper !== undefined) {
+        console.log('Swiper 제거 (PC)');
+        howtoSwiper.destroy(true, true);
+        howtoSwiper = undefined;
+      } else {
+        console.log('PC 화면 - Swiper 없음');
+      }
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    initSwiper();
+  });
+
+  let resizeTimer;
+  window.addEventListener("resize", function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      initSwiper();
+    }, 100);
+  });
+</script>

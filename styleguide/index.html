@@ -2,6 +2,16 @@
 <!--@layout(/layout/basic/layout.html)-->
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <!--@css(/styleguide/styleguide.css)-->
+<!---------- CSS ------------>
+<!--@css(/layout/basic/css/ap-layout.css)--> <!-- 공통 -->
+<!--@css(/layout/basic/css/ap-custom.css)--> <!-- 기존소스에 더하기 -->
+<!--@css(/layout/basic/css/ap-footer.css)--> <!-- 푸터 -->
+<!--@css(/layout/basic/css/ap-header.css)--> <!-- 헤더 -->
+<!--@css(/layout/basic/css/ap-main.css)--> <!-- 메인 -->
+<!--@css(/layout/basic/css/ap-memeber.css)--> <!-- 회원 -->
+<!--@css(/layout/basic/css/ap-myshop.css)--> <!-- 마이페이지 -->
+<!--@css(/layout/basic/css/ap-service.css)--> <!-- 서비스 -->
+<!--@css(/layout/basic/css/ap-product.css)--> <!-- 제품목록/제품카드 -->
 
 <!-- HEADER -->
 <header class="sg-header">
@@ -291,40 +301,40 @@
     <div class="sg-section__title">상품 카드</div>
     <p class="sg-section__desc">border-radius: 0 (카드는 각지게 유지 — 이미지 중심 레이아웃과 정합성). 뱃지는 #FDD000 배경.</p>
     <div class="sg-card-grid">
-      <div class="ap-card">
-        <div class="ap-card__img">
-          <span class="ap-card__badge">New</span>이미지
+      <div class="ap-prdItem">
+        <div class="ap-prdItem__img">
+          <span class="ap-prdItem__badge">New</span>이미지
         </div>
-        <div class="ap-card__body">
-          <span class="ap-card__category">아기띠</span>
-          <div class="ap-card__name">프리아핏 에어</div>
-          <div class="ap-card__desc">신생아부터 올인원, 4계절 메쉬</div>
-          <div class="ap-card__footer">
-            <span class="ap-card__price">298,000원</span>
+        <div class="ap-prdItem__body">
+          <span class="ap-prdItem__category">아기띠</span>
+          <div class="ap-prdItem__name">프리아핏 에어</div>
+          <div class="ap-prdItem__desc">신생아부터 올인원, 4계절 메쉬</div>
+          <div class="ap-prdItem__footer">
+            <span class="ap-prdItem__price">298,000원</span>
           </div>
         </div>
       </div>
-      <div class="ap-card">
-        <div class="ap-card__img">
-          <span class="ap-card__badge ap-card__badge--gold">Best</span>이미지
+      <div class="ap-prdItem">
+        <div class="ap-prdItem__img">
+          <span class="ap-prdItem__badge ap-prdItem__badge--gold">Best</span>이미지
         </div>
-        <div class="ap-card__body">
-          <span class="ap-card__category">카시트</span>
-          <div class="ap-card__name">보네떼 360</div>
-          <div class="ap-card__desc">360° 회전, ISOFIX, 신생아~4세</div>
-          <div class="ap-card__footer">
-            <div><span class="ap-card__price--original">1,490,000</span><span class="ap-card__price">1,290,000원</span></div>
+        <div class="ap-prdItem__body">
+          <span class="ap-prdItem__category">카시트</span>
+          <div class="ap-prdItem__name">보네떼 360</div>
+          <div class="ap-prdItem__desc">360° 회전, ISOFIX, 신생아~4세</div>
+          <div class="ap-prdItem__footer">
+            <div><span class="ap-prdItem__price--original">1,490,000</span><span class="ap-prdItem__price">1,290,000원</span></div>
           </div>
         </div>
       </div>
-      <div class="ap-card">
-        <div class="ap-card__img">이미지</div>
-        <div class="ap-card__body">
-          <span class="ap-card__category">기저귀가방</span>
-          <div class="ap-card__name">토드백 미니</div>
-          <div class="ap-card__desc">경량 방수, 스냅 탈착, 다용도</div>
-          <div class="ap-card__footer">
-            <span class="ap-card__price">158,000원</span>
+      <div class="ap-prdItem">
+        <div class="ap-prdItem__img">이미지</div>
+        <div class="ap-prdItem__body">
+          <span class="ap-prdItem__category">기저귀가방</span>
+          <div class="ap-prdItem__name">토드백 미니</div>
+          <div class="ap-prdItem__desc">경량 방수, 스냅 탈착, 다용도</div>
+          <div class="ap-prdItem__footer">
+            <span class="ap-prdItem__price">158,000원</span>
           </div>
         </div>
       </div>
@@ -367,10 +377,15 @@
       <div class="ap-tab__panel is-active" id="panel-1">tab content - 1</div>
       <div class="ap-tab__panel" id="panel-2">tab content - 2</div>
     </div>
-    <!-- 셀렉트박스 UI -->
-     <div>
-      
-     </div>
+    <!-- 탭 UI - 2 -->
+    <div>
+      <div class="ap-tabs ap-tabs--category">
+        <button class="ap-tab ap-cate__tab active">전체</button>
+        <button class="ap-tab ap-cate__tab">아기띠</button>
+        <button class="ap-tab ap-cate__tab">카시트</button>
+      </div><!-- //ap-tabs--category -->
+    </div>
+    
   </section>
 
   <!-- 07. GNB 2단 -->
