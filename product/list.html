@@ -1,10 +1,29 @@
 <!--@layout(/layout/basic/layout.html)-->
 <!--@js(/js/module/product/menucategory.js)-->
 <!--@css(/css/module/product/menupackage.css)-->
-<div class="ap-titleArea">
+
+<div class="ap-list__title">
   <div class="ap-container">
+
+    <div class="ap-titleArea">
+      <div class="ap-container--narrow">
+        <!-- 브래드크럼 -->
+        <div class="ap-list-path path section" module="product_headcategory">
+          <span>현재 위치</span>
+          <ol>
+            <li><a href="/"><!--@import(/svg/icon-home.html)--></a></li>
+            <!-- <li class="{$disp_cate_1|display}"><a href="{$link_product_list_1}">{$name_1}</a></li> -->
+            <li class="{$disp_cate_2|display}"><strong><a href="{$link_product_list_2}">{$name_2}</a></strong></li>
+            <li class="{$disp_cate_3|display}"><a href="{$link_product_list_3}">{$name_3}</a></li>
+            <li class="{$disp_cate_4|display}"><strong><a href="{$link_product_list_4}">{$name_4}</a></strong></li>
+          </ol>
+        </div><!-- //ap-path -->
+      </div><!-- //ap-container--narrow -->
+    </div><!-- //ap-titleArea -->
+
+
     <!-- 브래드크럼 -->
-    <div class="ap-list-path path section" module="product_headcategory" data-ez-module="product-head-breadcrumb/1" data-ez="contents-0i627kb-1">
+    <!-- <div class="ap-list-path path section" module="product_headcategory" data-ez-module="product-head-breadcrumb/1" data-ez="contents-0i627kb-1">
       <span>현재 위치</span>
       <ol>
         <li><a href="/">홈</a></li>
@@ -13,7 +32,9 @@
         <li class="{$disp_cate_3|display}"><a href="{$link_product_list_3}">{$name_3}</a></li>
         <li class="{$disp_cate_4|display}"><strong><a href="{$link_product_list_4}">{$name_4}</a></strong></li>
       </ol>
-    </div><!-- //ap-path -->
+    </div> --><!-- //ap-path -->
+
+
     <!-- 제품목록 타이틀 -->
     <div class="ap-titleArea__tit section titleArea" module="product_headcategory" data-ez-module="product-list-head-title/1" data-ez="contents-0mpbd2y-1">
       <h2>{$title_text_or_image}</h2>

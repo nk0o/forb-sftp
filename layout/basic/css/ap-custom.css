@@ -1,19 +1,18 @@
 
-@media all and (min-width: 1025px) {
+/* @media all and (min-width: 1025px) {
   .path + .titleArea { margin: 0; padding-top: 55px; }
   .titleArea { margin: 0; padding: 45px 0 40px; text-align: center; }
 }
 @media all and (max-width: 1024px) {
-  .forb #container #contents{width: 100%;}
   .forb .titleArea { margin: 0; padding: 40px 0; }
 }
 
 @media all and (min-width: 768px) and (max-width:1024px) {
   .forb .titleArea { margin: 0; padding: 40px 24px 30px; }
-}
+} */
 
 /******** 제품 목록 ********/
-.forb .ec-base-tab.typeMenu, .forb .product_top_image{max-width: var(--ap-max-width) !important;}
+/* .forb .ec-base-tab.typeMenu, .forb .product_top_image{max-width: var(--ap-max-width) !important;}
 .forb .ec-base-product .prdList > li:hover .thumbnail{box-shadow: none;}
 .forb .ec-base-product ul.grid3 > li{}
 .forb .ec-base-product .prdList .description .name a{}
@@ -27,5 +26,5 @@
   .forb .ec-base-product .prdList .prdList__item{margin: 0 8px;}
   .forb .ec-base-product .prdList > li{margin-bottom: 32px;}
 }
-
+ */
 

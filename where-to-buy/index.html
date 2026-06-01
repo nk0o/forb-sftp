@@ -1,0 +1,131 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/layout/basic/css/ap-wheretobuy.css)-->
+<div class="section path">
+    <span>현재 위치</span>
+    <ol>
+        <li><a href="/">홈</a></li>
+        <li title="현재 위치"><strong>매장안내</strong></li>
+    </ol>
+</div>
+<div class="section titleArea">
+    <h2>매장안내</h2>
+</div>
+<div class="section">
+    <div class="store-wrap">
+        <div class="store-filter">
+            <select id="storeRegion">
+                <option value="">지역 전체</option>
+                <option value="서울">서울</option>
+                <option value="경기">경기</option>
+            </select>
+            <select id="storeType">
+                <option value="">매장 유형</option>
+                <option value="백화점">백화점</option>
+                <option value="로드샵">로드샵</option>
+            </select>
+            <input type="text" id="storeKeyword" placeholder="매장명 검색" />
+        </div>
+        <div class="store-content">
+            <ul id="storeList"></ul>
+            <div id="map"></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1c2339c2dc10c5bb4d9dbd04a5a79d65"></script>
+<script>
+  (function () {
+    const _storeData = [
+      {
+        name: "동인기연 방화점",
+        region: "서울",
+        type: "백화점",
+        address: "서울특별시 강서구 양천로 108 한원빌딩 B1 아토판지아 매장",
+        lat: 37.5732704,
+        lng: 126.8156708,
+        url: "/store/banghwa.html",
+      },
+      {
+        name: "동인기연 김포점",
+        region: "경기",
+        type: "로드샵",
+        address: "경기도 김포시 통진읍 대곶북로 370-26",
+        lat: 37.6792368,
+        lng: 126.5754458,
+        url: "/store/gimpo.html",
+      },
+    ];
+
+    let _markers = [];
+    let _map = null;
+
+    function render(data) {
+      const list = document.querySelector("#storeList");
+      list.innerHTML = "";
+
+      _markers.forEach((m) => m.setMap(null));
+      _markers = [];
+
+      data.forEach((store) => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+          <div class="store-info">
+            <strong class="store-name">${store.name}</strong>
+            <p class="store-address">${store.address}</p>
+            <a href="${store.url}" class="store-cta">매장정보보기</a>
+          </div>
+        `;
+        list.appendChild(li);
+
+        const marker = new kakao.maps.Marker({
+          map: _map,
+          position: new kakao.maps.LatLng(store.lat, store.lng),
+        });
+
+        li.querySelector(".store-cta").addEventListener("click", (e) => {
+          e.stopPropagation();
+        });
+
+        li.addEventListener("click", () => {
+          _map.setCenter(marker.getPosition());
+          document.querySelectorAll("#storeList li").forEach((el) => el.classList.remove("active"));
+          li.classList.add("active");
+        });
+
+        _markers.push(marker);
+      });
+
+      if (data.length > 0) {
+        list.querySelector("li").classList.add("active");
+        _map.setCenter(new kakao.maps.LatLng(data[0].lat, data[0].lng));
+        _map.setLevel(4);
+      }
+    }
+    // 셀렉트박스, 키보드검색
+    function applyFilter() {
+      const region = document.querySelector("#storeRegion").value;
+      const type = document.querySelector("#storeType").value;
+      const keyword = document.querySelector("#storeKeyword").value.toLowerCase();
+      const filtered = _storeData.filter((s) =>
+        (!region || s.region === region) &&
+        (!type || s.type === type) &&
+        (!keyword || s.name.toLowerCase().includes(keyword))
+      );
+      render(filtered);
+    }
+
+    //첫 로드
+    window.addEventListener("load", function () {
+      _map = new kakao.maps.Map(document.querySelector("#map"), {
+        center: new kakao.maps.LatLng(37.5, 127),
+        level: 8,
+      });
+
+      render(_storeData);
+
+      document.querySelector("#storeRegion").addEventListener("change", applyFilter);
+      document.querySelector("#storeType").addEventListener("change", applyFilter);
+      document.querySelector("#storeKeyword").addEventListener("input", applyFilter);
+    });
+  })();
+  </script>

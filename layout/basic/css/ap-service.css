@@ -1,28 +1,28 @@
 /******** 서비스 공통 ********/
-.ap-service__top{ border-bottom: 1px solid var(--ap-color-border);}
+.ap-service__top{ border-bottom: 1px solid var(--ap-color-border); height: 600px;}
 .ap-service{background:var(--ap-color-bg-section)}
 /* PAGE HERO */
 .ap-service__hero { position: relative; overflow: hidden; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px 40px;  padding: 52px 0 40px;}
 .ap-service__hero--center{justify-content: center;}
 .ap-service__hero--center .ap-service__left{text-align: center;}
 .ap-service__left { position: relative; z-index: 2; }
-.ap-service__eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: var(--ap-text-xs); letter-spacing: 0.3em; color: var(--ap-color-text-muted); text-transform: uppercase; margin-bottom: 18px; }
+.ap-service__eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: var(--ap-text-xs); letter-spacing: 0.3em; color: var(--ap-color-gold); text-transform: uppercase; margin-bottom: 18px; }
 .ap-service__eyebrow::before, .ap-service__eyebrow::after { content: ''; width: 28px; height: 1px; background: var(--ap-color-dusty-rose); }
-.ap-service__title { font-family: var(--ap-font-sans); font-size: clamp(var(--ap-text-2xl), 3vw, 58px); font-weight: 400; color: var(--ap-color-text-primary); line-height: 1.1; letter-spacing: 1.16px; margin-bottom: 20px; }
-.ap-service__title em { font-style: italic; color: var(--ap-color-dusty-rose); }
-.ap-service__desc { font-size: var(--ap-text-base); line-height: 1.45; color: var(--ap-color-text-secondary); font-weight: 500; letter-spacing: 0.6px;word-break: keep-all;}
-.ap-service__left .ap-btn{ width: 100%; max-width: 320px; margin-top: 20px;background-color: var(--ap-color-warm-brown); color: #fff;transition: background var(--ap-transition-fast);}
+.ap-service__title { font-size: var(--ap-text-4xl); font-weight: 500; color: #fff; line-height: 1.2; letter-spacing: 0.16px; margin-bottom: 20px; }
+.ap-service__title em { color: var(--ap-color-dusty-rose); }
+.ap-service__desc { font-size: var(--ap-text-md); line-height: 1.45; color: #fff; font-weight: 500; letter-spacing: 0.6px;word-break: keep-all;}
+.ap-service__left .ap-btn{ width: 100%; max-width: 346px; margin-top: 20px; color: var(--ap-color-text-primary) !important;transition: background var(--ap-transition-fast);font-size: var(--ap-text-base) !important; font-weight: 600 !important;}
 .ap-service__left .ap-btn:hover{background-color: var(--ap-color-warm-brown-deep);}
 
 .ap-service__badges { display: flex; gap: 12px 28px; margin-bottom: 10px; }
 .ap-service__badges.ap-service__badges--vertical{flex-direction: column;gap: 28px;}
-.ap-service-badge  {display: flex; align-items: center; gap: 12px; padding: 8px; }
-.ap-service-badge__icon {flex-shrink: 0; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;}
+.ap-service-badge  {display: flex; align-items: center; gap: 16px; padding: 8px; }
+.ap-service-badge__icon {flex-shrink: 0; width: 22px; height: auto; display: flex; align-items: center; justify-content: center;}
 .ap-service-badge__icon svg{width:100%;}
 .ap-service-badge__icon svg, .ap-service-badge__icon path{color: var(--ap-color-warm-brown-deep);stroke: var(--ap-color-warm-brown-deep);}
 .ap-service-badge__content { display: flex; flex-direction: column; gap: 2px; }
-.ap-service-badge__label { font-size: var(--ap-text-base); font-weight: 400; color: var(--ap-color-text-primary); line-height: 1.4; }
-.ap-service-badge__desc { font-size:  var(--ap-text-sm); color: var(--ap-color-text-secondary);     word-break: keep-all;}
+.ap-service-badge__label { font-size: var(--ap-text-base); font-weight: 400; color: var(--ap-color-beige-mid); line-height: 1.4; }
+.ap-service-badge__desc { font-size:  var(--ap-text-sm); color: var(--ap-color-beige-deep);     word-break: keep-all;}
 
 /******** 정품인증서비스 ********/
 .ap-auth__main.ap-container--narrow { margin: 0 auto; padding-block:0 100px; overflow: hidden;}
@@ -142,11 +142,18 @@
 
 /******** 카시트무상교환서비스 ********/
 /* UTILITIES */
+.ap-replace .ap-service__top{position: relative;background:url('/web/img/service/img_exchange-bg.webp') top center/cover no-repeat;border-bottom: 0;}
+.ap-replace .ap-titleArea{position: absolute;top: 0; left:0; width: 100%;}
+.forb .ap-replace .path li:not(:first-child):before, .forb .ap-replace .path svg >*, .forb .ap-replace .path li a, .forb .ap-replace .path li strong{color: var(--ap-color-beige);}
+.ap-replace .ap-service__hero{ display: flex;align-items: center; justify-content: space-between; height: 100%;}
 .ap-container--narrow.exchange__section { max-width: 1060px; margin: 0 auto; padding: 0 40px; }
-.exchange__eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: var(--ap-text-xs); letter-spacing: 0.3em; color: var(--ap-color-dusty-rose); text-transform: uppercase; margin-bottom: 14px; }
+.exchange__eyebrow { font-size: var(--ap-text-xs); letter-spacing: var(--ap-tracking-wider); color: var(--ap-color-gold); text-transform: uppercase; margin-bottom: 10px; display: block;font-weight: 400;}
 .exchange__eyebrow::after { content: ''; width: 32px; height: 1px; background: var(--ap-color-dusty-rose); }
-.exchange__title { font-size: clamp(var(--ap-text-xl),3.2vw,var(--ap-text-3xl)); font-weight: 300; color: var(--ap-color-warm-brown-deep); line-height: 1.2; letter-spacing: 0.02em; }
-.exchange__title em { font-style: italic; color: var(--ap-color-warm-brown); }
+.exchange__title { font-size: clamp(22px, 2.8vw, 38px);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.184; }
+.exchange__title em { color: var(--ap-color-warm-brown); }
 
 /* REVEAL */
 .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.65s ease, transform 0.65s ease; }
@@ -154,15 +161,15 @@
 .delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; } .delay-3 { transition-delay: 0.3s; }
 
 /* INTRO */
-.exchange-intro { background: var(--ap-color-bg-base); padding: 84px 0; text-align: center; }
+.exchange-intro { background: url('https://forbmaster.cafe24.com/web/img/service/img_exchange-bg2.webp') center right/cover no-repeat; padding: 80px 0;  }
 .exchange-intro .exchange__section { max-width: 700px; }
-.intro__lead { font-size: clamp(var(--ap-text-xl),3.2vw,var(--ap-text-2xl));; font-weight: 300; font-style: italic; color: var(--ap-color-text-secondary); line-height: 1.5; letter-spacing: 0.02em; margin-bottom: 32px;    word-break: keep-all;}
-.intro__lead em { color: var(--ap-color-gold); font-style: normal; }
-.intro__body { font-size: var(--ap-text-base); line-height: 1.7; color: var(--ap-color-text-muted); font-weight: 400; letter-spacing: 0.04em; }
+.exchange-intro .intro__lead { font-size: 30px; font-weight: 400; color: #fff; line-height: 1.2; letter-spacing: 0.02em; margin-bottom: 42px;word-break: keep-all;}
+.exchange-intro .intro__lead em { color: var(--ap-color-gold); font-style: normal; }
+.exchange-intro .intro__body { font-size: var(--ap-text-base); line-height: 1.2; color: #fff; font-weight: 400; letter-spacing: 0.04em; }
 
 /* STORIES */
 .exchange-story { padding: 96px 0; background: var(--ap-color-ivory); }
-.exchange-story__header { margin-bottom: 56px; }
+.exchange-story__header { margin-bottom: 50px; }
 .exchange-story__list { display: flex; flex-direction: column; gap: 28px; }
 
 /* 카드: 사진 왼쪽 + 텍스트 오른쪽 */
@@ -276,7 +283,7 @@
 .cta__left { position: relative; z-index: 2; }
 .cta__eyebrow { font-size: var(--ap-text-xs); letter-spacing: 0.3em; color: var(--ap-color-dusty-rose); text-transform: uppercase; margin-bottom: 14px; display: block; }
 .cta__title {font-size: clamp(var(--ap-text-2xl), 4.2vw, var(--ap-text-3xl)); font-weight: 300; color: #fff8f4; line-height: 1.18; margin-bottom: 18px; }
-.cta__title em { font-style: italic; color: var(--ap-color-dusty-rose); }
+.cta__title em { color: var(--ap-color-dusty-rose); }
 .cta__desc { font-size: var(--ap-text-sm); line-height: 2; color: rgba(255,248,244,0.58); font-weight: 300; letter-spacing: 0.04em; }
 
 .cta__right { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 12px; align-items: flex-end; flex-shrink: 0; }

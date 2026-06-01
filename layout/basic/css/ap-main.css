@@ -35,8 +35,8 @@ PAGE-SPECIFIC — 메인페이지 전용 컴포넌트
 /******** 베스트 대표 상품 ********/
 .ap-best{margin-top: 60px;}
 .ap-best__title { text-align: center; margin-bottom: 60px; }
-.ap-best__title h2 { font-family: var(--ap-font-serif); font-size: 42px; font-weight: 500; color: var(--ap-color-text-primary); margin-bottom: 12px; letter-spacing: 1px; }
-.ap-best__title p { font-size: 15px; color: var(--ap-color-text-secondary); font-weight: 300; }
+.ap-best__title h2 { font-family: var(--ap-font-serif); font-size: 42px; font-weight: 700; color: var(--ap-color-text-primary); margin-bottom: 12px; letter-spacing: 1px; }
+.ap-best__title p { font-size: 15px; color: var(--ap-color-text-secondary); font-weight: 500; }
 .ap-best__container { max-width: var(--ap-max-width-narrow); margin: 0 auto; overflow: hidden; }
 .ap-best__scroll { display: flex; justify-content: center;gap: 20px; overflow-x: auto; scroll-behavior: smooth; padding: 20px var(--ap-gutter);margin-bottom: 80px; scrollbar-width: none; transition: all var(--ap-transition-fast);}
 .ap-best__scroll:hover{scrollbar-width: initial;}
@@ -55,9 +55,9 @@ PAGE-SPECIFIC — 메인페이지 전용 컴포넌트
 /******** 브랜드 철학 ********/
 .ap-philosophy {overflow: hidden; background: var(--ap-color-ivory); }
 .ap-philosophy__inner { padding: 120px var(--ap-gutter) 90px; text-align: center; }
-.ap-philosophy__text {max-width: var(--ap-max-width);margin: 0 auto; color: var(--ap-color-text-primary); letter-spacing: 0.01em;  line-height: 1.25;}
-.ap-philosophy__text em, .ap-philosophy__text strong { color: var(--ap-color-gold);}
-.ap-philosophy__sub { margin-top: 20px; font-size: var(--ap-text-xs); letter-spacing: var(--ap-tracking-wider); text-transform: uppercase; color: var(--ap-color-text-muted); }
+.ap-philosophy__text {max-width: var(--ap-max-width);margin: 0 auto; color: var(--ap-color-text-primary); letter-spacing: 0.01em;  line-height: 1.25;font-weight: 400;}
+.ap-philosophy__text em, .ap-philosophy__text strong { color: var(--ap-color-gold);font-weight: 500;}
+.ap-philosophy__sub { margin-top: 20px; font-size: var(--ap-text-xs); letter-spacing: var(--ap-tracking-wider); text-transform: uppercase; color: var(--ap-color-text-muted);font-weight: 500;}
 
 
 /******** 브랜드 소개 ********/
@@ -77,7 +77,7 @@ PAGE-SPECIFIC — 메인페이지 전용 컴포넌트
 .ap-brand__card-body { position: absolute; bottom: 0; left: 0; right: 0; padding: 32px 36px 36px; display: flex; flex-direction: column; gap: 10px; transform: translateY(4px); transition: transform 0.35s ease; } 
 .ap-brand__card:hover .ap-brand__card-body { transform: translateY(0); } 
 .ap-brand__card-eyebrow { font-size: var(--ap-text-xs); font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ap-color-gold-light); } 
-.ap-brand__card-title { font-size: clamp(20px, 2vw, 28px); font-weight: 300; color: #fff; line-height: 1.2; letter-spacing: -0.01em; } 
+.ap-brand__card-title { font-size: clamp(20px, 2vw, 28px); font-weight: 400; color: #fff; line-height: 1.2; letter-spacing: -0.01em; } 
 .ap-brand__card-desc { font-size: var(--ap-text-base); font-weight: 300; color: rgba(255, 255, 255, 0.72); line-height: 1.7; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, opacity 0.3s ease, padding .4s ease; opacity: 0; } 
 .ap-brand__card:hover .ap-brand__card-desc { max-height: 80px; opacity: 1; padding-top: 12px; } 
 /* 버튼 — 흰색 ghost 스타일 */
@@ -91,7 +91,7 @@ PAGE-SPECIFIC — 메인페이지 전용 컴포넌트
 .ap-products {overflow: hidden; background: var(--ap-color-bg-base); }
 .ap-products__header { text-align: center; padding: 144px 0 var(--ap-space-3xl);}
 .ap-products__eyebrow { display: block; font-size: var(--ap-text-xs); font-weight: 500; letter-spacing: var(--ap-tracking-wider); text-transform: uppercase; color: var(--ap-color-gold); margin-bottom: var(--ap-space-sm); }
-.ap-products__title { color: var(--ap-color-text-primary); line-height: var(--ap-leading-tight); }
+.ap-products__title { color: var(--ap-color-text-primary); line-height: var(--ap-leading-tight);font-weight: 400; }
 
 /* 제품군 이미지+설명 */
 .ap-products-row { display: grid; grid-template-columns: 63% 1fr;max-width: var(--ap-max-width); min-height: 520px;margin: 0 auto; border-top: 1px solid var(--ap-color-border-light); background: var(--ap-color-cream);}
@@ -127,15 +127,15 @@ PAGE-SPECIFIC — 메인페이지 전용 컴포넌트
 .ap-service-item__img img{position: absolute; top: 0; left: 0;width: 100%; height: 100%; object-fit: cover;}
 .ap-service-item__img-placeholder {position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--ap-font-sans); font-size: var(--ap-text-xs); letter-spacing: 0.1em; text-transform: uppercase; color: var(--ap-color-text-muted); }
 .ap-service-item__icon { width: 36px; height: 1px; background: var(--ap-color-gold); }
-.ap-service-item__title { font-family: var(--ap-font-sans); font-size: var(--ap-text-lg); font-weight: 300; color: var(--ap-color-text-primary); }
-.ap-service-item__desc { font-family: var(--ap-font-sans); font-size: var(--ap-text-sm); font-weight: 300; color: var(--ap-color-text-muted); line-height: 1.7; flex: 1; }
+.ap-service-item__title { font-family: var(--ap-font-sans); font-size: var(--ap-text-lg); font-weight: 500; color: var(--ap-color-text-primary); }
+.ap-service-item__desc { font-family: var(--ap-font-sans); font-size: var(--ap-text-sm); font-weight: 400; color: var(--ap-color-text-muted); line-height: 1.7; flex: 1; }
 
 
 /******** 클릭유도섹션 ********/
 .ap-cta { padding: 100px 0; text-align: center; background: var(--ap-color-ivory); border-top: 1px solid var(--ap-color-border-light); position: relative; overflow: hidden; }
 .ap-cta::before { content: ''; position: absolute; bottom: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(243, 167, 0, 0.12) 0%, transparent 70%); pointer-events: none; }
 .ap-cta__eyebrow { font-family: var(--ap-font-sans); font-size: var(--ap-text-xs); font-weight: 400; letter-spacing: var(--ap-tracking-wider); text-transform: uppercase; color: var(--ap-color-gold); margin-bottom: 20px; display: block; }
-.ap-cta__title { color: var(--ap-color-text-primary); line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 16px; }
+h2.ap-cta__title { color: var(--ap-color-text-primary); line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 16px; font-weight: 500;}
 .ap-cta__desc { font-family: var(--ap-font-sans); font-size: var(--ap-text-base); font-weight: 300; color: var(--ap-color-text-secondary); line-height: 1.8; margin-bottom: 40px; }
 .ap-cta__actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 .ap-cta__note { margin-top: 20px; font-family: var(--ap-font-sans); font-size: var(--ap-text-xs); color: var(--ap-color-text-muted); }
