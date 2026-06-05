@@ -25,6 +25,10 @@
 .ap-service-badge__desc { font-size:  var(--ap-text-sm); color: var(--ap-color-beige-deep);     word-break: keep-all;}
 
 /******** 정품인증서비스 ********/
+.ap-auth .ap-service__desc {color: var(--ap-color-text-primary);}
+.ap-auth .ap-service__top {height: 310px; background-color: var(--ap-color-bg-base);}
+.ap-auth .ap-service-badge__label {color: var(--ap-color-text-secondary);}
+.ap-auth .ap-service-badge__desc {color: var(--ap-color-text-muted);}
 .ap-auth__main.ap-container--narrow { margin: 0 auto; padding-block:0 100px; overflow: hidden;}
 /* AUTH CARD */
 .auth-section{margin-top: 80px;}
@@ -125,8 +129,12 @@
 .auth-empty__desc { font-size: var(--ap-text-base); color: var(--ap-color-gray-300); line-height: 1.6; }
 
 
+@media (max-width: 1024px) {
+  .ap-auth .ap-service__top {height: auto;}
+}
 @media (max-width: 768px) {
   .ap-service__badges{flex-direction: column;width: 100%;}
+  .ap-service-badge{border: 1px solid var(--ap-color-border);}
   .auth-section{margin-top: 40px;}
   .auth-section--record{margin-top: 60px;}
   .auth-section.ap-grid{grid-template-columns: 1fr;box-shadow: 0;}
