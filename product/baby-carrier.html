@@ -34,66 +34,198 @@
   </section>
   
   <div class="prd-container">
-    <!-- PRODUCT TYPES -->
-    <section class="types__section" id="types">
+    <!-- Babyintro Section -->
+    <section class="babyintro__section">
       <div class="prd__header reveal">
         <p class="prd__num">selection guide</p>
         <h2 class="prd__title">나에게 맞는 아기띠는?</h2>
         <p class="prd__desc">제품별 특징을 비교하여 최적의 선택을 도와드려요</p>
       </div>
+    </section>
 
+    <!-- Tabs Section -->
+    <section class="tabs__section" id="types">
       <div class="ap-container--narrow">
         <div class="ap-tabs ap-tabs--category">
           <a href="#panel-sling" class="ap-cate__tab types__tab-btn active" data-tab="sling">슬링 아기띠</a>
-          <a href="#panel-babycarrier" class="ap-cate__tab types__tab-btn" data-tab="babycarrier">신생아 아기띠</a>
-          <a href="#panel-hipseat" class="ap-cate__tab types__tab-btn" data-tab="hipseat">힙시트 아기띠</a>
-          <a href="#panel-hipseat" class="ap-cate__tab types__tab-btn" data-tab="hipseat">힙시트 단독</a>
+          <a href="#panel-babycarrier" class="ap-cate__tab types__tab-btn" data-card="0" data-tab="babycarrier">신생아 아기띠</a>
+          <a href="#panel-babycarrier" class="ap-cate__tab types__tab-btn" data-card="1" data-tab="babycarrier">힙시트 아기띠</a>
+          <a href="#panel-babycarrier" class="ap-cate__tab types__tab-btn" data-card="2" data-tab="babycarrier">힙시트 단독</a>
           <a href="#panel-allinone" class="ap-cate__tab types__tab-btn" data-tab="allinone">올인원 아기띠</a>
         </div><!-- //ap-tabs -->
       </div><!-- //ap-container--narrow -->
     </section>
-  
-      <div class="type__panels">
-        <!-- 슬링 -->
-        <div class="type__panel swiper-slide active" id="panel-sling">
+
+    <!-- Panels Section -->
+    <section class="type__panels">
+      <!-- 슬링 -->
+      <div class="type__panel reveal" id="panel-sling">
+        <div class="baby-card baby-card--full">
           <div class="type__visual">
             <div class="type__visual-bg" style="background:linear-gradient(145deg,#EFE6DC,#D4C4B0);position:absolute;inset:0;"></div>
             <div class="type__visual-content">
               <div class="type__img">
-                <img src="/web/product/small/202307/7b1c7ae6783cd309ee840b276820ff0c.jpg">
+                <img src="/web/img/prdList/babycarrier/img_sling-bg.webp?v=2"><div class="type__item">
+                  <img src="/web/img/prdList/babycarrier/img_sling-item.png"><div class="ap-badge ap-badge--beige"><span class="ap-badge ap-badge--primary">사용연령</span>생후 2주 - 12개월</div><!-- //ap-badge -->
+                </div>
               </div>
             </div><!-- //type__visual-content -->
-          </div>
+          </div><!-- //type__visual -->
           <div class="type__info">
             <div class="type__sub">Newborn Friendly</div>
             <h3 class="type__name">슬링 아기띠</h3>
-            <span class="type__age">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.2"/><path d="M7 4v3l2 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-              사용연령&nbsp;<strong>생후 2주 ~ 12개월</strong>
-            </span>
+            <div class="type__item">
+              <img src="/web/img/prdList/babycarrier/img_sling-item.png"><div class="ap-badge ap-badge--beige"><span class="ap-badge ap-badge--primary">사용연령</span>생후 2주 - 12개월</div><!-- //ap-badge -->
+            </div>
+            <p class="type__desc">부드러운 모달 원단으로 아이를 감싸며 마치 옷을 입는 듯 자연스러운 편안한 착용감<br>신생아가 처음 사용하는 아기띠 </p>
+            <a class="ap-btn ap-btn--primary" href="/product/프리아핏-슬링/21"> 슬링 제품 보기 </a>
+          </div><!-- //type__info -->
+        </div><!-- //baby-card -->
+      </div><!-- //#panel-sling -->
+
+      <!-- 아기띠 -->
+      <div class="type__swiper swiper" id="panel-babycarrier">
+        <div class="type__panel active visible swiper-wrapper">
+          <!-- 아기띠 - 신생아 -->
+          <div class="baby-card flip-card swiper-slide">
+            <div class="flip-card__inner">
+              <div class="flip-card__front">
+                <div class="type__info">
+                  <div class="type__sub">Newborn Friendly</div>
+                  <h3 class="type__name">신생아 아기띠</h3>
+                  <p class="type__desc">아기띠 등받이+허리&nbsp;벨트</p>
+                </div><!-- //type__info -->
+                <div class="type__visual">
+                  <div class="type__visual-content">
+                    <div class="type__img">
+                      <img src="/web/img/prdList/babycarrier/img_carrier-bg-1.png"><div class="type__item">
+                        <div class="ap-badge ap-badge--beige"><span class="ap-badge ap-badge--primary">사용연령</span>생후 2주 - 12개월</div><!-- //ap-badge -->
+                      </div><!-- //type__item -->
+                    </div>
+                  </div><!-- //type__visual-content -->
+                </div><!-- //type__visual -->
+              </div><!-- //flip-card__front -->
+              <div class="flip-card__back">
+                <div class="type__sub">Newborn Friendly</div>
+                <h3 class="type__name">신생아 아기띠</h3>
+                <p class="type__desc">아기띠 등받이+허리&nbsp;벨트</p>
+                <div class="type__item">
+                  <img src="/web/img/prdList/babycarrier/img_carrier-item-1.png"><div class="ap-badge ap-badge--beige"><span class="ap-badge ap-badge--primary">사용연령</span>생후 2주 - 12개월</div><!-- //ap-badge -->
+                  <p class="type__desc">알루미늄 프레임으로 처짐없이 오래도록 수납 포켓으로 자유로운 외출을 돕는 짧은 외출의 완벽한 파트너</p>
+                </div><!-- //type__item -->
+                <div class="type__product ap-mb--auto">
+                  <em>신생아 아기띠 제품 라인업</em>
+                  <p>프리아핏에어, 프리아핏슬림</p>
+                </div><!-- //type__product -->
+              </div><!-- //flip-card__back -->
+            </div><!-- //flip-card__inner -->
+          </div><!-- //baby-card -->
+          <!-- 아기띠 - 힙시트 -->
+          <div class="baby-card flip-card swiper-slide">
+            <div class="flip-card__inner">
+              <div class="flip-card__front">
+                <div class="type__info">
+                  <div class="type__sub">Hands-free freedom</div>
+                  <h3 class="type__name">힙시트 아기띠</h3>
+                  <p class="type__desc">아기띠 등받이+힙시트용&nbsp;허리&nbsp;벨트</p>
+                </div><!-- //type__info -->
+                <div class="type__visual">
+                  <div class="type__visual-content">
+                    <div class="type__img">
+                      <img src="/web/img/prdList/babycarrier/img_carrier-bg-2.png"><div class="type__item">
+                        <div class="ap-badge ap-badge--beige"><span class="ap-badge ap-badge--primary">사용연령</span>생후 6개월 - 36개월</div><!-- //ap-badge -->
+                      </div><!-- //type__item -->
+                    </div>
+                  </div><!-- //type__visual-content -->
+                </div><!-- //type__visual -->
+              </div><!-- //flip-card__front -->
+              <div class="flip-card__back">
+                <div class="type__sub">Hands-free freedom</div>
+                <h3 class="type__name">힙시트 아기띠</h3>
+                <p class="type__desc">아기띠 등받이+힙시트용 허리 벨트</p>
+                <div class="type__item">
+                  <img src="/web/img/prdList/babycarrier/img_carrier-item-2.png"><div class="ap-badge ap-badge--beige"><span class="ap-badge ap-badge--primary">사용연령</span>생후 6개월 - 36개월</div><!-- //ap-badge -->
+                  <p class="type__desc">텍스트가 필요해용 3줄까지 가능해용</p>
+                </div><!-- //type__item -->
+                <div class="type__product ap-mb--auto">
+                  <em>힙시트 아기띠 제품 라인업</em>
+                  <p>힙노스핏, 프리아핏에어, 프리아핏슬림</p>
+                </div><!-- //type__product -->
+              </div><!-- //flip-card__back -->
+            </div><!-- //flip-card__inner -->
+          </div><!-- //baby-card -->
+          <!-- 아기띠 - 힙시트 단독 -->
+          <div class="baby-card flip-card swiper-slide">
+            <div class="flip-card__inner">
+              <div class="flip-card__front">
+                <div class="type__info">
+                  <div class="type__sub">Hands-free freedom</div>
+                  <h3 class="type__name">힙시트 단독</h3>
+                  <p class="type__desc">힙시트용 허리 벨트</p>
+                </div><!-- //type__info -->
+                <div class="type__visual">
+                  <div class="type__visual-content">
+                    <div class="type__img">
+                      <img src="/web/img/prdList/babycarrier/img_carrier-bg-3.png"><div class="type__item">
+                        <div class="ap-badge ap-badge--beige"><span class="ap-badge ap-badge--primary">사용연령</span>생후 6개월 - 36개월</div><!-- //ap-badge -->
+                      </div><!-- //type__item -->
+                    </div>
+                  </div><!-- //type__visual-content -->
+                </div><!-- //type__visual -->
+              </div><!-- //flip-card__front -->
+              <div class="flip-card__back">
+                <div class="type__sub">Hands-free freedom</div>
+                <h3 class="type__name">힙시트 단독</h3>
+                <p class="type__desc">힙시트용 허리 벨트</p>
+                <div class="type__item">
+                  <img src="/web/img/prdList/babycarrier/img_carrier-item-3.png"><div class="ap-badge ap-badge--beige"><span class="ap-badge ap-badge--primary">사용연령</span>생후 6개월 - 36개월</div><!-- //ap-badge -->
+                  <p class="type__desc">텍스트가 필요해용 3줄까지 가능해용</p>
+                </div><!-- //type__item -->
+                <div class="type__product ap-mb--auto">
+                  <em>힙시트 단독 제품 라인업</em>
+                  <p>프리아핏에어, 프리아핏슬림</p>
+                </div><!-- //type__product -->
+              </div><!-- //flip-card__back -->
+            </div><!-- //flip-card__inner -->
+          </div><!-- //baby-card -->
+        </div><!-- //#panel-babycarrier -->
+      </div>
+
+      <!-- 올인원 -->
+      <div class="type__panel reveal" id="panel-allinone">
+        <div class="baby-card baby-card--full">
+          <div class="type__visual">
+            <div class="type__visual-bg" style="background:linear-gradient(145deg,#EFE6DC,#D4C4B0);position:absolute;inset:0;"></div>
+            <div class="type__visual-content">
+              <div class="type__img">
+                <img src="/web/img/prdList/babycarrier/img_allinone-bg.webp"><div class="type__item">
+                  <img src="/web/img/prdList/babycarrier/img_allinone-item.png"><div class="ap-badge ap-badge--beige"><span class="ap-badge ap-badge--primary">사용연령</span>생후 2주 - 36개월</div><!-- //ap-badge -->
+                </div>
+              </div>
+            </div><!-- //type__visual-content -->
+          </div><!-- //type__visual -->
+          <div class="type__info">
+            <div class="type__sub">3-in-1 versatile</div>
+            <h3 class="type__name">올인원 아기띠</h3>
+            
+            <div class="type__item">
+              <img src="/web/img/prdList/babycarrier/img_sling-item.png"><div class="ap-badge ap-badge--beige"><span class="ap-badge ap-badge--primary">사용연령</span>생후 2주 - 12개월</div><!-- //ap-badge -->
+            </div>
             <p class="type__desc">
-              부드러운 모달 원단으로 아이를 감싸,<br>
-              마치 옷을 입는 듯 자연스럽고 편안한 착용감<br>
-              신생아부터 사용 가능한 포브의 시작
+              알루미늄 프레임으로 처짐없이 오래도록<br>수납 포켓으로 자유로운 외출을 돕는<br>짧은 외출의 완벽한 파트너
             </p>
-            <ul class="feature__list">
-              <li>초경량 친환경 식물성 섬유 모달 사용</li>
-              <li>빠르고 간단한 착용</li>
-              <li>통기성 메시 안감 적용</li>
-              <li>간편한 보관과 편리한 휴대성</li>
-            </ul>
-            <a class="ap-btn ap-btn--primary" href="#">
-              슬링 제품 보기
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div><!-- //type__panels -->
+            <div class="type__product ap-mb--auto">
+              <em>올인원 제품 라인업</em>
+              프리아핏에어, 프리아핏슬림
+            </div><!-- //ap-mb--auto -->
+          </div><!-- //type__info -->
+        </div><!-- //baby-card -->
+      </div><!-- //#panel-allinone -->
+      
+    </section><!-- //type__panels -->
 
   
-    <!-- 제품 -->
+    <!-- 제품라인업 -->
     <div class="prd-lineup">
       <div class="normalpackage_box" data-ez-module="product-normalpackage/1" data-ez-layout="grid4" data-ez="contents-0ozazsd-1">
         <div class="ap-container--narrow">
@@ -169,18 +301,17 @@
   
   tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      const target = btn.dataset.tab;
-  
-      // 버튼 active 처리
+      const targetTab  = btn.dataset.tab;
+      const targetCard = btn.dataset.card; // 카드 인덱스 (없으면 undefined)
+
+      // 버튼 active
       tabBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-  
+
       // 패널 전환
-      panels.forEach(p => {
-        p.classList.remove('active', 'visible');
-      });
-  
-      const targetPanel = document.getElementById('panel-' + target);
+      panels.forEach(p => p.classList.remove('active', 'visible'));
+
+      const targetPanel = document.getElementById('panel-' + targetTab);
       if (targetPanel) {
         targetPanel.classList.add('active');
         requestAnimationFrame(() => {
@@ -188,10 +319,19 @@
             targetPanel.classList.add('visible');
           });
         });
+
+        // ✅ 패널 내 카드 active 처리
+        const cards = targetPanel.querySelectorAll('.baby-card');
+        cards.forEach(c => c.classList.remove('is-active'));
+
+        if (targetCard !== undefined) {
+          const activeCard = cards[Number(targetCard)];
+          if (activeCard) activeCard.classList.add('is-active');
+        }
       }
     });
   });
-  
+
   // 초기 패널 visible 처리
   window.addEventListener('DOMContentLoaded', () => {
     const activePanel = document.querySelector('.type__panel.active');

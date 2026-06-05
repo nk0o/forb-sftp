@@ -8,7 +8,7 @@
 .ap-service__left { position: relative; z-index: 2; }
 .ap-service__eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: var(--ap-text-xs); letter-spacing: 0.3em; color: var(--ap-color-gold); text-transform: uppercase; margin-bottom: 18px; }
 .ap-service__eyebrow::before, .ap-service__eyebrow::after { content: ''; width: 28px; height: 1px; background: var(--ap-color-dusty-rose); }
-.ap-service__title { font-size: var(--ap-text-4xl); font-weight: 500; color: #fff; line-height: 1.2; letter-spacing: 0.16px; margin-bottom: 20px; }
+.ap-service__title { font-size: var(--ap-text-4xl); font-weight: 500; color: var(--ap-color-text-primary); line-height: 1.2; letter-spacing: 0.16px; margin-bottom: 20px; }
 .ap-service__title em { color: var(--ap-color-dusty-rose); }
 .ap-service__desc { font-size: var(--ap-text-md); line-height: 1.45; color: #fff; font-weight: 500; letter-spacing: 0.6px;word-break: keep-all;}
 .ap-service__left .ap-btn{ width: 100%; max-width: 346px; margin-top: 20px; color: var(--ap-color-text-primary) !important;transition: background var(--ap-transition-fast);font-size: var(--ap-text-base) !important; font-weight: 600 !important;}
@@ -142,6 +142,7 @@
 
 /******** 카시트무상교환서비스 ********/
 /* UTILITIES */
+.ap-replace .ap-service__title{color: #fff;}
 .ap-replace .ap-service__top{position: relative;background:url('/web/img/service/img_exchange-bg.webp') top center/cover no-repeat;border-bottom: 0;}
 .ap-replace .ap-titleArea{position: absolute;top: 0; left:0; width: 100%;}
 .forb .ap-replace .path li:not(:first-child):before, .forb .ap-replace .path svg >*, .forb .ap-replace .path li a, .forb .ap-replace .path li strong{color: var(--ap-color-beige);}
@@ -346,7 +347,7 @@
 /* ─── BODY LAYOUT ────────────────────────────────────────────────────────────── */
 .howto-body {position: relative; display: flex; align-items: flex-start; max-width: var(--ap-max-width); margin: 0 auto;}
 .howto-body.ap-container--narrow{ padding-block: 40px 100px;}
-.ap-howto .ap-service__title{ font-size: clamp(32px, 3vw, 58px);}
+.ap-howto .ap-service__title{ font-size: 46px}
 /* ─── SIDEBAR ─────────────────────────────────────────────────────────────────── */
 .howto-sidebar { width: 250px; flex-shrink: 0; background: var(--ap-color-bg-card); border: 1px solid var(--ap-color-border); position: sticky; top: var(--ap-header-height); overflow-y: auto; overscroll-behavior: contain; }
 .howto-sidebar::-webkit-scrollbar { width: 3px; }
