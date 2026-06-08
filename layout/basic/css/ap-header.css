@@ -103,7 +103,7 @@
 .all-menu-drawer__tit--highlight{color: var(--ap-color-gold);font-size: var(--ap-text-md);}
 
 /* ── 검색 레이어 ── */
-.forb .ap-search{top:var(--ap-header-height); width: 100%;height: 250px; background: var(--ap-color-cream);box-shadow: 0 20px 60px rgba(26,20,16,0.10);}
+.forb .ap-search{top:var(--ap-header-height); width: 100%;height: 230px; background: var(--ap-color-cream);box-shadow: 0 20px 60px rgba(26,20,16,0.10);}
 .forb .ap-search .ap-search__inner{position:relative;height: 100%;max-width: var(--ap-max-width-form--wide); margin: 0 auto;  padding: 12px var(--ap-gutter) 0;display: flex;
   flex-direction: column;}
 .forb .ap-search .ap-search__field{position:relative;display: flex;
@@ -116,9 +116,16 @@
 .forb .ap-search fieldset .ap-search__form .ap-search__submit{height: 100%; margin-top: 3px;font-size: var(--ap-text-sm); 
   color: var(--ap-color-gray-500); line-height: 1; text-indent: 0;cursor: pointer;padding: 4px; transition: color var(--ap-transition-fast); flex-shrink: 0;}
 .forb .ap-search fieldset .ap-search__form .ap-search__submit svg{width: 20px;}
-.forb .ap-search__closebar{margin-top: auto; border-top: 1px solid var(--ap-color-border-light); display: flex; justify-content: center; align-items: center; padding: 8px 0;}
+
+.forb .ap-search__closebar{ margin-top: auto; border-top: 1px solid var(--ap-color-border-light); display: flex; justify-content: center; align-items: center; padding: 8px 0;display: none;}
 .forb .ap-search .ap-search__close{position: relative; inset: auto; transform: none; display: flex; justify-content: center; align-items: center; gap: 4px; width: auto;padding: 6px 20px;font-size: var(--ap-text-xs);font-weight: 500; color: var(--ap-color-text-primary); line-height: 1.4; text-indent: 0;border: 0;border-radius: 0;text-transform: uppercase;letter-spacing: 0.14em;}
-.forb .ap-search .ap-search__close::after{content:'';display: inline-block; width: 16px;height: 16px; background:url('https://img.echosting.cafe24.com/skin/mobile/common/ico_arrow.svg') center/contain no-repeat}
+.forb .ap-search .ap-search__closebar .ap-search__close::after{content:'';display: inline-block; width: 16px;height: 16px; background:url('https://img.echosting.cafe24.com/skin/mobile/common/ico_arrow.svg') center/contain no-repeat}
+
+.forb .ap-search .ap-search__close.icon { color: var(--ap-color-gray-500); position: absolute; margin-top: 0; margin-left: 0; width: 16px; height: 16px; right: 0;text-indent: -999px;padding: 6px;}
+.forb .ap-search .ap-search__close.icon:hover{color:var(--ap-color-text-primary);}
+.forb .ap-search .ap-search__close.icon:before { content: ''; position: absolute; top: 10px; width: 16px; height: 1px; background-color: currentColor; -webkit-transform: rotate(-45deg); transform: rotate(-45deg); }
+.forb .ap-search .ap-search__close.icon:after { content: ''; position: absolute; top: 10px; width: 16px; height: 1px; background-color: currentColor; -webkit-transform: rotate(45deg); transform: rotate(45deg); }
+
 
 /* 검색 - 자주 찾는 키워드 */
 .forb .ap-search fieldset .ap-search__form #keyword{ flex: 1; height: 44px;padding: 6px !important; color: var(--ap-color-text-primary); border: none !important; letter-spacing: 0.01em; line-height: 1.4; background-color: var(--ap-color-cream) !important; font-size: var(--ap-text-md) !important; font-weight: 400;}
@@ -128,7 +135,6 @@
 .ap-search__kw-list { display: flex; flex-wrap: wrap; gap: 8px; }
 .ap-search__kw-item { font-family: var(--ap-font-sans); font-size: var(--ap-text-sm); font-weight: 400; color: var(--ap-color-text-secondary); background: rgb(250 246 239 / 30%); border: 1px solid var(--ap-color-border-light); border-radius: var(--ap-radius-pill); padding: 6px 14px; cursor: pointer; text-decoration: none; transition: background 0.15s, color 0.15s, border-color 0.15s; }
 .ap-search__kw-item:hover { background:  rgba(26, 20, 16, 0.7); color: #fff; border-color: rgba(26, 20, 16, 0.7); }
-
 
 /* 스크롤 픽스 */
 .forb #wrap .ap-header .ap-nav__bar .ap-nav__logo,
@@ -152,7 +158,7 @@
   .forb #header .inner .top_nav_box .top_mypage{width: auto;}
   .forb #header .inner .top_nav_box, .forb #header .inner{height: 100%;}
   .forb #header .inner .top_nav_box .top_mypage a.eSearch{margin-right:auto;display: flex;}
-  .forb #header .inner .top_nav_box .top_logo{inset: 0; top: 50%; left: 50%; justify-content: center; width: 60px;}
+  .forb #header .inner .top_nav_box .top_logo{inset: 0; top: 50%; left: 50%; justify-content: center; width: auto}
   .forb #header .inner .top_nav_box .top_mypage > div.mypage, 
   .forb #header .inner .top_nav_box .top_mypage a{display: flex;}
   #header .inner .top_nav_box .top_mypage svg{width: 20px; height: auto;}
@@ -179,7 +185,8 @@
   .drawer-dim { top: 52px; }
   /* ── 검색 레이어 ── */
   .forb .ap-search{padding-bottom: 0;}
-  .forb .ap-search__closebar{ margin-top: 0; padding: 4px 0;}
+  .forb .ap-search__closebar{ display: flex; margin-top: 0; padding: 4px 0;}
+  .forb .ap-search .ap-search__close.icon{display: none;}
   .forb .ap-search .ap-search__keywords,
   .forb .ap-search fieldset .ap-search__form{width:100%;}
   .forb .ap-search fieldset .ap-search__form #keyword{text-overflow: ellipsis;}

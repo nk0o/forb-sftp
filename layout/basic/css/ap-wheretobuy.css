@@ -6,7 +6,7 @@
 .wheretobuy__notice::before { content: "※ "; }
 
 /* ── Store ── */
-.store-filter{display: inline-block}
+.store-filter{display: inline-flex; gap: 4px; }
 .store-content { display: flex; height: 620px;margin: 24px 0 0; border: 1px solid var(--ap-color-border-light);}
 #storeList {flex: 40%;min-width: 380px; list-style: none; height: 100%; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--ap-color-beige-deep) transparent; }
 /* ── Map ── */
@@ -51,7 +51,7 @@
   #storeList { height: auto; max-height: 420px; border-top: 2px solid var(--ap-color-text-primary);}
   #storeList li{padding: 12px;}
   #storeList li.active::before{display: none;}
-  #map { flex: 600px;height: 600px; width: 100%;   border-top: 2px solid var(--ap-color-text-primary);}
+  #map { flex: 400px;height: 400px; width: 100%;   border-top: 2px solid var(--ap-color-text-primary);}
   .store-tel::before{text-decoration: none;}
 }
 @media (max-width: 520px) {
