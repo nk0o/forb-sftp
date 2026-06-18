@@ -356,6 +356,8 @@
 .howto-body {position: relative; display: flex; align-items: flex-start; max-width: var(--ap-max-width); margin: 0 auto;}
 .howto-body.ap-container--narrow{ padding-block: 40px 100px;}
 .ap-howto .ap-service__title{ font-size: 46px}
+.ap-howto .ap-service__desc{color:var(--ap-color-text-primary);}
+.ap-howto .ap-service__top{height: auto;}
 /* ─── SIDEBAR ─────────────────────────────────────────────────────────────────── */
 .howto-sidebar { width: 250px; flex-shrink: 0; background: var(--ap-color-bg-card); border: 1px solid var(--ap-color-border); position: sticky; top: var(--ap-header-height); overflow-y: auto; overscroll-behavior: contain; }
 .howto-sidebar::-webkit-scrollbar { width: 3px; }
@@ -399,8 +401,8 @@
 .howto-cate__tabs {margin-bottom: var(--ap-space-xl); }
 
 /* 비디오 헤더 행 */
-.howto-video__header { display: flex; align-items: baseline; gap: var(--ap-space-sm); margin-bottom: var(--ap-space-sm); padding-bottom: var(--ap-space-md); }
-.howto-video__count { font-size: var(--ap-text-xs); color: var(--ap-color-text-muted); font-weight: 300; }
+.howto-video__header {display: flex; align-items: baseline; gap: var(--ap-space-sm); margin-bottom: var(--ap-space-sm); padding-bottom: var(--ap-space-md); display: none; }
+.howto-video__count { font-size: var(--ap-text-xs); color: var(--ap-color-text-muted); font-weight: 400; }
 
 /* 비디오 그리드 */
 .howto-video__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: var(--ap-space-lg); }
@@ -423,11 +425,7 @@
 .play-tri { width: 0; height: 0; border-style: solid; border-width: 7px 0 7px 13px; border-color: transparent transparent transparent rgba(255,255,255,.85); margin-left: 3px; }
 .howto-thumb__dur { position: absolute; bottom: 8px; right: 8px; font-size: 10px; font-weight: 500; background: rgba(0,0,0,.65); color: rgba(255,255,255,.88); padding: 2px 7px; border-radius: var(--ap-radius-sm); letter-spacing: .05em; }
 .howto-thumb__age { position: absolute; top: 8px; left: 8px; font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: var(--ap-radius-pill); letter-spacing: .04em; backdrop-filter: blur(6px); }
-.howto-thumb__age.age-newborn  { background: rgba(122,150,180,.22); color: #AECCE0; border: 1px solid rgba(122,150,180,.3); }
-.howto-thumb__age.age-infant   { background: rgba(122,158,126,.22); color: #AACFAE; border: 1px solid rgba(122,158,126,.3); }
-.howto-thumb__age.age-toddler  { background: rgba(243,167,0,.18);   color: #F5C84A; border: 1px solid rgba(243,167,0,.28); }
-.howto-thumb__age.age-preschool{ background: rgba(212,169,154,.22); color: #E0C0B4; border: 1px solid rgba(212,169,154,.3); }
-.howto-thumb__prod { display: inline-block; font-size: var(--ap-text-xs); font-weight: 600; margin-bottom: 14px; margin-left: -2px; padding: 3px 9px; border-radius: var(--ap-radius-pill);     background: var(--ap-color-border-light); color: var(--ap-color-text-muted); backdrop-filter: blur(4px); letter-spacing: 0.04em; }
+.howto-thumb__prod { display: inline-flex; align-items: center; height: 20px; white-space: nowrap; font-size: var(--ap-text-xs); font-weight: 400; margin-bottom: 14px; margin-left: -2px; padding: 3px 8px;border-radius: var(--ap-radius-pill);background: var(--ap-color-border-light); color: var(--ap-color-text-primary); letter-spacing: -0.02em; }
 /* 카드 바디 */
 .howto-card__body {position: relative; padding:20px 20px 36px; }
 .howto-card__body h4 { font-size: var(--ap-text-md); font-weight: 600; letter-spacing: var(--ap-tracking-tight); line-height: 1.45; margin-bottom: var(--ap-space-xs); color: var(--ap-color-text-primary); }
@@ -441,12 +439,12 @@
 /* ─── MODAL ───────────────────────────────────────────────────────────────────── */
 .howto-modal__overlay { display: none; position: fixed; inset: 0; background: rgba(26,20,16,.72); z-index: 500; align-items: center; justify-content: center; padding: var(--ap-space-lg); backdrop-filter: blur(8px); }
 .howto-modal__overlay.open { display: flex; }
-.howto-modal { background: var(--ap-color-bg-card); border-radius: var(--ap-radius-lg); width: min(700px, 100%); overflow: hidden; box-shadow: 0 32px 80px rgba(26,20,16,.3); animation: mIn var(--ap-transition-normal) cubic-bezier(.22,1,.36,1) both; }
+.howto-modal {position: relative; background: var(--ap-color-bg-card); border-radius: var(--ap-radius-md); min-width: 480px; width: 73dvh; box-shadow: 0 32px 80px rgba(26,20,16,.3); animation: mIn var(--ap-transition-normal) cubic-bezier(.22,1,.36,1) both; }
 @keyframes mIn {
   from { opacity:0; transform: translateY(18px) scale(.96); }
   to   { opacity:1; transform: translateY(0) scale(1); }
 }
-.howto-modal__thumb { background: var(--ap-color-text-primary); position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; padding-top: 56.25%;}
+.howto-modal__thumb {border-top-left-radius: var(--ap-radius-md); border-top-right-radius: var(--ap-radius-md); background: var(--ap-color-text-primary); position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; padding-top: 56.25%;overflow: hidden;}
 .howto-modal__glyph { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 11rem; user-select: none; }
 .howto-modal__glyph::before {content: ''; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.5);
   z-index: 1;}
@@ -462,13 +460,13 @@
 .howto-modal__tags { display: flex; gap: var(--ap-space-sm); flex-wrap: wrap; margin-bottom: var(--ap-space-md); }
 .howto-modal__tag { font-size: var(--ap-text-xs); font-weight: 500; padding: 4px 12px; border-radius: var(--ap-radius-pill); background: var(--ap-color-beige); color: var(--ap-color-warm-brown); border: 1px solid var(--ap-color-border); }
 .howto-modal__body h3 { font-size: var(--ap-text-lg); font-weight: 700; letter-spacing: var(--ap-tracking-tight); line-height: 1.3; margin-bottom: var(--ap-space-sm); }
-.howto-modal__body .howto-modal__desc { font-size: var(--ap-text-sm); color: var(--ap-color-text-secondary); line-height: var(--ap-leading-normal); font-weight: 300; margin-bottom: var(--ap-space-md); }
-.howto-modal__actions { display: flex; gap: var(--ap-space-sm); flex-wrap: wrap; justify-content: flex-end; }
+.howto-modal__body .howto-modal__desc { font-size: var(--ap-text-sm); color: var(--ap-color-text-secondary); line-height: var(--ap-leading-normal); font-weight: 400; }
+.howto-modal__actions {position: absolute;width: 3.5dvh; min-width: 32px; top: min(-40px, -3.5dvh); right: -6px; overflow:hidden;display: flex; gap: var(--ap-space-sm); flex-wrap: wrap; justify-content: flex-end; }
+.howto-modal__actions svg{width: 100%;    color: #fff;}
 
 .ap-howto .ap-btn--ghost { background: none; color: var(--ap-color-text-secondary); border: 1px solid var(--ap-color-border); border-radius: var(--ap-radius-md); padding: 11px var(--ap-space-lg); font-size: var(--ap-text-sm); font-weight: 500; transition: background var(--ap-transition-fast), border-color var(--ap-transition-fast); }
 .ap-howto .ap-btn--ghost:hover { background: var(--ap-color-ivory); border-color: var(--ap-color-beige-mid); }
 
-/* ─── RESPONSIVE ─────────────────────────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .howto-body.ap-container--narrow{overflow: visible;}
   .howto-video__grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
@@ -491,34 +489,31 @@
   .howto-cat__icon { font-size: .85rem; width: auto; }
   .howto-cat__chevron { display: none; }
 
-  /* 하위 제품 목록 — 모바일에서 숨김 (탭으로 대체) */
   .howto-sidebar__prds { display: none !important; }
-
-  /* 메인 */
   .howto-main { width: 100%; padding: 48px 0; }
-
   /* 제품 헤더 */
   .howto-header { gap: var(--ap-space-md); margin-bottom: var(--ap-space-md); padding-bottom: var(--ap-space-md); }
   .howto-header__icon { width: 40px; height: 40px; font-size: 1.1rem; flex-shrink: 0; }
   .howto-header__text h2 { margin-bottom: 2px; }
   .howto-header__text p { font-size: var(--ap-text-xs); }
-
   /* 제품 탭 */
   .howto-cate__tabs { margin-bottom: var(--ap-space-lg); gap: var(--ap-space-xs); }
   .howto-cate__tab { padding: 6px 13px; }
-  
   /* 그리드 */
   .howto-video__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
   .howto-card__body{padding: 16px 12px;}
   .howto-card__body p { font-size: var(--ap-text-sm); }
-  ..howto-thumb__prod{font-size: var(--ap-text-sm);}
+  .howto-thumb__prod{font-size: var(--ap-text-sm);}
 
   /* 모달 */
+  .howto-modal{width: 100%; min-width: 100%;}
   .howto-modal__body { padding: var(--ap-space-md) var(--ap-space-lg); }
   .howto-modal__body h3 { font-size: var(--ap-text-md); }
   .howto-modal__actions { flex-direction: column; }
   .ap-howto .ap-btn--primary,
   .ap-howto .ap-btn--ghost { width: 100%; justify-content: center; }
+  .ap-howto .ap-service__title{ font-size: 34px}
+  .ap-howto .ap-service__desc{font-size: var(--ap-text-base);}
 }
 @media (max-width: 480px) {
   .howto-video__grid { grid-template-columns: 1fr; }

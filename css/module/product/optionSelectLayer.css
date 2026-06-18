@@ -11,7 +11,7 @@ body#popup { position:relative; overflow:hidden;  height:100%; }
 .xans-product-optionselectlayer .productNormal { position:relative; display: flex; margin:30px 16px; min-height:82px;  }
 .xans-product-optionselectlayer .productNormal .imgArea { position:absolute; left:0; top:0; width:83px; }
 .xans-product-optionselectlayer .productNormal .imgArea img { max-width:100%; border: 1px solid #ededed; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
-.xans-product-optionselectlayer .productNormal .thumbnail { width:76px; }
+.xans-product-optionselectlayer .productNormal .thumbnail { width:76px; flex-shrink: 0; }
 .xans-product-optionselectlayer .productNormal .thumbnail img { max-width:100%; }
 .xans-product-optionselectlayer .productNormal table th { padding:2px 0 5px; font-weight:normal; text-align:left; vertical-align:top; }
 .xans-product-optionselectlayer .productNormal table th:first-child { border-left:0; }
@@ -80,7 +80,7 @@ body#popup { position:relative; overflow:hidden;  height:100%; }
 .ec-base-desc.quantity dt { width:125px; padding:0 0 0 8px; }
 
 /* 총 상품 */
-#totalProducts { margin:15px 0 0; }
+#totalProducts { margin:15px 20px 0; }
 #totalProducts table { width: 100%; margin:0; font-size:12px; }
 #totalProducts table .left { text-align:left; }
 #totalProducts table .center { text-align:center; }
@@ -160,3 +160,47 @@ body#popup { position:relative; overflow:hidden;  height:100%; }
 .xans-product-optionselectlayer .regularDelivery .info .icoDown { display:inline-block; position:relative; overflow:hidden; width:5px; height:10px; margin:0 0 0 2px; line-height:10px; text-indent:-9999px; }
 .xans-product-optionselectlayer .regularDelivery .info .icoDown:before { content:""; display:inline-block; position:absolute; top:0; left:2px; width:1px; height:10px; background-color:#ff5454; }
 .xans-product-optionselectlayer .regularDelivery .info .icoDown:after { content:""; display:inline-block; position:absolute; bottom:2px; left:-2px; padding:4px; border:solid #ff5454; border-width:0 1px 1px 0; transform:rotate(45deg); -webkit-transform:rotate(45deg); }
+
+
+select, input[type=text], input[type=password]{height: 36px; font-family: var(--ap-font-sans) !important; font-size: var(--ap-text-base) !important; color: var(--ap-color-text-primary) !important; border: 1px solid var(--ap-color-border) !important; border-radius: var(--ap-radius-sm) !important; padding: 8px 14px !important; outline: none !important; transition: border-color var(--ap-transition-fast) !important; -webkit-appearance: none; }
+select{ appearance: none !important; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%23C8A97E' stroke-width='1.5' fill='none'/%3E%3C/svg%3E") !important; background-position: right 16px center !important; background-repeat: no-repeat !important; background-size: 16px !important; }
+select:not([type=text][readonly]):focus,input[type=text]:not([type=text][readonly]):focus, input[type=password]:not([type=password][readonly]):focus, 
+.ap-form__input:focus, .ap-form__select:focus, .ap-form__textarea:focus { border-color: var(--ap-color-gold) !important; }
+input[type=text]::placeholder , input[type=password]::placeholder, .ap-form__input::placeholder { color: var(--ap-color-text-disabled) !important; }
+input[type=text].hasDatepicker{width: auto !important;}
+input:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px var(--ap-color-cream) inset ; -webkit-text-fill-color: var(--ap-color-text-primary); }
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active { transition: background-color 5000s ease-in-out 0s; }
+
+.ap-basket-option #totalPrice, .ap-basket-option.ec-base-layer.typeSide .header{padding-inline: 20px;}
+.ap-basket-option.xans-product-optionselectlayer.ec-base-layer table,
+.ap-basket-option.xans-product-optionselectlayer .productNormal,
+.ap-basket-option #totalProducts,
+.ap-basket-option.ec-base-layer.typeSide .ec-base-button[class*="gColumn"]{margin-inline: 20px;}
+
+.ap-basket-option.ec-base-layer.typeSide .header h2{font-size: var(--ap-text-md);}
+.ap-basket-option.xans-product-optionselectlayer.ec-base-layer .xans-product-option th, 
+.ap-basket-option.xans-product-optionselectlayer.ec-base-layer .xans-product-option td,
+.ap-basket-option.xans-product-optionselectlayer .inner .name{font-size: var(--ap-text-base);word-break: keep-all;}
+.ap-basket-option.xans-product-optionselectlayer .inner .name strong{display: inline-block; font-weight: 600;vertical-align: middle; line-height: 20px;}
+.ap-basket-option #totalProducts .ec-base-help{font-size: var(--ap-text-sm); background-position-y: 2px;}
+.ap-basket-option #totalProducts tbody td p.product span,
+.ap-basket-option #totalProducts tbody td p{font-size: var(--ap-text-sm);}
+.ap-basket-option.ec-base-layer.typeSide .ec-base-button[class*="gColumn"]{justify-content: space-between; gap: 4px;margin-bottom: 0;}
+.ap-basket-option.ec-base-layer.typeSide .ec-base-button[class*="gColumn"] .ap-btn{flex: 1;}
+.ap-basket-option #totalPrice .total{font-size: var(--ap-text-base);}
+.ap-basket-option #totalPrice .total strong{font-size: var(--ap-text-md);}
+.ap-basket-option.xans-product-optionselectlayer .productNormal .thumbnail {flex-shrink: 0; }
+.ap-basket-option.xans-product-optionselectlayer .productSet .product .option .name{font-size: var(--ap-text-sm);}
+
+/* 네이버 페이 */
+.ap-basket-option.xans-product-optionselectlayer #NaverChk_Button, .ap-basket-option.xans-product-optionselectlayer #appPaymentButtonBox{width: 100%;}
+.ap-basket-option .npay_storebtn_bx {width: 100% !important; height: 90px !important;}
+.ap-basket-option .npay_btn_link.npay_btn_zzim{width: 34px !important;}
+.ap-basket-option .npay_storebtn_bx, .ap-basket-option .npay_button_box, 
+.ap-basket-option .npay_button_box2, .ap-basket-option .npay_storebtn_bx *, 
+.ap-basket-option .npay_button_box *, .npay_button_box2 *{ font-family: var(--ap-font-sans) !important; font-size: var(--ap-text-sm) !important; }
+
+#popup .ap-basket-option.ec-base-layer .btnClose { top: 16px; }

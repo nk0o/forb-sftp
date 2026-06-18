@@ -126,49 +126,15 @@
         <div class="ap-myshop__subtitle no_margin">
           <h3 class="ap-myshop__subtitle-txt">쿠폰 사용하기</h3>
         </div>
-        <div module="product_listmain_1" class="mileage-recommend">
+        <div module="product_listmain_1" class="ap-recommendPrd">
           <!--@css(/css/module/product/listnormal.css)-->
+          <!--@css(/layout/basic/css/ap-product.css)-->
           <!--
               $count = 4
               $basket_result = /product/add_basket.html
           -->
           <ul class="ap-recommendPrd__grid">
-            <li class="item ap-recommendPrd__item" id="anchorBoxId_{$product_no}">
-              <div class="box">
-                  <a href="/product/detail.html{$param}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="" class="thumb" /></a>
-                  <p class="name">
-                    <strong>
-                      <a href="/product/detail.html{$param}" class="{$product_name_display|display}"> {$product_name}</a>
-                    </strong>
-                  </p>
-                  <ul module="product_ListItem" class="prd-info">
-                      <li class="{$item_display|display}">{$item_content}</li>
-                      <li class="{$item_display|display}">{$item_content}</li>
-                  </ul>
-                  <div class="status">
-                    <div class="icon">{$soldout_icon} {$recommend_icon} {$new_icon} {$product_icons} {$benefit_icons}</div>
-                    <div class="btn_basket">{$basket_icon}</div>
-                </div>
-              </div>
-            </li>
-            <li class="item ap-recommendPrd__item" id="anchorBoxId_{$product_no}">
-              <div class="box">
-                  <a href="/product/detail.html{$param}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="" class="thumb" /></a>
-                  <p class="name">
-                    <strong>
-                      <a href="/product/detail.html{$param}" class="{$product_name_display|display}"> {$product_name}</a>
-                    </strong>
-                  </p>
-                  <ul module="product_ListItem" class="prd-info">
-                    <li class="{$item_display|display}">{$item_content}</li>
-                    <li class="{$item_display|display}">{$item_content}</li>
-                  </ul>
-                  <div class="status">
-                    <div class="icon">{$soldout_icon} {$recommend_icon} {$new_icon} {$product_icons} {$benefit_icons}</div>
-                    <div class="btn_basket">{$basket_icon}</div>
-                </div>
-              </div>
-            </li>
+              <!--@import(/product/list_product.html)-->
           </ul>
         </div><!-- //ap-recommendPrd -->
       </div><!-- //ap-myshop__section.mileage-recommend -->

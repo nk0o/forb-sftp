@@ -1,5 +1,5 @@
 .wheretobuy{background-color: var(--ap-color-bg-base);padding-bottom: 100px;}
-.wheretobuy__hero{padding: 52px 0 40px;}
+.wheretobuy__hero{padding: 52px 0 72px;}
 .wheretobuy__title{text-align: center; font-size: 46px; font-weight: 500; color: var(--ap-color-text-primary); line-height: 1.2; letter-spacing: 0.16px; margin-bottom: 20px;}
 /* ── Notice Banner ── */
 .wheretobuy__notice {display: inline-block; padding: 10px 0 10px 8px;font-size: var(--ap-text-sm); color: var(--ap-color-text-primary); }
@@ -8,6 +8,7 @@
 /* ── Store ── */
 .store-filter{display: inline-flex; gap: 4px; }
 .store-content { display: flex; height: 620px;margin: 24px 0 0; border: 1px solid var(--ap-color-border-light);}
+.store-filter select{min-width: 130px;}
 #storeList {flex: 40%;min-width: 380px; list-style: none; height: 100%; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--ap-color-beige-deep) transparent; }
 /* ── Map ── */
 #map {flex: 60%; width: 60%; height: 100%; background: var(--ap-color-beige, #F2EAE0); }

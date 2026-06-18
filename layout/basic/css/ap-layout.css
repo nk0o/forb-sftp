@@ -36,7 +36,7 @@
   --ap-color-info:               #7A96B4;
 
   /* === COLOR — GrayScale === */
-  --ap-color-gray-950 : #1F1F1F;
+  --ap-color-gray-950 : #1A1410;
   --ap-color-gray-900 : #303030;
   --ap-color-gray-800 : #404040;
   --ap-color-gray-700 : #525252;
@@ -112,6 +112,7 @@
 @media (max-width: 768px) {
   :root { 
     --ap-header-height:   61px;
+    --ap-space-4xl: 36px;
   }
 }
 
@@ -125,9 +126,11 @@ input, select, textarea, body, code, button{font-family: var(--ap-font-sans) !im
 .ap__bg--ivory{background-color: var(--ap-color-ivory);}
 .ap__bg--cream{background-color: var(--ap-color-cream);}
 
-body.forb{font-family: var(--ap-font-sans) !important;min-width: 320px !important; width: 100%; max-width: 100%;}
+body.forb{font-family: var(--ap-font-sans) !important;min-width: 320px !important; width: 100%; max-width: 100%;color: var(--ap-color-text-primary);}
 .forb #wrap{overflow: visible;}
 .forb #container{padding-bottom: 0;}
+.forb #container.path--white{}
+
 /* ──ap-container ── */
 .ap-container { max-width: var(--ap-max-width); margin: 0 auto; padding: 0 var(--ap-gutter);}
 .ap-container--narrow { max-width: var(--ap-max-width-narrow) !important;  margin: 0 auto; padding: 0 var(--ap-gutter);}
@@ -143,7 +146,7 @@ body.forb{font-family: var(--ap-font-sans) !important;min-width: 320px !importan
 .ec-base-button.gBottom {display: flex !important;align-items: center !important; gap: 8px !important;}
 .ec-base-button::after{display: none !important;}
 /* ──ap-btn ── */
-.ap-btn { display: inline-flex; align-items: center !important; justify-content: center !important; gap: var(--ap-space-sm) !important; font-family: var(--ap-font-sans) !important; font-size: var(--ap-text-sm) !important; font-weight: 400 !important; letter-spacing: var(--ap-tracking-wider) !important; text-transform: uppercase !important; line-height: 1 !important; padding: 12px 20px !important; border: 1px solid transparent !important; cursor: pointer !important; transition: background-color var(--ap-transition-fast), color var(--ap-transition-fast), border-color var(--ap-transition-fast) !important; -webkit-appearance: none !important; text-decoration: none !important; }
+.ap-btn { display: inline-flex; align-items: center !important; justify-content: center !important; gap: var(--ap-space-sm) !important; font-family: var(--ap-font-sans) !important; font-size: var(--ap-text-sm) !important; font-weight: 400 !important; letter-spacing: var(--ap-tracking-wider) !important; text-transform: uppercase !important; line-height: 1 !important; padding: 12px 18px !important; border: 1px solid transparent !important; cursor: pointer !important; transition: background-color var(--ap-transition-fast), color var(--ap-transition-fast), border-color var(--ap-transition-fast) !important; -webkit-appearance: none !important; text-decoration: none !important; }
 .ap-btn--primary   { background: var(--ap-color-text-primary) !important; color: var(--ap-color-cream) !important; border-color: var(--ap-color-text-primary) !important; }
 .ap-btn--primary:hover { background: var(--ap-color-warm-brown-deep) !important; border-color: var(--ap-color-warm-brown-deep) !important; }
 .ap-btn--gold      { background: var(--ap-color-gold) !important; color: #fff !important; border-color: var(--ap-color-gold) !important; }
@@ -157,9 +160,12 @@ body.forb{font-family: var(--ap-font-sans) !important;min-width: 320px !importan
 .ap-btn--ghost { background: transparent !important; border: none !important; padding: 0 !important; color: var(--ap-color-text-primary) !important; font-size: var(--ap-text-xs) !important; letter-spacing: var(--ap-tracking-wider) !important; text-transform: uppercase !important; border-bottom: 1px solid var(--ap-color-text-primary) !important; padding-bottom: 3px !important; border-radius: 0 !important; }
 .ap-btn--ghost:hover { color: var(--ap-color-gold) !important; border-color: var(--ap-color-gold) !important; }
 .ap-btn--sm { font-size: var(--ap-text-sm) !important; padding: 9px 18px !important; }
-.ap-btn--lg { font-size: var(--ap-text-sm) !important; padding: 16px 36px !important; }
+.ap-btn--lg { font-size: var(--ap-text-sm) !important; padding: 16px 18px !important; }
 .ap-btn--disabled, .ap-btn:disabled { opacity: 0.6 !important; cursor: not-allowed !important; pointer-events: none !important; }
-
+.ap-btn--close { transform: none !important; display: flex !important; justify-content: center !important; align-items: center !important; gap: 4px !important; width: 24px !important; height: 24px !important; padding: 6px 18px !important; color: var(--ap-color-text-primary) !important; line-height: 1.4 !important; border: 0 !important; border-radius: 0 !important; text-transform: uppercase !important; letter-spacing: 0.14em !important; }
+.ap-btn--close:before { content: ''; position: absolute !important; inset:auto !important; top: 10px !important; width: 16px !important; height: 1px !important; margin: 0 !important; background-color: currentColor !important; -webkit-transform: rotate(-45deg) !important; transform: rotate(-45deg) !important; }
+.ap-btn--close:after { content: ''; position: absolute !important; inset:auto !important; top: 10px !important; width: 16px !important; height: 1px !important; margin: 0 !important; background-color: currentColor !important; -webkit-transform: rotate(45deg) !important; transform: rotate(45deg) !important; }
+.ap-btn--close:hover { color: var(--ap-color-text-primary); }
 /* ──ap-badge ── */
 .ap-badge { display: inline-flex; align-items: center; font-family: var(--ap-font-sans); font-size: 10px; font-weight: 500; letter-spacing: 0.06em; line-height: 1; padding: 4px 10px; border-radius: var(--ap-radius-pill); border: 1px solid transparent; }
 .ap-badge--primary { background: var(--ap-color-text-primary); color: #fff; }
@@ -183,6 +189,18 @@ body.forb{font-family: var(--ap-font-sans) !important;min-width: 320px !importan
 
 
 /* ──ap-form ── */
+.forb select, .forb input[type=text], .forb input[type=password], .ap-form__input, .ap-form__select, .ap-form__textarea {height: 36px; font-family: var(--ap-font-sans) !important; font-size: var(--ap-text-base) !important; color: var(--ap-color-text-primary) !important; border: 1px solid var(--ap-color-border) !important; border-radius: var(--ap-radius-sm) !important; padding: 8px 14px !important; outline: none !important; transition: border-color var(--ap-transition-fast) !important; -webkit-appearance: none; }
+.forb select{ appearance: none !important; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%23C8A97E' stroke-width='1.5' fill='none'/%3E%3C/svg%3E") !important; background-position: right 16px center !important; background-repeat: no-repeat !important; background-size: 16px !important; }
+.forb select:not([type=text][readonly]):focus,.forb input[type=text]:not([type=text][readonly]):focus, .forb input[type=password]:not([type=password][readonly]):focus, 
+.ap-form__input:focus, .ap-form__select:focus, .ap-form__textarea:focus { border-color: var(--ap-color-gold) !important; }
+.forb input[type=text]::placeholder , .forb input[type=password]::placeholder, .ap-form__input::placeholder { color: var(--ap-color-text-disabled) !important; }
+.forb input[type=text].hasDatepicker{width: auto !important;}
+.forb input:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px var(--ap-color-cream) inset ; -webkit-text-fill-color: var(--ap-color-text-primary); }
+.forb input:-webkit-autofill,
+.forb input:-webkit-autofill:hover,
+.forb input:-webkit-autofill:focus,
+.forb input:-webkit-autofill:active { transition: background-color 5000s ease-in-out 0s; }
+
 .ap-form__group { display: flex; flex-direction: column; gap: var(--ap-space-xs); margin-bottom: var(--ap-space-md); }
 .ap-form__section{}
 .ap-form__section-tit{font-size: var(--ap-text-xs); font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--ap-color-text-muted); margin-bottom: 16px;}
@@ -193,20 +211,11 @@ body.forb{font-family: var(--ap-font-sans) !important;min-width: 320px !importan
 .ap-form__group .formGroup .btnNormal {margin-left: 4px;border-radius: 4px}
 .forb .ap-form__group .txtInfo{text-indent: 8px;}
 .forb .ap-form__group .error {color: var(--ap-color-error);margin-top: 4px;}
-.forb input[type=text], .forb input[type=password], .ap-form__input, .ap-form__select, .ap-form__textarea {height: 36px; font-family: var(--ap-font-sans) !important; font-size: var(--ap-text-base) !important; color: var(--ap-color-text-primary) !important; border: 1px solid var(--ap-color-border) !important; border-radius: var(--ap-radius-sm) !important; padding: 12px 14px !important; outline: none !important; transition: border-color var(--ap-transition-fast) !important; -webkit-appearance: none; }
 
-.forb input[type=text]:not([type=text][readonly]):focus, .forb input[type=password]:not([type=password][readonly]):focus, .ap-form__input:focus, .ap-form__select:focus, .ap-form__textarea:focus { border-color: var(--ap-color-gold) !important; }
-.forb input[type=text]::placeholder , .forb input[type=password]::placeholder, .ap-form__input::placeholder { color: var(--ap-color-text-disabled) !important; }
-.forb input[type=text].hasDatepicker{width: auto !important;}
 .ap-form__input--error { border-color: var(--ap-color-error); }
 .ap-form__error-msg { font-size: var(--ap-text-xs); color: var(--ap-color-error); }
 .ap-form__hint { font-size: var(--ap-text-xs); color: var(--ap-color-text-muted); }
-select{height: 36px;}
-.forb input:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px var(--ap-color-cream) inset ; -webkit-text-fill-color: var(--ap-color-text-primary); }
-.forb input:-webkit-autofill,
-.forb input:-webkit-autofill:hover,
-.forb input:-webkit-autofill:focus,
-.forb input:-webkit-autofill:active { transition: background-color 5000s ease-in-out 0s; }
+
 
 /* ──ap-section ── */
 .ap-section { padding: var(--ap-space-3xl) 0; }
@@ -319,6 +328,7 @@ h5, .ap-text--h5 { font-size: clamp(var(--ap-text-base), 1.8vw, var(--ap-text-md
 .forb .ec-base-tab.typeMenu .menu li{ flex: 1; display: flex; align-items: center;justify-content: center;margin-bottom: 0; padding: 8px 24px; border: 1px solid var(--ap-color-text-primary);font-size: var(--ap-text-base);}
 .forb .ec-base-tab.typeMenu .menu li.selected{background-color: var(--ap-color-text-primary);}
 .forb .ec-base-tab.typeMenu .menu li.selected a{color:#fff;}
+.forb .ec-base-tab.typeMenu .menu li + li{margin-left: -1px;}
 @media all and (max-width:1024px) {
   .forb .ec-base-tab.typeMenu{ height: 38px;}
   .forb .ec-base-tab.typeMenu .menu li{padding: 4px 12px; font-size: var(--ap-text-sm);}
@@ -368,3 +378,53 @@ h5, .ap-text--h5 { font-size: clamp(var(--ap-text-base), 1.8vw, var(--ap-text-md
 .ap-select{ width: 100%; padding: 10px 16px; border: 1px solid var(--ap-color-border); border-radius: var(--ap-radius-sm); background: var(--ap-color-bg-card); font-size: var(--ap-text-base); font-family: var(--ap-font-sans); color: var(--ap-color-text-primary); transition: all 0.2s; outline: none; }
 .ap-select { appearance: none; cursor: pointer; padding-right: 40px;}
 .ap-select__arrow { position: absolute; right: 16px; top: 50%; transform: rotate(0deg) translateY(-50%); pointer-events: none; color: var(--ap-color-gray-300); font-size: 12px; }
+
+#totalProducts > table > tbody > td:first-child,
+#totalProducts > table > tbody > tr > td:first-child{padding-left: 8px !important;}
+#totalProducts tbody td p{word-break: keep-all;}
+#totalProducts > table > tbody > tr > td:last-child,
+#totalProducts > table > tbody > td:last-child,
+#totalProducts .infoArea #totalProducts > table .right{ padding-right: 24px !important; }
+#totalProducts > table {font-size: var(--ap-text-sm);}
+#totalProducts > table tr.add_product,
+#totalProducts > table .option_product,
+#totalProducts > table .option_product tr {position: relative;}
+#totalProducts > table .delete{position: absolute; top: 50%; right: 0px; transform: translateY(-50%);margin: 0;}
+#totalProducts > table .quantity input[readonly] ~ a:before,
+#totalProducts > table .quantity input[readonly] ~ a:after {display: none;}
+
+/* ap-prd-swiper */
+@media all and (max-width:768px) {
+  .forb .ap-prd-swiper{position: relative; padding-bottom: 32px;}
+  .forb .ap-prd-swiper .swiper-wrapper {display: flex;}
+  .forb .ap-prd-swiper .swiper-pagination{justify-content: center;bottom: 0;}
+}
+
+
+/* 네이버 페이 */
+.forb #NaverChk_Button {margin-top: 0 !important; float: none; text-align: center; margin-top: 0; text-align: left; max-width: 250px; }
+.forb #NaverChk_Button .npay_text{display: none !important;}
+.forb #NaverChk_Button * { font-family: 'pretendard' !important; }
+.forb .option-layer.open #NaverChk_Button { display: none; }
+.forb .npay_type_A_2 { width: 100% !important; height: auto !important; margin: 0 auto; }
+.forb .npay_type_MA_1 { width: 90% !important; height: auto !important; margin: 0 auto; }
+.forb .npay_button_box { background: none !important; border: none !important; padding: 0 !important}
+.forb .npay_btn_list tr { display: flex !important; align-items: center !important; justify-content: space-between !important; }
+.forb .npay_button { padding: 0 !important; }
+.forb .npay_btn_item{display: flex !important; width: 100% !important;}
+.forb .npay_event { border-top: 0 !important; }
+.forb .npay_btn_link.btn_green{position: relative !important; background: none !important; background: #00de5a !important;width: 100% !important;}
+.forb .npay_btn_link.btn_green::after{position: absolute; inset: 0; content:'네이버 페이 구매'; display: flex; align-items: center; justify-content: center;font-size: var(--ap-text-sm); font-weight: 600;} 
+.forb .npay_btn_item.btn_width{display: flex !important;width: 42px !important; justify-content: end !important;}
+
+
+.forb .ec-base-paginate.typeList li a{background-color: transparent;}
+.forb .ec-base-paginate.typeList > a{background: none;background:url('/web/img/icon/icon-chevron-right.svg') center/20px no-repeat;margin-left: 8px;}
+.forb .ec-base-paginate.typeList > a:first-child, .forb .ec-base-paginate.typeList > a:last-child{display:none;} 
+.forb .ec-base-paginate.typeList > a:first-child + a{background:url('/web/img/icon/icon-chevron-left.svg') center/20px no-repeat;margin-right: 8px}
+.forb .ec-base-paginate.typeList a{color: var(--ap-color-text-muted);}
+.forb .ec-base-paginate.typeList a.this{color: var(--ap-color-text-primary);}
+.ec-base-paginate.typeList li a,.ec-base-paginate.typeList a.this{border-color: transparent;}
+.forb .ec-base-paginate.typeList a.this:hover{text-underline-offset: 12px; text-decoration: underline; }
+.forb .ec-base-paginate.typeList li a { font-size: var(--ap-text-base);   font-weight: 600;}
+.forb .ec-base-paginate.typeList a.this{font-weight: 700;}

@@ -27,6 +27,7 @@
 .ap-myshop__subtitle-txt .desc{font-size: var(--ap-text-lg);}
 .ap-myshop__subtitle-btn{display: flex;align-items: center; font-size: var(--ap-text-base); color: var(--ap-color-text-secondary); text-decoration: none; border-bottom: 1px solid transparent; transition: all 0.3s; font-weight: 500;}
 .ap-myshop__subtitle-btn:hover{border-bottom-color: var(--ap-color-text-primary); color: var(--ap-color-text-primary);}
+.ap-myshop .ap-recommendPrd__grid{margin-top: 24px;}
 
 /* 메인 - 요약 */
 .ap-myshop__section.benefit{padding-top: 0;}

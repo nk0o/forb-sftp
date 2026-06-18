@@ -27,7 +27,7 @@
 .ap-ft-legal__grid { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: start; }
 .ap-ft-legal__row { display: flex; flex-wrap: wrap; gap: 7px 0; margin-bottom: 7px; }
 .ap-ft-legal__row:last-child { margin-bottom: 0; }
-.ap-ft-legal__item { font-size: var(--ap-text-sm); color: var(--ap-color-beige-deep); font-weight: 300;margin-right:10px; padding-right:10px; border-right: 1px solid var(--ap-color-text-secondary); line-height: 1.3; }
+.ap-ft-legal__item { font-size: var(--ap-text-sm); color: var(--ap-color-beige-deep); font-weight: 300;margin-right:10px; padding-right:10px; border-right: 1px solid var(--ap-color-text-secondary); line-height: 1.3; word-break: keep-all; text-align: center;}
 .ap-ft-legal__item.cpo-name a{text-decoration: underline;}
 .ap-ft-legal__item:first-child { padding-left: 0; }
 .ap-ft-legal__item:last-child { border-right: none; }
@@ -41,7 +41,7 @@
 .ap-ft-escrow__badge:hover { border-color: var(--ap-color-beige-deep); }
 .ap-ft-escrow__icon { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .ap-ft-escrow__icon img{display: block; width: 100%;}
-.ap-ft-escrow__text { font-size: 10px; color: var(--ap-color-beige-deep); font-weight: 300; line-height: 1.4; }
+.ap-ft-escrow__text { font-size: 10px; color: var(--ap-color-beige-deep); font-weight: 300; line-height: 1.4; word-break: keep-all;}
 .ap-ft-escrow__text strong { font-size: 9px; font-weight: 500; color: var(--ap-color-gold); letter-spacing: 0.1em; text-transform: uppercase; word-break: keep-all;}
 .ap-ft-escrow__text span{white-space: nowrap;}
 

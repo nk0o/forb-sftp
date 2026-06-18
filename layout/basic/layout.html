@@ -43,7 +43,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" /><!-- theme03 -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@500,600&display=swap" rel="stylesheet">
     
 
     <link rel="stylesheet" href="/layout/basic/css/swiper.min.css">
@@ -140,5 +140,27 @@
 	<!--@css(/layout/basic/css/add_theme01.css)-->
 	<!--@css(/layout/basic/css/add_theme02.css)-->
 	<!--@css(/layout/basic/css/add_layout.css)-->
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const header = document.querySelector('#header');
+
+      if (!header) return;
+      const updateHeaderHeight = () => {
+        document.documentElement.style.setProperty(
+          '--ap-header-height',
+          `${header.offsetHeight}px`
+        );
+      };
+
+      updateHeaderHeight();
+
+      const observer = new ResizeObserver(updateHeaderHeight);
+      observer.observe(header);
+
+      window.addEventListener('resize', updateHeaderHeight);
+    });
+    
+  </script>
 </body>
 </html>

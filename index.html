@@ -115,35 +115,60 @@
       <p>정성을 담아 만든 우리의 제품을 만나보세요</p>
   </div>
   <div class="ap-best__container">
-      <div class="ap-best__scroll">
-          <div class="best-card">
-              <a href="">
-                <div class="best-card__image"><img src="/web/img/main/img-best-prd-1.png?v=3" alt></div>
-                <div class="best-card__content">
-                    <h3 class="best-card__name">프리아핏에어 올인원 아기띠</h3>
-                    <p class="best-card__desc">6 COLOR</p>                    
-                </div>
-              </a>
-          </div>
-          <div class="best-card">
-              <a href="">
-                <div class="best-card__image"><img src="/web/img/main/img-best-prd-2.png?v=2" alt=""></div>
-                <div class="best-card__content">
-                    <h3 class="best-card__name">볼레프로 등산 캐리어</h3>
-                    <p class="best-card__desc">3 COLOR</p>                    
-                </div>
-              </a>
-          </div>
-          <div class="best-card">
-              <a href="">
-                <div class="best-card__image"><img src="/web/img/main/img-best-prd-3.png?v=2" alt=""></div>
-                <div class="best-card__content">
-                    <h3 class="best-card__name">보네떼 카시트</h3>
-                    <p class="best-card__desc">4 COLOR</p>                    
-                </div>
-              </a>
-          </div>
-      </div>
+    <!-- <div module="product_listmain_13" class="ap-best__scroll"> -->
+      <!--
+          $count = 3
+      -->
+        <!-- <div class="best-card">
+            <a href="/product/detail.html{$param}">
+              <div class="best-card__image"><img src="{$image_medium}" id="{$image_medium_id}" alt></div>
+              <div class="best-card__content">
+                  <h3 class="best-card__name">{$product_name}</h3>
+                  <p class="best-card__desc">{$summary_desc}</p>                    
+              </div>
+            </a>
+        </div>
+        <div class="best-card">
+            <a href="/product/detail.html{$param}">
+              <div class="best-card__image"><img src="{$image_medium}" id="{$image_medium_id}" alt></div>
+              <div class="best-card__content">
+                  <h3 class="best-card__name">{$product_name}</h3>
+                  <p class="best-card__desc">{$summary_desc}</p>                    
+              </div>
+            </a>
+        </div>
+    </div> --><!-- //ap-best__scroll -->
+
+
+    <div class="ap-best__scroll">
+        <div class="best-card">
+            <a href="/product/detail.html?product_no=43">
+              <div class="best-card__image"><img src="/web/img/main/img-best-prd-1.png?v=3" alt></div>
+              <div class="best-card__content">
+                  <h3 class="best-card__name">프리아핏에어 올인원 아기띠</h3>
+                  <p class="best-card__desc">6 COLOR</p>                    
+              </div>
+            </a>
+        </div>
+        <div class="best-card">
+            <a href="/product/detail.html?product_no=46">
+              <div class="best-card__image"><img src="/web/img/main/img-best-prd-2.png?v=2" alt=""></div>
+              <div class="best-card__content">
+                  <h3 class="best-card__name">볼레프로 등산 캐리어</h3>
+                  <p class="best-card__desc">3 COLOR</p>                    
+              </div>
+            </a>
+        </div>
+        <div class="best-card">
+            <a href="/product/detail.html?product_no=17">
+              <div class="best-card__image"><img src="/web/img/main/img-best-prd-3.png?v=2" alt=""></div>
+              <div class="best-card__content">
+                  <h3 class="best-card__name">보네떼 카시트</h3>
+                  <p class="best-card__desc">4 COLOR</p>                    
+              </div>
+            </a>
+        </div>
+    </div>
   </div>
 </section>
 
@@ -410,5 +435,56 @@
     requestAnimationFrame(raf);
     lenis.on('scroll', () => {
       AOS.refresh();
+    });
+</script>
+
+
+<script>
+fetch("https://labdip.dong-in.com/dongin/api/v2/verify", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        wid: "3",
+        sid: "2"
+      })
+    })
+    .then((response) => {
+        console.dir('then');
+      if (!response.ok) {
+        throw new Error("HTTP status " + response.status);
+      }
+      return response.json();
+    })
+    .then((data) => {
+        console.dir('success');
+      console.log(" Post === 성공:", data);
+    })
+    .catch((error) => {
+        console.dir('failed');
+      console.dir(error);
+    });
+
+
+    fetch("https://labdip.dong-in.com/dongin/api/v2/verify/1", {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    .then((response) => {
+        console.dir('then');
+      if (!response.ok) {
+        throw new Error("HTTP status " + response.status);
+      }
+      return response.json();
+    })
+    .then((data) => {
+        console.dir('success');
+      console.log("Get === 성공:", "데이터" + data);
+    })
+    .catch((error) => {
+        console.dir('failed');
+      console.dir(error);
     });
 </script>
