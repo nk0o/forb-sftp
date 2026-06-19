@@ -184,6 +184,15 @@ $(document).ready(function () {
 function switchTab(item, btn) {
   document.querySelectorAll('.ap-tab__item').forEach(b => b.classList.remove('is-active'));
   btn.classList.add('is-active');
+
   document.querySelectorAll('.ap-tab__panel').forEach(p => p.classList.remove('is-active'));
-  document.getElementById(item).classList.add('is-active');
+
+  const panel = document.getElementById(item);
+  panel.classList.add('is-active');
+
+  // 패널 시작 위치로 이동
+  panel.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+  });
 }

@@ -172,7 +172,7 @@
 /* ── 모바일 (≤768px) ── */
 @media (max-width: 768px) {
   /* 헤더 */
-  .forb #header{height: var(--ap-header-height);}
+  .forb #header{height: 62px;}
   .forb #wrap .ap-header.fixed .inner{transform:none;}
   .forb #header .inner .top_nav_box .top_mypage{flex: 100%;}
   .forb #header .inner .top_nav_box .top_mypage a.eNavFold{display: flex; order: -1;}

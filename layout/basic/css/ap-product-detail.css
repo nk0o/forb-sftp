@@ -10,7 +10,7 @@
 .ap-prdDetail .xans-product-detail .imgArea{width: 100%;}
 .ap-prdDetail .xans-product-additional div.info_fold .info_title{padding: 20px 0;}
 
-.ap-prd-layout { display: grid; grid-template-columns: 1.5fr 1fr; gap: var(--ap-space-2xl); align-items: start;justify-content: space-between;padding-top: 50px;}
+.ap-prd-layout { display: grid; grid-template-columns: 1.5fr 1fr; gap: 24px; align-items: start;justify-content: space-between;padding-top: 50px;}
 /* 왼쪽 */
 .gallery-section {max-width: 780px; min-width: 0; padding-bottom: 24px; }
 .gallery-section .xans-product-detail .detailArea{padding-inline: 11%;}
@@ -19,14 +19,20 @@
 .gallery-section .xans-product-detail .imgArea .listImg li{border-radius: 2px; overflow: hidden;width: 94px; position: relative;}
 .gallery-section .xans-product-detail .imgArea .listImg li::after{content: ""; display: block; height: 0; padding-top: 110%; position: relative;}
 .gallery-section .xans-product-detail .imgArea .listImg li img{position: absolute; inset:0;width: 100%; height: 100%; object-fit: cover;}
-.gallery-section .xans-product-detail .eventArea h3{display: none;}
 .gallery-section .xans-product-detail .imgArea .listImg { position: relative; overflow: hidden; width: 100%; height: auto; margin: 24px 0 0; box-sizing: border-box; }
+.gallery-section .xans-product-detail .imgArea .listImg .inner { position: relative; overflow: hidden; width: 100%; height: auto; }
+.gallery-section .xans-product-detail .imgArea .listImg ul { margin: 0 -6px; }
+.gallery-section .xans-product-detail .imgArea .listImg li { display: inline-block; width: 80px; margin: 0 6px; font-size: 12px; line-height: 14px; vertical-align: top; }
+.gallery-section .xans-product-detail .imgArea .listImg li img { max-width: 100%; cursor: pointer; }
+.gallery-section .eventArea h3{display: none;}
+.gallery-section .eventArea img{width: 100%; max-width: 100%; vertical-align: top;}
+    
 /* 오른쪽 */
-.product-info {width: 420px;position: sticky; top: var(--ap-header-height); max-height: calc(100vh - var(--ap-header-height)); overflow-y: auto; scrollbar-width: none; padding-bottom: var(--ap-space-xl);}
+.product-info {max-width: 420px;position: sticky; justify-self: flex-end;top: var(--ap-header-height); max-height: calc(100vh - var(--ap-header-height)); overflow-y: auto; scrollbar-width: none; padding-bottom: var(--ap-space-xl);}
 .product-info .xans-product-detail{margin: 0;}
 .product-info::-webkit-scrollbar {display: none;}
 .product-info .xans-product-detail .headingArea {padding-bottom: var(--ap-space-lg);   }
-.product-info .xans-product-detail .headingArea h1.product-name{display: block; max-width: 380px; word-break: keep-all;font-size: var(--ap-text-xl); font-weight: 700; line-height: var(--ap-leading-tight); letter-spacing: var(--ap-tracking-tight); margin-bottom: var(--ap-space-sm); }
+.product-info .xans-product-detail .headingArea h1.product-name{display: block; max-width: 300px; word-break: keep-all;font-size: var(--ap-text-xl); font-weight: 700; line-height: var(--ap-leading-tight); letter-spacing: var(--ap-tracking-tight); margin-bottom: var(--ap-space-sm); }
 .product-info__category { font-size: var(--ap-text-xs); font-weight: 600; letter-spacing: var(--ap-tracking-wider); color: var(--ap-color-warm-brown); text-transform: uppercase; padding-bottom: var(--ap-space-sm);}
 .product-subtitle{font-size: var(--ap-text-sm); color: var(--ap-color-text-muted);line-height: var(--ap-leading-normal); font-weight: 400; letter-spacing: 0.02em;word-break: keep-all;}
 .product-heading{margin-bottom: 20px;}
@@ -83,11 +89,12 @@
 .product-info .ap-prd-payment{display: flex;justify-content: flex-end; margin-top: 24px;}
 .forb #NaverChk_Button {flex: 1 !important;}
 
-
+.ap-prd-layout .ap-tab{ position: sticky; top: var(--ap-header-height); z-index: 1; background: var(--ap-color-bg-section); }
+.ap-prd-layout .ap-tab__panel{padding: 0;}
 /* 아래 후기, 문의 */
 .ap-recommendPrd{margin-top: 24px;}
 .ap-prd-recommend{padding: 60px 0 100px;}
-.ap-prd-customer.xans-product-additional{margin-top: 24px;padding-bottom: 100px;  border-top: 1px solid var(--ap-color-border);}
+.ap-prd-customer.xans-product-additional{padding-bottom: 100px;}
 .ap-prd-customer h4{margin-block: 100px 24px;}
 .ap-prd-review__content .ec-base-button{ overflow: hidden;}
 
@@ -96,21 +103,30 @@
 @media (min-width: 1025px) {
   .xans-product-additional .view { padding: 25px 25px 0; }
 }
-@media (min-width: 769px) {    
+@media (min-width: 769px) {   
+  .gallery-section{min-width: 544px;} 
   #orderFixArea { display: none !important; }
 }
 @media (max-width: 1440px) {
+  .ap-prd-layout{grid-template-columns: 1fr 1fr;}
   .gallery-section .xans-product-detail .detailArea{padding-inline: 5%;}
 }
 @media (max-width: 1024px) {
-  .product-info{padding-left: 24px;top: 0;height: auto;}
+  .ap-prdDetail .xans-product-detail{margin-bottom: 0;}
+  .ap-prdDetail .xans-product-detail .imgArea{margin-bottom: 0;}
+  /* .product-info{padding-left: 24px;top: 0;height: auto;}
   .forb .xans-product-detail .infoArea{width: 100%;}
+  .gallery-section .xans-product-detail .imgArea .listImg{display: block;}
   .ap-prdDetail #orderFixArea.ec-base-button.gFixed > .ec-base-button[class*="gColumn"]{width: 100%; padding-inline: var(--ap-gutter);}
+  .ap-prd-layout{gap: var(--ap-space-lg);}
+  .gallery-section .xans-product-detail .detailArea{padding-inline:0} */
+  .ap-prd-layout { grid-template-columns: 1fr;padding-top: 0;gap: 0;}
+  .ap-prdImg--pc{display: none;}
+  .gallery-section { padding-right: 0; max-width: 100%;}
+  .product-info { order: -1; position: static; inset:auto; border-left: none; padding-left: 0;  width: 100%;height: auto; max-height: none;max-width: 100%;border-bottom: 1px solid var(--ap-color-border);}
+  .ap-prdDetail .ap-container--narrow{max-width: 768px !important;}
 }
 @media (max-width: 768px) {
-  .ap-prd-layout { grid-template-columns: 1fr;}
-  .ap-prdImg--pc{display: none;}
-  .gallery-section { padding-right: 0; }
-  .product-info { order: -1; position: static; inset:auto; border-left: none; padding-left: 0; padding-bottom: 100px; }
+  .ap-prd-layout .ap-tab{margin-left: -20px; margin-right: -20px;}
 }
 

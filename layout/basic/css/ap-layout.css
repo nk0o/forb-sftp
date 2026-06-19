@@ -370,7 +370,7 @@ h5, .ap-text--h5 { font-size: clamp(var(--ap-text-base), 1.8vw, var(--ap-text-md
 .ap-tab__item.is-active { color:var(--ap-color-text-primary); font-weight:600; }
 .ap-tab__item.is-active::after { transform:scaleX(1); }
 /* ── 탭 패널 ── */
-.ap-tab__panel { display:none; padding:28px 36px 36px; }
+.ap-tab__panel { display:none; padding:28px 36px 36px;   scroll-margin-top: 80px; /* sticky 탭 높이 */}
 .ap-tab__panel.is-active { display:block; }
 
 /* 셀렉트 박스 */
