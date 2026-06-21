@@ -10,14 +10,14 @@
 .ap-prdDetail .xans-product-detail .imgArea{width: 100%;}
 .ap-prdDetail .xans-product-additional div.info_fold .info_title{padding: 20px 0;}
 
-.ap-prd-layout { display: grid; grid-template-columns: 1.5fr 1fr; gap: 24px; align-items: start;justify-content: space-between;padding-top: 50px;}
+.ap-prd-layout { display: grid; grid-template-columns: 1.5fr 1fr; gap: 24px; align-items: start;justify-content: space-between;padding-top: 50px;min-height: 600px;}
 /* 왼쪽 */
-.gallery-section {max-width: 780px; min-width: 0; padding-bottom: 24px; }
+.gallery-section {position:relative; max-width: 780px; min-width: 0; padding-bottom: 24px; }
 .gallery-section .xans-product-detail .detailArea{padding-inline: 11%;}
 .gallery-section .xans-product-detail .imgArea .prdImg .thumbnail{border-radius: 4px; overflow: hidden; height: 0; padding-top: 110%; position: relative;}
 .gallery-section .xans-product-detail .imgArea .prdImg .thumbnail img{position: absolute; inset:0;width: 100%; height: 100%; object-fit: cover;}
 .gallery-section .xans-product-detail .imgArea .listImg li{border-radius: 2px; overflow: hidden;width: 94px; position: relative;}
-.gallery-section .xans-product-detail .imgArea .listImg li::after{content: ""; display: block; height: 0; padding-top: 110%; position: relative;}
+.gallery-section .xans-product-detail .imgArea .listImg li::after{content: ""; display: block; height: 0; padding-top: 110%; position: relative;pointer-events: none; z-index: -1;}
 .gallery-section .xans-product-detail .imgArea .listImg li img{position: absolute; inset:0;width: 100%; height: 100%; object-fit: cover;}
 .gallery-section .xans-product-detail .imgArea .listImg { position: relative; overflow: hidden; width: 100%; height: auto; margin: 24px 0 0; box-sizing: border-box; }
 .gallery-section .xans-product-detail .imgArea .listImg .inner { position: relative; overflow: hidden; width: 100%; height: auto; }
@@ -89,17 +89,17 @@
 .product-info .ap-prd-payment{display: flex;justify-content: flex-end; margin-top: 24px;}
 .forb #NaverChk_Button {flex: 1 !important;}
 
-.ap-prd-layout .ap-tab{ position: sticky; top: var(--ap-header-height); z-index: 1; background: var(--ap-color-bg-section); }
+.ap-prd-layout .ap-tab{ position: sticky; top: var(--ap-header-height); z-index: 2; background: var(--ap-color-bg-section); }
 .ap-prd-layout .ap-tab__panel{padding: 0;}
 /* 아래 후기, 문의 */
 .ap-recommendPrd{margin-top: 24px;}
 .ap-prd-recommend{padding: 60px 0 100px;}
-.ap-prd-customer.xans-product-additional{padding-bottom: 100px;}
+.ap-prd-customer.xans-product-additional{padding-bottom: 100px; }
 .ap-prd-customer h4{margin-block: 100px 24px;}
-.ap-prd-review__content .ec-base-button{ overflow: hidden;}
-
-#review{scroll-margin-block: 100px;}
-
+.ap-prd-review__content .ec-base-button{ overflow: hidden;display: flex;justify-content: flex-end;}
+.ap-prd-review .attach{display: flex; gap: 8px; flex-wrap: wrap; margin-block: 12px;}
+.ap-prd-review .attach img{width: 160px; height: auto;display: block;}
+.ap-prd-review .ec-common-rwd-image{pointer-events: none;}
 @media (min-width: 1025px) {
   .xans-product-additional .view { padding: 25px 25px 0; }
 }

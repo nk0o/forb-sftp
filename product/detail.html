@@ -100,7 +100,7 @@
           <!-- 탭 -->
           <div class="ap-tab">
             <button class="ap-tab__item is-active" onclick="switchTab('panel-1', this)">상품상세</button>
-            <button class="ap-tab__item" onclick="switchTab('panel-2', this)">리뷰</button>
+            <button class="ap-tab__item" id="review-tab" onclick="switchTab('panel-2', this)">리뷰</button>
             <button class="ap-tab__item" onclick="switchTab('panel-3', this)">Q&A</button>
           </div><!-- //ap-tab -->
 
@@ -207,17 +207,14 @@
               <!--@import(/board/report_popup.html)-->
               <div id="prdReview" class="ap-prd-review">
                 <h4>상품리뷰</h4>
-                <div class="ap-prd-review__content">
+                <div class="ap-prd-review__content" id="review">
                   <div module="product_review">
                     <!--@js(/js/module/product/review.js)-->
                     <a name="use_review"></a>
                     <p class="noAccess {$deny_display|display}">글읽기 권한이 없습니다.</p>
                     <div class="minor {$adult_display|display}">
-                      <p><img src="//img.echosting.cafe24.com/skin/skin/product/ico_under19.gif" alt
-                          loading="lazy" ez-prevent="img"> <strong class="txtEm">"19세 미만의 미성년자"</strong>는
-                        출입을 금합니다!</p>
-                      <p class="button"><a href="/intro/board.html{$returnParam}"
-                          class="btnSubmit sizeS">성인인증 하기</a></p>
+                      <p><img src="//img.echosting.cafe24.com/skin/skin/product/ico_under19.gif" alt loading="lazy" ez-prevent="img"> <strong class="txtEm">"19세 미만의 미성년자"</strong>는 출입을 금합니다!</p>
+                      <p class="button"><a href="/intro/board.html{$returnParam}" class="btnSubmit sizeS">성인인증 하기</a></p>
                     </div>
                     <div class="ec-base-table typeList">
                       <table border="1" class="{$list_display|display}">
@@ -238,26 +235,16 @@
                         </thead>
                         <tbody class="center">
                           <tr class="{$block_target_class}" {$block_data_attr}>
-                            <td class="subject left txtBreak">{$icon_re}{$icon_lock} <a
-                                href="{$link_board_detail}" class="{$block_content_class}">{$subject}</a>
-                              {$icon_file}<span
-                                class="comment">{$comment_count}</span>{$icon_hit}{$icon_new}</td>
+                            <td class="subject left txtBreak">{$icon_re}{$icon_lock} <a href="{$link_board_detail}{$param_read}" class="{$block_content_class}">{$subject}</a> {$icon_file}<span class="comment">{$comment_count}</span>{$icon_hit}{$icon_new}</td>
                             <td>{$member_icon} {$writer}</td>
                             <td>{$write_date}</td>
-                            <td class="{$use_point_display|display}"><img
-                                src="//img.echosting.cafe24.com/skin/skin/board/icon-star-rating{$point_count}.svg"
-                                alt="{$point_count}점" loading="lazy" ez-prevent="img"></td>
+                            <td class="{$use_point_display|display}"><img src="//img.echosting.cafe24.com/skin/skin/board/icon-star-rating{$point_count}.svg" alt="{$point_count}점" loading="lazy" ez-prevent="img"></td>
                           </tr>
                           <tr class="{$block_target_class}" {$block_data_attr}>
-                            <td class="subject left txtBreak">{$icon_re}{$icon_lock} <a
-                                href="{$link_board_detail}" class="{$block_content_class}">{$subject}</a>
-                              {$icon_file}<span
-                                class="comment">{$comment_count}</span>{$icon_hit}{$icon_new}</td>
+                            <td class="subject left txtBreak">{$icon_re}{$icon_lock} <a href="{$link_board_detail}{$param_read}" class="{$block_content_class}">{$subject}</a> {$icon_file}<span class="comment">{$comment_count}</span>{$icon_hit}{$icon_new}</td>
                             <td>{$member_icon} {$writer}</td>
                             <td>{$write_date}</td>
-                            <td class="{$use_point_display|display}"><img
-                                src="//img.echosting.cafe24.com/skin/skin/board/icon-star-rating{$point_count}.svg"
-                                alt="{$point_count}점" loading="lazy" ez-prevent="img"></td>
+                            <td class="{$use_point_display|display}"><img src="//img.echosting.cafe24.com/skin/skin/board/icon-star-rating{$point_count}.svg" alt="{$point_count}점" loading="lazy" ez-prevent="img"></td>
                           </tr>
                         </tbody>
                       </table>
@@ -266,7 +253,7 @@
                   <div class="ec-base-button">
                     <a href="{$review_list}" class="btnNormalFix">LIST</a>
                     <a href="{$review_write}" class="btnNormalFix">WRITE</a>
-                  </div><!-- //ec-base-button -->
+                  </div>
                   <div module="product_reviewpaging" class="ec-base-paginate typeList">
                     <a href="{$param_first}" class="first">첫 페이지</a>
                     <a href="{$param_before}">이전 페이지</a>
@@ -281,7 +268,7 @@
                     <a href="{$param_last}" class="last">마지막 페이지</a>
                   </div><!-- //ec-base-paginate -->
                 </div><!-- //ap-prd-review__content -->
-              </div><!-- #review -->
+              </div><!-- #prdReview -->
             </div><!-- //ap-prd-customer -->
           </div><!-- //ap-tab__panel -->
           <div class="ap-tab__panel" id="panel-3">
@@ -372,7 +359,7 @@
             <div class="headingArea">
               <div class="product-heading">
                 <div class="icon">{$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon} {$product_icons} {$today_arrival_icon} {$pickup_icon} {$benefit_icons} {$regular_delivery_icon} {$cultural_tax_icon}</div>
-                <div class="product-rating"><a href="#review" class="rating-text">리뷰 {$review_count}개</a> </div>
+                <div class="product-rating"><a href="#review" onclick="document.getElementById('review-tab').click(); return false;" class="rating-text">리뷰 {$review_count}개</a> </div>
                 <div class="product-info__category {$simple_desc|display}">{$simple_desc}</div>
                 <h1 class="product-name">{$name}</h1>
                 <div class="product-subtitle">{$summary_desc}</div>
@@ -902,9 +889,4 @@
   
 const stickyTab = document.querySelector('.ap-tab');
 const stickyHeight = stickyTab.offsetHeight;
-
-window.scrollTo({
-  top: panel.offsetTop - stickyHeight,
-  behavior: 'smooth'
-});
 </script>
