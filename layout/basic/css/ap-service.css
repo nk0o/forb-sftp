@@ -356,7 +356,7 @@
 .howto-body {position: relative; display: flex; align-items: flex-start; max-width: var(--ap-max-width); margin: 0 auto;}
 .howto-body.ap-container--narrow{ padding-block: 40px 100px;}
 .ap-howto .ap-service__title{ font-size: 46px}
-.ap-howto .ap-service__desc{color:var(--ap-color-text-primary);}
+.ap-howto .ap-service__desc{color:var(--ap-color-text-secondary);}
 .ap-howto .ap-service__top{height: auto;}
 /* ─── SIDEBAR ─────────────────────────────────────────────────────────────────── */
 .howto-sidebar { width: 250px; flex-shrink: 0; background: var(--ap-color-bg-card); border: 1px solid var(--ap-color-border); position: sticky; top: var(--ap-header-height); overflow-y: auto; overscroll-behavior: contain; }
@@ -389,10 +389,10 @@
 /* ─── MAIN ───────────────────────────────────────────────────────────────────── */
 .howto-main { flex: 1; min-width: 0; min-height: calc(100dvh - var(--ap-header-height)); padding: var(--ap-space-lg) var(--ap-space-xl)  }
 /* 제품 헤더 */
-.howto-header { display: flex; gap: var(--ap-space-lg); align-items: center; margin-bottom: var(--ap-space-lg); padding-bottom: var(--ap-space-lg); border-bottom: 1px solid var(--ap-color-border-light); }
+.howto-header { display: flex; gap: var(--ap-space-lg); align-items: center; margin-bottom: var(--ap-space-lg); padding-bottom: var(--ap-space-lg); border-bottom: 1px solid var(--ap-color-border); }
 .howto-header__icon { width: 54px; height: 54px; border-radius: var(--ap-radius-lg); background: var(--ap-color-beige); border: 1px solid var(--ap-color-border); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
 .howto-header__text h2 { font-size: var(--ap-text-xl); font-weight: 700; letter-spacing: var(--ap-tracking-tight); line-height: 1.25; margin-bottom: var(--ap-space-sm); }
-.howto-header__text p { font-size: var(--ap-text-sm); color: var(--ap-color-text-muted); line-height: var(--ap-leading-normal); font-weight: 300; max-width: 520px; }
+.howto-header__text p { font-size: var(--ap-text-base); color: var(--ap-color-text-muted); line-height: var(--ap-leading-normal); font-weight: 400; max-width: 520px;line-height: 1.25; }
 
 /* 섹션 howto__label */
 .howto__label { font-size: var(--ap-text-xs); font-weight: 600; letter-spacing: var(--ap-tracking-wider); text-transform: uppercase; color: var(--ap-color-text-muted); }
@@ -519,3 +519,24 @@
   .howto-video__grid { grid-template-columns: 1fr; }
   .howto-header { flex-direction: row; } /* 480에서도 가로 유지 */
 }
+
+
+
+/* 제품케어서비스 */
+.ap-as .ap-as-center .ap-container--narrow,
+.ap-as .howto-body .ap-container--narrow{width: 100%; max-width: 1280px !important;padding-top: 40px;}
+.ap-as .howto-main{padding: 0;}
+.ap-as .howto-header__text h2{margin-bottom: 8px;}
+.ap-as .howto-header__text p{max-width: none;word-break: keep-all;font-size: var(--ap-text-sm);}
+.ap-as .ap-tab{border-bottom: 0;justify-content: center;}
+.ap-as .ap-tab .menu{width: 560px;}
+.ap-as .ap-tab__panel{padding: 64px 0 28px;}
+.ap-as-center{padding: 80px 0;border-top: 1px solid var(--ap-color-border); background: var(--ap-color-cream);}
+.ap-as-center__cont a:hover{text-decoration: underline;}
+.ap-as-center__cont p {margin-top: 6px;font-size: var(--ap-text-base);line-height: 1.7;word-break: keep-all;}
+.ap-as-center__cont p em{font-weight: 600;}
+
+.ap-as__title{font-size: var(--ap-text-lg);margin: 32px 0 16px;font-weight: 600;}
+.ap-as__desc{font-size: var(--ap-text-base); line-height: var(--ap-leading-normal); font-weight: 400; max-width: 520px; line-height: 1.25;word-break: keep-all;}
+.ap-as__list{margin: 36px 0 48px;font-size: var(--ap-text-base);}
+.ap-as__list li{margin-top: 8px; padding-left: 14px;}

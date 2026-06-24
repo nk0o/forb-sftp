@@ -24,7 +24,7 @@
 .store-info { display: flex; gap: 14px; align-items: flex-start; }
 .store-img { width: 72px; height: 72px; object-fit: cover; border-radius: var(--ap-radius-sm, 4px); background: var(--ap-color-beige, #F2EAE0); flex-shrink: 0; border: 1px solid var(--ap-color-border-light);}
 .store-detail { flex: 1; min-width: 0; }
-.store-tag { display: inline-block; font-size: var(--ap-text-xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ap-color-warm-brown, #A07848); background:rgba(254, 240, 160, 0.6); padding: 2px 7px; border-radius: var(--ap-radius-pill, 999px); margin-bottom: 5px; font-weight: 500; }
+.store-tag { display: inline-block; display: none; font-size: var(--ap-text-xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ap-color-warm-brown, #A07848); background:rgba(254, 240, 160, 0.6); padding: 2px 7px; border-radius: var(--ap-radius-pill, 999px); margin-bottom: 5px; font-weight: 500; }
 .store-name { display: block; font-size: var(--ap-text-base); font-weight: 600; color: var(--ap-color-text-primary, #1A1410); margin-bottom: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .store-address,
 .store-tel,

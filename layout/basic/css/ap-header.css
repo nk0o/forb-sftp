@@ -128,8 +128,8 @@
 
 
 /* 검색 - 자주 찾는 키워드 */
-.forb .ap-search fieldset .ap-search__form #keyword{ flex: 1; height: 44px;padding: 6px !important; color: var(--ap-color-text-primary); border: none !important; letter-spacing: 0.01em; line-height: 1.4; background-color: var(--ap-color-cream) !important; font-size: var(--ap-text-md) !important; font-weight: 400;}
-.forb .ap-search fieldset .ap-search__form #keyword::placeholder{ -webkit-text-fill-color: red !important;}
+.forb .ap-search fieldset .ap-search__form.top_search_box #keyword{ flex: 1 !important; height: 44px !important;padding: 6px !important; color: var(--ap-color-text-primary) !important; border: none !important; letter-spacing: 0.01em !important; line-height: 1.4 !important; background-color: var(--ap-color-cream) !important; font-size: var(--ap-text-md) !important; font-weight: 400;}
+.forb .ap-search fieldset .ap-search__form.top_search_box #keyword::placeholder{ -webkit-text-fill-color: red !important;}
 .ap-search__keywords {display: flex; flex-direction: column; gap: 0;width: 100% !important;  margin:24px auto 0 !important; }
 .ap-search__kw-label {font-size:var(--ap-text-sm); font-weight: 400;text-transform: uppercase; color: var(--ap-color-text-primary); margin-bottom: 12px; letter-spacing: 0px;}
 .ap-search__kw-list { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -143,7 +143,8 @@
 .forb #wrap .ap-header.fixed .ap-nav__bar .ap-nav__actions{display: flex;}
 
 .forb #wrap .ap-header.fixed{height: var(--ap-fix-header-height);}
-.forb #wrap .ap-header.fixed .inner{transform: translateY(-58px);}
+.forb #wrap .ap-header.fixed .inner{/* transform: translateY(-58px); */height: var(--ap-fix-header-height);}
+.forb #wrap .ap-header.fixed .ap-nav__top{height: 0; opacity: 0; visibility: hidden; transition: opacity 0.3s ease;}
 .forb #wrap .ap-header.fixed .ap-nav__bar{justify-content: space-between;height: var(--ap-fix-header-height);}
 .forb #wrap .ap-header.fixed .ap-nav__bar .ap-nav__links{position: absolute;left: 50%; transform: translateX(-50%); width: 100%; justify-content: center;}
 .forb #wrap .ap-header.fixed .ap-nav__bar .ap-nav__link{height: var(--ap-fix-header-height);}
@@ -173,6 +174,7 @@
 @media (max-width: 768px) {
   /* 헤더 */
   .forb #header{height: 62px;}
+  .forb #wrap .ap-header.fixed .ap-nav__top{height: 100%; opacity: 1; visibility: visible; transition: none;}
   .forb #wrap .ap-header.fixed .inner{transform:none;}
   .forb #header .inner .top_nav_box .top_mypage{flex: 100%;}
   .forb #header .inner .top_nav_box .top_mypage a.eNavFold{display: flex; order: -1;}

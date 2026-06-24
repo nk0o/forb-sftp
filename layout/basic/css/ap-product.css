@@ -4,6 +4,7 @@
 ============================================================ */
 .ap-search__hero{}
 .ap-search__tit{text-align: center;}
+.forb .xans-product-searchdata select{min-width: 130px;}
 .forb .xans-product-searchdata .searchField input[type=text], 
 .forb .xans-product-searchdata .searchField input[type=password], 
 .forb .xans-product-searchdata .searchField .ap-form__input,

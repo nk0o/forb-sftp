@@ -78,8 +78,8 @@
 .login-benefit__title em { color: var(--ap-color-gold); }
 .login-benefit__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; list-style: none; }
 .login-benefit__item { background: var(--ap-color-cream); border: 1px solid var(--ap-color-border-light); border-radius: var(--ap-radius-sm); padding: 18px 14px 16px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px; justify-content: center; }
-.login-benefit__value { font-family: var(--ap-font-serif); font-size: var(--ap-text-xl); font-weight: 400; color: var(--ap-color-gold); letter-spacing: -.01em; line-height: 1; }
-.login-benefit__value small { font-size: 14px; letter-spacing: 0; }
+.login-benefit__value {font-family: "Libre Baskerville", serif; font-size: var(--ap-text-md); font-weight: 400; color: var(--ap-color-gold); letter-spacing: -.01em; line-height: 1; }
+.login-benefit__value small {  font-size: var(--ap-text-md); letter-spacing: 0; }
 .login-benefit__label { font-size: var(--ap-text-sm); font-weight: 400; color: var(--ap-color-text-muted); line-height: 1.5; }
 
 /******** 아이디 비번찾기 ********/

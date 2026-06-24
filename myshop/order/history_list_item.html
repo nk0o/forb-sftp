@@ -30,9 +30,10 @@
       <tbody class="{$list_display|display}">
         <tr>
           <td {$rowspan} class="number {$display_column|display}">
-            <p class="number__date">{$order_date}</p>
-            <p class="number__orderID">[{$order_id}]</p>
-            <a href="detail.html{$param_detail}" class="ap-txt--under">주문 상세보기<!--@import(/svg/icon-chevron-right.html)--></a>
+            <div class="number__info">
+              <p class="number__date">{$order_date}</p>
+              <p class="number__orderID"><a href="detail.html{$param_detail}" class="ap-txt--under">[{$order_id}]</a></p>
+            </div>
             <div class="number__btns">
               <a href="#none" class="{$direct_cancel_display|display} number__btn" onclick="{$action_direct_cancel}">주문취소</a>
               <a href="cancel.html{$param_apply}" class="{$apply_cancel_display|display} number__btn">취소신청</a>
@@ -71,9 +72,10 @@
         </tr>
         <tr>
           <td {$rowspan} class="number {$display_column|display}">
-            <p class="number__date">{$order_date}</p>
-            <p class="number__orderID">[{$order_id}]</p>
-            <a href="detail.html{$param_detail}" class="ap-txt--under">주문 상세보기<!--@import(/svg/icon-chevron-right.html)--></a>
+            <div class="number__info">
+              <p class="number__date">{$order_date}</p>
+              <p class="number__orderID"><a href="detail.html{$param_detail}" class="ap-txt--under">[{$order_id}]</a></p>
+            </div>
             <div class="number__btns">
               <a href="#none" class="{$direct_cancel_display|display} number__btn" onclick="{$action_direct_cancel}">주문취소</a>
               <a href="cancel.html{$param_apply}" class="{$apply_cancel_display|display} number__btn">취소신청</a>

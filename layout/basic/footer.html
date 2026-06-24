@@ -1,10 +1,11 @@
 
 <!--@css(/layout/basic/css/ap-footer.css)-->
 <div class="bottom-nav RMB RTB" ez-module="bottom-navigation" data-ez="contents-07fah5x-1">
-  <div class="bottom-nav__top">
-    <a href="#wrap" title="화면 최상단으로 이동하기"><i aria-hidden="true" class="icon icoArrowRight"></i></a>
-    <a href="#footer" title="화면 최상단으로 이동하기"><i aria-hidden="true" class="icon icoArrowRight"></i></a>
-  </div>
+    <div class="bottom-nav__top ap-floating">
+      <a href="javascript:history.back();" class="ap-floating__back" title="뒤로 가기"><!--@import(/svg/icon-arrow-left.html)--></a>
+      <a href="javascript:history.forward();" class="ap-floating__foward" title="앞으로 가기"><!--@import(/svg/icon-arrow-right.html)--></a>
+      <a href="#wrap" class="ap-floating__top" title="위로 가기"><!--@import(/svg/icon-arrow-left.html)-->TOP</a>
+    </div>
 </div>
 
 <!-- 푸터 영역 -->
@@ -40,10 +41,9 @@
             <div class="ap-ft-nav__body">
               <div class="ap-ft-nav__inner">
                 <ul>
-                  <li><a href="#">포브 스토리</a></li>
-                  <li><a href="#">포브 장인정신</a></li>
-                  <li><a href="#">지속가능성</a></li>
-                  <li><a href="#">매장 안내</a></li>
+                  <li><a href="/about/forbstory.html">포브 스토리</a></li>
+                  <li><a href="/about/craftsmanship.html">포브 장인정신</a></li>
+                  <li><a href="/about/sustainability.html">지속가능성</a></li>
                 </ul>
               </div>
             </div>
@@ -54,11 +54,11 @@
             <div class="ap-ft-nav__body">
               <div class="ap-ft-nav__inner">
                 <ul>
-                  <li><a href="#">카시트</a></li>
-                  <li><a href="#">아기띠</a></li>
-                  <li><a href="#">아웃도어캐리어</a></li>
-                  <li><a href="#">기저귀가방</a></li>
-                  <li><a href="#">액세서리</a></li>
+                  <li><a href="/product/carseat.html">카시트</a></li>
+                  <li><a href="/product/baby-carrier.html">아기띠</a></li>
+                  <li><a href="/product/outdoor-carrier.html">아웃도어캐리어</a></li>
+                  <!-- <li><a href="/product/carseat.html">기저귀가방</a></li> -->
+                  <li><a href="/category/액세서리/51/">액세서리</a></li>
                 </ul>
               </div>
             </div>
@@ -70,7 +70,7 @@
               <div class="ap-ft-nav__inner">
                 <ul>
                   <li><a href="/service/warranty.html">제품 케어 서비스(A/S)</a></li>
-                  <li><a href="/skin-skin15/service/authentication.html">정품 인증</a></li>
+                  <li><a href="/service/authentication.html">정품 인증</a></li>
                   <li><a href="/service/carseat-replacement.html">카시트 무상교환</a></li>
                   <li><a href="/board/free/list.html?board_no=3">FAQ</a></li>
                 </ul>
@@ -86,6 +86,7 @@
                 <a href="https://pf.kakao.com/_Rkfld/chat" target="_blank" class="ap-ft-cs__link ap-btn ap-btn--sm ap-btn--outline-gold">카카오톡 1:1 문의</a>
               </div>
             </div>
+            <div class="ap-ft-nav__title" style="border-bottom: 0; margin-top: 32px;">매장안내</div>
           </li>
           <!-- <li class="ap-ft-nav__col" data-ez-group="sns">
             <button class="mob-toggle" aria-expanded="false" onclick="toggleCol(this)">미디어</button>

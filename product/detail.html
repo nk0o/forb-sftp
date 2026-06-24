@@ -166,40 +166,9 @@
                     </div>
                   </div><!-- //product_relation -->
                 </div><!-- //#prdDetail -->
-                <div id="pay_Info" class="info_fold">
-                  <div class="info_title">상품결제정보<i aria-hidden="true" class="icon icoPlus">+</i></div>
-                  <div class="info_content">
-                    {$payment_info}
-                  </div>
-                </div><!-- //#pay_Info -->
-                <div id="delivery_Info" class="info_fold">
-                  <div class="info_title">배송정보<i aria-hidden="true" class="icon icoPlus">+</i></div>
-                  <div class="info_content">
-                    <ul class="info delivery">
-                      <li>배송 방법 : {$shipping_method}</li>
-                      <li>배송 지역 : {$shipping_area}</li>
-                      <li>배송 비용 : {$shipping_fee}</li>
-                      <li>배송 기간 : {$shipping_period}</li>
-                      <li>배송 안내 : {$shipping_info}</li>
-                    </ul>
-                  </div>
-                </div><!-- //#delivery_Info -->
-                <div id="exchange_Info" class="info_fold">
-                  <div class="info_title">교환 및 반품정보<i aria-hidden="true" class="icon icoPlus">+</i></div>
-                  <div class="info_content">
-                    {$exchange_info}
-                  </div>
-                </div><!-- //#exchange_Info -->
-                <div id="service_Info" class="info_fold {$service_info|display}">
-                  <div class="info_title">서비스문의<i aria-hidden="true" class="icon icoPlus">+</i></div>
-                  <div class="info_content">
-                    {$service_info}
-                  </div>
-                </div><!-- //#service_Info -->
               </div>
             </div><!-- //ap-prd-tabPanel -->
           </div><!-- //ap-tab__panel -->
-          
           <!-- 리뷰 탭내용 -->
           <div class="ap-tab__panel" id="panel-2">
             <div module="product_additional" class="ap-prd-customer" data-ez="contents-0ctf423-1">
@@ -345,7 +314,6 @@
               </div><!-- #QnA -->
             </div><!-- //ap-prd-customer -->
           </div><!-- //ap-tab__panel -->
-
           
         </div><!-- //ap-prd-detail -->
       </div><!-- //gallery-section -->
@@ -673,7 +641,7 @@
                 <colgroup>
                   <col style="width:auto;">
                   <col style="width:100px;">
-                  <col style="width:50px;">
+                  <col style="width:80px;">
                 </colgroup>
                 <thead>
                   <tr>
@@ -799,12 +767,47 @@
 
             </div><!-- //productAction -->
 
-            <!-- 모바일 고정 주문 버튼 -->            
+            <div module="product_additional" data-ez="contents-0ctf423-1" class="ap-prd__detail-info">
+              <!--@css(/css/module/product/additional.css)-->
+              <!--@import(/board/report_popup.html)-->
+              <div id="pay_Info" class="info_fold">
+                <div class="info_title">상품결제정보<i aria-hidden="true" class="icon icoPlus">+</i></div>
+                <div class="info_content">
+                  {$payment_info}
+                </div>
+              </div><!-- //#pay_Info -->
+              <div id="delivery_Info" class="info_fold">
+                <div class="info_title">배송정보<i aria-hidden="true" class="icon icoPlus">+</i></div>
+                <div class="info_content">
+                  <ul class="info delivery">
+                    <li>배송 방법 : {$shipping_method}</li>
+                    <li>배송 지역 : {$shipping_area}</li>
+                    <li>배송 비용 : {$shipping_fee}</li>
+                    <li>배송 기간 : {$shipping_period}</li>
+                    <li>배송 안내 : {$shipping_info}</li>
+                  </ul>
+                </div>
+              </div><!-- //#delivery_Info -->
+              <div id="exchange_Info" class="info_fold">
+                <div class="info_title">교환 및 반품정보<i aria-hidden="true" class="icon icoPlus">+</i></div>
+                <div class="info_content">
+                  {$exchange_info}
+                </div>
+              </div><!-- //#exchange_Info -->
+              <div id="service_Info" class="info_fold {$service_info|display}">
+                <div class="info_title">서비스문의<i aria-hidden="true" class="icon icoPlus">+</i></div>
+                <div class="info_content">
+                  {$service_info}
+                </div>
+              </div><!-- //#service_Info -->
+            </div>
+
+            <!-- 모바일 고정 주문 버튼 -->     
             <div module="product_action" class="ec-base-button gFixed" id="orderFixArea">
               <div class="ec-base-button gColumn {$action_display|display}">
-                <span class="sizeM sub_sold {$soldout_display|display}">매진</span>
-                <button type="button" class="btnNormal sizeM actionCart {$basket_display|display}" onclick="{$action_basket}">장바구니</button>
-                <a href="#none" class="btnSubmit sizeM {$buy_display|display}" onclick="{$action_buy}"><span id="{$btn_buy_mobile_id}">구매하기</span>
+                <span class="ap-btn ap-btn--primary ap-btn--lg {$soldout_display|display}">매진</span>
+                <button type="button" class="prd-btn-cart ap-btn ap-btn--primary ap-btn--lg actionCart  {$basket_display|display}" onclick="{$action_basket}">장바구니</button>
+                <a href="#none" class="prd-btn-buy ap-btn ap-btn--gold ap-btn--lg  {$buy_display|display}" onclick="{$action_buy}"><span id="{$btn_buy_mobile_id}">구매하기</span>
                   <span class="{$btn_reserve_class|display}" id="{$btn_reserve_mobile_id}">예약주문</span><span id="{$btn_regular_delivery_id}" class="{$btn_regular_delivery|display}">정기배송 신청하기</span>
                 </a>
               </div>

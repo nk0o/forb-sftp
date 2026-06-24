@@ -1,0 +1,115 @@
+#userStyle { font-family: 'Pretendard', sans-serif;} 
+#userStyle #header, #userStyle #header .header{ background: rgba(255, 253, 249, 0.97) !important;} 
+#userStyle.v2 #mCafe24Order{padding-inline: var(--ap-gutter);}
+#userStyle.v2 #mCafe24Order .orderArea .totalPrice .title,
+#userStyle.v2 #mCafe24Order .rightGroup .stickyTop,
+#userStyle.v2 #mCafe24Order,
+#userStyle.v2 #titleArea + form{background-color: #fff ;}
+#userStyle.v2 #titleArea > h1{padding-top: 24px;}
+#userStyle.v2 #titleArea{border-bottom: 0;}
+#userStyle.v2 #header .headerMenu [class*="btn"]{width: 24px; height: 24px;}
+#header .headerMenu.gRight [class*="btn"]{margin-right: 16px;}
+#userStyle .header .headerMenu .btnBasket > a{width: 100%;height: 100%; background: url('/web/img/icon/icon-cart.svg') no-repeat 0 50%/contain;}
+#userStyle .header .headerMenu .btnMy{ background: url('/web/img/icon/icon-user.svg') no-repeat 0 50%/contain;}
+#userStyle .header .headerMenu .btnBack a:before{ background: url('/web/img/icon/icon-chevron-left.svg') no-repeat 0 50%/contain;top: 3px;}
+#userStyle #header .header h1{font-size: var(--ap-text-md);}
+#userStyle #header .headerMenu .btnBasket .count{background: var(--ap-color-text-primary);}
+#userStyle #header .headerMenu .btnBasket .count{width: 16px;height: 16px;display: flex;justify-content: center;align-items: center;top: -2px;right: -51%;}
+#userStyle #titleArea > h1{font-size: var(--ap-text-xl); font-weight: 700; letter-spacing: var(--ap-tracking-tight);}
+#userStyle #titleArea > h1::after { content: '결제 전 주문 내용을 한 번 더 확인해 주세요'; display: block; font-size: var(--ap-text-sm); color: var(--ap-color-text-muted); font-weight: 400; line-height: 1; margin-top: -8px; }
+#userStyle.v2 #mCafe24Order .ec-base-fold{border: 1px solid var(--ap-color-border);border-radius: var(--ap-radius-md); }
+#userStyle.v2 #mCafe24Order .leftGroup .ec-base-fold{margin-bottom: 24px;}
+#userStyle.v2 #orderFixItem.ec-base-button.gFull [class*="btn"]{background-color: var(--ap-color-gold);font-size: var(--ap-text-md);}
+#userStyle.v2 #mCafe24Order .title h2{font-size: var(--ap-text-md);}
+#userStyle.v2 #mCafe24Order .ec-base-prdInfo .thumbnail{width: 76px;height: 76px;border-radius: var(--ap-radius-md); overflow: hidden; background: var(--ap-color-bg-section); flex-shrink: 0;}
+#userStyle.v2 #mCafe24Order .orderArea .totalPrice .title{border-top: 1px solid var(--ap-color-border);padding-bottom: 0;}
+#userStyle.v2 #mCafe24Order .orderArea .totalPrice .deliveryFee{font-size:0;color: var(--ap-color-text-primary);font-weight: 600; letter-spacing:-0.02em; line-height: 20px;}
+#userStyle.v2 #mCafe24Order .orderArea .totalPrice .deliveryFee::after{font-size: var(--ap-text-sm);content: '무료배송';color: var(--ap-color-gold);vertical-align: middle;}
+#userStyle.v2 #mCafe24Order .orderArea .totalPrice .deliveryFee .notranslate{display: none;}
+
+#userStyle.v2 #mCafe24Order .leftGroup,
+#userStyle.v2 #mCafe24Order .rightGroup{padding-top: 30px;}
+#userStyle.v2 #mCafe24Order .rightGroup .stickyTop{ top: 80px; border: 1px solid var(--ap-color-border); border-radius: var(--ap-radius-lg); padding:var(--ap-space-sm) var(--ap-space-lg) var(--ap-space-md); box-shadow: var(--ap-shadow-md);}
+#userStyle.v2 #mCafe24Order .rightGroup .stickyTop .ec-base-fold{border: 0;padding-inline: 0;}
+#userStyle.v2 #mCafe24Order .rightGroup .stickyTop .title{padding-inline: 0;}
+#userStyle.v2 #mCafe24Order.is-terms-sticky #orderFixItem.ec-base-button.gFull{padding: 0;}
+#userStyle.v2 #mCafe24Order .rightGroup .stickyTop .ec-base-fold > .contents{padding-inline: 0;padding-bottom: 0;}
+#userStyle.v2 #mCafe24Order #ec-jigsaw-area-payment .totalPay .heading{color: var(--ap-color-text-secondary);font-size: var(--ap-text-lg);}
+#userStyle.v2 #mCafe24Order #ec-jigsaw-area-payment .totalPay.paymentPrice .txtStrong{color: var(--ap-color-gold);}
+#userStyle.v2 #mCafe24Order .totalPay{padding-bottom: 16px;}
+
+#userStyle.v2 #mCafe24Order .segment .ec-base-table tbody tr th{color: var(--ap-color-text-secondary);}
+#userStyle.v2 #mCafe24Order .segment .ec-base-table tbody tr td span{color: var(--ap-color-text-primary);}
+#userStyle.v2 #mCafe24Order #ec-jigsaw-title-benefit.title h2{color: var(--ap-color-text-secondary);font-size: var(--ap-text-base);}
+#userStyle.v2 #mCafe24Order .ec-base-fold #mAllMileageSum-title{color: var(--ap-color-text-primary);font-size: var(--ap-text-base);}
+.v2 #mCafe24Order .ec-base-fold > .title #ec-jigsaw-heading-discount{font-weight: 500;}
+#userStyle.v2 #mCafe24Order .ec-base-tab a{color: var(--ap-color-text-muted);}
+#userStyle.v2 #mCafe24Order .ec-base-tab li.selected a{color: var(--ap-color-text-primary);}
+#userStyle.v2 #mCafe24Order .ec-base-tab li.selected::after{background-color: var(--ap-color-gold);height: 2px;}
+#userStyle.v2 #mCafe24Order .recentShipArea .segment{border: 1px solid var(--ap-color-border); background: var(--ap-color-cream); border-radius: var(--ap-radius-md); padding: var(--ap-space-lg);}
+#userStyle.v2 #mCafe24Order .recentShipArea .recent .name{font-size: var(--ap-text-base); font-weight: 700;color: var(--ap-color-text-primary);}
+#userStyle.v2 #mCafe24Order .recentShipArea .name .txtEm:not(:empty){color: var(--ap-color-text-primary);background-color: transparent; font-size: var(--ap-text-base);}
+#userStyle.v2 #mCafe24Order .recentShipArea .contact{    font-size: var(--ap-text-sm); color: var(--ap-color-text-secondary); margin:4px 0 var(--ap-space-md);}
+#userStyle.v2 #mCafe24Order .btnNormal, #userStyle.v2 #mCafe24Order .btnNormal.mini, #userStyle.v2 #mCafe24Order .btnBasic{border-color: var(--ap-color-border); border-radius: var(--ap-radius-md);box-shadow:none;}
+
+#userStyle.v2 select, #userStyle.v2 input[type=text], 
+#userStyle.v2 input[type=password] { box-shadow:none; height: 36px !important; font-family: var(--ap-font-sans) !important; font-size: var(--ap-text-base) !important; color: var(--ap-color-text-primary) !important; border: 1px solid var(--ap-color-border) !important; border-radius: var(--ap-radius-sm) !important; padding: 0px 14px !important; outline: none !important; transition: border-color var(--ap-transition-fast) !important; -webkit-appearance: none; }
+#userStyle.v2 select{ appearance: none !important; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%23C8A97E' stroke-width='1.5' fill='none'/%3E%3C/svg%3E") !important; background-position: right 16px center !important; background-repeat: no-repeat !important; background-size: 16px !important; }
+#userStyle.v2 select:not([type=text][readonly]):focus,#userStyle.v2 input[type=text]:not([type=text][readonly]):focus, #userStyle.v2 input[type=password]:not([type=password][readonly]):focus, 
+.ap-form__input:focus, .ap-form__select:focus, .ap-form__textarea:focus { border-color: var(--ap-color-gold) !important; }
+#userStyle.v2 input[type=text]::placeholder , #userStyle.v2 input[type=password]::placeholder, .ap-form__input::placeholder { color: var(--ap-color-text-disabled) !important; }
+#userStyle.v2 input[type=text].hasDatepicker{width: auto !important;}
+#userStyle.v2 input:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px var(--ap-color-cream) inset ; -webkit-text-fill-color: var(--ap-color-text-primary); }
+#userStyle.v2 input:-webkit-autofill,
+#userStyle.v2 input:-webkit-autofill:hover,
+#userStyle.v2 input:-webkit-autofill:focus,
+#userStyle.v2 input:-webkit-autofill:active { transition: background-color 5000s ease-in-out 0s; }
+
+
+#userStyle.v2 #mCafe24Order .shippingList{margin-top: 0;}
+#userStyle.v2 #mCafe24Order .shippingList li:first-child{border-top: 0;}
+#userStyle.v2 #mCafe24Order .ec-base-table.typeWrite th, .v2 #mCafe24Order .deliveryDate .heading{    font-size: var(--ap-text-sm); font-weight: 600; color: var(--ap-color-text-secondary);}
+#userStyle.v2 #mCafe24Order .totalPay .txtEm{color: var(--ap-color-error);}
+#userStyle.v2 #mCafe24Order .fRadio:not(:disabled):checked[type="radio"], 
+#userStyle.v2 #mCafe24Order .selected > .fRadio, 
+#userStyle.v2 #mCafe24Order input:not(:disabled):checked[type="radio"]{ background: url("/web/img/icon/icon-radio_checked.svg") no-repeat 0 0; }
+#userStyle.v2 #mCafe24Order input:not(:disabled):checked[type="checkbox"]{background-image: url('/web/img/icon/icon-checkbox_checked.svg');}
+#userStyle.v2 #mCafe24Order #ec-jigsaw-area-paymethod .ec-base-label{display: flex; align-items: center; gap: 8px; padding: 8px 23px; margin-bottom: 8px; /* border: 1px solid var(--ap-color-border); */ border-radius: var(--ap-radius-md);}
+/* #userStyle.v2 #mCafe24Order #ec-jigsaw-area-paymethod .ec-base-label:has(:checked[type="radio"]){border-color: var(--ap-color-gold);} */
+#userStyle.v2 #mCafe24Order #ec-jigsaw-area-paymethod .ec-base-label input[type="radio"] + label{width: 100%;}
+#userStyle.v2 #mCafe24Order #ec-jigsaw-area-paymethod .ec-base-label input{flex-shrink: 0;}
+#userStyle.v2 #mCafe24Order label{color: var(--ap-color-text-secondary);}
+#userStyle.v2 #mCafe24Order .icoRequired{background-image: url('/web/img/icon/icon-required.svg');}
+
+#userStyle #mCafe24Order .ec-base-mail .mailAddress .directInput{width: 80%; border: 0; position: absolute; top: 1px; left: 1px;right: auto; bottom: auto;}
+#userStyle #mCafe24Order .ec-base-mail .mailAddress .directInput input{height: 34px !important; border: 0 !important;}
+#userStyle.v2 #mCafe24Order.is-terms-sticky .agree-msg{padding: 0;}
+#userStyle.v2 #mCafe24Order .agreeArea{padding: 0;}
+#userStyle.v2 #mCafe24Order #all_agreement_checkbox{margin: 0;}
+#userStyle.v2 #mCafe24Order .agreeArea .checkNone ul{padding: 0;background-color: transparent;}
+@media all and (max-width:768px){
+  #userStyle.v2 #mCafe24Order .leftGroup{padding-top: 24px;}
+  #userStyle.v2 #mCafe24Order .rightGroup{padding-top: 0;}
+  #userStyle.v2 #mCafe24Order.is-terms-sticky .agree-msg{padding: 0;bottom: 56px;}
+  #userStyle.v2 #mCafe24Order.is-terms-sticky #orderFixItem.ec-base-button.gFull{padding: 8px;}
+  #zipcodeLayer{position: fixed !important; inset: 0 !important; width: 100% !important; height: 100dvh !important;}
+}
+
+#zipcodeLayer{ border: 1px solid;}
+#userStyle .mCafe24Post.themeEC h1{color: red;}
+
+
+/* 주문완료 */
+#userStyle.v2 #mCafe24Order .rightGroup .stickyTop{background-color: #fff;}
+#userStyle #titleArea > h1, #userStyle.v2 #titleArea{ background: var(--ap-color-bg-section);}
+.v2.orderResult #mCafe24Order .resultArea{border: 1px solid var(--ap-color-border);}
+.v2.orderResult #mCafe24Order .ec-base-button.gColumn{background-color: var(--ap-color-bg-section);}
+#mCafe24Order .ec-base-button[class*="gColumn"] a, #mCafe24Order .ec-base-button[class*="gColumn"] button{margin-left: 0;}
+.v2.orderResult #mCafe24Order .resultArea .orderNumber{
+    background: var(--ap-color-bg-section);    padding: 2px 8px;}
+#userStyle.v2 #mCafe24Order .orderArea .totalPrice .title, #userStyle.v2 #mCafe24Order, #userStyle.v2 #titleArea + form{ background: var(--ap-color-bg-section);}
+#userStyle.v2 #mCafe24Order .orderArea .totalPrice .title{background-color: #fff;}
+#userStyle.v2 #mCafe24Order .ap-btn.ap-btn--outline{background-color: #fff !important;}
+#userStyle.v2 #mCafe24Order .ap-btn.ap-btn--outline:hover{background-color: #fff !important;color: var(--ap-color-text-primary) !important;}
+
+#userStyle.v2.orderResult #mCafe24Order .ec-base-button.gColumn{padding-bottom: 100px;}

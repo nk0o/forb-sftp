@@ -2,15 +2,18 @@
 <div class="section" module="Board_ListPackage_1002">
     <!--@css(/css/module/board/listPackage.css)-->
     <div module="board_title_1002">
-        <div class="path">
-            <span>현재 위치</span>
-            <ol>
-                <li><a href="/">홈</a></li>
-                <li><a href="#">게시판</a></li>
-                <li title="현재 위치"><strong>{$board_name}</strong></li>
-            </ol>
-        </div>
-
+        <div class="ap-titleArea displaynone">
+          <div class="ap-container--narrow">
+            <!-- 브래드크럼 -->
+            <div class="ap-list-path path section" module="product_headcategory">
+              <span>현재 위치</span>
+              <ol>
+                <li><a href="/"><!--@import(/svg/icon-home.html)--></a></li>
+                <li>{$board_title}</li>
+              </ol>
+            </div><!-- //ap-path -->
+          </div><!-- //ap-container--narrow -->
+        </div><!-- //ap-titleArea -->
         <div class="titleArea">
             <h2>{$board_title} {$board_adult_icon}</h2>
             <p>{$board_info}</p>
@@ -36,7 +39,7 @@
             <colgroup module="board_listheader_1002">
                 <col style="width:80px;" />
                 <col style="width:auto;" />
-                <col style="width:100px;" class="{$config.is_category|display}" />
+                <col style="width:180px;" class="{$config.is_category|display}" />
                 <col style="width:90px;" />
                 <col style="width:120px;" class="{$config.use_date|display}" />
                 <col style="width:74px;" class="{$config.use_cnt|display}" />
@@ -67,7 +70,7 @@
                     <td class="{$category_display|display}">{$category_name}</td>
                     <td>{$member_icon}{$writer}</td>
                     <td class="{$date_display|display}">{$write_date}</td>
-                    <td class="{$hit_display|display}"><span class="RTMI">조회</span> {$hit_count}</span></td>
+                    <td class="{$hit_display|display}"><span class="RTMI">조회</span> {$hit_count}</td>
                     <td class="{$point_display|display}"><img src="//img.echosting.cafe24.com/skin/skin/board/icon-star-rating{$point_count}.svg" alt="{$point_count}점" /></td>
                 </tr>
                 <tr style="{$list_bg_color} {$list_char_color}" class="{$block_target_class}" {$block_data_attr}>
@@ -151,7 +154,7 @@
         <!--@css(/css/module/board/search.css)-->
         <fieldset class="boardSearch">
             <legend>게시물 검색</legend>
-            <div class="form">{$form.search_date} {$form.search_key} {$form.search} <a href="#none" class="btnNormal" onclick="{$action_search}">찾기</a></div>
+            <div class="form">{$form.search_date} {$form.search_key} {$form.search} <a href="#none" class="ap-btn ap-btn--sm ap-btn--outline" onclick="{$action_search}">찾기</a></div>
         </fieldset>
     </div>
 </div>

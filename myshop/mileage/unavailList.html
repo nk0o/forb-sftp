@@ -76,61 +76,61 @@
             <li><a href="/myshop/mileage/couponList.html">미가용쿠폰/회원등급적립내역</a></li>
           </ul>
         </div><!-- //ec-base-tab -->
-        
+
         <!-- 적립금 내역 -->
-        <div module="myshop_unavailList" class="ap-mileage-list">
+        <div class="ap-mileage-list">
           <div class="ap-myshop__subtitle display_tablet_only">
             <h3 class="ap-myshop__subtitle-txt">미가용적립내역보기</h3>
           </div>
-          <!--
-              $only_html = no
-              $count = 10
-              $login_page = /member/login.html
-          -->
-          <div class="ap-mileage-list__item {$display_unavail|display}">
-            <div class="ec-base-table gClearBorderTop">
-              <table border="1">
-                <caption>적립금</caption>
-                <colgroup>
-                  <col style="width:120px;">
-                  <col style="width:auto;">
-                </colgroup>
-                <tbody>
-                  <tr class="item">
-                    <td>
-                      <div class="mileage-item">
-                        <div class="description">
-                          <div class="type" title="적립내용">{$mileage_type}</div>
-                          <div class="number" title="관련주문번호">
-                            <span class="date" title="주문날짜">{$issue_date}</span> 
-                            <a href="/myshop/order/detail.html?order_id={$order_id}">({$order_id})</a>
-                          </div><!-- //number -->
-                          <div class="number" title="사용가능 예정일">사용가능 예정일: <span class="date" title="주문날짜">{$issue_date}</span></div>
+          <div class="ap-mileage-list__item {$display_unavail|display} ap-mileage-list__item--unavail">
+            <div module="myshop_unavailList">
+              <div class="ec-base-table gClearBorderTop">
+                  <!--
+                      $only_html = no
+                      $count = 10
+                      $login_page = /member/login.html
+                  -->
+                <table border="1">
+                  <caption>{$mileage_name} 내역</caption>
+                  <colgroup>
+                    <col style="width:120px;">
+                    <col style="width:auto;">
+                  </colgroup>
+                  <tbody class="{$display_unavail|display}">
+                    <tr class="item">
+                      <td>
+                        <div class="mileage-item">
+                          <div class="description">
+                            <div class="type" title="적립내용">{$mileage_type} <a href="/myshop/order/detail.html?order_id={$order_id}">({$order_id})</a></div>
+                            <div class="number" title="관련주문번호">
+                              <span class="date" title="주문날짜">{$order_date}</span>
+                            </div><!-- //number -->
+                            <div class="number" title="사용가능 예정일">사용가능 예정일: <span class="date" title="주문날짜">{$can_use_date}</span></div>
+                          </div>
+                          <div class="money">{$product_mileage}</div>
                         </div>
-                        <div class="money">{$product_mileage}</div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr class="item">
-                    <td>
-                      <div class="mileage-item">
-                        <div class="description">
-                          <div class="type" title="적립내용">{$mileage_type}</div>
-                          <div class="number" title="관련주문번호">
-                            <span class="date" title="주문날짜">{$issue_date}</span> 
-                            <a href="/myshop/order/detail.html?order_id={$order_id}">({$order_id})</a>
-                          </div><!-- //number -->
-                          <div class="number" title="사용가능 예정일">사용가능 예정일: <span class="date" title="주문날짜">{$issue_date}</span></div>
+                      </td>
+                    </tr>
+                    <tr class="item">
+                      <td>
+                        <div class="mileage-item">
+                          <div class="description">
+                            <div class="type" title="적립내용">{$mileage_type} <a href="/myshop/order/detail.html?order_id={$order_id}">({$order_id})</a></div>
+                            <div class="number" title="관련주문번호">
+                              <span class="date" title="주문날짜">{$order_date}</span>
+                            </div><!-- //number -->
+                            <div class="number" title="사용가능 예정일">사용가능 예정일: <span class="date" title="주문날짜">{$can_use_date}</span></div>
+                          </div>
+                          <div class="money">{$product_mileage}</div>
                         </div>
-                        <div class="money">{$product_mileage}</div>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div><!-- //ec-base-table -->
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div><!-- //ec-base-table -->
+              <p class="ec-base-prdEmpty {$display_unavail_none|display}"><!--@import(/svg/icon-empty.html)-->{$mileage_name} 내역이 없습니다.</p>
+            </div>
           </div><!-- //ap-mileage-history -->
-          <p class="ec-base-prdEmpty {$display_unavail_none|display}"><!--@import(/svg/icon-empty.html)-->{$mileage_name} 내역이 없습니다.</p>
           <!-- 모바일용 버튼 -->
           <div class="ap-mileage__btns">
             <a href="/myshop/mileage/historyList.html">적립내역보기<!--@import(/svg/icon-chevron-right.html)--></a>
@@ -160,56 +160,21 @@
       </div><!-- //ap-myshop__section -->
 
       <!-- 마이페이지 메인 - 추천 -->
-      <div class="ap-myshop__section mileage-recommend">
-        <div class="ap-myshop__subtitle no_margin">
-          <h3 class="ap-myshop__subtitle-txt">적립금 사용하기</h3>
-        </div>
-        <div module="product_listmain_1" class="mileage-recommend">
+        <div class="ap-myshop__section mileage-recommend">
+          <div class="ap-myshop__subtitle no_margin">
+            <h3 class="ap-myshop__subtitle-txt">적립금 사용하기</h3>
+          </div>
+          <div module="product_listmain_1" class="ap-recommendPrd">
           <!--@css(/css/module/product/listnormal.css)-->
+          <!--@css(/layout/basic/css/ap-product.css)-->
           <!--
               $count = 4
               $basket_result = /product/add_basket.html
           -->
           <ul class="ap-recommendPrd__grid">
-            <li class="item ap-recommendPrd__item" id="anchorBoxId_{$product_no}">
-              <div class="box">
-                  <a href="/product/detail.html{$param}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="" class="thumb" /></a>
-                  <p class="name">
-                    <strong>
-                      <a href="/product/detail.html{$param}" class="{$product_name_display|display}"> {$product_name}</a>
-                    </strong>
-                  </p>
-                  <ul module="product_ListItem" class="prd-info">
-                      <li class="{$item_display|display}">{$item_content}</li>
-                      <li class="{$item_display|display}">{$item_content}</li>
-                  </ul>
-                  <div class="status">
-                    <div class="icon">{$soldout_icon} {$recommend_icon} {$new_icon} {$product_icons} {$benefit_icons}</div>
-                    <div class="btn_basket">{$basket_icon}</div>
-                </div>
-              </div>
-            </li>
-            <li class="item ap-recommendPrd__item" id="anchorBoxId_{$product_no}">
-              <div class="box">
-                  <a href="/product/detail.html{$param}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="" class="thumb" /></a>
-                  <p class="name">
-                    <strong>
-                      <a href="/product/detail.html{$param}" class="{$product_name_display|display}"> {$product_name}</a>
-                    </strong>
-                  </p>
-                  <ul module="product_ListItem" class="prd-info">
-                    <li class="{$item_display|display}">{$item_content}</li>
-                    <li class="{$item_display|display}">{$item_content}</li>
-                  </ul>
-                  <div class="status">
-                    <div class="icon">{$soldout_icon} {$recommend_icon} {$new_icon} {$product_icons} {$benefit_icons}</div>
-                    <div class="btn_basket">{$basket_icon}</div>
-                </div>
-              </div>
-            </li>
+              <!--@import(/product/list_product.html)-->
           </ul>
         </div><!-- //ap-recommendPrd -->
-      </div><!-- //ap-myshop__section.mileage-recommend -->
       
     </div><!-- //ap-myshop__content -->    
   </div><!-- //ap-myshop__container -->

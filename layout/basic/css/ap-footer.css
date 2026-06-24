@@ -2,7 +2,7 @@
 
 /* ══ UPPER ══ */
 #footer.ap-ft{ background: #2C2420;border-top: 0;}
-.ap-ft-upper { padding: 64px 0 120px; }
+.ap-ft-upper { padding: 64px 0 90px; }
 .ap-ft-upper__grid { display: grid; grid-template-columns: 220px minmax(auto, 860px); gap: 72px; align-items: start; justify-content: space-between; }
 .ap-ft-brand__name { font-family: var(--ap-font-serif); font-size: 24px; font-weight: 400; letter-spacing: 0.28em; color: var(--ap-color-cream); display: block; margin-bottom: 14px; height: 20px;}
 .ap-ft-brand__name img{display: inline-block;width: auto; height: 100%;}
@@ -99,4 +99,24 @@
   .ap-ft-bottom__inner {justify-content: center; gap: 12px; padding: 18px 0 24px; }
   .ap-ft-bottom__copyright { text-align: left; }
   .ap-ft-bottom__policy{ gap: 8px 0; justify-content: center;flex-wrap: wrap;}
+}
+
+
+.forb .bottom-nav{display: block !important;} 
+.ap-floating {display:none; position:fixed;right: 0; bottom: 0; z-index:600;}
+.ap-floating a{display: flex;align-items: center; justify-content: center;position:absolute; bottom:10px;width:36px; height:36px; background: var(--ap-color-gray-100);  opacity:0.8; }
+.ap-floating a svg{width: 18px;}
+.ap-floating .ap-floating__back { right:96px;}
+.ap-floating .ap-floating__foward { right:53px; }
+.ap-floating .ap-floating__top {  right:10px; flex-direction: column; padding-top:2px; text-align:center; font-size:11px; color:var(--ap-color-black);}
+.ap-floating .ap-floating__top svg{transform: rotate(90deg);}
+.ap-floating.bottom-nav__top{height: 36px; background-color: transparent;}
+.ap-floating.bottom-nav__top--show{display:block}
+.ap-floating .ap-floating__back, .ap-floating .ap-floating__foward{display: none;}
+@media (max-width: 1024px) {
+  .ap-floating.bottom-nav{bottom: 90px;}
+  .ap-floating.bottom-nav__top--show .ap-floating__back, .ap-floating.bottom-nav__top--show .ap-floating__foward{display: flex;border: 0;}
+  .ap-floating.bottom-nav__top{background-color: transparent;top: auto; height: auto;}
+  .ap-floating{width: auto;}
+  .ap-floating .ap-floating__top{height: 36px;}
 }
