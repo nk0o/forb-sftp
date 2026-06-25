@@ -1,3 +1,7 @@
+.forb .ap-floating .ap-floating__top.ap-floating__down{display: flex;}
+@media (max-width: 1024px) {
+  .forb .bottom-nav{bottom: 80px !important;}
+}
 .ap-prdDetail{ background: var(--ap-color-bg-base);}
 .ap-prdDetail #zoom_wrap{inset: 0;pointer-events: none;}
 .ap-prdDetail .image_zoom_large{width: 100%; height: 100%; outline: 0;}
@@ -21,11 +25,11 @@
 .gallery-section .xans-product-detail .imgArea .prdImg .thumbnail{border-radius: 4px; overflow: hidden; height: 0; padding-top: 110%; position: relative;}
 .gallery-section .xans-product-detail .imgArea .prdImg .thumbnail img{position: absolute; inset:0;width: 100%; height: 100%; object-fit: cover;}
 .gallery-section .xans-product-detail .imgArea .listImg li{border-radius: 2px; overflow: hidden;width: 94px; position: relative;}
-.gallery-section .xans-product-detail .imgArea .listImg li::after{content: ""; display: block; height: 0; padding-top: 110%; position: relative;pointer-events: none; z-index: -1;}
-.gallery-section .xans-product-detail .imgArea .listImg li img{position: absolute; inset:0;width: 100%; height: 100%; object-fit: cover;}
+/* .gallery-section .xans-product-detail .imgArea .listImg li::after{content: ""; display: block; height: 0; padding-top: 110%; position: relative;pointer-events: none; z-index: -1;}
+.gallery-section .xans-product-detail .imgArea .listImg li img{position: absolute; inset:0;width: 100%; height: 100%; object-fit: cover;} */
 .gallery-section .xans-product-detail .imgArea .listImg { position: relative; overflow: hidden; width: 100%; height: auto; margin: 24px 0 0; box-sizing: border-box; }
 .gallery-section .xans-product-detail .imgArea .listImg .inner { position: relative; overflow: hidden; width: 100%; height: auto; }
-.gallery-section .xans-product-detail .imgArea .listImg ul { margin: 0 -6px; }
+.gallery-section .xans-product-detail .imgArea .listImg ul { margin: 0 -6px; height: 80px; overflow: hidden;}
 .gallery-section .xans-product-detail .imgArea .listImg li { display: inline-block; width: 80px; margin: 0 6px; font-size: 12px; line-height: 14px; vertical-align: top; }
 .gallery-section .xans-product-detail .imgArea .listImg li img { max-width: 100%; cursor: pointer; }
 .gallery-section .eventArea h3{display: none;}
@@ -37,9 +41,10 @@
 .product-info::-webkit-scrollbar {display: none;}
 .product-info .xans-product-detail .headingArea {padding-bottom: var(--ap-space-lg);   }
 .product-info .xans-product-detail .headingArea h1.product-name{display: block; max-width: 300px; word-break: keep-all;font-size: var(--ap-text-xl); font-weight: 700; line-height: var(--ap-leading-tight); letter-spacing: var(--ap-tracking-tight); margin-bottom: var(--ap-space-sm); }
+.forb .product-info .ap-prdItem__colorchip .color-chip{width: 26px; height: 26px;}
 .product-info__category { font-size: var(--ap-text-xs); font-weight: 600; letter-spacing: var(--ap-tracking-wider); color: var(--ap-color-warm-brown); text-transform: uppercase; padding-bottom: var(--ap-space-sm);}
 .product-subtitle{font-size: var(--ap-text-sm); color: var(--ap-color-text-muted);line-height: var(--ap-leading-normal); font-weight: 400; letter-spacing: 0.02em;word-break: keep-all;}
-.forb .product-heading .ap-prdItem__colorchip{margin-top: 4px;}
+.forb .product-heading .ap-prdItem__colorchip{margin-top: 8px;}
 .product-heading{margin-bottom: 20px;}
 .product-rating { display: flex; align-items: center; gap: 8px;justify-content: end; padding-right: 20px;margin-bottom: -13px;}
 .product-rating .stars { display: flex; gap: 2px; }
@@ -95,10 +100,11 @@
 .product-info .ap-prd-payment{display: flex;justify-content: flex-end; margin-top: 24px;}
 .forb #NaverChk_Button {flex: 1 !important;}
 
-.ap-prd-layout .ap-tab{ position: sticky; top: var(--ap-header-height); z-index: 2; background: var(--ap-color-bg-section); border-top: 1px solid var(--ap-color-border);}
+.ap-prd-layout .ap-tab{ position: sticky; top: var(--ap-header-height); z-index: 2; background: var(--ap-color-beige); border-top: 1px solid var(--ap-color-border);}
 .ap-prd-layout .ap-tab__panel{padding: 0;}
 /* 아래 후기, 문의 */
 .ap-recommendPrd{margin-top: 24px;}
+#prdRecommend{scroll-margin-top: 120px;}
 .ap-prd-recommend{padding: 60px 0 100px;}
 .ap-prd-customer.xans-product-additional{padding-bottom: 100px; }
 .ap-prd-customer h4{margin-block: 100px 24px;}

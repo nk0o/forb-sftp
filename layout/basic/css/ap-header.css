@@ -7,9 +7,9 @@
 .forb .main_top_banner .top_banner_box_inner .top_banner_close label{display: none;}
 
 /* 헤더 */
-.forb #header{border-bottom:0; position: relative; /* height: var(--ap-header-height);  */padding: 0 !important;background: rgba(255,253,249,0.97) !important;backdrop-filter: blur(10px);}
-.forb #header .inner{width:100%;max-width: var(--ap-max-width);padding: 0 !important;border-bottom: 1px solid var(--ap-color-border-light) !important;}
-.forb #header .inner .top_nav_box{position:static;}
+.forb #header{border-bottom:0; position: relative;padding: 0 !important;background: rgba(255,253,249,0.97) !important;backdrop-filter: blur(10px);}
+.forb #header .inner{width:100%;max-width: var(--ap-max-width);padding: 0 !important;}
+.forb #header .inner .top_nav_box{position:static;border-bottom: 1px solid var(--ap-color-border-light) !important;}
 .forb #header .inner .top_nav_box .top_logo {z-index: 2; top:50%; transform: translate(-50%,-50%);}
 .forb #header .inner .top_nav_box .top_logo a{height:100%;}
 .forb #header .inner .top_nav_box .top_logo img{display: block;height: 14px;}
