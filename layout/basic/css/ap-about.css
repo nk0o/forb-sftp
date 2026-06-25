@@ -216,15 +216,10 @@
 .hs-img-inner{flex-direction: column; width: 95%; aspect-ratio: 1 / 1; display: flex; align-items: flex-start; justify-content: center; transition: transform 1.2s cubic-bezier(.76,0,.24,1), box-shadow .3s ease; transform: scale(1.08);text-align: left;}
 .hs-img-inner img{ max-width: 72%; max-height: 72%; width: auto; height: auto; object-fit: contain; }
 .hs-img-wrap.revealed .hs-img-inner{ transform: scale(1); }
-.hs-img-row{ display: flex; flex-direction: column; gap: 0; margin-top: 10px; } 
+.hs-img-row{ display: flex; flex-wrap: wrap; gap: 0; margin-top: 10px; } 
 .hs-img-row .hs-img-wrap{ flex: 1; min-width: 0; margin-top: 0;}
 .hs-img-row .hs-img-inner img{ max-width: 68%; max-height: 68%; }
-@media (hover:hover){
-  .hs-img-inner:hover{
-    box-shadow: 0 10px 24px rgba(0,0,0,.08);
-    transform: translateY(-2px);
-  }
-}
+.hs-img-row--2col .hs-img-wrap{ flex: 16dvh; min-width: 0; margin-top: 0;}
 .hs-ph-label{ position: static; display: flex; align-items: flex-start; gap: 5px; margin-top: 2px; font-size: var(--ap-text-sm); letter-spacing: .3px; color: var(--ap-color-text-muted); word-break: keep-all;}
 .hs-ph-label::before{ content:''; width: 4px; height: 4px;margin-top: 5px; border-radius: 50%; background: var(--ap-color-gold); flex-shrink: 0; }
 
@@ -330,7 +325,7 @@
 /*====================== 
     포브의 장인정신 
   ================== */
-.ap-craftmanship .story-hero {background:url('/web/img/story/img_craftmanship-hero.webp') bottom center/cover no-repeat;}
+.ap-craftmanship .story-hero {background:#000 url('/web/img/story/img_craftmanship-hero.webp') bottom center/cover no-repeat;}
 .ap-craftmanship .story-hero::before{background:transparent;}
 .ap-craftmanship .intro-section{background:var(--ap-color-text-primary);text-align: center;padding: 106px 0;}
 .ap-craftmanship .intro-section .story-tag{justify-content: center;}
@@ -386,7 +381,7 @@
 .flow-item:hover .flow-img{opacity: 1; transform: translateY(0);}
 /* ─── ALUMINUM  ─── */
 .aluminum-section {position: relative;height: 100%; background:url('/web/img/story/img_craftmanship-2.webp') right top/cover no-repeat; text-align: center; display: flex; align-items: center; justify-content: center;}
-.aluminum-section--soft{background:url('/web/img/story/img_craftmanship-3.webp?v=1') center top/cover no-repeat;}
+.aluminum-section--soft{background:url('/web/img/story/img_craftmanship-3.webp?v=3') center top/cover no-repeat;}
 .aluminum-section .story-section{display: flex;align-items: center;justify-content: center;
     top: var(--ap-header-height);}
 .aluminum-section::before{content: '';position: absolute;inset: 0; background: rgba(0,0,0,0.1); }

@@ -331,6 +331,12 @@
                 <div class="product-info__category {$simple_desc|display}">{$simple_desc}</div>
                 <h1 class="product-name">{$name}</h1>
                 <div class="product-subtitle">{$summary_desc}</div>
+                <div class="ap-prdItem__colorchip color {$colorchip_display|display}">
+                  <div module="product_Colorchip">
+                    <div class="color-chip"><span class="chips" style="background-color:{$color}" {$color_image}></span></div>
+                    <div class="color-chip"><span class="chips" style="background-color:{$color}" {$color_image}></span></div>
+                  </div>
+                </div>
               </div><!-- //product-heading -->
               <div class="product-price-box">
                 <div class="product-info__price product-originPrice {$product_sale_price_display|display}">&nbsp;{$product_price|numberformat}원&nbsp;</div>

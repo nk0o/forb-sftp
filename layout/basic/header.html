@@ -113,11 +113,7 @@
         <div class="ap-nav__bar">
           <a href="/" class="top_logo ap-nav__logo"><img src="/web/img/logo-new-1.png" alt="{$mall_name}"></a>
           <ul class="ap-nav__links">
-            <li class="ap-nav__item">
-              <a class="ap-nav__link" href="/event/list.html">
-                <em class="ap-text--gold">신상 아기띠</em>
-              </a>
-            </li>
+            <li class="ap-nav__item"> <a class="ap-nav__link" href="/event/list.html"> <em class="ap-text--gold">신상 아기띠</em> </a> </li>
             <li class="ap-nav__item" data-menu="carseat">
               <a class="ap-nav__link" href="/product/carseat.html?cate_no=43">카시트</a>
             </li>
@@ -201,7 +197,9 @@
       <div class="mega-menu__visual">
         <div class="mega-menu__img"><img src="/web/upload/about_bg_45.jpg" class="mega-menu__visual-image" id="mmImage"></div>
         <div class="mega-menu__visual-caption" id="mmCaption"></div>
-        <div class="mega-menu__visual-title" id="mmVisualTitle"></div>
+        <div class="mega-menu__visual-title">
+          <span id="mmVisualTitle"></span><!--@import(/svg/icon-chevron-right.html)-->
+        </div>
       </div>
     </a>
     <!-- 우: 링크 -->
@@ -219,7 +217,7 @@
 <div class="all-menu-drawer" id="allMenuDrawer" aria-label="전체메뉴">
   <div class="all-menu-drawer__inner">
     <div class="all-menu-drawer__header">
-      <h3 class="all-menu-drawer__tit all-menu-drawer__tit--highlight"><a href="/event/list.html">New 신상 아기띠</a></h3>
+      <!-- <h3 class="all-menu-drawer__tit all-menu-drawer__tit--highlight"><a href="/event/list.html">New 신상 아기띠</a></h3> -->
       <button class="all-menu-drawer__close" id="drawerClose" aria-label="닫기">✕</button>
     </div>
     <div class="all-menu-drawer__section">
@@ -240,15 +238,18 @@
       <!-- 메뉴 -->
       <div class="all-menu-drawer__list">
         <h3 class="all-menu-drawer__tit"><a href="/product/outdoor-carrier.html?cate_no=59">아웃도어 캐리어</a></h3>
+        <div class="all-menu-drawer__link">
+          <a href="/product/포브-볼레-프로voler-pro-유아-등산캐리어-3color/46">볼레 프로 바로가기</a>
+        </div>
       </div>
       <!-- 메뉴 -->
-      <div class="all-menu-drawer__list">
+      <!-- <div class="all-menu-drawer__list">
         <h3  class="all-menu-drawer__tit"><a href="/category/액세서리/51/">기저귀 가방</a></h3>
         <div class="all-menu-drawer__link">
           <a href="/category/액세서리/51/">토드백</a>
           <a href="/category/액세서리/51/">백팩</a>
         </div>
-      </div>
+      </div> -->
       <!-- 메뉴 -->
       <div class="all-menu-drawer__list">
         <h3  class="all-menu-drawer__tit"><a href="/category/액세서리/51/">액세서리</a></h3>
@@ -258,22 +259,19 @@
           <a href="/category/액세서리/51/">기타 외출용품</a>
         </div>
       </div>
-    </div><!-- //all-menu-drawer__section -->
-    <div class="all-menu-drawer__section">
-      <!-- 메뉴 -->
-      <div class="all-menu-drawer__list">
-        <h3 class="all-menu-drawer__tit"><a href="/how-to-use/index.html">사용방법</a></h3>
-      </div>
       <!-- 메뉴 -->
       <div class="all-menu-drawer__list">
         <h3 class="all-menu-drawer__tit"><a href="/service/warranty.html">서비스</a></h3>
         <div class="all-menu-drawer__link">
-          <a href="/service/warranty.html">A/S 기준</a>
+          <a href="/service/warranty.html">제품케어서비스(A/S)</a>
           <a href="/service/authentication.html">정품 인증</a>
           <a href="/service/carseat-replacement.html">카시트 무상교환</a>
+          <a href="/how-to-use/index.html">사용방법</a>
           <a href="/service/faq.html">자주 하는 질문</a>
         </div>
       </div>
+    </div><!-- //all-menu-drawer__section -->
+    <div class="all-menu-drawer__section">
       <!-- 메뉴 -->
       <div class="all-menu-drawer__list">
         <h3 class="all-menu-drawer__tit"><a href="/about/forbstory.html">포브 소개</a></h3>
@@ -486,15 +484,19 @@
     }
 
     navItems.forEach(item => {
-      item.addEventListener('mouseenter', () => {
-        clearTimeout(closeTimer);
-        openTimer = setTimeout(() => {
-          showMenu(item.dataset.menu);
-        }, 180); // 👈 열림 딜레이
-      });
+        item.addEventListener('mouseenter', () => {
+          clearTimeout(closeTimer);
+          clearTimeout(openTimer);
+
+          navItems.forEach(i => i.classList.toggle('is-open', i === item));
+
+          openTimer = setTimeout(() => {
+            showMenu(item.dataset.menu);
+          }, 180);
+        });
 
       item.addEventListener('mouseleave', () => {
-        clearTimeout(openTimer); // 👈 열리기 전에 나가면 취소
+        clearTimeout(openTimer);
         hideMenu();
       });
     });

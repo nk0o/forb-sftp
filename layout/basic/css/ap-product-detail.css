@@ -39,6 +39,7 @@
 .product-info .xans-product-detail .headingArea h1.product-name{display: block; max-width: 300px; word-break: keep-all;font-size: var(--ap-text-xl); font-weight: 700; line-height: var(--ap-leading-tight); letter-spacing: var(--ap-tracking-tight); margin-bottom: var(--ap-space-sm); }
 .product-info__category { font-size: var(--ap-text-xs); font-weight: 600; letter-spacing: var(--ap-tracking-wider); color: var(--ap-color-warm-brown); text-transform: uppercase; padding-bottom: var(--ap-space-sm);}
 .product-subtitle{font-size: var(--ap-text-sm); color: var(--ap-color-text-muted);line-height: var(--ap-leading-normal); font-weight: 400; letter-spacing: 0.02em;word-break: keep-all;}
+.forb .product-heading .ap-prdItem__colorchip{margin-top: 4px;}
 .product-heading{margin-bottom: 20px;}
 .product-rating { display: flex; align-items: center; gap: 8px;justify-content: end; padding-right: 20px;margin-bottom: -13px;}
 .product-rating .stars { display: flex; gap: 2px; }

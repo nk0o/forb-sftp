@@ -21,12 +21,11 @@
         <!-- 상품 요약정보 -->
         <div class="ap-prdItem__desc">{$summary_desc}</div>
         <!-- 컬러칩 -->
-        <div class="ap-prdItem__colorchip color">
-          <div class="color-chip"><span class="chips" style="background-color:{$color};" {$color_image}></span></div>
-          <div class="color-chip"><span class="chips" style="background-color:{$color};" {$color_image}></span></div>
-          <!-- <div class="color-chip"><span class="chips" style="background:#1a1a1a"></span></div>
-          <div class="color-chip"><span class="chips" style="background:#4a6fa5"></span></div>
-          <div class="color-chip"><span class="chips" style="background:#6b6b6b"></span></div> -->
+        <div class="ap-prdItem__colorchip color {$colorchip_display|display}">
+          <div module="product_Colorchip">
+            <div class="color-chip"><span class="chips" style="background-color:{$color}" {$color_image}></span></div>
+            <div class="color-chip"><span class="chips" style="background-color:{$color}" {$color_image}></span></div>
+          </div>
         </div>
         <!-- 상품 가격 -->
         <div class="ap-prdItem__price-row">
@@ -60,9 +59,11 @@
         <!-- 상품 요약정보 -->
         <div class="ap-prdItem__desc">{$summary_desc}</div>
         <!-- 컬러칩 -->
-        <div class="ap-prdItem__colorchip color">
-          <div class="color-chip"><span class="chips" style="background-color:{$color};" {$color_image}></span></div>
-          <div class="color-chip"><span class="chips" style="background-color:{$color};" {$color_image}></span></div>
+        <div class="ap-prdItem__colorchip color {$colorchip_display|display}">
+          <div module="product_Colorchip">
+            <div class="color-chip"><span class="chips" style="background-color:{$color}" {$color_image}></span></div>
+            <div class="color-chip"><span class="chips" style="background-color:{$color}" {$color_image}></span></div>
+          </div>
         </div>
         <!-- 상품 가격 -->
         <div class="ap-prdItem__price-row">
