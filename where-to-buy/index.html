@@ -56,7 +56,9 @@
         '</div></div>';
       return;
     }
+    console.log(data)
     data.forEach((store) => {
+    
       const li = document.createElement("li");
       li.innerHTML = `
         <div class="store-info">
@@ -139,7 +141,7 @@
     });
 
     // JSON 파일 fetch
-    fetch("/web/data/storeData.json?v=2")
+    fetch("/web/data/storeData.json?v=3")
     .then((res) => res.json())
     .then((data) => {
       _storeData = data;

@@ -117,11 +117,12 @@
 }
 
 body, html, * {box-sizing: border-box;}
+body:has(#capp-shop-new-product-optionselect-backlayer){overflow: hidden;}
 fieldset{min-width: auto;max-width: none;}
 a{ color: inherit; font: inherit; }
 em{font-style: normal;}
 input, select, textarea, body, code, button{font-family: var(--ap-font-sans) !important;}
-
+.forb .path{height: 0;padding: 0;}
 .font-serif{font-family:var(--ap-font-serif)}
 .ap__bg--ivory{background-color: var(--ap-color-ivory);}
 .ap__bg--cream{background-color: var(--ap-color-cream);}

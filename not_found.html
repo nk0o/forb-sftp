@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+      .error404{ position:relative; width:100%; min-height:100vh; display:flex; justify-content:center; align-items:center; overflow:hidden; background:#FFFDF9; color:#1A1410; }
+      .error404__bg{ position:absolute; inset:0; background:url('/web/upload/error/error-bg.jpg') center/cover no-repeat; opacity:.06; transform:scale(1.05); }
+      .error404__content{ position: relative; z-index: 2; max-width: 720px; padding: 40px; text-align: center; box-sizing: border-box; width: 100%;}
+      .error404__num{ font-size:120px; font-weight:700; line-height:1; margin-bottom:20px; color:rgba(26,20,16); letter-spacing:.08em; }
+      .error404__title{ font-size:42px; font-weight:600; margin-bottom:20px; color:#1A1410; }
+      .error404__desc{ font-size:18px; line-height:1.8; color:#6B635D; }
+      .error404__btns{ display:flex; justify-content:center; gap:16px; margin-top:48px; }
+      .btn{ box-sizing: border-box;display:inline-flex; justify-content:center; align-items:center; width:auto; height:56px; padding:0 32px; text-decoration:none; font-size:15px; font-weight:500; transition:.3s; border-radius:999px; cursor:pointer; }
+      .btn--naver{ background:#03C75A; color:#FFFDF9; border:1px solid #03C75A; }
+      .btn--coupang{ background:#fff; color:#111; border:1px solid #111; }
+      .btn--black:hover{ background:#3A312B; border-color:#3A312B; }
+      .btn--white{ background:#FFFDF9; color:#1A1410; border:1px solid #D9D1CA; }
+      .btn--white:hover{ background:#F5F1EC; border-color:#C7BEB7; }
+      .info{ max-width: 100%; height: 450px; width: auto; display: block; margin: 30px auto 0; }
+      @media(max-width:768px){
+          .error404__content{ padding:24px; }
+          .error404__num{ font-size:72px; }
+          .error404__title{ font-size:28px; }
+          .error404__desc{ font-size:15px; }
+          .error404__btns{ flex-direction:column; }
+          .btn{ width:100%; }
+      }
+  </style>
+</head>
+<body>
+  <div class="error404">
+    <div class="error404__bg"></div>
+
+    <div class="error404__content">
+        <img src="/web/upload/_dj/img/p_logo.png" alt="포브" style="width:100px; margin:auto; height:auto;">
+        <img class="info" src="https://forbmaster.cafe24.com/web/img/img-info.jpg" alt="공식몰 리뉴얼 중입니다. 중단일시: 2026.07.06 기존 주문건은 정상적으로 출고되며, 출고 시 개별 안내드릴 예정입니다.
+        공식몰 리뉴얼 기간동안에도 포브제품은 다양한 온라인 판매 채널에서 만나보실 수 있습니다.">
+
+        <div class="error404__btns">
+            <a href="https://brand.naver.com/forb" class="btn btn--naver">스마트 스토어 바로가기</a>
+            <a href="https://shop.coupang.com/dongin01" class="btn btn--coupang">쿠팡 스토어 바로가기</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
