@@ -52,7 +52,7 @@
   /* === TYPOGRAPHY — Font Family === */
   --ap-font-serif: 'Cormorant Garamond', 'Noto Serif KR', serif;
   --ap-font-sans: 'Pretendard Variable', 'Apple SD Gothic Neo', sans-serif;
-
+  --ap-font-serif-en: 'Libre Baskerville', serif;  
   /* === TYPOGRAPHY — Size === */
   --ap-text-xs:   12px;  --ap-text-sm:   13px;
   --ap-text-base: 15px;  --ap-text-md:   17px;
@@ -124,6 +124,7 @@ em{font-style: normal;}
 input, select, textarea, body, code, button{font-family: var(--ap-font-sans) !important;}
 .forb .path{height: 0;padding: 0;}
 .font-serif{font-family:var(--ap-font-serif)}
+.font-serif--en{font-family: "Libre Baskerville", serif; }
 .ap__bg--ivory{background-color: var(--ap-color-ivory);}
 .ap__bg--cream{background-color: var(--ap-color-cream);}
 
@@ -139,6 +140,8 @@ body.forb{font-family: var(--ap-font-sans) !important;min-width: 320px !importan
 .ap-form__wrap--wide{max-width: var(--ap-max-width-form--wide);}
 .forb .xans-product-headcategory.titleArea.section{max-width: var(--ap-max-width) !important;}
 .forb #contents > .section { max-width: var(--ap-max-width); width: 100%; padding-inline:var(--ap-gutter); }
+.forb #contents > .section.xans-board-listpackage { max-width: var(--ap-max-width-narrow);}
+.forb .xans-board-search{max-width: none;}
 @media(max-width:1024px){ 
   .forb #container #contents{width: 100%;}
   .ap-container,.ap-container--narrow {overflow: hidden; } 
@@ -161,7 +164,7 @@ body.forb{font-family: var(--ap-font-sans) !important;min-width: 320px !importan
 .ap-btn--ghost { background: transparent !important; border: none !important; padding: 0 !important; color: var(--ap-color-text-primary) !important; font-size: var(--ap-text-xs) !important; letter-spacing: var(--ap-tracking-wider) !important; text-transform: uppercase !important; border-bottom: 1px solid var(--ap-color-text-primary) !important; padding-bottom: 3px !important; border-radius: 0 !important; }
 .ap-btn--ghost:hover { color: var(--ap-color-gold) !important; border-color: var(--ap-color-gold) !important; }
 .ap-btn--sm { font-size: var(--ap-text-sm) !important; padding: 9px 18px !important; }
-.ap-btn--lg { font-size: var(--ap-text-sm) !important; padding: 16px 18px !important; }
+.ap-btn--lg { font-size: var(--ap-text-base) !important; padding: 16px 18px !important; }
 .ap-btn--disabled, .ap-btn:disabled { opacity: 0.6 !important; cursor: not-allowed !important; pointer-events: none !important; }
 .ap-btn--close { transform: none !important; display: flex !important; justify-content: center !important; align-items: center !important; gap: 4px !important; width: 24px !important; height: 24px !important; padding: 6px 18px !important; color: var(--ap-color-text-primary) !important; line-height: 1.4 !important; border: 0 !important; border-radius: 0 !important; text-transform: uppercase !important; letter-spacing: 0.14em !important; }
 .ap-btn--close:before { content: ''; position: absolute !important; inset:auto !important; top: 10px !important; width: 16px !important; height: 1px !important; margin: 0 !important; background-color: currentColor !important; -webkit-transform: rotate(-45deg) !important; transform: rotate(-45deg) !important; }
@@ -206,7 +209,7 @@ body.forb{font-family: var(--ap-font-sans) !important;min-width: 320px !importan
 .ap-form__group { display: flex; flex-direction: column; gap: var(--ap-space-xs); margin-bottom: var(--ap-space-md); }
 .ap-form__section{}
 .ap-form__section-tit{font-size: var(--ap-text-xs); font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--ap-color-text-muted); margin-bottom: 16px;}
-.ap-form__label {margin-bottom: 4px; font-family: var(--ap-font-sans); font-size: var(--ap-text-base); font-weight: 400; color: var(--ap-color-text-secondary); }
+.ap-form__label {margin-bottom: 4px; font-family: var(--ap-font-sans); font-size: var(--ap-text-base); font-weight:500; color: var(--ap-color-text-secondary); }
 .ap-form__required{position: relative;}
 .ap-form__required::after{content: '*'; position: absolute; top: -2px; right: -10px;font-size: var(--ap-text-sm); color: var(--ap-color-error);}
 .ap-form__group .formGroup{display: flex;align-items: center; gap: 4px;}

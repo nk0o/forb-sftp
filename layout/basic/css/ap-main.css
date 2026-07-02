@@ -14,7 +14,7 @@ PAGE-SPECIFIC — 메인페이지 전용 컴포넌트
 .ap-hero__slider { height: 100%; } 
 .ap-hero__bg { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-family: var(--ap-font-sans); font-size: var(--ap-text-sm); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ap-color-text-muted); } 
 .ap-hero__img, .ap-hero__bg img, .ap-hero__bg video{width:100%; height: 100%; object-fit: cover;}
-.ap-hero__bg::after {content:''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(255, 253, 249, 0.55) 0%, transparent 60%); pointer-events: none; } 
+.ap-hero__bg::after {content:''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(255, 253, 249, 0.4) 0%, transparent 60%); pointer-events: none; } 
 .ap-hero__content { position: absolute; width: 100%; inset: 0; display: flex; flex-direction: column; padding: 32px 8%; justify-content: center; } 
 .ap-hero__eyebrow { display: block; font-family: var(--ap-font-sans); font-size: var(--ap-text-sm); font-weight: 500; letter-spacing: var(--ap-tracking-wider); text-transform: uppercase; color: var(--ap-color-gold); margin-bottom: 16px; } 
 .ap-hero__title {margin-bottom: 20px; font-size: clamp(32px, 3.5vw, 46px); color: var(--ap-color-text-primary); letter-spacing: -0.01em; } 

@@ -91,7 +91,7 @@
         
         <div class="auth-info__checklist">
           <div class="auth-info__checkItem"><span class="icon"><!--@import(/svg/icon-check.html)--></span>공식 정품 보증 서비스</div>
-          <div class="auth-info__checkItem"><span class="icon"><!--@import(/svg/icon-check.html)--></span>제품 이력 및 보유 관리 관리</div>
+          <div class="auth-info__checkItem"><span class="icon"><!--@import(/svg/icon-check.html)--></span>제품 이력 및 보유 관리</div>
           <div class="auth-info__checkItem"><span class="icon"><!--@import(/svg/icon-check.html)--></span>교환/AS 등 고객 서비스 지원</div>
           <div class="auth-info__checkItem"><span class="icon"><!--@import(/svg/icon-check.html)--></span>이벤트 및 신제품 소식 우선 안내</div>
         </div>
@@ -292,7 +292,8 @@
                 <div class="auth-record__icon"><!--@import(/svg/icon-certified.html)--></div>
                 <div class="auth-record__main">
                   <div class="auth-record__product">${displayName}</div>
-                  <span class="auth-record__serial">시리얼번호: ${r.MATNR}</span>
+                  <span class="auth-record__serial">시리얼번호: ${r.SID}</span><br>
+                  <span class="auth-record__serial">제품코드: ${r.MATNR}</span>
                   <div class="auth-record__date">${dateStr} ${timeStr}</div>
                 </div>
               </div>
@@ -334,10 +335,26 @@ function loadRecords() {
     .then(data => {
       const list = Array.isArray(data) ? data : [];
       renderRecords(list);
-      //console.log(list)
+      console.log(list)
     })
     .catch(() => renderRecords([]));
 }
+
+/* 
+{
+  AUT_DT: 1782353382000
+  ERDAT: "20260624"
+  MAKTX: "HANDS-FREE LEASH,ORANGE"
+  MATNR: "GW24FWLE0006"
+  POSNR_VA: "000010"
+  POSNR_VL: "000010"
+  SERNO: "0001"
+  SID: "GW2606V5499"
+  VBELN_VA: "0000335786"
+  VBELN_VL: "0080427078"
+  WID: "forbmaster"
+}
+*/
 
 /* 자재코드 자재명 한글제품명  */
   let productNameMap = {};

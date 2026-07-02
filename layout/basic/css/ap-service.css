@@ -8,7 +8,7 @@
 .ap-service__left { position: relative; z-index: 2; }
 .ap-service__eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: var(--ap-text-xs); letter-spacing: 0.3em; color: var(--ap-color-gold); text-transform: uppercase; margin-bottom: 18px; }
 .ap-service__eyebrow::before, .ap-service__eyebrow::after { content: ''; width: 28px; height: 1px; background: var(--ap-color-dusty-rose); }
-.ap-service__title { font-size: var(--ap-text-4xl); font-weight: 500; color: var(--ap-color-text-primary); line-height: 1.2; letter-spacing: 0.16px; margin-bottom: 20px; }
+.ap-service__title { font-size: 46px; font-weight: 500; color: var(--ap-color-text-primary); line-height: 1.2; letter-spacing: 0.16px; margin-bottom: 20px; word-break: keep-all; }
 .ap-service__title em { color: var(--ap-color-dusty-rose); }
 .ap-service__desc { font-size: var(--ap-text-md); line-height: 1.45; color: #fff; font-weight: 500; letter-spacing: 0.6px;word-break: keep-all;}
 .ap-service__left .ap-btn{ width: 100%; max-width: 346px; margin-top: 20px; color: var(--ap-color-text-primary) !important;transition: background var(--ap-transition-fast);font-size: var(--ap-text-base) !important; font-weight: 600 !important;}
@@ -139,6 +139,7 @@
   
 }
 @media (max-width: 768px) {
+  .ap-service__title{font-size: var(--ap-text-2xl);}
   .ap-service__badges{flex-direction: column;width: 100%; padding: 11px 16px;}
   .ap-service__badges.ap-service__badges--vertical{flex-direction: column;}
   .ap-service-badge{border: 1px solid var(--ap-color-border);}
@@ -390,7 +391,6 @@
 /* ─── BODY LAYOUT ────────────────────────────────────────────────────────────── */
 .howto-body {position: relative; display: flex; align-items: flex-start; max-width: var(--ap-max-width); margin: 0 auto;}
 .howto-body.ap-container--narrow{ padding-block: 40px 100px;}
-.ap-howto .ap-service__title{ font-size: 46px}
 .ap-howto .ap-service__desc{color:var(--ap-color-text-secondary);}
 .ap-howto .ap-service__top{height: auto;}
 /* ─── SIDEBAR ─────────────────────────────────────────────────────────────────── */
@@ -576,3 +576,121 @@
 .ap-as__desc{font-size: var(--ap-text-base); line-height: var(--ap-leading-normal); font-weight: 400; max-width: 520px; line-height: 1.25;word-break: keep-all;}
 .ap-as__list{margin: 36px 0 48px;font-size: var(--ap-text-base);}
 .ap-as__list li{margin-top: 8px; padding-left: 14px;}
+
+
+
+
+
+
+/* ================= 정품인증 인트로 ================= */
+/* 등록 혜택 */
+.ap-auth.ap-auth--intro .ap-service__title,
+.ap-auth.ap-auth--intro .ap-service__desc{color: #fff;}
+.ap-auth.ap-auth--intro .ap-service__top{position: relative; height: auto;}
+.ap-auth.ap-auth--intro .ap-service__top .auth__bg{position: absolute; top: 0; left: 0;; width:100%; height: 100%;}
+.ap-auth.ap-auth--intro .ap-service__top .auth__bg img{width:100%; height: 100%;object-fit: cover;}
+.ap-auth.ap-auth--intro .ap-service__top .auth__btns {position: relative; z-index: 1;; margin-bottom: 64px;color: #fff !important;}
+.ap-auth.ap-auth--intro .ap-service__top .auth__btns .ap-btn{color: #fff !important;font-size: var(--ap-text-sm) !important;}
+.auth__btns{display: flex;justify-content: center; gap: 8px;}
+.auth-benefit { padding: 96px 24px; }
+.auth__head { text-align: center; max-width: 560px; margin: 0 auto 56px; font-weight: 600; font-size:var(--ap-text-lg); line-height: 1.4; letter-spacing: -0.01em;}
+.auth__eyebrow{color: var(--ap-color-gold);  font-size: var(--ap-text-xs); letter-spacing: 0.3em; text-transform: uppercase;}
+.auth__heading{margin: 20px 0; font-weight: 600; font-size: var(--ap-text-2xl); line-height: 1.4; letter-spacing: -0.01em;word-break: keep-all;}
+.auth__desc {font-weight: 400; font-size: var(--ap-text-base); line-height: 1.8; color: var(--ap-color-text-secondary); word-break: keep-all; }
+
+.auth-benefit__list {position: relative; z-index: 1; display: grid;grid-template-columns: repeat(3, 1fr); max-width: 470px; margin: 0 auto; }
+.auth-benefit__item { padding: 32px 0 28px; text-align: center; }
+.auth-benefit__mark {background-color: rgba(243,167,0,0.08); width: 100px; height: 100px; margin: 0 auto 20px; border: 3px solid var(--ap-color-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--ap-font-serif-en);  font-size: var(--ap-text-md); color: var(--ap-color-gold); letter-spacing: -0.02em; font-weight: 700; }
+.auth-benefit__title { font-weight: 600; font-size: 14.5px; margin-bottom: 10px; }
+.auth-benefit__desc { font-size: 12.5px; line-height: 1.7; color: var(--ap-color-ink-soft); word-break: keep-all; }
+
+/* ─── 정품인증 INHOUSE ─── */
+.ap-auth .inhouse-section{padding: 64px 0 72px;}
+.ap-auth .inhouse-section .story-section{ display: grid; grid-template-columns: 1fr 1.2fr; gap: var(--ap-space-3xl); align-items: center;height: 100%;}
+.ap-auth .inhouse-section .story-text{font-size: var(--ap-text-base);}
+.ap-auth .inhouse .reveal-left { opacity: 0; transform: translateX(-32px); transition: opacity 0.8s ease, transform 0.8s ease; } 
+.ap-auth .inhouse .reveal-left.visible { opacity: 1; transform: translateX(0); }
+.ap-auth .inhouse { background: var(--ap-color-cream); padding: var(--ap-space-4xl) var(--ap-gutter); }
+.ap-auth .inhouse-inner { max-width: var(--ap-max-width-narrow); margin: 0 auto; }
+.ap-auth .inhouse-top { display: grid; grid-template-columns: 1fr 1.2fr; gap: var(--ap-space-3xl); align-items: start; margin-bottom: var(--ap-space-3xl); }
+.ap-auth .inhouse-body { font-size: var(--ap-text-base); color: var(--ap-color-text-secondary); line-height: var(--ap-leading-loose); margin-top: var(--ap-space-lg); }
+/* 인하우스 프로세스 흐름 */ 
+.ap-auth .inhouse-flow {position: relative; display: flex; flex-direction: column; gap: 0; max-width: 500px; margin: 0 auto;}
+.ap-auth .flow-item { display: flex; align-items: stretch; opacity: 0; transform: translateY(-30px); transition: all 0.7s ease; }
+.ap-auth .flow-item.visible { opacity: 1; transform: translateY(0); }
+.ap-auth .flow-connector {display: flex; flex-direction: column; align-items: center; width: 48px; flex-shrink: 0; }
+.ap-auth .flow-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--ap-color-beige-deep); border: 2px solid var(--ap-color-beige-mid); flex-shrink: 0; transition: all var(--ap-transition-normal); }
+.ap-auth .flow-item.visible .flow-dot { background: var(--ap-color-gold); border-color: var(--ap-color-gold); }
+.ap-auth .flow-line { flex: 1; width: 1px; background: var(--ap-color-gold); }
+.ap-auth .flow-item:last-child .flow-line { display: none; }
+.ap-auth .flow-content { padding: 0 var(--ap-space-md) var(--ap-space-lg) var(--ap-space-md); flex: 1; }
+.ap-auth .flow-label { font-size: var(--ap-text-xs); color: var(--ap-color-gold); letter-spacing: var(--ap-tracking-wider); font-weight: 500; text-transform: uppercase; margin-bottom: 6px; }
+.ap-auth .flow-title { font-size: var(--ap-text-xl); font-weight: 500; color: #fff; margin-bottom: 6px;color: var(--ap-color-text-primary); }
+.ap-auth .flow-desc { font-size: var(--ap-text-sm); color: var(--ap-color-text-secondary); line-height: var(--ap-leading-normal); word-break: keep-all;}
+.ap-auth .flow-img{position: absolute; top: 17px; left: 20px;width: 200px; height: 100px;border: 1px solid var(--ap-color-beige-deep);border-radius: 4px;overflow: hidden;opacity: 0; transform: translateY(30px); transition: all 0.7s ease;}
+.ap-auth .flow-img img{width: 100%; height: 100%; object-fit: cover;}
+.ap-auth .flow-item:hover .flow-img{opacity: 1; transform: translateY(0);}
+@media (min-width: 769px) {
+  .ap-auth .flow-connector { padding-left: 50%; }
+  .ap-auth .flow-item.reverse .flow-content{order: -1;    text-align: right;}
+  .ap-auth .flow-item.reverse .flow-connector {padding-left: 0; padding-right: 50%;}
+  .ap-auth .flow-item.reverse .flow-img {left: auto; right: 20px;}
+}
+
+/*  정품인증 하단 재유도 CTA  */
+.ap-final-cta { background: #fff; padding: 80px 0 120px; text-align: center; }
+.ap-final-cta .auth__btns {margin: 20px 0;}
+.ap-final-cta .auth__btns .ap-btn{min-width: 250px;}
+.ap-final-cta__title, .ap-final-cta p {display:flex;justify-content: center;align-items: center;gap: 4px; font-weight: 500; font-size: var(--ap-text-sm); margin-bottom: 28px; line-height: 1.44; }
+.ap-final-cta span { font-weight: 400; font-size: var(--ap-text-sm);}
+.ap-final-cta p em{width: 16px;height: 16px; display: inline-flex;align-items: center; justify-content: center;border-radius: 100%; background-color: var(--ap-color-beige-deep);}
+
+/* 정품인증 하단 다크 재요약  */
+.ap-r-recap { background: var(--ap-color-text-secondary); padding: 100px 0 96px; }
+.ap-r-recap .auth__head { text-align: center; max-width: 640px; margin: 0 auto 56px; }
+.ap-r-recap .auth__desc { color: #fff;}
+.ap-r-recap .auth__heading { color:#fff; }
+.ap-r-recap .auth__heading strong { color: var(--ap-color-gold); }
+.ap-r-recap__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 720px; margin: 0 auto; }
+.ap-r-recap__card {position: relative; background: #2C2822 url('/web/img/main/img-story-1.webp') center/cover no-repeat; border: 1px solid #3A342C; padding: 32px 28px; text-decoration: none; display: block; transition: background .2s ease, border-color .2s ease; }
+.ap-r-recap__card::before{position: absolute; content: ''; inset: 0; background-color: #333; opacity: 0.3;}
+.ap-r-recap__card:nth-child(2) { background-image: url('/web/img/main/img-story-2.webp'); }
+.ap-r-recap__card-eyebrow {position: relative; font-size: var(--ap-text-sm); color: #fff; margin-bottom: 10px; word-break: keep-all;}
+.ap-r-recap__card-title {position: relative; font-weight: 600; font-size: var(--ap-text-xl); color:#fff; margin-bottom: 16px; word-break: keep-all;}
+.ap-r-recap__card-link {position: relative; display: inline-flex; align-items: center; gap: 6px; font-weight: 500; font-size: var(--ap-text-base); color: var(--ap-color-gold); transition: transform 0.2s ease;}
+.ap-r-recap__card:hover .ap-r-recap__card-link{transform: translateX(10px);}
+
+/* ================= 반응형 ================= */
+@media (max-width: 1024px) {
+  .ap-benefit__list { grid-template-columns: repeat(2, 1fr); }
+  .ap-craft__statement { grid-template-columns: 1fr; gap: 32px; }
+  .ap-craft__statement-media { aspect-ratio: 16/9; order: -1; }
+}
+
+@media (max-width: 768px) {
+  .ap-hero { padding: 88px 20px 64px; }
+  .ap-hero__cta { width: 100%; }
+  .auth-benefit__mark {width: 80px; height: 80px;font-size: var(--ap-space-base);}
+  .auth-benefit__item{padding-top: 0;}
+  .ap-benefit { padding: 64px 20px; }
+  .ap-benefit__head { margin-bottom: 36px; }
+  .ap-craft { padding: 80px 20px 80px; }
+  .ap-craft__head { margin-bottom: 64px; }
+  .ap-craft__process { grid-template-columns: repeat(2, 1fr); row-gap: 48px; }
+  .ap-craft__process::before { display: none; }
+  .ap-craft__step-img { max-width: 120px; }
+  .ap-final-cta { padding: 64px 0; }
+  .ap-final-cta .ap-hero__cta { width: 100%; }
+  .ap-final-cta .auth__btns .ap-btn { min-width: 136px; }
+  .inhouse-section .story-section{grid-template-columns: 1fr; }
+  .inhouse-top { grid-template-columns: 1fr; }
+  .inhouse-flow{max-width: 420px;}
+  .inhouse-top { grid-template-columns: 1fr; }
+  .flow-connector { width: 24px; }
+  .flow-img { position: relative; inset: auto; height: auto; border-width: 1px; margin-top: 8px; opacity: 1; transform: translateY(0); }
+  .flow-desc { font-size: var(--ap-text-base); }
+}
+
+@media (max-width: 480px) {
+  .ap-benefit__list { grid-template-columns: 1fr; }
+}
