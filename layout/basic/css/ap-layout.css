@@ -262,7 +262,7 @@ h5, .ap-text--h5 { font-size: clamp(var(--ap-text-base), 1.8vw, var(--ap-text-md
 .ap-txt--under{text-decoration: underline; text-underline-offset: 4px;}
 .ap-txt--under:hover{text-decoration: underline; text-underline-offset: 4px;}
 .ap-mb--auto{margin-top: auto;}
-
+.ap-font-sans{font-family: var(--ap-font-sans);}
 .forb .ec-base-prdEmpty {display: flex;align-items: center; justify-content: center; flex-direction: column; gap: 16px; text-align: center; border: 0; color: var(--ap-color-text-muted); }
 
 /* swiper */

@@ -102,11 +102,11 @@
 /* 주문완료 */
 #userStyle.v2 #mCafe24Order .rightGroup .stickyTop{background-color: #fff;}
 #userStyle #titleArea > h1, #userStyle.v2 #titleArea{ background: var(--ap-color-bg-section);}
-.v2.orderResult #mCafe24Order .resultArea{border: 1px solid var(--ap-color-border);}
-.v2.orderResult #mCafe24Order .ec-base-button.gColumn{background-color: var(--ap-color-bg-section);}
+#userStyle.v2.orderResult #mCafe24Order .resultArea{border: 1px solid var(--ap-color-border);}
+#userStyle.v2.orderResult #mCafe24Order .ec-base-button.gColumn{background-color: var(--ap-color-bg-section);}
 #mCafe24Order .ec-base-button[class*="gColumn"] a, #mCafe24Order .ec-base-button[class*="gColumn"] button{margin-left: 0;}
-.v2.orderResult #mCafe24Order .resultArea .orderNumber{
-    background: var(--ap-color-bg-section);    padding: 2px 8px;}
+#userStyle.v2.orderResult #mCafe24Order .resultArea .orderNumber{ background: var(--ap-color-bg-section); padding: 2px 8px;}
+#userStyle.v2.orderResult #mCafe24Order .resultArea .message:before{background:url("/web/img/icon/ico_resultarea_message.png") 50% 50% no-repeat;}
 #userStyle.v2 #mCafe24Order .orderArea .totalPrice .title, #userStyle.v2 #mCafe24Order, #userStyle.v2 #titleArea + form{ background: var(--ap-color-bg-section);}
 #userStyle.v2 #mCafe24Order .orderArea .totalPrice .title{background-color: #fff;}
 #userStyle.v2 #mCafe24Order .ap-btn.ap-btn--outline{background-color: #fff !important;}
