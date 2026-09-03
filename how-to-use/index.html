@@ -141,6 +141,14 @@
               url:'pNBIwel_MZs?si=vbnkzBoHe9iuwvOf',
               thumbnail:'/web/img/howto/img_howto_thumb13.png', 
             },
+            { 
+              title:'포브 보네떼 보호매트 사용법',
+              desc:'포브 보네떼 보호매트 사용법입니다.',
+              dur:' 0:38',
+              type: 'mp4',
+              url:'https://forb01.godohosting.com/forb/renewal/video/video_howto-bonete-mat.mp4',
+              thumbnail:'/web/img/howto/img_howto_thumb23.png', 
+            },
           ]
         },
       ]
@@ -226,12 +234,12 @@
         };
 
         render();
-        closeDrawer();
+        //closeDrawer();
       });
     });
     nav.querySelectorAll('.howto-sidebar__prd').forEach(b => b.addEventListener('click', () => {
       S.catId=b.dataset.cat; S.prodId=b.dataset.prod;
-      render(); closeDrawer();
+      render(); //closeDrawer();
     }));
   }
 
@@ -324,9 +332,25 @@
     document.getElementById('modal-title').textContent=v.title;
     document.getElementById('modal-desc').textContent=v.desc;
     document.getElementById('modal-thumb').setAttribute( 'src', v.thumbnail)
-    document.getElementById('modal-video').innerHTML=`<iframe src="https://www.youtube.com/embed/${v.url}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
-   /*  const tags=document.getElementById('modal-tags');
-    tags.innerHTML=''; */
+    //document.getElementById('modal-video').innerHTML=`<iframe src="https://www.youtube.com/embed/${v.url}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+    console.log(v.url)
+    if (v.type === 'mp4') {
+      document.getElementById('modal-video').innerHTML = `
+        <video controls playsinline>
+          <source src="${v.url}" type="video/mp4">
+        </video>
+      `;
+    } else {
+      document.getElementById('modal-video').innerHTML = `
+        <iframe src="https://www.youtube.com/embed/${v.url}" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen>
+        </iframe>
+      `;
+    }
+
     document.getElementById('modal-prod').innerHTML=` ${S.prodId === 'all' && v._prodLabel ? `<span class="howto-thumb__prod" style="background-color: ${v._badgeColor}">${v._prodLabel}</span>` : ''}`;
     const d=document.createElement('span');d.className='modal-tag';
     document.getElementById('modal-overlay').classList.add('open');
@@ -350,6 +374,8 @@
     if (e.target === e.currentTarget) closeModal();
   });
   /* ── MODAL PLAY LOGIC ─────────────────────────────────── */
+
+  /*  
   let isPlaying = false;
 
   document.getElementById('modal-play').addEventListener('click', () => {
@@ -366,6 +392,35 @@
     if (iframe) {
       iframe.src = iframe.src + '&autoplay=1';
     }
+    isPlaying = true;
+  }); */
+
+  let isPlaying = false;
+  document.getElementById('modal-play').addEventListener('click', () => {
+
+    if (!document.getElementById('modal-overlay').classList.contains('open')) return;
+    if (isPlaying) return;
+
+    // 플레이 버튼 & 썸네일 숨기기
+    document.getElementById('modal-play').style.display = 'none';
+    document.querySelector('.howto-modal__glyph').style.display = 'none';
+
+    // MP4
+    const video = document.querySelector('#modal-video video');
+    console.log(video)
+    if (video) {
+      video.play().catch(error => {
+        console.log('MP4 재생 실패:', error);
+      });
+    }
+
+    // 유튜브
+    const iframe = document.querySelector('#modal-video iframe');
+
+    if (iframe) {
+      iframe.src = iframe.src + '&autoplay=1';
+    }
+
     isPlaying = true;
   });
 

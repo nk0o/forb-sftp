@@ -486,6 +486,7 @@
   z-index: 1;}
 .howto-modal__video{ position: absolute; inset: 0; padding-top: 56.25%;}
 .howto-modal__video iframe{position: absolute; inset: 0; width: 100%; height: 100%;}
+.howto-modal__video video {position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
 .howto-play { position: absolute;inset:0; z-index: 1; text-align: center; color: rgba(255,255,255,.35); }
 .howto-play__circle { position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%); width: 68px; height: 68px; border-radius: 50%; border: 2px solid rgba(255,255,255,.18); background: rgba(255,255,255,0.5); display: flex; align-items: center; justify-content: center;cursor: pointer; transition: all var(--ap-transition-normal);}
 .howto-modal__thumb:hover .howto-play__circle { background: var(--ap-color-gold); border-color: var(--ap-color-gold); }
